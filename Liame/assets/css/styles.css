@@ -1,0 +1,41 @@
+/*fonte poppins regular, medium, semi-bold, bold*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*gerais*/
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  margin: 0;
+}
+
+.container {
+  padding: 70px 0;
+}
+p {
+  font-size: 14px;
+  color: #000;
+}
+#linksnavbar a{
+  color: #ff0;
+}
+#linksnavbar a:hover{
+  color: #ff0;
+}
+
+#logo {
+  width: 50px;
+}
+.navbar-brand {
+  padding-left:
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding:
+}
+#nav-login {
+  justify-content: end;
+}
