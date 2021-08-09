@@ -25,17 +25,18 @@
 <body>
 	<!--banner-->
 	<div id="home" class="container-fluid text-center">
-		<div class="landing-text gradient-overlay">
-	<img class="img-fluid" src="assets/img/banner.png" alt="">
-</div>
+		<div class="landing-text ">
+			<img class="img-fluid" src="assets/img/banner-gradient.png" alt="">
+		</div>
 	</div>
+	<!--navbar-->
 	<header class="cabecalho">
 		<div class="container-fluid" id="nav-container">
 			<nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar fixed-top">
 
 				<!--logo-->
-				<a href="index.html" class="navbar-brand">
-					<img id="logo" src="assets/img/logo_liame.png" alt="Liame">
+				<a href="index.html" class="navbar-brand ml-5">
+					<img id="logo" src="assets/img/logo-liame-branca.png" alt="Liame">
 				</a>
 				<!--botão para menu hamburguer mobile-->
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -51,7 +52,7 @@
 						<a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
 					</div>
 					<!--entrar/cadastro-->
-					<div class="nav navbar-nav">
+					<div id="login" class="nav navbar-nav mr-5">
 						<div class="nav-item">
 							<a class="nav-item nav-link" href="php/entrar.php">
 								<i class="uil uil-user"></i>
@@ -64,128 +65,85 @@
 		</div>
 	</header>
 
+<!--serviços-->
+	<div id="servicos" class="container shadow-lg">
+		<div class="d-flex row">
 
-	<table class="container" cellspacing="0" class="#">
-		<tr>
-			<td bgcolor="#dfdfdf">
-				<a href="php/marcar_consultas.php" target="-blank">
-					<img class="#" src="img\#">
+			<div class="col text-center">
+				<a href="#">
+					<i class="uil uil-hospital"></i>
+					<h3 class="">Consultas</h3>
 				</a>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<a href="php/diario_bordo_gestante.php" target="-blank">
-					<img class="#" src="img\#">
-				</a>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<a href="php/diario_bordo_rn.php" target="-blank">
-					<img class="#" src="img\#">
-				</a>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<a href="php/carteirinha_vacinacao.php" target="-blank">
-					<img class="#" src="img\#">
-				</a>
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Marque</font><br>
-				<font align="center" height="50">consultas</font><br>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Crie seu dário</font><br>
-				<font align="center" height="50">de bordo</font><br>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Acompanhe</font><br>
-				<font align="center" height="50">seu bebê</font><br>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Carteirinha de</font><br>
-				<font align="center" height="50">vacinação digital</font><br>
-			</td>
-		</tr>
-		<tr>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
-			</td>
-			<td bgcolor="#dfdfdf">
-				<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
-			</td>
-		</tr> <br>
-	</table>
+				<div class="container descricao">
+					<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
+				</div>
+			</div>
 
-	<form action="php/entrar.php">
-		<input type="submit" value="Começe já" />
-	</form>
+			<div class="col text-center">
+				<a href="#">
+					<i class="uil uil-syringe"></i>
+					<h3 class="">Vacinação</h3>
+				</a>
+				<div class="container descricao">
+					<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
+				</div>
+			</div>
+
+			<div class="col text-center">
+				<a href="#">
+					<i class="uil uil-calender"></i>
+					<h3 class="">Diário de Bordo</h3>
+				</a>
+				<div class="container descricao">
+					<font align="center" height="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra posuere mauris mi nisl nunc non platea tincidunt. Nullam praesent sed blandit pharetra turpis.</font>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<!-- Planos -->
-	<section class="planos">
-		<h1> Planos para especialistas </h1>
-		<h4> Temos planos para os especialistas poderem mostrar seu trabalho para as mamães </h4>
+	<div class="container">
+		<div class="d-flex row">
 
-		<table cellspacing=" 0 " class=" # ">
-			<tr>
-				<td bgcolor=" # 98ee98 ">
-					<img class=" # " src=" img \ # ">
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<img class=" # " src=" img \ # ">
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<img class=" # " src=" img \ # ">
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<img class=" # " src=" img \ # ">
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor=" # 98ee98 ">
-					<Font align="center" altura=" 50 "> bebê Melina </font> <br>
-					<Font align="center" altura=" 50 "> 1 Mês </font> <br>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<Font align="center" altura=" 50 "> bebê Theo </font> <br>
-					<Font align="center" altura=" 50 "> 3 meses </font> <br>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<Font align="center" altura=" 50 "> bebê Sophia </font> <br>
-					<Font align="center" altura=" 50 "> 6 meses </font> <br>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<Font align="center" altura=" 50 "> bebê Antony </font> <br>
-					<Font align="center" altura=" 50 "> 1 ano </font> <br>
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor=" # 98ee98 ">
-					<font align=" center " height=" 50 "> R $ 29,90 </font>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<font align=" center " height=" 50 "> R $ 79,90 </font>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<font align=" center " height=" 50 "> R $ 157,90 </font>
-				</td>
-				<td bgcolor=" # 98ee98 ">
-					<font align=" center " height=" 50 "> R $ 310,90 </font>
-				</td>
-			</tr>
-			<br>
-		</table><br>
+			<div class="col text-center">
+				<img src="assets/img/medica.jpg" class="medica">
+			</div>
 
-		<form action="php/planos.php">
-			<input type="submit" value="Escolha seu plano" />
-		</form>
-	</section>
+			<div id="planos" class="flex-grow-1 p-5 col shadow-lg">
+				<div>
+					<p>Planos para especialistas</p>
+				</div>
 
+				<div>
+					<p>Temos planos para especialistas mostrarem seu trabalho para as mamães</p>
+				</div>
+
+				<div class="row plano">
+					<div class="m-3 col melina">
+						<p>Baby Melina</p>
+						<p> 1 mês </p>
+						<p> R$ 29,90 </p>
+					</div>
+					<div class="m-3 col theo">
+						<p>Baby Theo</p>
+						<p> 3 mês </p>
+						<p> R$ 79,90 </p>
+					</div>
+					<div class="m-3 col sophia">
+						<p>Baby Sophia</p>
+						<p> 6 mês </p>
+						<p> R$ 157,90 </p>
+					</div>
+					<div class="m-3 col antony">
+						<p>Baby Antony</p>
+						<p> 1 ano </p>
+						<p> R$ 310,90 </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- redes sociais  -->
 	<section>

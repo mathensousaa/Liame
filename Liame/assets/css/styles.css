@@ -4,23 +4,28 @@
 /*gerais*/
 html, body {
   font-family: 'Poppins', sans-serif;
+  background-color: #FAF9F8;
 }
-.navbar {
-}
+
 .row {
   margin: 0;
 }
 
 .container {
-  padding: 70px 0;
+  padding: 70px;
 }
+
 p {
   font-size: 14px;
   color: #000;
 }
+
+/*estilizações isoladas*/
+
 #linksnavbar a{
   color: #ffffff;
 }
+
 #linksnavbar a:hover{
   color: #ffffff;
 }
@@ -34,21 +39,82 @@ p {
   margin: 0;
 }
 
-.gradient-overlay{
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width:: 100%;
-    height: 100%;;
-    background-image: linear-gradient(96.3deg, rgba(232, 191, 187, 0.89) 7.5%, rgba(124, 157, 182, 0.89) 90.91%);
-  }
-}
 #home {
   background-size: cover;
 }
 .container-fluid{
   padding: inherit;
+}
+
+#servicos {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: -150px;
+  padding: 30px;
+
+}
+
+#servicos a{
+  color: #49626F;
+  font-weight: 700;
+}
+#servicos a:hover{
+  text-decoration: none;
+}
+
+#servicos i {
+  font-size: 50px;
+}
+font {
+  color:
+}
+
+.descricao {
+  padding: 25px;
+  background-color: #ffffff;
+  color: #49626F;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.bigbox{
+  background-color:#fff;
+  width: 600px;
+  height: 250px;
+  top: 400px;
+  left: 450px;
+  box-shadow: 0 0 1em rgb(95, 92, 92);
+
+}
+ .plano{
+ }
+
+.melina {
+    box-shadow: 0px 5px 3px rgba(168, 164, 164, 0.342);
+}
+
+.theo {
+    box-shadow: 0px 5px 3px rgba(168, 164, 164, 0.342);
+
+}
+
+.sophia {
+    box-shadow: 0px 5px 3px rgba(168, 164, 164, 0.342);
+}
+
+.antony{
+    box-shadow: 0px 5px 3px rgba(168, 164, 164, 0.342);
+}
+
+.medica{
+    height: auto;
+    width:200px;
+
+}
+
+#planos {
+  border-radius: 20px;
 }
