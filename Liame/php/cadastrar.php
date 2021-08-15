@@ -1,41 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    Aqui vai o código HTML que fará seu site aparecer.
+  </body>
+</html>
+
+
+
+
+
 <?php
     echo "página de cadastro";
 
+    $connect = mysql_connect('localhost', 'root', '');
+    $db = mysql_select_db('liame');
+
+    
     $login = $_POST['login'];
     $senha = MD5 ($_POST['senha']);
-    $connect = mysql_connect('localhost', 'usuario', 'senha');
-    $db = mysql_select_db('liame');
-    $query_select = "SELECT email_mae FROM mae WHERE email_mae = '$login';
-    $select = mysql_query($query_select, $connect);
     $array = $array['login'];
+    $query_select = "SELECT email_profissional FROM profissional WHERE email_profissional = '$login' AND senha_profissional = '$senha';
+    $select = mysql_query($query_select, $connect);
 
-        if ($login == "" || $login == null){
-            echo "<script language='javascript' type='text/javascript'>
-            alert('O campo login deve ser preenchido');window.location.href='
-            cadastrar.php';</script>";
+    if (isset({$_POST['enviar']})){
 
-        }else{
-            if($logarray == $login){
+        $tipo=$_POST{['tipo']};
 
-                echo"<script language='javascript' type='text/javascript'>
-                alert('Esse login já existe');window.location.href='
-                cadastrar.php';</script>";
-                die();
+        if ($tipo == 'profissional'){
 
-        }else{
-            $query = "INSERT INTO mae (email_mae,senha_mae) VALUES ('$login','$senha')";
-            $insert = mysql_query($query,$connect);
-        
-             if($insert){
-                 echo"<script language='javascript' type='text/javascript'>
-                  alert('Usuário cadastrado com sucesso!');window.location.
-                  href='entrar.php'</script>";
+            if ($login == ' ' || $login == null){
+                echo O campo login deve ser preenchido;
+    
             }else{
-                echo"<script language='javascript' type='text/javascript'>
-                  alert('Não foi possível cadastrar esse usuário');window.location
-                  .href='entrar.php'</script>";
+                if($logarray == $login){
+    
+                    echo Esse login já existe;
+                    die();
+    
+            }else{
+                
+                $query = INSERT INTO profissional (email_profissional,senha_profissional) VALUES ('$login','$senha');
+                $insert = mysql_query($query,$connect);
+                
+                 if($insert){
+                     echo Usuário cadastrado com sucesso!;
+                }else{
+                    echo Não foi possível cadastrar esse usuário;
+                }
             }
         }
-     }
+        }else{
+            
+            if ($login == '' || $login == null){
+                echo O campo login deve ser preenchido;
+    
+            }else{
+                if($logarray == $login){
+    
+                    echo Esse login já existe;
+                    die();
+    
+            }else{
+                $query = INSERT INTO mae (email_mae,senha_mae) VALUES ('$login','$senha');
+                $insert = mysql_query($query,$connect);
+            
+                 if($insert){
+                     echo Usuário cadastrado com sucesso!;
+                }else{
+                    echo Não foi possível cadastrar esse usuário;
+                }
+            }
+         }
+        
+    ]
 
+    
 ?>
