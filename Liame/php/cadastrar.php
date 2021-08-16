@@ -25,7 +25,7 @@
         }else{
             $query = "INSERT INTO mae (email_mae,senha_mae) VALUES ('$login','$senha')";
             $insert = mysql_query($query,$connect);
-        
+
              if($insert){
                  echo"<script language='javascript' type='text/javascript'>
                   alert('Usuário cadastrado com sucesso!');window.location.
