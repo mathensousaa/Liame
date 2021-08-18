@@ -28,70 +28,46 @@
 
     if (isset({$_POST['enviar']})){
 
-        $tipo=$_POST{['tipo']};
+        $tipo=$_POST{['tipo']}; 
 
-        if ($tipo == 'profissional'){
+            if ($tipo == 'profissional'){
 
-<<<<<<< HEAD
-        }else{
-            $query = "INSERT INTO mae (email_mae,senha_mae) VALUES ('$login','$senha')";
-            $insert = mysql_query($query,$connect);
+                if ($login == ' ' || $login == null){
 
-             if($insert){
-                 echo"<script language='javascript' type='text/javascript'>
-                  alert('Usuário cadastrado com sucesso!');window.location.
-                  href='entrar.php'</script>";
-=======
-            if ($login == ' ' || $login == null){
-                echo O campo login deve ser preenchido;
-    
->>>>>>> 747d604859fd35252be30a9e4f9e5826a848dfd7
-            }else{
-                if($logarray == $login){
+                    echo O campo login deve ser preenchido;
+
+
+                }else if($logarray == $login){
+                
     
                     echo Esse login já existe;
                     die();
-    
-            }else{
-                
-                $query = INSERT INTO profissional (email_profissional,senha_profissional) VALUES ('$login','$senha');
-                $insert = mysql_query($query,$connect);
-                
-                 if($insert){
-                     echo Usuário cadastrado com sucesso!;
-                }else{
-                    echo Não foi possível cadastrar esse usuário;
-                }
-            }
-        }
-        }else{
-            
-            if ($login == '' || $login == null){
-                echo O campo login deve ser preenchido;
-    
-            }else{
-                if($logarray == $login){
-    
-                    echo Esse login já existe;
-                    die();
-    
-            }else{
-                $query = INSERT INTO mae (email_mae,senha_mae) VALUES ('$login','$senha');
-                $insert = mysql_query($query,$connect);
-            
-                 if($insert){
-                     echo Usuário cadastrado com sucesso!;
-                }else{
-                    echo Não foi possível cadastrar esse usuário;
-                }
-            }
-         }
-        
-    ]
 
-<<<<<<< HEAD
-?>
-=======
+                }else{
+                    echo Usuário cadastrado com sucesso!;
+                    }
+
+            }else{
+            
+                    if ($login == '' || $login == null){
+
+                         echo O campo login deve ser preenchido;
+                    
+    
+                    }else if{($logarray == $login){
+    
+                         echo Esse login já existe;
+                         die();
+    
+                    }else{
+                        
+                        echo Usuário cadastrado com sucesso!;
+                        }
+
+                }
+            
+    }
+
+   
     
 ?>
->>>>>>> 747d604859fd35252be30a9e4f9e5826a848dfd7
