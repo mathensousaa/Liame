@@ -6,7 +6,9 @@ html, body {
   font-family: 'Poppins', sans-serif;
   background-color: #FAF9F8;
 }
-
+main {
+  color: #49626F;
+}
 .row {
   margin: 0;
 }
@@ -16,11 +18,12 @@ html, body {
 }
 
 p {
-  font-size: 14px;
-  color: #000;
+  font-size: 12px;
 }
-
-/*estilizações isoladas*/
+a:hover {
+  text-decoration: none;
+}
+/*cabeçalho*/
 
 #linksnavbar a{
   color: #ffffff;
@@ -29,92 +32,30 @@ p {
 #linksnavbar a:hover{
   color: #ffffff;
 }
-
-#logo {
+.logo {
   width: 50px;
 }
 
-.img-fluid{
-  padding: 0;
-  margin: 0;
+
+/*rodapé*/
+.footer {
+  margin-top: 400px;
 }
 
-#home {
-  background-size: cover;
-}
-.container-fluid{
-  padding: inherit;
-}
-
-#servicos {
-  position: relative;
-  background-color: #ffffff;
-  border-radius: 20px;
-  margin-top: -150px;
-  padding: 30px;
-
-}
-
-#servicos a{
-  color: #49626F;
-  font-weight: 700;
-}
-#servicos a:hover{
-  text-decoration: none;
-}
-
-#servicos i {
-  font-size: 50px;
-}
-font {
-  color:
-}
-
-.descricao {
-  padding: 25px;
-  background-color: #ffffff;
-  color: #49626F;
-}
-
-h3 {
-  font-weight: 600;
-}
-
-.btn {
-  flex: 1 1 auto;
-  margin: 10px;
-  padding: 15px 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
- /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-position: right center;
-  color: white;
-}
-
-.btn-1 {
-  background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
-}
-
-#medica {
-
-}
-
-#plano {
-
-}
-#planos i {
-  font-size: 35px;
-}
-
-#rodape {
+footer{
   background-color: #7C9DB6;
+  color: #FFFFFF;
+  margin-top: 400px;
+}
+
+footer a {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+footer a:hover {
+  color: #FFFFFF;
+}
+.logo-footer {
+  width: 10em;
 }
