@@ -229,6 +229,14 @@ h3 {
   border-radius: 50%;
 }
 
+.barra-progresso .step span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  left: 50%
+  transform: translateX(-50%);
+}
+
 .barra-progresso .step:last-child .bullet:before,
 .barra-progresso .step:last-child .bullet:after {
   display: none;
@@ -251,7 +259,7 @@ h3 {
   animation: animate 0.3 linear infinite;
 }
 
-@@keyframes animate {
+@keyframes animate {
   100% {
     transform:  scaleX(1);
   }
@@ -261,12 +269,7 @@ h3 {
   font-size: 16px;
   font-weight: 500;
 }
-.step span {
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0;
-  margin: 0;
-}
+
 .span {
   width: 28px;
   margin-right: 0px;

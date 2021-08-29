@@ -169,7 +169,7 @@
           </div>
           <div class="d-flex">
             <input type="submit" name="submit" value="Enviar">
-            <!--<a href="" class="btn btn-1">Próximo</a>-->
+            <a href="" class="btn btn-1">Próximo</a>
           </div>
         </div>
 
@@ -221,41 +221,3 @@
 </body>
 
 </html>
-
-
-
-
-
-<!--
-<div class="card text-center justify-content-center shadow-lg card-1 border-0 bg-white px-sm-2">
-  <div class="card-body show ">
-    <div class="row">
-      <div class="col">
-        <h5>Selecione o tipo de conta</h5>
-      </div>
-    </div>
-    <div class="radio-group row justify-content-between px-3 text-center a">
-      <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio selected">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\mae-icone.png" alt="ícone de mãe" width="100" height="100">
-              <p>Mãe</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\doutor-icone.png" alt="ícone de médico" width="100" height="100">
-              <p>Profissional</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
