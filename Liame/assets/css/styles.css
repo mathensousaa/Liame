@@ -219,6 +219,36 @@ h3 {
   font-size: 25px;
 }
 
+
+.bullet {
+  position: relative;
+  height: 28px;
+  width: 28px;
+  border: 2px solid #49626F;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.step:last-child .bullet:before,
+.bullet:after {
+  display: none;
+}
+
+.bullet:before,
+.bullet:after {
+  position: absolute;
+  content: '';
+  left: 35px;
+  height: 3px;
+  width: 100px;
+  background: #49626F;
+  bottom: 11px;
+}
+
+.bullet:after {
+  background: #
+}
+
 .step p{
   font-size: 16px;
   font-weight: 500;

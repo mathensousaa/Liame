@@ -19,7 +19,7 @@
     $connect = mysql_connect('localhost', 'root', '');
     $db = mysql_select_db('liame');
 
-    
+
     $login = $_POST['login'];
     $senha = MD5 ($_POST['senha']);
     $array = $array['login'];
@@ -28,7 +28,7 @@
 
     if (isset({$_POST['enviar']})){
 
-        $tipo=$_POST{['tipo']}; 
+        $tipo=$_POST{['tipo']};
 
             if ($tipo == 'profissional'){
 
@@ -38,8 +38,8 @@
 
 
                 }else if($logarray == $login){
-                
-    
+
+
                     echo Esse login já existe;
                     die();
 
@@ -48,26 +48,26 @@
                     }
 
             }else{
-            
+
                     if ($login == '' || $login == null){
 
                          echo O campo login deve ser preenchido;
-                    
-    
+
+
                     }else if{($logarray == $login){
-    
+
                          echo Esse login já existe;
                          die();
-    
+
                     }else{
-                        
+
                         echo Usuário cadastrado com sucesso!;
                         }
 
                 }
-            
+
     }
 
-   
-    
+
+
 ?>
