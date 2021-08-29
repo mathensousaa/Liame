@@ -5,8 +5,9 @@
 $login = $_POST['login'];
 $entrar = $_POST['entrar'];
 $senha = MD5($_POST['senha']);
-$connect = mysql_connect('localhost','nome_de_usuario','senha');
+$connect = mysql_connect('localhost','root','');
 $db = mysql_select_db('liame');
+
   if (isset($entrar)) {
 
     $verifica = mysql_query("SELECT * FROM mae WHERE email_mae =
