@@ -220,7 +220,7 @@ h3 {
 }
 
 
-.bullet {
+.barra-progresso .step .bullet {
   position: relative;
   height: 28px;
   width: 28px;
@@ -229,13 +229,13 @@ h3 {
   border-radius: 50%;
 }
 
-.step:last-child .bullet:before,
-.bullet:after {
+.barra-progresso .step:last-child .bullet:before,
+.barra-progresso .step:last-child .bullet:after {
   display: none;
 }
 
-.bullet:before,
-.bullet:after {
+.barra-progresso .step .bullet:before,
+.barra-progresso .step .bullet:after {
   position: absolute;
   content: '';
   left: 35px;
@@ -245,8 +245,16 @@ h3 {
   bottom: 11px;
 }
 
-.bullet:after {
-  background: #
+.barra-progresso .step .bullet:after {
+  background: #8787a3;
+  transform: scaleX(0);
+  animation: animate 0.3 linear infinite;
+}
+
+@@keyframes animate {
+  100% {
+    transform:  scaleX(1);
+  }
 }
 
 .step p{
