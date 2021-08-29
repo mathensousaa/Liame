@@ -229,9 +229,7 @@ h3 {
   padding: 0;
   margin: 0;
 }
-.bullet {
-  border: 2px solid #000;
-  border-radius: 50%;
+.span {
   width: 28px;
   margin-right: 0px;
 }
