@@ -2,7 +2,8 @@
 <?php
     include 'conexao.php';
     
-    if(isset($_POST['submit']);
+    if(isset($_POST['submit']){
+        
     $nome_mae = $_POST['nome_mae'];
     $sobrenome_mae = ($_POST['sobrenome_mae']);
     $nome_usuario = ($_POST['nome_usuario']);
@@ -10,7 +11,7 @@
     $email_mae = ($_POST['email_mae']);
     $senha_mae = ($_POST['senha_mae']);
     $confirmarsenha_mae = ($_POST['confirmarsenha_mae']);
-
+    }
     if($confirmarsenha_mae == $senha_mae){
         echo "Senhas iguais";
        }else{
