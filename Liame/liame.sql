@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 14-Ago-2021 às 20:01
+-- Tempo de geração: 30-Ago-2021 às 00:58
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -42,6 +42,41 @@ CREATE TABLE IF NOT EXISTS `adm` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `comentario`
+--
+
+DROP TABLE IF EXISTS `comentario`;
+CREATE TABLE IF NOT EXISTS `comentario` (
+  `id_comentario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_profissional` int(11) NOT NULL,
+  `id_mae` int(11) NOT NULL,
+  `data_comentario` date NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  PRIMARY KEY (`id_comentario`),
+  KEY `fk_MaeComentario` (`id_mae`),
+  KEY `fk_ProfissionalComentario` (`id_profissional`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `diario_bordo`
+--
+
+DROP TABLE IF EXISTS `diario_bordo`;
+CREATE TABLE IF NOT EXISTS `diario_bordo` (
+  `id_diario` int(11) NOT NULL,
+  `id_mae` int(11) NOT NULL,
+  `texto_diario` varchar(500) NOT NULL,
+  `video_diario` varchar(200) NOT NULL,
+  `imagem_diario` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_diario`),
+  KEY `fk_MaeDiario` (`id_mae`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `mae`
 --
 
@@ -54,6 +89,8 @@ CREATE TABLE IF NOT EXISTS `mae` (
   `email_mae` varchar(100) NOT NULL,
   `senha_mae` varchar(100) NOT NULL,
   `foto_perfil_mae` varchar(100) DEFAULT NULL,
+  `nome_bebe_diario` varchar(200) DEFAULT NULL,
+  `sexo_bebe_diario` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_mae`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -70,8 +107,10 @@ CREATE TABLE IF NOT EXISTS `plano` (
   `tipo_plano` varchar(40) NOT NULL,
   `data_venciamento_plano` datetime NOT NULL,
   `data_pagamento_plano` date NOT NULL,
-  `forma_pagamento` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_plano`)
+  `forma_pagamento_plano` varchar(40) NOT NULL,
+  `id_profissional` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_plano`),
+  KEY `fk_PlanoProfissional` (`id_profissional`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
