@@ -204,7 +204,7 @@ h3 {
 
 .estrutura {
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .estrutura form {
@@ -215,10 +215,6 @@ h3 {
   border-radius: 10px;
 }
 
-.step i{
-  font-size: 25px;
-}
-
 
 .barra-progresso .step .bullet {
   position: relative;
@@ -227,6 +223,12 @@ h3 {
   border: 2px solid #49626F;
   display: inline-block;
   border-radius: 50%;
+}
+
+.container .barra-progresso .step i{
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .barra-progresso .step span {
@@ -249,20 +251,29 @@ h3 {
   left: 35px;
   height: 3px;
   width: 100px;
-  background: #49626F;
   bottom: 11px;
+  background: #49626F;
 }
 
 .barra-progresso .step .bullet:after {
-  background: #8787a3;
+  background: #e8bfbb;
   transform: scaleX(0);
-  animation: animate 0.3 linear infinite;
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
 }
 
 @keyframes animate {
   100% {
     transform:  scaleX(1);
   }
+}
+
+.barra-progresso .step .check i{
+  position: absolute;
+  left: 0;
+  top: 53%;
+  font-size: 24px;
+  display: none;
 }
 
 .step p{
