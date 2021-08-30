@@ -29,7 +29,13 @@
 }
 
 
+<<<<<<< HEAD
+?>
+
+
+=======
     ?>
+>>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
 <!DOCTYPE html>
 <html lang="pt-br">
 
