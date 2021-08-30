@@ -2,7 +2,7 @@
   $host = "localhost";
   $user = "root";
   $pass = "";
-  $db = "Liame";
+  $db = "liame";
   $mysqli = new mysqli($host, $user, $pass, $db);
 
 if($mysqli -> connect_errno)

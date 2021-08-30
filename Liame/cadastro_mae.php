@@ -11,8 +11,8 @@
     $email_mae = ($_POST['email_mae']);
     $senha_mae = ($_POST['senha_mae']);
     $confirmarsenha_mae = ($_POST['confirmarsenha_mae']);
-    
-    
+
+
 
     if($confirmarsenha_mae == $senha_mae){
       echo "Senhas iguais";
@@ -22,7 +22,7 @@
 
   $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
   mysqli_query($link,$query) or die("Erro ao cadastrar");
-  
+
   echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
 }else{
   echo "formulario nao preenchido";
@@ -30,8 +30,6 @@
 
 
     ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -142,8 +140,8 @@
             <label for="sobrenome_mae">Sobrenome</label>
             <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg">
           </div>
-          <div class="d-flex">
-            <input type="submit" name="submit" value="Enviar">
+          <div class="d-flex nextBtn">
+
             <a href="" class="btn btn-1">Próximo</a>
           </div>
         </div>
@@ -187,6 +185,7 @@
           <div class="d-flex">
             <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
             <a href="" class="col-6 m-1 mb-4 btn btn-1">Próximo</a>
+            <input type="submit" name="submit" value="Enviar">
           </div>
         </div>
       </form>
