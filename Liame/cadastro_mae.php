@@ -11,8 +11,8 @@
     $email_mae = ($_POST['email_mae']);
     $senha_mae = ($_POST['senha_mae']);
     $confirmarsenha_mae = ($_POST['confirmarsenha_mae']);
-    
-    
+
+
 
     if($confirmarsenha_mae == $senha_mae){
       echo "Senhas iguais";
@@ -22,16 +22,20 @@
 
   $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
   mysqli_query($link,$query) or die("Erro ao cadastrar");
-  
+
   echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
 }else{
   echo "formulario nao preenchido";
 }
 
 
+<<<<<<< HEAD
 ?>
 
 
+=======
+    ?>
+>>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -130,7 +134,7 @@
         </div>
       </div>
       <form class="" action="cadastro_mae.php" method="post">
-        <div class="col-12">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
@@ -142,8 +146,8 @@
             <label for="sobrenome_mae">Sobrenome</label>
             <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg">
           </div>
-          <div class="d-flex">
-            <input type="submit" name="submit" value="Enviar">
+          <div class="d-flex nextBtn">
+
             <a href="" class="btn btn-1">Próximo</a>
           </div>
         </div>
@@ -187,12 +191,25 @@
           <div class="d-flex">
             <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
             <a href="" class="col-6 m-1 mb-4 btn btn-1">Próximo</a>
+            <input type="submit" name="submit" value="Enviar">
           </div>
         </div>
       </form>
     </div>
 
   </div>
+
+  <!--implementação jquery, poppers.js e plugin bootstrap-->
+  <script src="assets/js/scripts.js"></script>
+
+  <!--progressbar-->
+  <script src="assets/js/progressbar.min.js"></script>
+
+  <!--biblioteca parallax-->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
