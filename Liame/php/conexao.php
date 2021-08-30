@@ -1,6 +1,6 @@
 <?php
   <?php
-  $link = mysqli_connect("localhost", "root", "", "liame");
+  $link = mysqli_connect("localhost: 3306", "root", "", "liame");
    
   if (!$link) {
       echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
@@ -12,6 +12,6 @@
   echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;
    
  
-  ?> 
+  
 
 ?>
