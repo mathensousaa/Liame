@@ -1,5 +1,5 @@
-
 <?php
+
     include 'php/conexao.php';
 
     if(isset($_POST['submit'])){
@@ -14,7 +14,7 @@
 
 
 
-    if($confirmarsenha_mae == $senha_mae){
+    if($confirmarsenha_mae == $senha_mae);
       echo "Senhas iguais";
      }else{
          echo "Senhas diferentes";
@@ -23,19 +23,15 @@
   $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
   mysqli_query($link,$query) or die("Erro ao cadastrar");
 
-  echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
-}else{
-  echo "formulario nao preenchido";
-}
-
-
-<<<<<<< HEAD
+    echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
+  }else{
+    echo "formulario nao preenchido";
+  }
 ?>
 
 
-=======
-    ?>
->>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
