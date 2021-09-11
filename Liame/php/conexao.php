@@ -1,16 +1,9 @@
 <?php
-<<<<<<< HEAD
-  $link = mysqli_connect("localhost:3307", "root", "", "liame");
-=======
-<<<<<<< HEAD
-  <?php
-  $link = mysqli_connect("localhost: 3306", "root", "", "liame");
-   
-=======
-  $link = mysqli_connect("localhost", "root", "", "liame");
->>>>>>> ae656a3e996e45860d8f9ff4f463d5842a7f7424
 
->>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
+  $link = mysqli_connect("localhost:3307", "root", "", "Liame");
+
+  /*$link = mysqli_connect("localhost: 3306", "root", "", "liame");*/
+  /*$link = mysqli_connect("localhost", "root", "", "liame");*/
   if (!$link) {
       echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
       echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
@@ -18,13 +11,7 @@
       exit;
   }
 
-  echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;
-<<<<<<< HEAD
-   
- 
-  
-=======
->>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
+  /*echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;*/
 
 
   ?>

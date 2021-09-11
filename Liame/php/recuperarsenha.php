@@ -12,12 +12,10 @@
   $dado = $sql_query ->fetch_assoc();
   $total = $sql_query -> num_rows;
 
-    if($total == 0)
+    if($total == 0){
        $erro[] = "O e-mail informado não existe"
 
-  	if(count($erro) == 0 && $total > 0){
-
-
+  	if(count($erro) == 0 && $total > 0)
 
 
       $novasenha = substr(md5(time()), 0, 6);

@@ -42,7 +42,6 @@ a:hover {
 
 /*rodapé*/
 .footer {
-  margin-top: 400px;
 }
 
 footer {
@@ -196,14 +195,22 @@ h3 {
   background: #FAF9F8;
   border-radius: 20px;
   color: #49626F;
-  width: 500px;
+  width: 27%;
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 30px;
 
 }
 
-.estrutura {
+.form-control-lg {
+  border-radius: 10px;
+}
+
+.foto_perfil_mae {
+  margin-bottom: 18px;
+}
+
+.container .estrutura {
   width: 100%;
   overflow: hidden;
 }
@@ -212,10 +219,9 @@ h3 {
   display: flex;
 }
 
-.form-control-lg {
-  border-radius: 10px;
-}
+.estrutura form .page {
 
+}
 
 .barra-progresso .step .bullet {
   position: relative;

@@ -1,41 +1,6 @@
 
-<?php
-    include 'php/conexao.php';
-
-    if(isset($_POST['submit'])){
-
-    $nome_mae = ($_POST['nome_mae']);
-    $sobrenome_mae = ($_POST['sobrenome_mae']);
-    $nome_usuario = ($_POST['nome_usuario']);
-    $foto_perfil = ($_POST['foto_perfil_mae']);
-    $email_mae = ($_POST['email_mae']);
-    $senha_mae = ($_POST['senha_mae']);
-    $confirmarsenha_mae = ($_POST['confirmarsenha_mae']);
 
 
-
-    if($confirmarsenha_mae == $senha_mae){
-      echo "Senhas iguais";
-     }else{
-         echo "Senhas diferentes";
-     }
-
-  $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
-  mysqli_query($link,$query) or die("Erro ao cadastrar");
-
-  echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
-}else{
-  echo "formulario nao preenchido";
-}
-
-
-<<<<<<< HEAD
-?>
-
-
-=======
-    ?>
->>>>>>> ce1960c01b2558b881e2d739909a9d3f53fa993e
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -98,7 +63,6 @@
     </div>
   </header>
   <div class="container formulario">
-    <div class="estrutura">
       <div class="registro text-center p-5">
         <h1>Criar conta</h2>
       </div>
@@ -133,6 +97,7 @@
           </div>
         </div>
       </div>
+      <div class="estrutura">
       <form class="" action="cadastro_mae.php" method="post">
         <div class="page slidepage col-12">
           <div class="pb-3">
@@ -140,58 +105,60 @@
           </div>
           <div class="form-group pb-2">
             <label for="nome_mae">Nome</label>
-            <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg">
+            <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg" required>
           </div>
           <div class=" form-group pb-2">
             <label for="sobrenome_mae">Sobrenome</label>
-            <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg">
+            <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg" required>
           </div>
           <div class="d-flex nextBtn">
-
-            <a href="" class="btn btn-1">Próximo</a>
+            <button class="btn btn-1">Próximo</button>
+          </div>
+          <div class="text-center mt-3">
+            <small>Já tem uma conta?<a class="ml-1"href="php/login.php">Entrar</a></small>
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Detalhes de usuário</h4>
           </div>
           <div class="form-group pb-2">
             <label for="apelido_mae">Nome de usuário</label>
-            <input type="text" name="nome_usuario" id="apelido_mae" class="form-control form-control-lg">
+            <input type="text" name="nome_usuario" id="apelido_mae" class="form-control form-control-lg" required>
           </div>
           <div class="form-group pb-2">
             <label for="foto_perfil_mae">Foto de perfil</label>
-            <input type="file" name="foto_perfil_mae" id="foto_perfil_mae" class="form-control-file">
+            <input type="file" name="foto_perfil_mae" id="foto_perfil_mae" class="form-control-file foto_perfil_mae" required>
           </div>
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="col-6 m-1 btn btn-1">Voltar</button>
+            <button class="col-6 m-1 btn btn-1">Próximo</button>
           </div>
         </div>
-        <div class="col-12">
+
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Detalhes de login</h4>
           </div>
           <div class="form-group pb-2">
             <label for="email_mae">E-mail</label>
-            <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg">
+            <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg" required>
           </div>
           <div class="form-row">
             <div class="form-group col-6">
               <label for="senha_mae">Senha</label>
-              <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
+              <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos" required>
             </div>
             <div class="form-group pb-2 col-6">
               <label for="confirmarsenha_mae">Confirmar senha</label>
-              <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg">
+              <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg" required>
             </div>
           </div>
 
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 mb-4 btn btn-1">Próximo</a>
-            <input type="submit" name="submit" value="Enviar">
+            <button class="col-6 m-1 btn btn-1">Voltar</button>
+            <button class="submit col-6 m-1 btn btn-1">Enviar</button>
           </div>
         </div>
       </form>
@@ -213,3 +180,38 @@
 </body>
 
 </html>
+
+
+
+<?php
+    include 'php/conexao.php';
+
+    if(isset($_POST['submit'])){
+
+    $nome_mae = ($_POST['nome_mae']);
+    $sobrenome_mae = ($_POST['sobrenome_mae']);
+    $nome_usuario = ($_POST['nome_usuario']);
+    $foto_perfil = ($_POST['foto_perfil_mae']);
+    $email_mae = ($_POST['email_mae']);
+    $senha_mae = ($_POST['senha_mae']);
+    $confirmarsenha_mae = ($_POST['confirmarsenha_mae']);
+
+
+
+    if($confirmarsenha_mae == $senha_mae){
+      echo "Senhas iguais";
+     }else{
+         echo "Senhas diferentes";
+     }
+
+  $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
+  mysqli_query($link,$query) or die("Erro ao cadastrar");
+
+  echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
+}else{
+  /*echo "formulario nao preenchido";*/
+}
+
+
+
+?>
