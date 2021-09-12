@@ -1,5 +1,5 @@
 <?php
-    include 'php/conexao_profissional.php';
+    include 'php/registro_profissional.php';
   
 ?>
 
@@ -101,7 +101,7 @@
           </div>
         </div>
       </div>
-      <form class="" action="index.html" method="post">
+      <form class="" action="registro_profissional.php" method="post">
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>

@@ -13,19 +13,7 @@
 
   $erro = array();
 
-  $link = mysqli_connect("localhost:3306", "root", "", "Liame");
-
-  /*$link = mysqli_connect("localhost: 66", "root", "", "liame");*/
-  /*$link = mysqli_connect("localhost", "root", "", "liame");*/
-  if (!$link) {
-      echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
-      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-      exit;
-  }
-
-  echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;
-
+  include 'conexao.php';
 
   // registrando
 
@@ -53,14 +41,14 @@
 
    //checando se o usuario e a senha ja existem
 
-   $user_check_query = "SELECT * FROM mae WHERE apelido_mae = '$nome_usuario' or email_mae = '$email_mae' LIMIT 1";
+   $user_check_query = "SELECT * FROM mae WHERE apelido_mae = '$nome_usuario' and email_mae = '$email_mae' LIMIT 1";
    $resultado = mysqli_query($link, $user_check_query);
 
    $user = mysqli_fetch_assoc($resultado);
 
    if($user){
 
-      if($user['nome_usuario'] === $nome_usuario){
+      if($user['apelido_mae'] === $nome_usuario){
 
         array_push($erro, "Usuário já existente");
 
@@ -84,10 +72,11 @@
 
     mysqli_query($link, $query);
 
-    $_SESSION['nome_usuario'] = $nome_usuario;
+    $_SESSION['apelido_mae'] = $nome_usuario;
     $_SESSION['success'] = "Cadastro realizado com sucesso";
 
-    header('location: php/login.php');
+    header('location: index.php');
+    
    }
 
 
