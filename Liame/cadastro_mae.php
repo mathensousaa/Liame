@@ -1,3 +1,12 @@
+<?php
+
+    include 'ph p /conexao.php';
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -155,12 +164,11 @@
 
           <div class="d-flex">
             <button class="col-6 m-1 btn btn-1">Voltar</button>
-            <button class="submit col-6 m-1 btn btn-1">Enviar</button>
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="submit" value="Enviar">
           </div>
         </div>
       </form>
     </div>
-
   </div>
 
   <!--implementação jquery, poppers.js e plugin bootstrap-->
@@ -177,11 +185,3 @@
 </body>
 
 </html>
-
-<?php
-
-    include (conexao.php);
-
-
-
-?>

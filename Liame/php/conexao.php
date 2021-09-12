@@ -45,7 +45,7 @@
   if($confirmarsenha_mae != $senha_mae){
 
     array_push($erro, "Senhas precisam ser iguais");
-    
+
    }
 
    //checando se o usuario e a senha ja existem
@@ -64,11 +64,11 @@
       }
 
           if($user['email_mae'] === $email_mae){
-    
+
             array_push($erro, "Esse email já está em uso");
-            
+
           }
-  
+
 
    }
 
