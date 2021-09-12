@@ -119,7 +119,7 @@
             <button class="btn btn-1">Próximo</button>
           </div>
           <div class="text-center mt-3">
-            <small>Já tem uma conta?<a class="ml-1"href="php/login.php">Entrar</a></small>
+            <!--<small>Já tem uma conta?<a class="ml-1"href="php/login.php">Entrar</a></small>-->
           </div>
         </div>
 
