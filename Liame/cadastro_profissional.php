@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
     include 'php/conexao_profissional.php';
 
+=======
+    include 'php/registro_profissional.php';
+  
+>>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
 ?>
 
 
@@ -101,7 +106,11 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <form class="" action="php/conexao_profissional.php" method="post">
+=======
+      <form class="" action="registro_profissional.php" method="post">
+>>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>

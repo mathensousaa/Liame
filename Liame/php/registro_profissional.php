@@ -4,22 +4,27 @@
 
   session_start();
 
+  $nome_profissional = "";
+  $sobrenome_profissional = "";
+  $telefone_profissional = "";
+  $cep_profissional = "";
+  $endereco_profissional = "";
+  $numero_endereco_profissional = "";
+  $bairro_profissional = "";
+  $cidade_profissional = "";
+  $estado_profissional = "";
+  $servico_profissional = "";
+  $numero_registro_profissional = "";
+  $email_profissional = "";
+  $foto_perfil_profissional = "";
+  $senha_profissional = "";
+  $confirmarsenha_profissional = "";
 
   $erro = array();
 
   $link = mysqli_connect("localhost:3306", "root", "", "Liame");
 
-  /*$link = mysqli_connect("localhost: 66", "root", "", "liame");*/
-  /*$link = mysqli_connect("localhost", "root", "", "liame");*/
-  if (!$link) {
-      echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
-      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-      exit;
-  }
-
-  echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;
-
+  include 'conexao.php';
 
   // registrando
 
@@ -54,7 +59,7 @@
 
    //checando se o usuario e a senha ja existem
 
-   $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissionak' AND numero_registro_profissional = '$numero_registro_profissional LIMIT 1";
+   $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND numero_registro_profissional = '$numero_registro_profissional' LIMIT 1";
    $resultado = mysqli_query($link, $user_check_query);
 
    $user = mysqli_fetch_assoc($resultado);
@@ -81,14 +86,14 @@
    if(count($erro) == 0){
 
     $senha = md5($senha_profissional);
-    $query = "INSERT INTO mae (nome_profissional, sobrenome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, servico_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, ) VALUES ('$nome_profissional', '$sobrenome_profissional', '$email_profissional', '$senha_profissional', '$foto_perfil_profissional', '$numero_registro_profissional', '$servico_profissional', '$numero_endereco_profissional', '$bairro_profissional', '$cidade_profissional', '$estado_profissional', '$cep_profissional', '$telefone_profissional')";
+    $query = "INSERT INTO profissional (nome_profissional, sobrenome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, servico_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional ) VALUES ('$nome_profissional', '$sobrenome_profissional', '$email_profissional', '$senha_profissional', '$foto_perfil_profissional', '$numero_registro_profissional', '$servico_profissional', '$numero_endereco_profissional', '$bairro_profissional', '$cidade_profissional', '$estado_profissional', '$cep_profissional', '$telefone_profissional')";
 
     mysqli_query($link, $query);
 
-    $_SESSION['nome_profissional'] = $nome_usuario;
+    $_SESSION['nome_profissional'] = $nome_profissional;
     $_SESSION['success'] = "Cadastro realizado com sucesso";
 
-    header('location: php/login.php');
+    
    }
 
 
