@@ -41,13 +41,12 @@ a:hover {
 }
 
 /*rodapé*/
-.footer {
-}
+
 
 footer {
   background-color: #7C9DB6;
   color: #FFFFFF;
-  margin-top: 400px;
+  margin-top: 300px;
 }
 
 footer a {
@@ -132,9 +131,8 @@ h3 {
   background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
 }
 
-#medica {}
-
-#plano {}
+.conteudo {
+}
 
 #planos i {
   font-size: 35px;
@@ -170,6 +168,32 @@ h3 {
 .mockup-celular {
   z-index: 2;
 }
+
+@media (min-width: 575.98px) {
+  .mockup {
+    width: 100px;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .mockup {
+    width: 300px;
+  }
+}
+
+@media (min-width: 991.98px) {
+  .mockup {
+    width: 700px;
+  }
+}
+
+@media (min-width: 1199.98px) {
+  .mockup {
+    width: 700px;
+    margin-top: -2em;
+  }
+}
+
 
 .redes-sociais h4 {
   font-size:
