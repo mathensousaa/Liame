@@ -1,5 +1,12 @@
+<?php
+
+    include ('php/conexao.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 
 <head>
   <meta charset="utf-8">
@@ -95,7 +102,7 @@
         </div>
       </div>
       <div class="estrutura">
-      <form class="" action="cadastro_mae.php" method="post">
+      <form class="" action="php/conexao.php" method="POST">
         <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
@@ -122,7 +129,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="apelido_mae">Nome de usuário</label>
-            <input type="text" name="nome_usuario" id="apelido_mae" class="form-control form-control-lg" required>
+            <input type="text" name="nome_usuario" id="nome_usuario" class="form-control form-control-lg" required>
           </div>
           <div class="form-group pb-2">
             <label for="foto_perfil_mae">Foto de perfil</label>
@@ -155,7 +162,7 @@
 
           <div class="d-flex">
             <button class="col-6 m-1 btn btn-1">Voltar</button>
-            <button class="submit col-6 m-1 btn btn-1">Enviar</button>
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="submit" value="Enviar">
           </div>
         </div>
       </form>
@@ -178,12 +185,6 @@
 
 </html>
 
-<?php
 
-    include (conexao.php);
-
-
-
-?>
 
 

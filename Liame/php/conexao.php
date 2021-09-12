@@ -6,7 +6,10 @@
 
   $nome_usuario = "";
   $email_mae = "";
-  $senha_mae = "";
+  $senha_mae ="";
+  $confirmarsenha_mae = "";
+  $nome_mae = "";
+  $sobrenome_mae = "";
 
   $erro = array();
 
@@ -42,7 +45,7 @@
 
 
 
-  if($confirmarsenha_mae != $senha_mae){
+  if($confirmarsenha_mae!= $senha_mae){
 
     array_push($erro, "Senhas precisam ser iguais");
     
@@ -84,7 +87,7 @@
     $_SESSION['nome_usuario'] = $nome_usuario;
     $_SESSION['success'] = "Cadastro realizado com sucesso";
 
-    header('location: index.php');
+    header('location: php/login.php');
    }
 
 
