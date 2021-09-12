@@ -60,11 +60,10 @@
     </div>
   </header>
   <div class="container formulario">
-    <div class="estrutura">
       <div class="registro text-center p-5">
         <h1>Criar conta</h2>
       </div>
-      <div class="barra-progesso pb-5 text-center">
+      <div class="barra-progresso pb-5 text-center">
         <div class="row">
           <div class="step col-4">
             <p>Nome</p>
@@ -95,107 +94,96 @@
           </div>
         </div>
       </div>
-      <form class="" action="\cadastro_mae.php" method="post">
-        <div class="col-12">
+      <div class="estrutura">
+      <form class="" action="cadastro_mae.php" method="post">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
           <div class="form-group pb-2">
             <label for="nome_mae">Nome</label>
-            <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg">
+            <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg" required>
           </div>
           <div class=" form-group pb-2">
             <label for="sobrenome_mae">Sobrenome</label>
-            <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg">
+            <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg" required>
           </div>
-          <div class="d-flex">
-            <a href="" class="btn btn-1">Próximo</a>
+          <div class="d-flex nextBtn">
+            <button class="btn btn-1">Próximo</button>
+          </div>
+          <div class="text-center mt-3">
+            <small>Já tem uma conta?<a class="ml-1"href="php/login.php">Entrar</a></small>
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Detalhes de usuário</h4>
           </div>
           <div class="form-group pb-2">
             <label for="apelido_mae">Nome de usuário</label>
-            <input type="text" name="nome_usuario" id="apelido_mae" class="form-control form-control-lg">
+            <input type="text" name="nome_usuario" id="apelido_mae" class="form-control form-control-lg" required>
           </div>
           <div class="form-group pb-2">
             <label for="foto_perfil_mae">Foto de perfil</label>
-            <input type="file" name="foto_perfil_mae" id="foto_perfil_mae" class="form-control-file">
+            <input type="file" name="foto_perfil_mae" id="foto_perfil_mae" class="form-control-file foto_perfil_mae" required>
           </div>
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="col-6 m-1 btn btn-1">Voltar</button>
+            <button class="col-6 m-1 btn btn-1">Próximo</button>
           </div>
         </div>
-        <div class="col-12">
+
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Detalhes de login</h4>
           </div>
           <div class="form-group pb-2">
             <label for="email_mae">E-mail</label>
-            <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg">
+            <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg" required>
           </div>
           <div class="form-row">
             <div class="form-group col-6">
               <label for="senha_mae">Senha</label>
-              <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
+              <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos" required>
             </div>
             <div class="form-group pb-2 col-6">
               <label for="confirmarsenha_mae">Confirmar senha</label>
-              <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg">
+              <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg" required>
             </div>
           </div>
 
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 mb- btn btn-1">Próximo</a>
+            <button class="col-6 m-1 btn btn-1">Voltar</button>
+            <button class="submit col-6 m-1 btn btn-1">Enviar</button>
           </div>
         </div>
       </form>
     </div>
 
   </div>
+
+  <!--implementação jquery, poppers.js e plugin bootstrap-->
+  <script src="assets/js/scripts.js"></script>
+
+  <!--progressbar-->
+  <script src="assets/js/progressbar.min.js"></script>
+
+  <!--biblioteca parallax-->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
 
+<?php
+
+    include (conexao.php);
 
 
 
+?>
 
-<!--
-<div class="card text-center justify-content-center shadow-lg card-1 border-0 bg-white px-sm-2">
-  <div class="card-body show ">
-    <div class="row">
-      <div class="col">
-        <h5>Selecione o tipo de conta</h5>
-      </div>
-    </div>
-    <div class="radio-group row justify-content-between px-3 text-center a">
-      <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio selected">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\mae-icone.png" alt="ícone de mãe" width="100" height="100">
-              <p>Mãe</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\doutor-icone.png" alt="ícone de médico" width="100" height="100">
-              <p>Profissional</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
+

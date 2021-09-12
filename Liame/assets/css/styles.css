@@ -20,7 +20,7 @@ main {
 }
 
 p {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 a:hover {
@@ -42,7 +42,6 @@ a:hover {
 
 /*rodapé*/
 .footer {
-  margin-top: 400px;
 }
 
 footer {
@@ -66,6 +65,7 @@ footer a:hover {
 
 /*CABEÇALHO PÁGINAS SECUNDARIAS*/
 .cabecalho {
+  background: linear-gradient(270deg, rgba(124, 157, 182, 0.6) 0%, rgba(232, 191, 187, 0.6) 99.51%);
 }
 
 /*HOME*/
@@ -195,26 +195,33 @@ h3 {
   background: #FAF9F8;
   border-radius: 20px;
   color: #49626F;
-  width: 500px;
+  width: 27%;
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 30px;
 
 }
 
-.estrutura {
+.form-control-lg {
+  border-radius: 10px;
+}
+
+.foto_perfil_mae {
+  margin-bottom: 18px;
+}
+
+.container .estrutura {
   width: 100%;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .estrutura form {
   display: flex;
 }
 
-.form-control-lg {
-  border-radius: 10px;
-}
+.estrutura form .page {
 
+}
 
 .barra-progresso .step .bullet {
   position: relative;
