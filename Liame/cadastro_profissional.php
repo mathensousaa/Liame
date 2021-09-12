@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE htms>
 <html lang="pt-br">
 
 <head>
@@ -30,7 +30,7 @@
       <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
         <!--logo-->
-        <a href="index.html" class="navbar-brand ml-5">
+        <a href="index.php" class="navbar-brand ms-5">
           <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
@@ -95,7 +95,7 @@
           </div>
         </div>
       </div>
-      <form class="" action="index.html" method="post">
+      <form class="" action="index.php" method="post">
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
