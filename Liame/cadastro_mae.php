@@ -1,6 +1,6 @@
 <?php
 
-    include ('php/conexao.php');
+    include 'php/conexao_mae.php';
 
 ?>
 
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="estrutura">
-      <form class="" action="php/conexao.php" method="POST">
+      <form class="" action="php/conexao_mae.php" method="POST">
         <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>

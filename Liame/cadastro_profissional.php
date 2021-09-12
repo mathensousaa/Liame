@@ -1,4 +1,10 @@
-<!DOCTYPE htms>
+<?php
+    include 'php/conexao_profissional.php';
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -95,7 +101,7 @@
           </div>
         </div>
       </div>
-      <form class="" action="index.php" method="post">
+      <form class="" action="php/conexao_profissional.php" method="post">
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
@@ -206,11 +212,11 @@
           </div>
           <div class="form-group pb-2">
             <label for="senha_mae">Senha</label>
-            <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
+            <input type="password" name="senha_profissional " id="senha_profissional" class="form-control form-control-lg" placeholder="8 dígitos">
           </div>
           <div class="form-group pb-2">
             <label for="confirmarsenha_mae">Confirmar senha</label>
-            <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg">
+            <input type="password" name="confirmarsenha_profissional " id="confirmarsenha_profissional" class="form-control form-control-lg">
           </div>
 
           <div class="d-flex">
@@ -260,7 +266,6 @@
 
 
 ?>
-
 
 
 <!--

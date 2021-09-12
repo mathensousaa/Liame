@@ -253,7 +253,7 @@ h3 {
 
 .container .estrutura {
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .estrutura form {
