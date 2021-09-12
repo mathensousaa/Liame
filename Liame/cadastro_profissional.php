@@ -136,7 +136,7 @@
           <div class="form-row pb-2">
             <div class="form-group col-3">
               <label for="numero_profissional">Número</label>
-              <input type="number" min="0" name="numero_profissional " id="numero_profissional" class="form-control form-control-lg">
+              <input type="number" min="0" name="numero_endereco_profissional " id="numero_profissional" class="form-control form-control-lg">
             </div>
             <div class="form-group col-9">
               <label for="bairro_profissional">Bairro</label>
