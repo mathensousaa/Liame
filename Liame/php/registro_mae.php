@@ -13,21 +13,7 @@
 
   $erro = array();
 
-<<<<<<< HEAD:Liame/php/conexao_mae.php
-  $link = mysqli_connect("localhost:3307", "root", "", "Liame");
-
-  if (!$link) {
-      echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
-      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-      exit;
-  }
-
-  /*echo "Sucesso: Sucesso ao conectar-se com a base de dados MySQL." . PHP_EOL;*/
-
-=======
-  include 'conexao.php';
->>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2:Liame/php/registro_mae.php
+include 'conexao.php';
 
   // registrando
 
@@ -90,7 +76,7 @@
     $_SESSION['success'] = "Cadastro realizado com sucesso";
 
     header('location: index.php');
-    
+
    }
 
 

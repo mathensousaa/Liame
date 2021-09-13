@@ -1,11 +1,6 @@
 <?php
-<<<<<<< HEAD
-    include 'php/conexao_profissional.php';
-
-=======
     include 'php/registro_profissional.php';
-  
->>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
+
 ?>
 
 
