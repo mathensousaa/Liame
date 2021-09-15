@@ -1,8 +1,5 @@
-<?php
 
-    include 'php/registro_mae.php';
 
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,10 +17,10 @@
 
 
   <!--css-->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -40,7 +37,7 @@
 
         <!--logo-->
         <a href="index.php" class="navbar-brand ms-5">
-          <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -49,16 +46,15 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="especialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
             <div class="nav-item">
-              <a class="nav-item nav-link" href="layouts/entrar.html">
+              <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
                 Entrar
               </a>
@@ -104,7 +100,7 @@
         </div>
       </div>
       <div class="estrutura">
-      <form class="" action="php/registro_mae.php" method="POST">
+      <form class="" action="cadastro_mae.php" method="POST">
         <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
@@ -121,7 +117,7 @@
             <button class="btn btn-1">Próximo</button>
           </div>
           <div class="text-center mt-3">
-            <small>Já tem uma conta?<a class="ms-1"href="php/login.php">Entrar</a></small>
+            <small>Já tem uma conta?<a class="ms-1"href="login.php">Entrar</a></small>
           </div>
         </div>
 
@@ -174,12 +170,98 @@
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  <script src="assets/js/scripts.js"></script>
+  <script src=""></script>
 
   <!--progressbar-->
-  <script src="assets/js/progressbar.min.js"></script>
+  <script src="../assets/js/progressbar.min.js"></script>
 
   <!--biblioteca parallax-->
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
 </html>
+
+
+<?php
+
+// iniciando as variaveis e conectando ao banco
+
+  session_start();
+
+  $nome_usuario = "";
+  $email_mae = "";
+  $senha_mae ="";
+  $confirmarsenha_mae = "";
+  $nome_mae = "";
+  $sobrenome_mae = "";
+  $foto_perfil = "";
+
+  $erro = array();
+
+include 'conexao.php';
+
+  // registrando
+
+  if(isset($_POST['submit'])){
+
+  $nome_mae = mysqli_real_escape_string($link, $_POST['nome_mae']);
+  $nome_usuario = mysqli_real_escape_string($link, $_POST['nome_usuario']);
+  $sobrenome_mae = mysqli_real_escape_string($link, $_POST['sobrenome_mae']);
+  $foto_perfil = mysqli_real_escape_string($link,$_POST['foto_perfil_mae']);
+  $email_mae = mysqli_real_escape_string($link, $_POST['email_mae']);
+  $senha_mae = mysqli_real_escape_string($link, $_POST['senha_mae']);
+  $confirmarsenha_mae = mysqli_real_escape_string($link, $_POST['confirmarsenha_mae']);
+
+  }
+
+  // validacao do formulario
+
+
+
+  if($confirmarsenha_mae!= $senha_mae){
+
+    array_push($erro, "Senhas precisam ser iguais");
+
+   }
+
+   //checando se o usuario e a senha ja existem
+
+   $user_check_query = "SELECT * FROM mae WHERE apelido_mae = '$nome_usuario' and email_mae = '$email_mae' LIMIT 1";
+   $resultado = mysqli_query($link, $user_check_query);
+
+   $user = mysqli_fetch_assoc($resultado);
+
+   if($user){
+
+      if($user['apelido_mae'] === $nome_usuario){
+
+        array_push($erro, "Usuário já existente");
+
+      }
+
+          if($user['email_mae'] === $email_mae){
+
+            array_push($erro, "Esse email já está em uso");
+
+          }
+
+
+   }
+
+   //registra se nao tiver erro
+
+   if(count($erro) == 0){
+
+    $senha = md5($senha_mae);
+    $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae, foto_perfil_mae) VALUES ("'.$nome_mae.'", "'.$nome_usuario.'", "'.$email_mae.'", "'.$senha.'", "'.$foto_perfil.'");';
+
+    mysqli_query($link, $query);
+
+    $_SESSION['apelido_mae'] = $nome_usuario;
+    $_SESSION['success'] = "Cadastro realizado com sucesso";
+
+
+
+   }
+
+
+  ?>
