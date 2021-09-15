@@ -14,10 +14,10 @@
 
 
   <!--css-->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -33,8 +33,8 @@
       <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
         <!--logo-->
-        <a href="index.php" class="navbar-brand ms-5">
-          <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
+        <a href="../index.php" class="navbar-brand ms-5">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -52,7 +52,7 @@
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
             <div class="nav-item">
-              <a class="nav-item nav-link" href="layouts/entrar.html">
+              <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
                 Entrar
               </a>
@@ -62,12 +62,14 @@
       </nav>
     </div>
   </header>
+
+  
   <div class="container formulario">
       <div class="registro text-center p-5">
         <h1>Login</h2>
       </div>
       <div class="estrutura">
-      <form class="" action="php/conexao.php" method="POST">
+      <form class="" action="conexao.php" method="POST">
         <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
@@ -98,10 +100,10 @@
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  <script src="assets/js/scripts.js"></script>
+  <script src="../assets/js/scripts.js"></script>
 
   <!--progressbar-->
-  <script src="assets/js/progressbar.min.js"></script>
+  <script src="../assets/js/progressbar.min.js"></script>
 
   <!--biblioteca parallax-->
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
