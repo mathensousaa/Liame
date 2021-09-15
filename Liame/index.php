@@ -220,7 +220,7 @@ session_start();
 					<h5 class="text-uppercase">Especialistas</h5>
 					<ul class="list-unstyled">
 						<li class=""><a href="php/planos.php">Planos para especialistas</a></li>
-						<li class=""><a href="php/central_ajuda.php">Central de ajuda</a></li>
+						<li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
 						<li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
 					</ul>
 				</div>
