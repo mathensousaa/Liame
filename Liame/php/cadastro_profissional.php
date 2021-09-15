@@ -111,13 +111,14 @@
   <title>Liame - Unindo do início ao fim.</title>
 
   <!--implementação bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
 
   <!--css-->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -133,8 +134,8 @@
       <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
         <!--logo-->
-        <a href="index.php" class="navbar-brand ms-5">
-          <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
+        <a href="../index.php" class="navbar-brand ms-5">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -143,16 +144,15 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
             <div class="nav-item">
-              <a class="nav-item nav-link" href="layouts/entrar.html">
+              <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
                 Entrar
               </a>
@@ -162,6 +162,8 @@
       </nav>
     </div>
   </header>
+
+  
   <div class="container formulario">
     <div class="estrutura">
       <div class="registro text-center p-5">

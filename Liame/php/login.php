@@ -43,11 +43,10 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">

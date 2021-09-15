@@ -40,11 +40,10 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
@@ -75,36 +74,35 @@
 
   </main>
 
-  <footer class="footer mt-5">
-    <div class="container conteudo-footer">
-      <div class="row">
-        <div class="#">
-          <a href="index.html"><img src="assets/img/logo.png" class="img-fluid logo-footer" alt="logo liame"></a>
-        </div>
+  <footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="../index.php"><img src="../assets/img/logo.png" class="img-fluid logo-footer" alt="logo liame"></a>
+				</div>
         <div class="col">
           <h5 class="text-uppercase">Mães</h5>
           <ul class="list-unstyled">
-            <li class=""><a href="php/marcar_consultas.php">Agendar consulta</a></li>
-            <li class=""><a href="php/especialistas.php">Especialistas</a></li>
-            <li class=""><a href="php/diario_bordo_gestante.php">Diário de bordo</a></li>
-            <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
+            <li class=""><a href="especialistas.php">Consultas</a></li>
+            <li class=""><a href="diario_bordo.php">Diário de bordo</a></li>
+            <li class=""><a href="carteirinha_vacinacao.php">Carteira de vacinação</a></li>
           </ul>
         </div>
         <div class="col">
           <h5 class="text-uppercase">Especialistas</h5>
           <ul class="list-unstyled">
-            <li class=""><a href="php/planos.php">Planos para especialistas</a></li>
-            <li class=""><a href="php/central_ajuda.php">Central de ajuda</a></li>
-            <li class=""><a href="termos_uso_profissional.html">Termos de uso de profissional</a></li>
+            <li class=""><a href="planos.php">Planos para especialistas</a></li>
+            <li class=""><a href="../layouts/central_ajuda.html">Central de ajuda</a></li>
+            <li class=""><a href="../layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
           </ul>
         </div>
         <div class="col">
           <h5 class="text-uppercase">Serviços</h5>
           <ul class="list-unstyled">
-            <li class=""><a href="php/quem_somos.php">Quem somos</a></li>
-            <li class=""><a href="php/contato.php">Contato</a></li>
-            <li class=""><a href="php/privacidade_cookie.php">Privacidade e cookies</a></li>
-            <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
+            <li class=""><a href="../layouts/quem_somos.html">Quem somos</a></li>
+            <li class=""><a href="contato.php">Contato</a></li>
+            <li class=""><a href="../layouts/privacidade_cookies.html">Privacidade e cookies</a></li>
+            <li class=""><a href="../layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
           </ul>
         </div>
         <div class="col">
@@ -112,7 +110,7 @@
             <a class="nav-item nav-link" href="https://www.instagram.com/projeto_liame/">
               <i class="uil uil-instagram"></i>
             </a>
-            <a class="nav-item nav-link" href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
+            <a class="nav-item nav-link" href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
               <i class="uil uil-facebook"></i>
             </a>
           </div>
