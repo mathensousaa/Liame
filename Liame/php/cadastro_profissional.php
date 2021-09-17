@@ -1,7 +1,104 @@
 <?php
-    include 'php/registro_profissional.php';
 
-?>
+// iniciando as variaveis e conectando ao banco
+
+  session_start();
+
+  $nome_profissional = "";
+  $sobrenome_profissional = "";
+  $telefone_profissional = "";
+  $cep_profissional = "";
+  $endereco_profissional = "";
+  $numero_endereco_profissional = "";
+  $bairro_profissional = "";
+  $cidade_profissional = "";
+  $estado_profissional = "";
+  $servico_profissional = "";
+  $numero_registro_profissional = "";
+  $email_profissional = "";
+  $foto_perfil_profissional = "";
+  $senha_profissional = "";
+  $confirmarsenha_profissional = "";
+
+  $erro = array();
+
+  $link = mysqli_connect("localhost:3306", "root", "", "Liame");
+
+  include 'conexao.php';
+
+  // registrando
+
+  if(isset($_POST['submit'])){
+
+  $nome_profissional = mysqli_real_escape_string($link, $_POST['nome_profissional']);
+  $sobrenome_profissional = mysqli_real_escape_string($link, $_POST['sobrenome_profissional']);
+  $telefone_profissional = mysqli_real_escape_string($link, $_POST['telefone_profissional']);
+  $cep_profissional = mysqli_real_escape_string($link,$_POST['cep_profissional']);
+  $endereco_profissional = mysqli_real_escape_string($link, $_POST['endereco_profissional']);
+  $numero_endereco_profissional = mysqli_real_escape_string($link, $_POST['numero_endereco_profissional']);
+  $bairro_profissional = mysqli_real_escape_string($link, $_POST['bairro_profissional']);
+  $cidade_profissional = mysqli_real_escape_string($link, $_POST['cidade_profissional']);
+  $estado_profissional = mysqli_real_escape_string($link, $_POST['estado_profissional']);
+  $servico_profissional = mysqli_real_escape_string($link, $_POST['servico_profissional']);
+  $numero_registro_profissional = mysqli_real_escape_string($link, $_POST['numero_registro_profissional']);
+  $email_profissional = mysqli_real_escape_string($link, $_POST['email_profissional']);
+  $foto_perfil_profissional = mysqli_real_escape_string($link, $_POST['foto_perfil_profissional']);
+  $senha_profissional = mysqli_real_escape_string($link, $_POST['senha_profissional']);
+  $confirmarsenha_profissional = mysqli_real_escape_string($link, $_POST['confirmarsenha_profissional']);
+  }
+
+  // validacao do formulario
+
+
+
+  if($confirmarsenha_profissional != $confirmarsenha_profissional){
+
+    array_push($erro, "Senhas precisam ser iguais");
+    
+   }
+
+   //checando se o usuario e a senha ja existem
+
+   $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND numero_registro_profissional = '$numero_registro_profissional' LIMIT 1";
+   $resultado = mysqli_query($link, $user_check_query);
+
+   $user = mysqli_fetch_assoc($resultado);
+
+   if($user){
+
+          if($user['email_profissional'] === $email_profissional){
+    
+            array_push($erro, "Esse email já está em uso");
+            
+          }
+
+          if($user['numero_registro_profissional'] === $numero_registro_profissional){
+    
+            array_push($erro, "Esse número de registro pertence a outra conta");
+            
+          }
+  
+
+   }
+
+   //registra se nao tiver erro
+
+   if(count($erro) == 0){
+
+    $senha = md5($senha_profissional);
+    $query = "INSERT INTO profissional (nome_profissional, sobrenome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, servico_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional ) VALUES ('$nome_profissional', '$sobrenome_profissional', '$email_profissional', '$senha_profissional', '$foto_perfil_profissional', '$numero_registro_profissional', '$servico_profissional', '$numero_endereco_profissional', '$bairro_profissional', '$cidade_profissional', '$estado_profissional', '$cep_profissional', '$telefone_profissional')";
+
+    mysqli_query($link, $query);
+
+    $_SESSION['nome_profissional'] = $nome_profissional;
+    $_SESSION['success'] = "Cadastro realizado com sucesso";
+
+    
+   }
+
+
+  ?>
+
 
 
 <!DOCTYPE html>
@@ -14,13 +111,14 @@
   <title>Liame - Unindo do início ao fim.</title>
 
   <!--implementação bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
 
   <!--css-->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -36,8 +134,8 @@
       <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
         <!--logo-->
-        <a href="index.php" class="navbar-brand ms-5">
-          <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
+        <a href="../index.php" class="navbar-brand ms-5">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -46,16 +144,15 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
             <div class="nav-item">
-              <a class="nav-item nav-link" href="layouts/entrar.html">
+              <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
                 Entrar
               </a>
@@ -65,6 +162,8 @@
       </nav>
     </div>
   </header>
+
+  
   <div class="container formulario">
     <div class="estrutura">
       <div class="registro text-center p-5">
@@ -101,11 +200,7 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <form class="" action="php/conexao_profissional.php" method="post">
-=======
-      <form class="" action="registro_profissional.php" method="post">
->>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
