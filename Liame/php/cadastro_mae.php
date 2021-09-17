@@ -105,12 +105,12 @@
             <h4>Informações básicas</h4>
           </div>
           <div class="form-group pb-2">
-            <label for="nome_mae">Nome</label>
+            <label for="nome_mae">Nome Completo</label>
             <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg" required>
           </div>
-          <div class=" form-group pb-2">
-            <label for="sobrenome_mae">Sobrenome</label>
-            <input type="text" name="sobrenome_mae " id="sobrenome_mae" class="form-control form-control-lg" required>
+          <div class="form-group pb-2">
+            <label for="apelido_mae">Apelido</label>
+            <input type="text" name="nome_usuario" id="nome_usuario" class="form-control form-control-lg" required>
           </div>
           <div class="d-flex nextBtn">
             <button class="btn btn-1">Próximo</button>
@@ -119,25 +119,6 @@
             <small>Já tem uma conta?<a class="ms-1"href="login.php">Entrar</a></small>
           </div>
         </div>
-
-        <div class="page slidepage col-12">
-          <div class="pb-3">
-            <h4>Detalhes de usuário</h4>
-          </div>
-          <div class="form-group pb-2">
-            <label for="apelido_mae">Nome de usuário</label>
-            <input type="text" name="nome_usuario" id="nome_usuario" class="form-control form-control-lg" required>
-          </div>
-          <div class="form-group pb-2">
-            <label for="foto_perfil_mae">Foto de perfil</label>
-            <input type="file" name="foto_perfil_mae" id="foto_perfil_mae" class="form-control-file foto_perfil_mae" required>
-          </div>
-          <div class="d-flex">
-            <button class="prev-1 col-6 m-1 btn btn-1">Voltar</button>
-            <button class="next-1 col-6 m-1 btn btn-1">Próximo</button>
-          </div>
-        </div>
-
         <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Detalhes de login</h4>
@@ -147,11 +128,11 @@
             <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg">
           </div>
           <div class="form-row">
-            <div class="form-group col-6">
+            <div class="form-group col">
               <label for="senha_mae">Senha</label>
               <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
             </div>
-            <div class="form-group pb-2 col-6">
+            <div class="form-group pb-2 col">
               <label for="confirmarsenha_mae">Confirmar senha</label>
               <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg">
             </div>
