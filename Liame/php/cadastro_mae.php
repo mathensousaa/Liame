@@ -27,8 +27,6 @@
 
 <body class="fundo">
   <?php
-   /* echo "oi";
-    print_r($_POST);*/
 
   ?>
   <!--cabeçalho-->
@@ -167,15 +165,6 @@
 
       // iniciando as variaveis e conectando ao banco
 
-
-      /*  $apelido_mae = "";
-        $email_mae = "";
-        $senha_mae ="";
-        $confirmarsenha_mae = "";
-        $nome_mae = "";
-
-        $erro = array();*/
-
       include 'conexao.php';
 
         // registrando
@@ -194,7 +183,7 @@
 
 
 
-        if($confirmarsenha_mae!= $senha_mae){
+        if($confirmarsenha_mae != $senha_mae){
 
           array_push($erro, "Senhas precisam ser iguais");
 
@@ -209,7 +198,7 @@
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_mae);
-          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae, foto_perfil_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'", "'.$foto_perfil.'");';
+          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'");';
 
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
@@ -217,8 +206,6 @@
           }else{
            $_SESSION['email_mae'] = $email_mae;
            $_SESSION['nome_mae'] = $nome_mae;
-
-           echo "<a href='texte.php'>Ver o teste</a>";
           }
         }
 
