@@ -26,7 +26,11 @@
 </head>
 
 <body class="fundo">
+  <?php
+   /* echo "oi";
+    print_r($_POST);*/
 
+  ?>
   <!--cabeçalho-->
   <header class="cabecalho cabecalho-2">
     <div class="container-fluid" id="nav-container">
@@ -110,7 +114,7 @@
           </div>
           <div class="form-group pb-2">
             <label for="apelido_mae">Apelido</label>
-            <input type="text" name="nome_usuario" id="nome_usuario" class="form-control form-control-lg" required>
+            <input type="text" name="apelido_mae" id="apelido_mae" class="form-control form-control-lg" required>
           </div>
           <div class="d-flex nextBtn">
             <button class="btn btn-1">Próximo</button>
@@ -158,90 +162,67 @@
   <!--biblioteca parallax-->
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
-</html>
+
+      <?php
+
+      // iniciando as variaveis e conectando ao banco
 
 
-<?php
+      /*  $apelido_mae = "";
+        $email_mae = "";
+        $senha_mae ="";
+        $confirmarsenha_mae = "";
+        $nome_mae = "";
 
-// iniciando as variaveis e conectando ao banco
+        $erro = array();*/
 
-  session_start();
+      include 'conexao.php';
 
-  $nome_usuario = "";
-  $email_mae = "";
-  $senha_mae ="";
-  $confirmarsenha_mae = "";
-  $nome_mae = "";
-  $sobrenome_mae = "";
-  $foto_perfil = "";
+        // registrando
 
-  $erro = array();
+        if(isset($_POST['submit'])){
+        
+        $nome_mae = mysqli_real_escape_string($link, $_POST['nome_mae_']);
+        $apelido_mae = mysqli_real_escape_string($link, $_POST['apelido_mae']);
+        $email_mae = mysqli_real_escape_string($link, $_POST['email_mae']);
+        $senha_mae = mysqli_real_escape_string($link, $_POST['senha_mae_']);
+        $confirmarsenha_mae = mysqli_real_escape_string($link, $_POST['confirmarsenha_mae_']);
 
-include 'conexao.php';
+        }
 
-  // registrando
-
-  if(isset($_POST['submit'])){
-
-  $nome_mae = mysqli_real_escape_string($link, $_POST['nome_mae']);
-  $nome_usuario = mysqli_real_escape_string($link, $_POST['nome_usuario']);
-  $sobrenome_mae = mysqli_real_escape_string($link, $_POST['sobrenome_mae']);
-  $foto_perfil = mysqli_real_escape_string($link,$_POST['foto_perfil_mae']);
-  $email_mae = mysqli_real_escape_string($link, $_POST['email_mae']);
-  $senha_mae = mysqli_real_escape_string($link, $_POST['senha_mae']);
-  $confirmarsenha_mae = mysqli_real_escape_string($link, $_POST['confirmarsenha_mae']);
-
-  }
-
-  // validacao do formulario
+        // validacao do formulario
 
 
 
-  if($confirmarsenha_mae!= $senha_mae){
+        if($confirmarsenha_mae!= $senha_mae){
 
-    array_push($erro, "Senhas precisam ser iguais");
+          array_push($erro, "Senhas precisam ser iguais");
 
-   }
+        }
 
-   //checando se o usuario e a senha ja existem
+        //checando se o usuario e a senha ja existem
 
-   $user_check_query = "SELECT * FROM mae WHERE apelido_mae = '$nome_usuario' and email_mae = '$email_mae' LIMIT 1";
-   $resultado = mysqli_query($link, $user_check_query);
+        $user_check_query = "SELECT * FROM mae WHERE email_mae = '$email_mae'";
+        $resultado = mysqli_query($link, $user_check_query);
+        $conta = mysqli_num_rows($resultado);
+        if($conta>1){
+          echo "Esse email já está em uso";
+        }else{
+          $senha = md5($senha_mae);
+          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae, foto_perfil_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'", "'.$foto_perfil.'");';
 
-   $user = mysqli_fetch_assoc($resultado);
+          $inserir = mysqli_query($link, $query);
+          if($inserir==0){
+              echo "ERRO ao cadastrar";
+          }else{
+           $_SESSION['email_mae'] = $email_mae;
+           $_SESSION['nome_mae'] = $nome_mae;
 
-   if($user){
-
-      if($user['apelido_mae'] === $nome_usuario){
-
-        array_push($erro, "Usuário já existente");
-
-      }
-
-          if($user['email_mae'] === $email_mae){
-
-            array_push($erro, "Esse email já está em uso");
-
+           echo "<a href='texte.php'>Ver o teste</a>";
           }
+        }
 
+    ?>
 
-   }
-
-   //registra se nao tiver erro
-
-   if(count($erro) == 0){
-
-    $senha = md5($senha_mae);
-    $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae, foto_perfil_mae) VALUES ("'.$nome_mae.'", "'.$nome_usuario.'", "'.$email_mae.'", "'.$senha.'", "'.$foto_perfil.'");';
-
-    mysqli_query($link, $query);
-
-    $_SESSION['apelido_mae'] = $nome_usuario;
-    $_SESSION['success'] = "Cadastro realizado com sucesso";
-
-
-
-   }
-
-
-  ?>
+  </body>
+</html>

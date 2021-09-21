@@ -74,8 +74,8 @@
             <h4>Informações básicas</h4>
           </div>
 					<div class="form-group pb-2">
-            <label for="apelido_mae">Nome de usuário</label>
-            <input type="text" name="nome_usuario" id="nome_usuario" class="form-control form-control-lg" required>
+            <label for="email_mae">Email</label>
+            <input type="text" name="email_mae" id="email_mae" class="form-control form-control-lg" required>
           </div>
 					<div class="form-grou pb-2">
 						<label for="senha_mae">Senha</label>
