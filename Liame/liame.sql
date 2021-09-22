@@ -2,9 +2,9 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 12-Set-2021 às 22:28
--- Versão do servidor: 5.7.31
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 22-Set-2021 às 13:53
+-- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -192,8 +192,8 @@ CREATE TABLE IF NOT EXISTS `mae` (
   `nome_mae` varchar(40) NOT NULL,
   `apelido_mae` varchar(40) DEFAULT NULL,
   `email_mae` varchar(100) NOT NULL,
-  `senha_mae` varchar(100) NOT NULL,
-  `foto_perfil_mae` varchar(100) DEFAULT NULL,
+  `senha_mae` varchar(32) NOT NULL,
+  `foto_perfil_mae` varchar(32) DEFAULT NULL,
   `id_bebe` int(11) DEFAULT NULL,
   `id_diario` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_mae`),
@@ -245,8 +245,8 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `id_profissional` int(11) NOT NULL AUTO_INCREMENT,
   `nome_profissional` varchar(40) NOT NULL,
   `email_profissional` varchar(100) NOT NULL,
-  `senha_profissional` varchar(100) NOT NULL,
-  `foto_perfil_profissional` varchar(100) DEFAULT NULL,
+  `senha_profissional` varchar(32) NOT NULL,
+  `foto_perfil_profissional` varchar(32) DEFAULT NULL,
   `numero_registro_profissional` varchar(20) NOT NULL,
   `logradouro_profissional` varchar(100) NOT NULL,
   `numero_endereco_profissional` int(10) NOT NULL,
@@ -254,15 +254,15 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `cidade_profissional` varchar(50) NOT NULL,
   `estado_profissional` varchar(50) NOT NULL,
   `cep_profissional` int(8) NOT NULL,
-  `imagens_profissional` varchar(100) DEFAULT NULL,
+  `imagens_profissional` varchar(32) DEFAULT NULL,
   `telefone_profissional` int(20) DEFAULT NULL,
   `instagram_profissional` varchar(2083) DEFAULT NULL,
   `whatsapp_profissional` varchar(2083) DEFAULT NULL,
   `telegram_profissional` varchar(2083) DEFAULT NULL,
-  `facebook_profissional` varchar(2083) DEFAULT NULL,
-  `youtube_profissional` varchar(2083) DEFAULT NULL,
+  `facebook_profissional` varchar(200) DEFAULT NULL,
+  `youtube_profissional` varchar(11) DEFAULT NULL,
   `linkdin_profissional` varchar(2083) DEFAULT NULL,
-  `sobre_mim_profissional` varchar(500) DEFAULT NULL,
+  `sobre_mim_profissional` varchar(250) DEFAULT NULL,
   `status_profissional` int(1) NOT NULL,
   `id_experiencia` int(11) DEFAULT NULL,
   `id_formacao` int(11) DEFAULT NULL,
