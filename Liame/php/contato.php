@@ -62,56 +62,29 @@
 
 
 
-  <?php
-    if (isset($_POST['BTEnvia'])) {
-    
-    //Variaveis de POST
-    $nome = $_POST['nome'];
-    $email = $_POST['email']; 
-    $mensagem = $_POST['mensagem'];
-    
-    //REMETENTE 
-    $email_remetente = "liametcc2021@gmail.com"; 
-    
-    //Configurações do email
-    $email_destinatario = "liametcc2021@gmail.com"; 
-    $email_reply = "$email"; 
-    $email_assunto = "Contato através do site"; //  assunto da mensagem
-    
-    //Corpo da Mensagem
-    $email_conteudo = "Nome = $nome \n"; 
-    $email_conteudo .= "Email = $email \n";
-    $email_conteudo .= "Mensagem = $mensagem \n"; 
-    
-    //Seta os Headers  
-    $email_headers = implode ( "\n",array ( "From: $email_remetente", "Reply-To: $email_reply", "Return-Path: $email_remetente","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ) );
-    
-    //Enviando o email 
-    if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
-    echo "</b>E-Mail enviado com sucesso!</b>"; 
-    } 
-    else{ 
-    echo "</b>Falha no envio do E-Mail!</b>"; } 
-    } 
-  ?>
- 
- <form action="<? $PHP_SELF; ?>" method="POST"> 
- <p> 
- Nome:<br /> 
- <input type="text" size="30" name="nome"> 
- </p>   
- <p> 
- E-mail:<br /> 
- <input type="text" size="30" name="email"> 
- </p>     
- <p> 
- Mensagem:<br /> 
- <input type="text" size="35" name="mensagem"> 
- </p>   
- <p>
-    <input type="submit" name="BTEnvia" value="Enviar"> 
-   <input type="reset" name="BTApaga" value="Apagar">
-  </p>
+  <div class="row">
+            <form action="enviar_email.php" method="POST" class="card">
+                <div>
+                    <label for="inputNome">Nome:</label>
+                    <input type="text" id="inputNome" name="nome" required maxlength="25" minlength="2">
+                    <span></span>
+                </div>
+
+                <div>
+                    <label for="inputEmail">Endereço de Email:</label>
+                    <input type="email" id="inputEmail" name="email" required maxlength="50">
+                    <span></span>
+                </div>
+
+                <div>
+                    <label for="textAreaMensagem">Mensagem:</label>
+                    <textarea name="mensagem" id="textAreaMensagem" required maxlength="100"></textarea>
+                    <span></span>
+                </div>
+
+                <button>Enviar mensagem</button>
+            </form>
+        </div>
 
 
 

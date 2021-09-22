@@ -1,32 +1,32 @@
 <?php
-    //Definimos Para quem vai ser enviado o email
-    $para = "liametcc2021@gmail.com";
+  //Variáveis
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $mensagem = $_POST['mensagem'];
+  $data_envio = date('d/m/Y');
+  $hora_envio = date('H:i:s');
 
-    //resgatar o nome digitado no formulário e  grava na variavel $nome
-    $nome = $_POST['nome'];
+  //Compo E-mail
+  $arquivo = "
+    <html>
+      <p><b>Nome: </b>$nome</p>
+      <p><b>E-mail: </b>$email</p>
+      <p><b>Mensagem: </b>$mensagem</p>
+      <p>Este e-mail foi enviado em <b>$data_envio</b> às <b>$hora_envio</b></p>
+    </html>
+  ";
+  
+  //Emails para quem será enviado o formulário
+  $destino = "liametcc2021@gmail.com";
+  $assunto = "Contato pelo Site";
 
-    //resgatar o assunto digitado no formulário e  grava na variavel $assunto
-    $assunto = $_POST['assunto'];
+  //Este sempre deverá existir para garantir a exibição correta dos caracteres
+  $headers  = "MIME-Version: 1.0\n";
+  $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+  $headers .= "From: $nome <$email>";
 
-    //mensagem que vai ser enviado no e-mail
-    $mensagem = "<strong>Nome:  </strong>".$nome;
-    $mensagem .= "<br>  <strong>Mensagem: </strong>"
-    .$_POST['mensagem'];
-
-
-    $headers =  "Content-Type:text/html; charset=UTF-8\n";
-    $headers .= "From:  dominio.com.br<sistema@dominio.com.br>\n";
-
-    //Vai ser //mostrado que  o email partiu deste email e seguido do nome
-    $headers .= "X-Sender:  <sistema@dominio.com.br>\n";
-
-    //email do servidor //que enviou
-    $headers .= "X-Mailer: PHP  v".phpversion()."\n";
-    $headers .= "X-IP:  ".$_SERVER['REMOTE_ADDR']."\n";
-    $headers .= "Return-Path:  <sistema@dominio.com.br>\n";
-    
-    //caso a msg //seja respondida vai para  este email.
-    $headers .= "MIME-Version: 1.0\n";
-
-    mail($para, $assunto, $mensagem, $headers);  //função que faz o envio do email.
-    ?>
+  //Enviar
+  mail($destino, $assunto, $arquivo, $headers);
+  
+  echo "<meta http-equiv='refresh' content='10;URL=contato.php'>";
+?>
