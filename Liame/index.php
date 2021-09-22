@@ -100,7 +100,7 @@ session_start();
 						<h3 class="">Vacinação</h3>
 					</a>
 					<div class="container descricao">
-						<font align="center" height="50">Tenha uma carteirinha digital<small>*</small> para acompanhar o calendário de imunização de seu filho.</font>
+						<font align="center" height="50">Tenha uma carteirinha digital para acompanhar o calendário de imunização de seu filho.</font>
 					</div>
 				</div>
 
@@ -121,7 +121,7 @@ session_start();
 		<div id="planos" class="mb-5 mt-5 container pr-0 pl-0">
 			<div class="justify-content-center align-items-center text-center row shadow-lg">
 
-				<div class="col-12 col-lg-4 flex-column pl-0 pr-0 flex-grow-1 text-center">
+				<div class="ps-0 pe-0 col-12 col-lg-4 flex-column pl-0 pr-0 flex-grow-1 text-center">
 					<img id="medica" src="assets/img/medica.jpg" class="img-fluid">
 				</div>
 

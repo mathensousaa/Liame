@@ -60,46 +60,15 @@
   </header>
 
 
-
-
-  <div class="row">
-            <form action="enviar_email.php" method="POST" class="card">
-                <div>
-                    <label for="inputNome">Nome:</label>
-                    <input type="text" id="inputNome" name="nome" required maxlength="25" minlength="2">
-                    <span></span>
-                </div>
-
-                <div>
-                    <label for="inputEmail">Endereço de Email:</label>
-                    <input type="email" id="inputEmail" name="email" required maxlength="50">
-                    <span></span>
-                </div>
-
-                <div>
-                    <label for="textAreaMensagem">Mensagem:</label>
-                    <textarea name="mensagem" id="textAreaMensagem" required maxlength="100"></textarea>
-                    <span></span>
-                </div>
-
-                <button>Enviar mensagem</button>
-            </form>
-        </div>
-
-
-
-
   <main>
     <div class="container content shadow-lg mt-5 mb-5">
       <h4 class="mb-4">Contato</h4>
 
-      <p> Nos escontre no Instagram @projeto_liame</p>
+      <p> Nos escontre no Instagram <a href="https://www.instagram.com/projeto_liame/">@projeto_liame.</a></p> 
 
-        <p> Temos também uma página do facebook Liame, unindo do inicio ao fim</p>
+        <p> Temos também uma página do facebook <a href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132/">Liame</a>.</p> 
 
-        <p> Nosso e-mail é liametcc2021@gmail.com</p>
-
-
+        <p> Nosso e-mail é <a href="mailto:liametcc2021@gmail.com">liametcc2021@gmail.com</a></p> 
             <br><br>
 
   </main>
