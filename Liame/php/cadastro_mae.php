@@ -108,14 +108,14 @@
           </div>
           <div class="form-group pb-2">
             <label for="nome_mae">Nome Completo</label>
-            <input type="text" name="nome_mae " id="nome_mae" class="form-control form-control-lg" required>
+            <input type="text" name="nome_mae" id="nome_mae" class="form-control form-control-lg" required>
           </div>
           <div class="form-group pb-2">
             <label for="apelido_mae">Apelido</label>
             <input type="text" name="apelido_mae" id="apelido_mae" class="form-control form-control-lg" required>
           </div>
-          <div class="d-flex nextBtn">
-            <button class="btn btn-1">Próximo</button>
+          <div class="d-flex">
+            <button class="nextBtn btn btn-1">Próximo</button>
           </div>
           <div class="text-center mt-3">
             <small>Já tem uma conta?<a class="ms-1"href="login.php">Entrar</a></small>
@@ -132,23 +132,24 @@
           <div class="form-row">
             <div class="form-group col">
               <label for="senha_mae">Senha</label>
-              <input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
+              <input type="password" name="senha_mae" id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
             </div>
             <div class="form-group pb-2 col">
               <label for="confirmarsenha_mae">Confirmar senha</label>
-              <input type="password" name="confirmarsenha_mae " id="confirmarsenha_mae" class="form-control form-control-lg">
+              <input type="password" name="confirmarsenha_mae" id="confirmarsenha_mae" class="form-control form-control-lg">
             </div>
           </div>
 
           <div class="d-flex">
-            <button class="prev-2 col-6 m-1 btn btn-1">Voltar</button>
-            <input class="submit col-6 m-1 btn btn-1" type="submit" name="submit" value="Enviar">
+            <button class="prev-1 col-6 m-1 btn btn-1">Voltar</button>
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="enviar" value="Enviar">
           </div>
         </div>
       </form>
     </div>
   </div>
 
+  <script src="../assets/js/scripts.js"></script>
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
@@ -169,15 +170,15 @@
 
         // registrando
 
-        if(isset($_POST['submit'])){
+        if(isset($_POST['enviar'])){
         
-        $nome_mae = mysqli_real_escape_string($link, $_POST['nome_mae_']);
-        $apelido_mae = mysqli_real_escape_string($link, $_POST['apelido_mae']);
-        $email_mae = mysqli_real_escape_string($link, $_POST['email_mae']);
-        $senha_mae = mysqli_real_escape_string($link, $_POST['senha_mae_']);
-        $confirmarsenha_mae = mysqli_real_escape_string($link, $_POST['confirmarsenha_mae_']);
+        $nome_mae = $_POST['nome_mae'];
+        $apelido_mae = $_POST['apelido_mae'];
+        $email_mae = $_POST['email_mae'];
+        $senha_mae = $_POST['senha_mae'];
+        $confirmarsenha_mae = $_POST['confirmarsenha_mae'];
 
-        }
+        
 
         // validacao do formulario
 
@@ -208,6 +209,7 @@
            $_SESSION['nome_mae'] = $nome_mae;
           }
         }
+          }
 
     ?>
 
