@@ -69,9 +69,12 @@ session_start();
 						<!--entrar/cadastro-->
 						<div id="login" class="nav navbar-nav me-5">
 							<div class="nav-item">
-								<a class="nav-item nav-link" href="php/login.php">
+								<a href="php/login.php">
+								<button type="button" class="btn btn-transparent nav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
 									<i class="uil uil-user"></i>
+
 									Entrar
+								</button>
 								</a>
 							</div>
 						</div>
@@ -179,8 +182,10 @@ session_start();
 		<!-- redes sociais  -->
 		<div class="mt-5 container-fluid degrade-diagonal">
 			<div class="d-flex justify-content-center align-items-center text-center row">
-				<div class="col redes-sociais">
+				<div class="col ms-5 me-5 redes-sociais">
+					<div class="col text-center">
 					<h1>Nos siga nas redes socias</h1>
+					</div>
 					<div class="col texto">
 						<p class="desc-social">Lá voce vai receber dicas sobre a gestação, além de interagir conosco!</p>
 					</div>
