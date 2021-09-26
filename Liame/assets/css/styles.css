@@ -133,9 +133,21 @@ h3 {
 .btn:hover {
   background-position: right center;
   color: white;
+  box-shadow: 0;
+  border: none;
+
 }
 
 .btn-1 {
+  background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
+  box-shadow: 0;
+}
+
+.btn-transparent {
+  background-color: transparent;
+}
+
+.btn-transparent:hover{
   background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
 }
 
@@ -184,7 +196,6 @@ h3 {
 @media (min-width: 575.98px) {
   .mockup {
     width: 100px;
-  }
 }
 
 @media (min-width: 767.98px) {
@@ -226,7 +237,7 @@ h3 {
   margin-top: 100px;
   margin-bottom: 100px;
   padding: 30px;
-
+  border-radius: 30px;
 }
 
 .form-control-lg {
@@ -245,7 +256,7 @@ h3 {
 
 .container .estrutura {
   width: 100%;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .estrutura form {
@@ -378,4 +389,8 @@ h3 {
 
 .a {
   justify-content: center !important;
+}
+
+.modal {
+  border-radius: 20px;
 }

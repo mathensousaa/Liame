@@ -62,7 +62,7 @@
     </div>
   </header>
 
-  
+
   <div class="container formulario">
       <div class="registro text-center p-5">
         <h1>Login</h2>
@@ -85,15 +85,47 @@
             <input class="submit col-6 m-1 btn btn-1" type="submit" name="submit" value="Enviar">
           </div>
           <div class="text-center mt-3">
-            <small>Não tem uma conta? Criar como:
-						<a href="cadastro_profissional.php">Profissional</a>
-						ou
-						<a href="cadastro_mae.php">Mãe</a>
+            <small>
+              <div class="row justify-content-center">
+                Não tem uma conta?
+              </div>
+              <div class="row">
+              <button type="button" class="btn btn-1" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Criar
+              </button>
+              </div>
 						</small>
+
           </div>
 				</div>
       </form>
     </div>
+  </div>
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="profissional-content">
+            <a href="cadastro_profissional.php">
+              <i class="uil uil-medkit"></i>
+            </a>
+          </div>
+          <div class="mae-content">
+            <a href="cadastro_mae.php">
+              <i class="uil uil-user"></i>
+            </a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-1" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <!--implementação jquery, poppers.js e plugin bootstrap-->
@@ -133,6 +165,6 @@
     }
   }
   if(count($erro) == 0 || !isset($erro)){
-    
+
   }
  ?>
