@@ -63,41 +63,41 @@
 
 
   <div class="container formulario">
-      <div class="registro text-center p-5">
-        <h1>Criar conta</h2>
-      </div>
-      <div class="barra-progresso pb-5 text-center">
-        <div class="row">
-          <div class="step col-4">
-            <p>Nome</p>
-            <div class="bullet text-center">
-              <span>1</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+    <div class="registro text-center p-5">
+      <h1>Criar conta</h2>
+    </div>
+    <div class="barra-progresso pb-5 text-center">
+      <div class="row">
+        <div class="step col-4">
+          <p>Nome</p>
+          <div class="bullet text-center">
+            <span>1</span>
           </div>
-          <div class="step col-4">
-            <p>Usuário</p>
-            <div class="bullet">
-              <span>2</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
           </div>
-          <div class="step col-4">
-            <p>Login</p>
-            <div class="bullet">
-              <span>3</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+        </div>
+        <div class="step col-4">
+          <p>Usuário</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
+          </div>
+        </div>
+        <div class="step col-4">
+          <p>Login</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
           </div>
         </div>
       </div>
-      <div class="estrutura">
+    </div>
+    <div class="estrutura">
       <form class="" action="cadastro_mae.php" method="POST">
         <div class="page slidepage col-12">
           <div class="pb-3">
@@ -115,7 +115,9 @@
             <button class="nextBtn m-1 btn btn-1">Próximo</button>
           </div>
           <div class="text-center mt-3">
-            <small>Já tem uma conta?<a class="ms-1"href="login.php">Entrar</a></small>
+            <small>Já tem uma conta?
+              <a class="ms-1" href="login.php">Entrar</a>
+            </small>
           </div>
         </div>
         <div class="page slidepage col-12">
@@ -159,7 +161,7 @@
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
 
-      <?php
+  <?php
 
       // iniciando as variaveis e conectando ao banco
 
@@ -195,7 +197,7 @@
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_mae);
-          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'");';
+          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'";)';
 
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
@@ -205,10 +207,11 @@
            $_SESSION['nome_mae'] = $nome_mae;
           }
         }
-      }
-          
+        }
+
 
     ?>
 
-  </body>
+</body>
+
 </html>
