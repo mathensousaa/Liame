@@ -8,7 +8,7 @@ html, body {
 }
 
 main {
-  color: #93aebd;
+  color: #49626F;
 }
 
 .row {
@@ -50,7 +50,6 @@ a {
 footer {
   background-color: #7C9DB6;
   color: #FFFFFF;
-  margin-top: 300px;
 }
 
 footer a {
@@ -79,6 +78,10 @@ footer i {
 .img-fluid {
   padding: 0;
   margin: 0;
+}
+
+.footer-home {
+  margin-top: 300px;
 }
 
 #home {
@@ -115,6 +118,8 @@ footer i {
 h3 {
   font-weight: 600;
 }
+
+
 
 .btn {
   flex: 1 1 auto;
