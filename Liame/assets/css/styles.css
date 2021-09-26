@@ -27,6 +27,10 @@ a:hover {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*cabeçalho*/
 #linksnavbar a {
   color: #ffffff;
@@ -135,9 +139,6 @@ h3 {
   background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
 }
 
-.conteudo {
-}
-
 #planos i {
   font-size: 35px;
 }
@@ -205,11 +206,6 @@ h3 {
   }
 }
 
-
-.redes-sociais h4 {
-  font-size:
-}
-
 /*TERMOS DE USO PROFISSIONAL*/
 /*conteudo*/
 .content {
@@ -223,12 +219,8 @@ h3 {
   height: 100vh;
 }
 
-.cabecalho-2 {
-}
-
 .formulario {
   background: #FAF9F8;
-  border-radius: 20px;
   color: #49626F;
   width: 27%;
   margin-top: 100px;
@@ -279,7 +271,7 @@ h3 {
   font-size: 16px;
   font-weight: 500;
   line-height: 28px;
-  left: 50%
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -295,7 +287,7 @@ h3 {
   content: '';
   left: 35px;
   height: 3px;
-  width: 100px;
+  width: 5vw;
   bottom: 11px;
   background: #49626F;
 }

@@ -1,12 +1,6 @@
-<?php
-<<<<<<< HEAD
-    include 'php/conexao_profissional.php';
 
-=======
-    include 'php/registro_profissional.php';
-  
->>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
-?>
+ 
+
 
 
 <!DOCTYPE html>
@@ -19,13 +13,14 @@
   <title>Liame - Unindo do início ao fim.</title>
 
   <!--implementação bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
 
   <!--css-->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -41,8 +36,8 @@
       <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
         <!--logo-->
-        <a href="index.php" class="navbar-brand ms-5">
-          <img class="logo" src="assets\img\logo-liame-branca.png" alt="Liame">
+        <a href="../index.php" class="navbar-brand ms-5">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
         </a>
         <!--botão para menu hamburguer mobile-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
@@ -51,16 +46,15 @@
         <!--link cabeçalho-->
         <div class="collapse navbar-collapse" id="linksnavbar">
           <div class="navbar-nav navbar-collapse justify-content-center">
-            <a class="nav-item nav-link" id="especialistas-menu" href="php/especialistas.php">Especialistas</a>
-            <a class="nav-item nav-link" id="consultas-menu" href="php/consultas.php">Consultas</a>
-            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="php/diario-de-bordo.php">Diário de Bordo</a>
-            <a class="nav-item nav-link" id="quem-somos-menu" href="php/especialistas.php">Quem Somos</a>
-            <a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
           <div id="login" class="nav navbar-nav mr-5">
             <div class="nav-item">
-              <a class="nav-item nav-link" href="layouts/entrar.html">
+              <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
                 Entrar
               </a>
@@ -70,6 +64,8 @@
       </nav>
     </div>
   </header>
+
+  
   <div class="container formulario">
     <div class="estrutura">
       <div class="registro text-center p-5">
@@ -106,22 +102,18 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <form class="" action="php/conexao_profissional.php" method="post">
-=======
-      <form class="" action="registro_profissional.php" method="post">
->>>>>>> 7843dee2e693804d3a4547a8dbc13ec3c6df79d2
+      <form class="" action="cadastro_profissional.php" method="post">
         <div class="col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
           <div class="form-group pb-2">
             <label for="nome_profissional">Nome</label>
-            <input type="text" name="nome_profissional " id="nome_profissional" class="form-control form-control-lg">
+            <input type="text" name="nome_profissional" id="nome_profissional" class="form-control form-control-lg">
           </div>
           <div class="form-group pb-2">
             <label for="sobrenome_profissional">Sobrenome</label>
-            <input type="text" name="sobrenome_profissional " id="sobrenome_profissional" class="form-control form-control-lg">
+            <input type="text" name="sobrenome_profissional" id="sobrenome_profissional" class="form-control form-control-lg">
           </div>
           <div class="d-flex">
             <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
@@ -136,22 +128,22 @@
           </div>
           <div class="form-group pb-2">
             <label for="telefone_profissional">Telefone</label>
-            <input type="text" name="telefone_profissional " id="telefone_profissional" class="form-control form-control-lg">
+            <input type="text" name="telefone_profissional" id="telefone_profissional" class="form-control form-control-lg">
           </div>
           <div class="form-row pb-2">
             <div class="form-group col-4">
               <label for="cep_profissional">CEP</label>
-              <input type="text" name="cep_profissional " id="cep_profissional" class="form-control form-control-lg">
+              <input type="text" name="cep_profissional" id="cep_profissional" class="form-control form-control-lg">
             </div>
             <div class="form-group col-8">
               <label for="logradouro_profissional">Endereço</label>
-              <input type="text" name="endereco_profissional " id="logradouro_profissional" class="form-control form-control-lg">
+              <input type="text" name="endereco_profissional" id="logradouro_profissional" class="form-control form-control-lg">
             </div>
           </div>
           <div class="form-row pb-2">
             <div class="form-group col-3">
               <label for="numero_profissional">Número</label>
-              <input type="number" min="0" name="numero_endereco_profissional " id="numero_profissional" class="form-control form-control-lg">
+              <input type="number" min="0" name="numero_endereco_profissional" id="numero_profissional" class="form-control form-control-lg">
             </div>
             <div class="form-group col-9">
               <label for="bairro_profissional">Bairro</label>
@@ -182,11 +174,11 @@
           </div>
           <div class="form-group pb-2">
             <label for="servico">Serviço</label>
-            <input type="text" name="servico_profissional " id="servico" class="form-control form-control-lg">
+            <input type="text" name="servico_profissional" id="servico" class="form-control form-control-lg">
           </div>
           <div class="form-group pb-2">
             <label for="numero_registro_profissional">Número de registro</label>
-            <input type="text" name="numero_registro_profissional " id="numero_registro_profissional" class="form-control form-control-lg">
+            <input type="text" name="numero_registro_profissional" id="numero_registro_profissional" class="form-control form-control-lg">
           </div>
           <div class="d-flex">
             <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
@@ -221,16 +213,16 @@
           </div>
           <div class="form-group pb-2">
             <label for="senha_mae">Senha</label>
-            <input type="password" name="senha_profissional " id="senha_profissional" class="form-control form-control-lg" placeholder="8 dígitos">
+            <input type="password" name="senha_profissional" id="senha_profissional" class="form-control form-control-lg" placeholder="8 dígitos">
           </div>
           <div class="form-group pb-2">
             <label for="confirmarsenha_mae">Confirmar senha</label>
-            <input type="password" name="confirmarsenha_profissional " id="confirmarsenha_profissional" class="form-control form-control-lg">
+            <input type="password" name="confirmarsenha_profissional" id="confirmarsenha_profissional" class="form-control form-control-lg">
           </div>
 
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="prev-1 col-6 m-1 btn btn-1">Enviar</button>
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="enviar" value="Enviar">
           </div>
         </div>
 
@@ -238,45 +230,71 @@
     </div>
 
   </div>
+
+  <?php
+
+      // iniciando as variaveis e conectando ao banco
+
+      include 'conexao.php';
+
+        // registrando
+
+        if(isset($_POST['enviar'])){
+
+        $nome_profissional = $_POST['nome_profissional'];
+        $telefone_profissional = $_POST['telefone_profissional'];
+        $cep_profissional = $_POST['cep_profissional'];
+        $endereco_profissional = $_POST['endereco_profissional'];
+        $numero_endereco_profissional = $_POST['numero_endereco_profissional'];
+        $bairro_profissional = $_POST['bairro_profissional'];
+        $cidade_profissional = $_POST['cidade_profissional'];
+        $estado_profissional = $_POST['estado_profissional'];
+        $servico_profissional = $_POST['servico_profissional'];
+        $numero_registro_profissional = $_POST['numero_registro_profissional'];
+        $email_profissional = $_POST['email_profissional'];
+        $foto_perfil_profissional = $_POST['foto_perfil_profissional'];
+        $senha_profissional = $_POST['senha_profissional'];
+        $confirmarsenha_profissional = $_POST['confirmarsenha_profissional'];
+              
+        
+
+        
+
+        // validacao do formulario
+
+
+
+        if($confirmarsenha_profissional!= $senha_profissional){
+
+          array_push($erro, "Senhas precisam ser iguais");
+
+        }
+
+        //checando se o usuario e a senha ja existem
+
+        $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional'";
+        $resultado = mysqli_query($link, $user_check_query);
+        $conta = mysqli_num_rows($resultado);
+        print_r $conta;
+        if($conta>1){
+          echo "Esse email já está em uso";
+        }else{
+          $senha = md5($senha_profissional);
+          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, numero_registro_profissional, logradouro_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$numero_registro_profissional.'", "'.$logradouro_profissional.'", "'.$numero_endereco_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'";)';
+
+          $inserir = mysqli_query($link, $query);
+          if($inserir==0){
+              echo "ERRO ao cadastrar";
+              echo $inserir;
+          }else{
+           $_SESSION['email_profissional'] = $email_profissional;
+           $_SESSION['nome_profissional'] = $nome_profissional;
+          }
+        }
+          }
+
+    ?>
 </body>
-
-</html>
-
-<?php
-    include 'conexao.php';
-
-    $nome_profissional = ($_POST['nome_profissional']);
-    $sobrenome_profissional = ($_POST['sobrenome_profissional']);
-    $email_profissional = ($_POST['email_profissional']);
-    $senha_profissional = ($_POST['senha_profissional']);
-    $confirmarsenha_profissonal = ($_POST['confirmarsenha_profissional']);
-    $foto_perfil_profissional = ($_POST['foto_perfil_profissional']);
-    $numero_registro_profissional = ($_POST['numero_registro_profissional']);
-    $servico_profissional = ($_POST['servico_profissional']);
-    $logradouro_profissional = ($_POST['logradouro_profissional']);
-    $numero_endereco_profissional = ($_POST['numero_endereco_profissional']);
-    $bairro_profissional = ($_POST['bairro_profissional']);
-    $cidade_profissional = ($_POST['cidade_profissional']);
-    $estado_profissional = ($_POST['estado_profissional']);
-    $cep_profissional = ($_POST['cep_profissional']);
-
-   if($confirmarsenha_profissional == $senha_profissional){
-    echo "Senhas iguais";
-   }else{
-       echo "Senhas diferentes";
-   }
-
-    $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
-    mysqli_query($link,$query) or die("Erro ao cadastrar");
-
-    echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
-
-
-
-
-?>
-
-
 <!--
 <div class="card text-center justify-content-center shadow-lg card-1 border-0 bg-white px-sm-2">
   <div class="card-body show ">
@@ -308,5 +326,14 @@
       </div>
     </div>
   </div>
-</div>
--->
+</div>-->
+
+</html>
+
+
+
+
+
+
+
+
