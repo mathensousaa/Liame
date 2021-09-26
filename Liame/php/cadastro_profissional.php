@@ -264,7 +264,7 @@
 
 
 
-        if($confirmarsenha_profissional!= $senha_profissional){
+        if($confirmarsenha_profissional != $senha_profissional){
 
           array_push($erro, "Senhas precisam ser iguais");
 
@@ -275,17 +275,17 @@
         $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional'";
         $resultado = mysqli_query($link, $user_check_query);
         $conta = mysqli_num_rows($resultado);
-        print_r $conta;
+        
         if($conta>1){
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_profissional);
-          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, numero_registro_profissional, logradouro_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$numero_registro_profissional.'", "'.$logradouro_profissional.'", "'.$numero_endereco_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'";)';
+          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, numero_registro_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$numero_registro_profissional.'", "'.$numero_endereco_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'";)';
 
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
               echo "ERRO ao cadastrar";
-              echo $inserir;
+             
           }else{
            $_SESSION['email_profissional'] = $email_profissional;
            $_SESSION['nome_profissional'] = $nome_profissional;

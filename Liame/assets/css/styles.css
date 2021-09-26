@@ -8,7 +8,7 @@ html, body {
 }
 
 main {
-  color: #49626F;
+  color: #93aebd;
 }
 
 .row {
@@ -256,7 +256,7 @@ h3 {
 
 .container .estrutura {
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .estrutura form {

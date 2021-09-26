@@ -178,7 +178,7 @@
         $senha_mae = $_POST['senha_mae'];
         $confirmarsenha_mae = $_POST['confirmarsenha_mae'];
 
-
+        }
 
         // validacao do formulario
 
@@ -209,7 +209,7 @@
            $_SESSION['nome_mae'] = $nome_mae;
           }
         }
-          }
+          
 
     ?>
 
