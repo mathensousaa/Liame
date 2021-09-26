@@ -197,7 +197,7 @@
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_mae);
-          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'";)';
+          $query = 'INSERT INTO mae (nome_mae, apelido_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$apelido_mae.'", "'.$email_mae.'", "'.$senha.'")';
 
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
