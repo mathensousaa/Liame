@@ -1,103 +1,4 @@
-<?php
 
-// iniciando as variaveis e conectando ao banco
-
-  session_start();
-
-  $nome_profissional = "";
-  $sobrenome_profissional = "";
-  $telefone_profissional = "";
-  $cep_profissional = "";
-  $endereco_profissional = "";
-  $numero_endereco_profissional = "";
-  $bairro_profissional = "";
-  $cidade_profissional = "";
-  $estado_profissional = "";
-  $servico_profissional = "";
-  $numero_registro_profissional = "";
-  $email_profissional = "";
-  $foto_perfil_profissional = "";
-  $senha_profissional = "";
-  $confirmarsenha_profissional = "";
-
-  $erro = array();
-
-  $link = mysqli_connect("localhost:3306", "root", "", "Liame");
-
-  include 'conexao.php';
-
-  // registrando
-
-  if(isset($_POST['submit'])){
-
-  $nome_profissional = mysqli_real_escape_string($link, $_POST['nome_profissional']);
-  $sobrenome_profissional = mysqli_real_escape_string($link, $_POST['sobrenome_profissional']);
-  $telefone_profissional = mysqli_real_escape_string($link, $_POST['telefone_profissional']);
-  $cep_profissional = mysqli_real_escape_string($link,$_POST['cep_profissional']);
-  $endereco_profissional = mysqli_real_escape_string($link, $_POST['endereco_profissional']);
-  $numero_endereco_profissional = mysqli_real_escape_string($link, $_POST['numero_endereco_profissional']);
-  $bairro_profissional = mysqli_real_escape_string($link, $_POST['bairro_profissional']);
-  $cidade_profissional = mysqli_real_escape_string($link, $_POST['cidade_profissional']);
-  $estado_profissional = mysqli_real_escape_string($link, $_POST['estado_profissional']);
-  $servico_profissional = mysqli_real_escape_string($link, $_POST['servico_profissional']);
-  $numero_registro_profissional = mysqli_real_escape_string($link, $_POST['numero_registro_profissional']);
-  $email_profissional = mysqli_real_escape_string($link, $_POST['email_profissional']);
-  $foto_perfil_profissional = mysqli_real_escape_string($link, $_POST['foto_perfil_profissional']);
-  $senha_profissional = mysqli_real_escape_string($link, $_POST['senha_profissional']);
-  $confirmarsenha_profissional = mysqli_real_escape_string($link, $_POST['confirmarsenha_profissional']);
-  }
-
-  // validacao do formulario
-
-
-
-  if($confirmarsenha_profissional != $confirmarsenha_profissional){
-
-    array_push($erro, "Senhas precisam ser iguais");
-    
-   }
-
-   //checando se o usuario e a senha ja existem
-
-   $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND numero_registro_profissional = '$numero_registro_profissional' LIMIT 1";
-   $resultado = mysqli_query($link, $user_check_query);
-
-   $user = mysqli_fetch_assoc($resultado);
-
-   if($user){
-
-          if($user['email_profissional'] === $email_profissional){
-    
-            array_push($erro, "Esse email já está em uso");
-            
-          }
-
-          if($user['numero_registro_profissional'] === $numero_registro_profissional){
-    
-            array_push($erro, "Esse número de registro pertence a outra conta");
-            
-          }
-  
-
-   }
-
-   //registra se nao tiver erro
-
-   if(count($erro) == 0){
-
-    $senha = md5($senha_profissional);
-    $query = "INSERT INTO profissional (nome_profissional, sobrenome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, servico_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional ) VALUES ('$nome_profissional', '$sobrenome_profissional', '$email_profissional', '$senha_profissional', '$foto_perfil_profissional', '$numero_registro_profissional', '$servico_profissional', '$numero_endereco_profissional', '$bairro_profissional', '$cidade_profissional', '$estado_profissional', '$cep_profissional', '$telefone_profissional')";
-
-    mysqli_query($link, $query);
-
-    $_SESSION['nome_profissional'] = $nome_profissional;
-    $_SESSION['success'] = "Cadastro realizado com sucesso";
-
-    
-   }
-
-
-  ?>
 
 
 
@@ -163,7 +64,7 @@
     </div>
   </header>
 
-  
+
   <div class="container formulario">
     <div class="estrutura">
       <div class="registro text-center p-5">
@@ -200,8 +101,8 @@
           </div>
         </div>
       </div>
-      <form class="" action="php/conexao_profissional.php" method="post">
-        <div class="col-12">
+      <form class="" action="cadastro_profissional.php" method="post">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
@@ -214,59 +115,68 @@
             <input type="text" name="sobrenome_profissional " id="sobrenome_profissional" class="form-control form-control-lg">
           </div>
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="nextBtn m-1 btn btn-1">Próximo</button>
           </div>
         </div>
 
 
-        <div class="col-12">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações de contato</h4>
           </div>
-          <div class="form-group pb-2">
+          <div class="form-group row pb-2">
             <label for="telefone_profissional">Telefone</label>
             <input type="text" name="telefone_profissional " id="telefone_profissional" class="form-control form-control-lg">
           </div>
-          <div class="form-row pb-2">
-            <div class="form-group col-4">
+          <div class="row pb-2">
+            <div class="form-group ps-0 col-4">
               <label for="cep_profissional">CEP</label>
               <input type="text" name="cep_profissional " id="cep_profissional" class="form-control form-control-lg">
             </div>
-            <div class="form-group col-8">
+            <div class="form-group pe-0 col-8">
               <label for="logradouro_profissional">Endereço</label>
               <input type="text" name="endereco_profissional " id="logradouro_profissional" class="form-control form-control-lg">
             </div>
           </div>
-          <div class="form-row pb-2">
-            <div class="form-group col-3">
-              <label for="numero_profissional">Número</label>
-              <input type="number" min="0" name="numero_endereco_profissional " id="numero_profissional" class="form-control form-control-lg">
-            </div>
-            <div class="form-group col-9">
-              <label for="bairro_profissional">Bairro</label>
-              <input type="text" name="bairro_profissional" id="bairro_profissional" class="form-control form-control-lg">
-            </div>
-          </div>
-          <div class="form-row pb-2">
-            <div class="form-group col-8">
-              <label for="cidade_profissional">Cidade</label>
-              <input type="text" name="cidade_profissional" id="cidade_profissional" class="form-control form-control-lg">
-            </div>
-            <div class="form-group col-4">
-              <label for="estado_profissional">UF</label>
-              <input type="" name="estado_profissional" id="estado_profissional" class="form-control form-control-lg">
-            </div>
-          </div>
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="prev-1 col-6 m-1 btn btn-1">Voltar</button>
+            <button class="next-1 col-6 m-1 btn btn-1">Próximo</button>
           </div>
         </div>
 
 
+        <div class="page slidepage col-12">
+          <div class="pb-3">
+            <h4>Informações de contato</h4>
+          </div>
+        <div class="row pb-2">
+          <div class="form-group ps-0 col-3">
+            <label for="numero_profissional">Número</label>
+            <input type="number" min="0" name="numero_endereco_profissional " id="numero_profissional" class="form-control form-control-lg">
+          </div>
+          <div class="form-group pe-0 col-9">
+            <label for="bairro_profissional">Bairro</label>
+            <input type="text" name="bairro_profissional" id="bairro_profissional" class="form-control form-control-lg">
+          </div>
+        </div>
+        <div class="row pb-2">
+          <div class="form-group ps-0 col-8">
+            <label for="cidade_profissional">Cidade</label>
+            <input type="text" name="cidade_profissional" id="cidade_profissional" class="form-control form-control-lg">
+          </div>
+          <div class="form-group pe-0 col-4">
+            <label for="estado_profissional">UF</label>
+            <input type="" name="estado_profissional" id="estado_profissional" class="form-control form-control-lg">
+          </div>
+        </div>
+        <div class="d-flex">
+          <button class="prev-2 col-6 m-1 btn btn-1">Voltar</button>
+          <button class="next-2 col-6 m-1 btn btn-1">Próximo</button>
+        </div>
+      </div>
 
-        <div class="col-12">
+
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Informações profissionais</h4>
           </div>
@@ -279,14 +189,14 @@
             <input type="text" name="numero_registro_profissional " id="numero_registro_profissional" class="form-control form-control-lg">
           </div>
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="prev-3 col-6 m-1 btn btn-1">Voltar</button>
+            <button class="next-3 btn col-6 m-1 btn-1">Próximo</button>
           </div>
         </div>
 
 
 
-        <div class="col-12">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Detalhes de login</h4>
           </div>
@@ -300,12 +210,12 @@
           </div>
 
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="prev-4 col-6 m-1 btn btn-1">Voltar</button>
+            <button class="next-4 col-6 m-1 btn btn-1">Próximo</button>
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="page slidepage col-12">
           <div class="pb-3">
             <h4>Escolher senha</h4>
           </div>
@@ -319,8 +229,8 @@
           </div>
 
           <div class="d-flex">
-            <a href="" class="col-6 m-1 btn btn-1">Voltar</a>
-            <a href="" class="col-6 m-1 btn btn-1">Próximo</a>
+            <button class="prev-5 col-6 m-1 btn btn-1">Voltar</button>
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="enviar" value="Enviar">
           </div>
         </div>
 
@@ -328,75 +238,133 @@
     </div>
 
   </div>
+
+  <script src="../assets/js/scripts.js"></script>
+  <!--implementação jquery, poppers.js e plugin bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  <script src=""></script>
+
+  <!--progressbar-->
+  <script src="../assets/js/progressbar.min.js"></script>
+
+  <!--biblioteca parallax-->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+
+  <?php
+
+  // iniciando as variaveis e conectando ao banco
+
+  include 'conexao.php';
+
+  // registrando
+
+  if(isset($_POST['submit'])){
+
+  $nome_profissional = mysqli_real_escape_string($link, $_POST['nome_profissional']);
+  $sobrenome_profissional = mysqli_real_escape_string($link, $_POST['sobrenome_profissional']);
+  $telefone_profissional = mysqli_real_escape_string($link, $_POST['telefone_profissional']);
+  $cep_profissional = mysqli_real_escape_string($link,$_POST['cep_profissional']);
+  $endereco_profissional = mysqli_real_escape_string($link, $_POST['endereco_profissional']);
+  $numero_endereco_profissional = mysqli_real_escape_string($link, $_POST['numero_endereco_profissional']);
+  $bairro_profissional = mysqli_real_escape_string($link, $_POST['bairro_profissional']);
+  $cidade_profissional = mysqli_real_escape_string($link, $_POST['cidade_profissional']);
+  $estado_profissional = mysqli_real_escape_string($link, $_POST['estado_profissional']);
+  $servico_profissional = mysqli_real_escape_string($link, $_POST['servico_profissional']);
+  $numero_registro_profissional = mysqli_real_escape_string($link, $_POST['numero_registro_profissional']);
+  $email_profissional = mysqli_real_escape_string($link, $_POST['email_profissional']);
+  $foto_perfil_profissional = mysqli_real_escape_string($link, $_POST['foto_perfil_profissional']);
+  $senha_profissional = mysqli_real_escape_string($link, $_POST['senha_profissional']);
+  $confirmarsenha_profissional = mysqli_real_escape_string($link, $_POST['confirmarsenha_profissional']);
+  }
+
+  // validacao do formulario
+
+
+
+  if($confirmarsenha_profissional != $confirmarsenha_profissional){
+
+    array_push($erro, "Senhas precisam ser iguais");
+
+   }
+
+   //checando se o usuario e a senha ja existem
+
+   $user_check_query = "SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND numero_registro_profissional = '$numero_registro_profissional' LIMIT 1";
+   $resultado = mysqli_query($link, $user_check_query);
+
+   $user = mysqli_fetch_assoc($resultado);
+
+   if($user){
+
+          if($user['email_profissional'] === $email_profissional){
+
+            array_push($erro, "Esse email já está em uso");
+
+          }
+
+          if($user['numero_registro_profissional'] === $numero_registro_profissional){
+
+            array_push($erro, "Esse número de registro pertence a outra conta");
+
+          }
+
+
+   }
+
+   //registra se nao tiver erro
+
+   if(count($erro) == 0){
+
+    $senha = md5($senha_profissional);
+    $query = "INSERT INTO profissional (nome_profissional, sobrenome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, servico_profissional, numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional ) VALUES ('$nome_profissional', '$sobrenome_profissional', '$email_profissional', '$senha_profissional', '$foto_perfil_profissional', '$numero_registro_profissional', '$servico_profissional', '$numero_endereco_profissional', '$bairro_profissional', '$cidade_profissional', '$estado_profissional', '$cep_profissional', '$telefone_profissional')";
+
+    mysqli_query($link, $query);
+
+    $_SESSION['nome_profissional'] = $nome_profissional;
+    $_SESSION['success'] = "Cadastro realizado com sucesso";
+
+
+   }
+
+
+  ?>
+
+  <?php
+      include 'conexao.php';
+
+      $nome_profissional = ($_POST['nome_profissional']);
+      $sobrenome_profissional = ($_POST['sobrenome_profissional']);
+      $email_profissional = ($_POST['email_profissional']);
+      $senha_profissional = ($_POST['senha_profissional']);
+      $confirmarsenha_profissonal = ($_POST['confirmarsenha_profissional']);
+      $foto_perfil_profissional = ($_POST['foto_perfil_profissional']);
+      $numero_registro_profissional = ($_POST['numero_registro_profissional']);
+      $servico_profissional = ($_POST['servico_profissional']);
+      $logradouro_profissional = ($_POST['logradouro_profissional']);
+      $numero_endereco_profissional = ($_POST['numero_endereco_profissional']);
+      $bairro_profissional = ($_POST['bairro_profissional']);
+      $cidade_profissional = ($_POST['cidade_profissional']);
+      $estado_profissional = ($_POST['estado_profissional']);
+      $cep_profissional = ($_POST['cep_profissional']);
+
+     if($confirmarsenha_profissional == $senha_profissional){
+      echo "Senhas iguais";
+     }else{
+         echo "Senhas diferentes";
+     }
+
+      $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
+      mysqli_query($link,$query) or die("Erro ao cadastrar");
+
+      echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
+
+
+
+
+  ?>
+
 </body>
 
 </html>
-
-<?php
-    include 'conexao.php';
-
-    $nome_profissional = ($_POST['nome_profissional']);
-    $sobrenome_profissional = ($_POST['sobrenome_profissional']);
-    $email_profissional = ($_POST['email_profissional']);
-    $senha_profissional = ($_POST['senha_profissional']);
-    $confirmarsenha_profissonal = ($_POST['confirmarsenha_profissional']);
-    $foto_perfil_profissional = ($_POST['foto_perfil_profissional']);
-    $numero_registro_profissional = ($_POST['numero_registro_profissional']);
-    $servico_profissional = ($_POST['servico_profissional']);
-    $logradouro_profissional = ($_POST['logradouro_profissional']);
-    $numero_endereco_profissional = ($_POST['numero_endereco_profissional']);
-    $bairro_profissional = ($_POST['bairro_profissional']);
-    $cidade_profissional = ($_POST['cidade_profissional']);
-    $estado_profissional = ($_POST['estado_profissional']);
-    $cep_profissional = ($_POST['cep_profissional']);
-
-   if($confirmarsenha_profissional == $senha_profissional){
-    echo "Senhas iguais";
-   }else{
-       echo "Senhas diferentes";
-   }
-
-    $query = "INSERT INTO 'mae' ( 'nome_mae' , 'sobrenome_mae' , 'apelido_mae' , 'email_mae' , 'senha_mae' , 'foto_perfil_mae') VALUES ('$nome_mae', '$sobrenome_mae', '$apelido_mae', '$email_mae', '$senha_mae', '$foto_perfil_mae')";
-    mysqli_query($link,$query) or die("Erro ao cadastrar");
-
-    echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
-
-
-
-
-?>
-
-
-<!--
-<div class="card text-center justify-content-center shadow-lg card-1 border-0 bg-white px-sm-2">
-  <div class="card-body show ">
-    <div class="row">
-      <div class="col">
-        <h5>Selecione o tipo de conta</h5>
-      </div>
-    </div>
-    <div class="radio-group row justify-content-between px-3 text-center a">
-      <div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio selected">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\mae-icone.png" alt="ícone de mãe" width="100" height="100">
-              <p>Mãe</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-auto ml-sm-2 mx-1 card-block py-0 text-center radio">
-        <div class="flex-row">
-          <div class="col">
-            <div class="icone">
-              <img class="irc_mut img-fluid" src="assets\img\doutor-icone.png" alt="ícone de médico" width="100" height="100">
-              <p>Profissional</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->

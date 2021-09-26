@@ -7,5 +7,5 @@ firtNextBtn.addEventListener("click", function(){
 });
 
 prevBtnSec.addEventListener("click", function(){
-  slidePage.style.marginLeft = "100%";
+  slidePage.style.marginLeft = "0%";
 });
