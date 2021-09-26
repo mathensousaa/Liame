@@ -26,9 +26,6 @@
 </head>
 
 <body class="fundo">
-  <?php
-
-  ?>
   <!--cabeçalho-->
   <header class="cabecalho cabecalho-2">
     <div class="container-fluid" id="nav-container">
@@ -115,7 +112,7 @@
             <input type="text" name="apelido_mae" id="apelido_mae" class="form-control form-control-lg" required>
           </div>
           <div class="d-flex">
-            <button class="nextBtn btn btn-1">Próximo</button>
+            <button class="nextBtn m-1 btn btn-1">Próximo</button>
           </div>
           <div class="text-center mt-3">
             <small>Já tem uma conta?<a class="ms-1"href="login.php">Entrar</a></small>
@@ -129,12 +126,12 @@
             <label for="email_mae">E-mail</label>
             <input type="email" name="email_mae" id="email_mae" class="form-control form-control-lg">
           </div>
-          <div class="form-row">
-            <div class="form-group col">
+          <div class="row">
+            <div class="form-group col ps-0">
               <label for="senha_mae">Senha</label>
               <input type="password" name="senha_mae" id="senha_mae" class="form-control form-control-lg" placeholder="8 dígitos">
             </div>
-            <div class="form-group pb-2 col">
+            <div class="form-group pb-2 col pe-0">
               <label for="confirmarsenha_mae">Confirmar senha</label>
               <input type="password" name="confirmarsenha_mae" id="confirmarsenha_mae" class="form-control form-control-lg">
             </div>
@@ -178,7 +175,6 @@
         $senha_mae = $_POST['senha_mae'];
         $confirmarsenha_mae = $_POST['confirmarsenha_mae'];
 
-        }
 
         // validacao do formulario
 
