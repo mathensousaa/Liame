@@ -135,12 +135,33 @@ h3 {
   text-decoration: none;
 }
 
+.btn-small {
+  flex: 1 1 auto;
+  margin: 10 0 0 10px;
+  padding: 5px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-small:hover {
+  background-position: right center;
+  color: white;
+  box-shadow: 0;
+  border: none;
+}
+
 .btn:hover {
   background-position: right center;
   color: white;
   box-shadow: 0;
   border: none;
-
 }
 
 .btn-1 {
@@ -230,6 +251,23 @@ h3 {
 }
 
 /*REGISTRO*/
+
+.botao {
+  border-radius: 10px;
+  border: solid 2px #ced4da;
+  padding: 30px 30px;
+}
+
+.botao h4 {
+  color: #49626F;
+}
+
+.botao i {
+  font-size: 30px;
+  color: #49626F;
+}
+
+
 .fundo {
   background: linear-gradient(270deg, rgba(124, 157, 182, 0.6) 0%, rgba(232, 191, 187, 0.6) 99.51%);
   height: 100vh;
@@ -399,4 +437,3 @@ h3 {
 .modal {
   border-radius: 20px;
 }
-

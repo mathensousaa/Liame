@@ -157,7 +157,7 @@
             <label for="numero_profissional">Número</label>
             <input type="text" name="numero_endereco_profissional" id="numero_endereco_profissional" class="form-control form-control-lg">
           </div>-->
-          <div class="form-group pe-0 col-9">
+          <div class="form-group ps-0 pe-0">
             <label for="bairro_profissional">Bairro</label>
             <input type="text" name="bairro_profissional" id="bairro_profissional" class="form-control form-control-lg">
           </div>
@@ -273,6 +273,11 @@
 
 
 
+
+
+
+
+
         // validacao do formulario
 
 
@@ -294,11 +299,11 @@
         }else{
           $senha = md5($senha_profissional);
           $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, /*numero_endereco_profissional,*/ bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$foto_perfil_profissional.'", "'.$numero_registro_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'")';
-                                             
+
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
               echo "ERRO ao cadastrar";
-          
+
           }else{
            $_SESSION['email_profissional'] = $email_profissional;
            $_SESSION['nome_profissional'] = $nome_profissional;
