@@ -69,7 +69,7 @@
       </div>
       <div class="estrutura">
       <form class="" action="conexao.php" method="POST">
-        <div class="page slidepage col-12">
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
