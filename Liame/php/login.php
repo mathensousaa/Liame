@@ -114,7 +114,7 @@
 
           <div class="col-12 d-flex profissional-content justify-content-center">
             <div class="botao">
-              <a href="cadastro_profissional.php">
+              <a href="cadastro_profissional1.php">
                 <i class="uil uil-medkit"></i>
                 <h4>Profissional</h4>
               </a>
@@ -123,7 +123,7 @@
 
           <div class="col-12 d-flex mae-content justify-content-center">
             <div class="botao">
-              <a href="cadastro_mae.php">
+              <a href="cadastro_mae1.php">
                 <i class="uil uil-user"></i>
                 <h4>Mãe</h4>
               </a>

@@ -27,9 +27,9 @@
     if($conta>1){
             echo "Esse email já está em uso";
         }else{
-            $senha = md5($senha_mae);
+            $senha = md5($senha_profissional);
             $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, numero_endereco_profissional, descricao_endereco_profissional, cep_profissional, status_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$numero_endereco_profissional.'", "'.$complemento_endereco_profissional.'", "'.$cep_profissional.'", "0")';
-            
+
             //inserir no banco de dados
             $inserir = mysqli_query($link, $query);
             if($inserir==TRUE){
