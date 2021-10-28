@@ -51,7 +51,7 @@
             <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
-          <div id="login" class="nav navbar-nav mr-5">
+          <div id="login" class="nav navbar-nav me-5">
             <div class="nav-item">
               <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>
@@ -70,37 +70,37 @@
       <div class="registro text-center p-5">
         <h1>Criar conta</h1>
       </div>
-      <div class="justify-content-center barra-progesso pb-5 text-center">
-        <div class="row">
-          <div class="step col-4">
-            <p>Nome</p>
-            <div class="bullet text-center">
-              <span>1</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+      <div class="barra-progresso pb-5 text-center">
+      <div class="row">
+        <div class="step col-4">
+          <p>Nome</p>
+          <div class="bullet text-center">
+            <span>1</span>
           </div>
-          <div class="step col-4">
-            <p>Usuário</p>
-            <div class="bullet">
-              <span>2</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
           </div>
-          <div class="step col-4">
-            <p>Login</p>
-            <div class="bullet">
-              <span>3</span>
-            </div>
-            <div class="check">
-              <i class="uil uil-check"></i>
-            </div>
+        </div>
+        <div class="step col-4">
+          <p>Usuário</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
+          </div>
+        </div>
+        <div class="step col-4">
+          <p>Login</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check">
+            <i class="uil uil-check"></i>
           </div>
         </div>
       </div>
+    </div>
       <form class="" action="cadastro_profissional.php" method="post">
         <div class="page slidepage col-12">
           <div class="pb-3">
@@ -159,10 +159,17 @@
           </div>
         <div class="row pb-2">
           <div class="form-group ps-0 col-3">
+<<<<<<< HEAD
             <label for="numero_profissional">Número</label>
             <input type="text" name="numero_endereco_profissional" id="numero_endereco_profissional" class="form-control form-control-lg">
           </div>
           <div class="form-group pe-0 col-9">
+=======
+            <label for="numero_endereco_profissional">Número</label>
+            <input type="text" name="numero_endereco_profissional" id="numero_endereco_profissional" class="form-control form-control-lg">
+          </div>
+          <div class="form-group ps-0 pe-0">
+>>>>>>> 85cd193d456db9e8574abcc04bbf6ecdc313a308
             <label for="bairro_profissional">Bairro</label>
             <input type="text" name="bairro_profissional" id="bairro_profissional" class="form-control form-control-lg">
           </div>
@@ -271,7 +278,10 @@
         $foto_perfil_profissional = $_POST['foto_perfil_profissional'];
         $senha_profissional = $_POST['senha_profissional'];
         $confirmarsenha_profissional = $_POST['confirmarsenha_profissional'];
+<<<<<<< HEAD
         $status_profissional = $_POST['status_profissional'];
+=======
+>>>>>>> 85cd193d456db9e8574abcc04bbf6ecdc313a308
         
       
 
@@ -303,7 +313,11 @@
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_profissional);
+<<<<<<< HEAD
           $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, logradouro_profissional , numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional, status_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$foto_perfil_profissional.'", "'.$numero_registro_profissional.'", "'.$endereco_profissional.'", $numero_endereco_profissional, "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'","'.$status_profissional.'")';
+=======
+          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, logradouro_profissional , numero_endereco_profissional ,bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$foto_perfil_profissional.'", "'.$numero_registro_profissional.'", "'.$endereco_profissional.'", "'.$numero_endereco_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'")';
+>>>>>>> 85cd193d456db9e8574abcc04bbf6ecdc313a308
   
           $inserir = mysqli_query($link, $query);
           if($inserir==0){

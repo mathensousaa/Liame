@@ -39,19 +39,15 @@ session_start();
 	<main>
 
 
-		<!--banner-->
-		<div id="home" class="container-fluid text-center">
-			<div class="landing-text">
-				<img class="img-fluid banner" src="assets/img/banner-gradient.png" alt="">
-			</div>
-		</div>
+
+
 		<!--navbar-->
 		<header class="cabecalho">
 			<div class="container-fluid" id="nav-container">
-				<nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar fixed-top">
+				<nav class="container ps-0 pe-0 pt-1 pb-0 navbar navbar-expand-lg navbar-light flex-md-row bd-navbar fixed-top">
 
 					<!--logo-->
-					<a href="index.php" class="navbar-brand ms-5">
+					<a href="index.php" class="navbar-brand">
 						<img class="logo" src="assets/img/logo-liame-branca.png" alt="Liame">
 					</a>
 					<!--botão para menu hamburguer mobile-->
@@ -67,7 +63,7 @@ session_start();
 							<a class="nav-item nav-link" id="planos-menu" href="php/planos.php">Planos para Especialistas</a>
 						</div>
 						<!--entrar/cadastro-->
-						<div id="login" class="nav navbar-nav me-5">
+						<div id="login" class="nav navbar-nav">
 							<div class="nav-item">
 								<a href="php/login.php">
 								<button type="button" class="btn btn-transparent nav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -82,6 +78,21 @@ session_start();
 				</nav>
 			</div>
 		</header>
+
+		<script>
+				window.addEventListener('scroll', function () {
+						let header = document.querySelector('header');
+						let windowPosition = window.scrollY > 0;
+						header.classList.toggle('scrolling-active', windowPosition);
+				})
+		</script>
+		<!--//navbar-->
+
+		<!--banner-->
+		<div class="hero container-fluid text-center">
+			<div class="">
+			</div>
+		</div>
 
 		<!--serviços-->
 		<div id="servicos" class="mb-5 servicos container shadow-lg">
@@ -207,7 +218,7 @@ session_start();
 		</div>
 	</main>
 	<!-- rodape -->
-	<footer class="footer">
+	<footer class="footer-home">
 		<div class="container">
 			<div class="row">
 				<div class="col">

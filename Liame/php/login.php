@@ -69,7 +69,7 @@
       </div>
       <div class="estrutura">
       <form class="" action="conexao.php" method="POST">
-        <div class="page slidepage col-12">
+        <div class="page col-12">
           <div class="pb-3">
             <h4>Informações básicas</h4>
           </div>
@@ -90,9 +90,11 @@
                 Não tem uma conta?
               </div>
               <div class="row">
-              <button type="button" class="btn btn-1" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <div class="col">
+              <button type="button" class="btn-small btn-1" data-bs-toggle="modal" data-bs-target="#loginModal">
                 Criar
               </button>
+              </div>
               </div>
 						</small>
 
@@ -108,16 +110,24 @@
           <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-        <div class="modal-body">
-          <div class="profissional-content">
-            <a href="cadastro_profissional.php">
-              <i class="uil uil-medkit"></i>
-            </a>
+        <div class="row modal-body justify-content-center align-">
+
+          <div class="col-12 d-flex profissional-content justify-content-center">
+            <div class="botao">
+              <a href="cadastro_profissional1.php">
+                <i class="uil uil-medkit"></i>
+                <h4>Profissional</h4>
+              </a>
+            </div>
           </div>
-          <div class="mae-content">
-            <a href="cadastro_mae.php">
-              <i class="uil uil-user"></i>
-            </a>
+
+          <div class="col-12 d-flex mae-content justify-content-center">
+            <div class="botao">
+              <a href="cadastro_mae1.php">
+                <i class="uil uil-user"></i>
+                <h4>Mãe</h4>
+              </a>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -145,7 +155,6 @@
    include("conexao.php");
 
     if(!isset($_SESSION))
-        session_start();
 
     $_SESSION['email'] = $mysqli->escape_string($_POST['email']);
     $_SESSION['senha'] =md5(md5($_POST['senha_func']));

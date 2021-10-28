@@ -48,7 +48,7 @@
             <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
           </div>
           <!--entrar/cadastro-->
-          <div id="login" class="nav navbar-nav mr-5">
+          <div id="login" class="nav navbar-nav me-5">
             <div class="nav-item">
               <a class="nav-item nav-link" href="login.php">
                 <i class="uil uil-user"></i>

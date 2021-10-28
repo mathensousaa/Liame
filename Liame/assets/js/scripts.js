@@ -9,3 +9,9 @@ firtNextBtn.addEventListener("click", function(){
 prevBtnSec.addEventListener("click", function(){
   slidePage.style.marginLeft = "0%";
 });
+
+window.addEventListener('scroll', function (){
+  Let cabecalho - document.querySelector('header');
+
+  cabecalho.classList.toggle('scrolling-active');
+})

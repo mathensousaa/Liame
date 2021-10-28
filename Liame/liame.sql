@@ -2,9 +2,9 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Tempo de geração: 22-Set-2021 às 13:53
--- Versão do servidor: 10.4.13-MariaDB
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 24-Out-2021 às 23:42
+-- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -31,11 +31,27 @@ USE `liame`;
 
 DROP TABLE IF EXISTS `adm`;
 CREATE TABLE IF NOT EXISTS `adm` (
-  `id_adm` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_adm` varchar(40) NOT NULL,
-  `email_adm` varchar(100) NOT NULL,
-  `senha_adm` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_adm`)
+  `id_adm` int(6) NOT NULL,
+  `nome_adm` varchar(50) DEFAULT NULL,
+  `email_adm` varchar(150) DEFAULT NULL,
+  `senha_adm` varchar(40) DEFAULT NULL,
+  `fk_avaliacao_id_avaliacao` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_adm`),
+  KEY `FK_adm_2` (`fk_avaliacao_id_avaliacao`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ativacao`
+--
+
+DROP TABLE IF EXISTS `ativacao`;
+CREATE TABLE IF NOT EXISTS `ativacao` (
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  `fk_adm_id_adm` int(6) DEFAULT NULL,
+  KEY `FK_ativacao_1` (`fk_profissional_id_profissional`),
+  KEY `FK_ativacao_2` (`fk_adm_id_adm`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -46,13 +62,17 @@ CREATE TABLE IF NOT EXISTS `adm` (
 
 DROP TABLE IF EXISTS `avaliacao`;
 CREATE TABLE IF NOT EXISTS `avaliacao` (
-  `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT,
-  `valor_avaliacao` int(1) NOT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  `id_mae` int(11) DEFAULT NULL,
+  `id_avaliacao` int(6) NOT NULL,
+  `valor_avaliacao` char(1) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  `id_mae` int(6) DEFAULT NULL,
+  `comentario_avaliacao` text,
+  `data_comentario` datetime DEFAULT NULL,
+  `fk_mae_id_mae` int(6) DEFAULT NULL,
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_avaliacao`),
-  KEY `fk_AvaliacaoMae` (`id_mae`),
-  KEY `fk_AvaliacaoProfissional` (`id_profissional`)
+  KEY `FK_avaliacao_2` (`fk_mae_id_mae`),
+  KEY `FK_avaliacao_3` (`fk_profissional_id_profissional`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,53 +83,45 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
 
 DROP TABLE IF EXISTS `bebe`;
 CREATE TABLE IF NOT EXISTS `bebe` (
-  `id_bebe` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_bebe` varchar(30) NOT NULL,
-  `sexo_bebe` varchar(12) NOT NULL,
-  `idade_bebe` int(11) NOT NULL,
-  `id_mae` int(11) DEFAULT NULL,
-  `id_diario` int(11) DEFAULT NULL,
+  `id_bebe` int(6) NOT NULL,
+  `nome_bebe` varchar(50) DEFAULT NULL,
+  `sexo_bebe` varchar(20) DEFAULT NULL,
+  `idade_bebe` varchar(20) DEFAULT NULL,
+  `id_mae` int(6) DEFAULT NULL,
+  `id_diario` int(6) DEFAULT NULL,
+  `fk_mae_id_mae` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_bebe`),
-  KEY `fk_BebeMae` (`id_mae`),
-  KEY `fk_BebeDiario` (`id_diario`)
+  KEY `FK_bebe_2` (`fk_mae_id_mae`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comentario`
+-- Estrutura da tabela `contem`
 --
 
-DROP TABLE IF EXISTS `comentario`;
-CREATE TABLE IF NOT EXISTS `comentario` (
-  `id_comentario` int(11) NOT NULL AUTO_INCREMENT,
-  `id_profissional` int(11) NOT NULL,
-  `id_mae` int(11) NOT NULL,
-  `data_comentario` date NOT NULL,
-  `comentario` varchar(500) NOT NULL,
-  PRIMARY KEY (`id_comentario`),
-  KEY `fk_MaeComentario` (`id_mae`),
-  KEY `fk_ProfissionalComentario` (`id_profissional`)
+DROP TABLE IF EXISTS `contem`;
+CREATE TABLE IF NOT EXISTS `contem` (
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  `fk_experiencia_profissional_id_experiencia` int(6) DEFAULT NULL,
+  KEY `FK_contem_1` (`fk_profissional_id_profissional`),
+  KEY `FK_contem_2` (`fk_experiencia_profissional_id_experiencia`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `diario_bordo`
+-- Estrutura da tabela `diario_brodo`
 --
 
-DROP TABLE IF EXISTS `diario_bordo`;
-CREATE TABLE IF NOT EXISTS `diario_bordo` (
-  `id_diario` int(11) NOT NULL,
-  `id_mae` int(11) NOT NULL,
-  `texto_diario` varchar(500) NOT NULL,
-  `video_diario` varchar(200) NOT NULL,
-  `imagem_diario` varchar(200) NOT NULL,
-  `data_diario` date NOT NULL,
-  `id_bebe` int(11) DEFAULT NULL,
+DROP TABLE IF EXISTS `diario_brodo`;
+CREATE TABLE IF NOT EXISTS `diario_brodo` (
+  `id_diario` int(6) NOT NULL,
+  `id_mae` int(6) DEFAULT NULL,
+  `id_bebe` int(6) DEFAULT NULL,
+  `fk_mae_id_mae` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_diario`),
-  KEY `fk_MaeDiario` (`id_mae`),
-  KEY `fk_DiarioBebe` (`id_bebe`)
+  KEY `FK_diario_brodo_2` (`fk_mae_id_mae`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -120,13 +132,26 @@ CREATE TABLE IF NOT EXISTS `diario_bordo` (
 
 DROP TABLE IF EXISTS `doencas_profissional`;
 CREATE TABLE IF NOT EXISTS `doencas_profissional` (
-  `id_doencas` int(11) NOT NULL AUTO_INCREMENT,
-  `doencas_tratadas` varchar(30) NOT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  `id_formacao` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_doencas`),
-  KEY `fk_DoencasProfissional` (`id_profissional`),
-  KEY `fk_DoencasFormacao` (`id_formacao`)
+  `id_doencas` int(6) NOT NULL,
+  `doencas_profissional` varchar(255) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_doencas`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `endereco_profissional`
+--
+
+DROP TABLE IF EXISTS `endereco_profissional`;
+CREATE TABLE IF NOT EXISTS `endereco_profissional` (
+  `cep` char(8) NOT NULL,
+  `tipo_logradouro` varchar(15) DEFAULT NULL,
+  `logradouro` varchar(50) DEFAULT NULL,
+  `cidade` varchar(50) DEFAULT NULL,
+  `estado` char(2) DEFAULT NULL,
+  PRIMARY KEY (`cep`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -137,13 +162,24 @@ CREATE TABLE IF NOT EXISTS `doencas_profissional` (
 
 DROP TABLE IF EXISTS `especialidade_profissional`;
 CREATE TABLE IF NOT EXISTS `especialidade_profissional` (
-  `id_especialidade` int(11) NOT NULL AUTO_INCREMENT,
-  `especialidade_profissional` varchar(30) NOT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  `id_formacao` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_especialidade`),
-  KEY `fk_EspecialidadeFormacao` (`id_formacao`),
-  KEY `fk_EspecialidadeProfissional` (`id_profissional`)
+  `id_especialidade` int(6) NOT NULL,
+  `especialidade_profissional` varchar(255) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_especialidade`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `especializa_`
+--
+
+DROP TABLE IF EXISTS `especializa_`;
+CREATE TABLE IF NOT EXISTS `especializa_` (
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  `fk_especialidade_profissional_id_especialidade` int(6) DEFAULT NULL,
+  KEY `FK_especializa__1` (`fk_profissional_id_profissional`),
+  KEY `FK_especializa__2` (`fk_especialidade_profissional_id_especialidade`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -154,11 +190,10 @@ CREATE TABLE IF NOT EXISTS `especialidade_profissional` (
 
 DROP TABLE IF EXISTS `experiencia_profissional`;
 CREATE TABLE IF NOT EXISTS `experiencia_profissional` (
-  `id_experiencia` int(11) NOT NULL AUTO_INCREMENT,
-  `experiencia` varchar(30) NOT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_experiencia`),
-  KEY `fk_ExperienciaProfissional` (`id_profissional`)
+  `id_experiencia` int(6) NOT NULL,
+  `experiencia_profissional` varchar(255) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_experiencia`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -169,15 +204,26 @@ CREATE TABLE IF NOT EXISTS `experiencia_profissional` (
 
 DROP TABLE IF EXISTS `formacao_profissional`;
 CREATE TABLE IF NOT EXISTS `formacao_profissional` (
-  `id_formacao` int(11) NOT NULL AUTO_INCREMENT,
-  `formacao` varchar(40) NOT NULL,
-  `id_especialidade` int(11) DEFAULT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  `id_doencas` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_formacao`),
-  KEY `fk_FormacaoProfissional` (`id_profissional`),
-  KEY `fk_FormacaoEspecialidade` (`id_especialidade`),
-  KEY `fk_FormacaoDoencas` (`id_doencas`)
+  `id_formacao` int(6) NOT NULL,
+  `formacao_profissional` varchar(255) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_formacao`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `galeria_imagem_profissional`
+--
+
+DROP TABLE IF EXISTS `galeria_imagem_profissional`;
+CREATE TABLE IF NOT EXISTS `galeria_imagem_profissional` (
+  `id_imagem_galeria` int(6) NOT NULL,
+  `imagem_galeria_profissional` varchar(40) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_imagem_galeria`),
+  KEY `FK_galeria_imagem_profissional_2` (`fk_profissional_id_profissional`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -188,50 +234,29 @@ CREATE TABLE IF NOT EXISTS `formacao_profissional` (
 
 DROP TABLE IF EXISTS `mae`;
 CREATE TABLE IF NOT EXISTS `mae` (
-  `id_mae` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_mae` varchar(40) NOT NULL,
-  `apelido_mae` varchar(40) DEFAULT NULL,
-  `email_mae` varchar(100) NOT NULL,
-  `senha_mae` varchar(32) NOT NULL,
-  `foto_perfil_mae` varchar(32) DEFAULT NULL,
-  `id_bebe` int(11) DEFAULT NULL,
-  `id_diario` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_mae`),
-  KEY `fk_MaeBebe` (`id_bebe`),
-  KEY `fk_MaeDiario` (`id_diario`)
+  `id_mae` int(6) NOT NULL,
+  `nome_mae` varchar(50) DEFAULT NULL,
+  `apelido_mae` varchar(20) DEFAULT NULL,
+  `email_mae` varchar(150) DEFAULT NULL,
+  `senha_mae` varchar(40) DEFAULT NULL,
+  `foto_perfil_mae` varchar(40) DEFAULT NULL,
+  `id_bebe` int(6) DEFAULT NULL,
+  `id_diario` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_mae`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `plano`
+-- Estrutura da tabela `possui`
 --
 
-DROP TABLE IF EXISTS `plano`;
-CREATE TABLE IF NOT EXISTS `plano` (
-  `id_plano` int(11) NOT NULL AUTO_INCREMENT,
-  `valor_plano` decimal(6,2) NOT NULL,
-  `descricao_plano` varchar(30) DEFAULT NULL,
-  `tempo_duracao_plano` int(2) NOT NULL,
-  `nome_plano` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_plano`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `plano_profissional`
---
-
-DROP TABLE IF EXISTS `plano_profissional`;
-CREATE TABLE IF NOT EXISTS `plano_profissional` (
-  `data_pagamento` date NOT NULL,
-  `forma_pagamento` varchar(10) NOT NULL,
-  `data_contratacao` datetime NOT NULL,
-  `id_profissional` int(11) DEFAULT NULL,
-  `id_plano` int(11) DEFAULT NULL,
-  KEY `fk_PlanoProfissional` (`id_profissional`),
-  KEY `fk_PlanoprofPlano` (`id_plano`)
+DROP TABLE IF EXISTS `possui`;
+CREATE TABLE IF NOT EXISTS `possui` (
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  `fk_formacao_profissional_id_formacao` int(6) DEFAULT NULL,
+  KEY `FK_possui_1` (`fk_profissional_id_profissional`),
+  KEY `FK_possui_2` (`fk_formacao_profissional_id_formacao`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -242,39 +267,98 @@ CREATE TABLE IF NOT EXISTS `plano_profissional` (
 
 DROP TABLE IF EXISTS `profissional`;
 CREATE TABLE IF NOT EXISTS `profissional` (
-  `id_profissional` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_profissional` varchar(40) NOT NULL,
-  `email_profissional` varchar(100) NOT NULL,
-  `senha_profissional` varchar(32) NOT NULL,
-  `foto_perfil_profissional` varchar(32) DEFAULT NULL,
-  `numero_registro_profissional` varchar(20) NOT NULL,
-  `logradouro_profissional` varchar(100) NOT NULL,
-  `numero_endereco_profissional` int(10) NOT NULL,
-  `bairro_profissional` varchar(50) NOT NULL,
-  `cidade_profissional` varchar(50) NOT NULL,
-  `estado_profissional` varchar(50) NOT NULL,
-  `cep_profissional` int(8) NOT NULL,
-  `imagens_profissional` varchar(32) DEFAULT NULL,
-  `telefone_profissional` int(20) DEFAULT NULL,
-  `instagram_profissional` varchar(2083) DEFAULT NULL,
-  `whatsapp_profissional` varchar(2083) DEFAULT NULL,
-  `telegram_profissional` varchar(2083) DEFAULT NULL,
-  `facebook_profissional` varchar(200) DEFAULT NULL,
-  `youtube_profissional` varchar(11) DEFAULT NULL,
-  `linkdin_profissional` varchar(2083) DEFAULT NULL,
-  `sobre_mim_profissional` varchar(250) DEFAULT NULL,
-  `status_profissional` int(1) NOT NULL,
-  `id_experiencia` int(11) DEFAULT NULL,
-  `id_formacao` int(11) DEFAULT NULL,
-  `id_doencas` int(11) DEFAULT NULL,
-  `id_especialidade` int(11) DEFAULT NULL,
-  `id_plano_profissional` int(11) DEFAULT NULL,
+  `nome_profissional` varchar(50) DEFAULT NULL,
+  `email_profissional` varchar(150) DEFAULT NULL,
+  `senha_profissional` varchar(40) DEFAULT NULL,
+  `foto_perfil_profissional` varchar(40) DEFAULT NULL,
+  `numero_endereco_profissional` varchar(5) DEFAULT NULL,
+  `descricao_endereco_profissional` varchar(100) DEFAULT NULL,
+  `cep_profissional` char(8) DEFAULT NULL,
+  `sobre_mim_profissional` varchar(255) DEFAULT NULL,
+  `status_profissional` char(1) DEFAULT NULL,
+  `id_experiencia` int(6) DEFAULT NULL,
+  `id_formacao` int(6) DEFAULT NULL,
+  `id_doencas` int(6) DEFAULT NULL,
+  `id_especialidade` int(6) DEFAULT NULL,
+  `id_profissional` int(6) NOT NULL,
+  `numero_registro_profissional` varchar(10) DEFAULT NULL,
+  `id_rede_social` int(6) DEFAULT NULL,
+  `id_telefone` int(6) DEFAULT NULL,
+  `id_imagem_galeria` int(6) DEFAULT NULL,
+  `fk_endereco_profissional_cep` char(8) DEFAULT NULL,
   PRIMARY KEY (`id_profissional`),
-  KEY `fk_ProfissionalExperiencia` (`id_experiencia`),
-  KEY `fk_ProfissionalFormacao` (`id_formacao`),
-  KEY `fk_ProfissionalDoencas` (`id_doencas`),
-  KEY `fk_ProfissionalEspecialidade` (`id_especialidade`),
-  KEY `fk_ProfissionalPlano` (`id_plano_profissional`)
+  KEY `FK_profissional_2` (`fk_endereco_profissional_cep`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rede_social_profissional`
+--
+
+DROP TABLE IF EXISTS `rede_social_profissional`;
+CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
+  `id_rede_social` int(6) NOT NULL,
+  `youtube_profissional` varchar(11) DEFAULT NULL,
+  `whatsapp_profissional` varchar(255) DEFAULT NULL,
+  `instagram_profissional` varchar(20) DEFAULT NULL,
+  `linkedin_profissional` varchar(100) DEFAULT NULL,
+  `facebook_profissional` varchar(255) DEFAULT NULL,
+  `telegram_profissional` varchar(16) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_rede_social`),
+  KEY `FK_rede_social_profissional_2` (`fk_profissional_id_profissional`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `registro_diario`
+--
+
+DROP TABLE IF EXISTS `registro_diario`;
+CREATE TABLE IF NOT EXISTS `registro_diario` (
+  `id_registro_diario` int(6) NOT NULL,
+  `texto_diario` text,
+  `imagem_diario` varchar(40) DEFAULT NULL,
+  `video_diario` varchar(40) DEFAULT NULL,
+  `data_hora_registro_diario` datetime DEFAULT NULL,
+  `id_diario` int(6) DEFAULT NULL,
+  `fk_diario_brodo_id_diario` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_registro_diario`),
+  KEY `FK_registro_diario_2` (`fk_diario_brodo_id_diario`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `telefone_profissional`
+--
+
+DROP TABLE IF EXISTS `telefone_profissional`;
+CREATE TABLE IF NOT EXISTS `telefone_profissional` (
+  `id_telefone` int(6) NOT NULL,
+  `ddd_telefone_profissional` char(2) DEFAULT NULL,
+  `numero_telefone_profissional` char(9) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_telefone`),
+  KEY `FK_telefone_profissional_2` (`fk_profissional_id_profissional`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `trata`
+--
+
+DROP TABLE IF EXISTS `trata`;
+CREATE TABLE IF NOT EXISTS `trata` (
+  `fk_profissional_id_profissional` int(6) DEFAULT NULL,
+  `fk_doencas_profissional_id_doencas` int(6) DEFAULT NULL,
+  KEY `FK_trata_1` (`fk_profissional_id_profissional`),
+  KEY `FK_trata_2` (`fk_doencas_profissional_id_doencas`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
