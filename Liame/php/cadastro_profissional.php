@@ -127,18 +127,23 @@
           <div class="pb-3">
             <h4>Informações de contato</h4>
           </div>
-          <div class="form-group pb-2">
+          <!--<div class="form-group pb-2">
             <label for="telefone_profissional">Telefone</label>
             <input type="text" name="telefone_profissional" id="telefone_profissional" class="form-control form-control-lg">
-          </div>
+          </div>-->
           <div class="row pb-2">
             <div class="form-group ps-0 col-4">
               <label for="cep_profissional">CEP</label>
               <input type="text" name="cep_profissional" id="cep_profissional" class="form-control form-control-lg">
             </div>
             <div class="form-group pe-0 col-8">
-              <label for="logradouro_profissional">Endereço</label>
+              <label for="endereco_profissional">Endereço</label>
               <input type="text" name="endereco_profissional" id="logradouro_profissional" class="form-control form-control-lg">
+            </div>
+
+            <div class="form-group pe-0 col-12>
+              <label for="logradouro_profissional">Logradouro</label>
+              <input type="text" name="logradouro_profissional" id="logradouro_profissional" class="form-control form-control-lg">
             </div>
           </div>
           <div class="d-flex">
@@ -153,10 +158,10 @@
             <h4>Informações de contato</h4>
           </div>
         <div class="row pb-2">
-          <!--<div class="form-group ps-0 col-3">
+          <div class="form-group ps-0 col-3">
             <label for="numero_profissional">Número</label>
             <input type="text" name="numero_endereco_profissional" id="numero_endereco_profissional" class="form-control form-control-lg">
-          </div>-->
+          </div>
           <div class="form-group pe-0 col-9">
             <label for="bairro_profissional">Bairro</label>
             <input type="text" name="bairro_profissional" id="bairro_profissional" class="form-control form-control-lg">
@@ -183,10 +188,10 @@
           <div class="pb-3">
             <h4>Informações profissionais</h4>
           </div>
-          <div class="form-group pb-2">
+          <!--<div class="form-group pb-2">
             <label for="servico">Serviço</label>
             <input type="text" name="servico_profissional" id="servico" class="form-control form-control-lg">
-          </div>
+          </div>-->
           <div class="form-group pb-2">
             <label for="numero_registro_profissional">Número de registro</label>
             <input type="text" name="numero_registro_profissional" id="numero_registro_profissional" class="form-control form-control-lg">
@@ -256,7 +261,7 @@
         $telefone_profissional = $_POST['telefone_profissional'];
         $cep_profissional = $_POST['cep_profissional'];
         $endereco_profissional = $_POST['endereco_profissional'];
-        /*$numero_endereco_profissional = $_POST['numero_endereco_profissional'];*/
+        $numero_endereco_profissional = $_POST['numero_endereco_profissional'];
         $bairro_profissional = $_POST['bairro_profissional'];
         $cidade_profissional = $_POST['cidade_profissional'];
         $estado_profissional = $_POST['estado_profissional'];
@@ -266,9 +271,14 @@
         $foto_perfil_profissional = $_POST['foto_perfil_profissional'];
         $senha_profissional = $_POST['senha_profissional'];
         $confirmarsenha_profissional = $_POST['confirmarsenha_profissional'];
+        $status_profissional = $_POST['status_profissional'];
+        
+      
 
-        print_r($nome_profissional);
-        print_r($telefone_profissional);
+
+
+
+
 
 
 
@@ -293,12 +303,12 @@
           echo "Esse email já está em uso";
         }else{
           $senha = md5($senha_profissional);
-          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, /*numero_endereco_profissional,*/ bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$foto_perfil_profissional.'", "'.$numero_registro_profissional.'", "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'")';
-                                             
+          $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, foto_perfil_profissional, numero_registro_profissional, logradouro_profissional , numero_endereco_profissional, bairro_profissional, cidade_profissional, estado_profissional, cep_profissional, telefone_profissional, sobre_mim_profissional, status_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_profissional.'", "'.$foto_perfil_profissional.'", "'.$numero_registro_profissional.'", "'.$endereco_profissional.'", $numero_endereco_profissional, "'.$bairro_profissional.'", "'.$cidade_profissional.'", "'.$estado_profissional.'", "'.$cep_profissional.'", "'.$telefone_profissional.'", "'.$servico_profissional.'","'.$status_profissional.'")';
+  
           $inserir = mysqli_query($link, $query);
           if($inserir==0){
               echo "ERRO ao cadastrar";
-          
+
           }else{
            $_SESSION['email_profissional'] = $email_profissional;
            $_SESSION['nome_profissional'] = $nome_profissional;
@@ -307,6 +317,7 @@
           }
 
     ?>
+
 
 </body>
 
