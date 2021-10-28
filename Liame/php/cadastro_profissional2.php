@@ -7,10 +7,10 @@
 
 <form action="cadastro_profissional3.php" method="post"/>
 
-    CEP:<input name="cep_profissional" type="text"/></br>
+    CEP:<input name="cep_profissional" type="text"/></br></br>
 
     <label>Tipo de logradouro:</label>
-    <select>
+    <select name="tipo_logradouro_profissional">
         <option selected disabled value="">Selecione</option>
         <option>Aeroporto</option>
         <option>Alameda</option>
@@ -55,19 +55,24 @@
         <option>Via</option>
         <option>Viaduto</option>
         <option>Viela</option>
+<<<<<<< HEAD
         <option>Vila</option>
     </select></br>
+=======
+        <option>Vila</option> 
+    </select></br></br>
+>>>>>>> 8362906ccfcef54f0db2d62403e20d06d553db19
 
-    Nome do logradouro:<input name="nome_logradouro_profissional" type="text"/></br>
+    Nome do logradouro:<input name="nome_logradouro_profissional" type="text"/></br></br>
 
-    Número:<input name="numero_endereco_profissional" type="text"/></br>
+    Número:<input name="numero_endereco_profissional" type="text"/></br></br>
 
-    Bairro:<input name="bairro_profissional" type="text"/></br>
+    Bairro:<input name="bairro_profissional" type="text"/></br></br>
 
-    Cidade:<input name="cidade_profissional" type="text"/></br>
+    Cidade:<input name="cidade_profissional" type="text"/></br></br>
 
     <label>UF:</label>
-    <select>
+    <select name="uf_profissional">
         <option selected disabled value="">Selecione</option>
         <option>AC</option>
         <option> AL</option>
@@ -96,9 +101,9 @@
         <option>SP</option>
         <option>SE</option>
         <option>TO</option>
-    </select></br>
+    </select></br></br>
 
-    Complemento: <input name="complemento_endereco_profissional" type="text"/></br>
+    Complemento: <input name="complemento_endereco_profissional" type="text"/></br></br></br>
 
     <input type="submit" value="Avançar"/>
 </form>
