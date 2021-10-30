@@ -127,18 +127,23 @@
           <div class="pb-3">
             <h4>Informações de contato</h4>
           </div>
-          <div class="form-group pb-2">
+          <!--<div class="form-group pb-2">
             <label for="telefone_profissional">Telefone</label>
             <input type="text" name="telefone_profissional" id="telefone_profissional" class="form-control form-control-lg">
-          </div>
+          </div>-->
           <div class="row pb-2">
             <div class="form-group ps-0 col-4">
               <label for="cep_profissional">CEP</label>
               <input type="text" name="cep_profissional" id="cep_profissional" class="form-control form-control-lg">
             </div>
             <div class="form-group pe-0 col-8">
-              <label for="logradouro_profissional">Endereço</label>
+              <label for="endereco_profissional">Endereço</label>
               <input type="text" name="endereco_profissional" id="logradouro_profissional" class="form-control form-control-lg">
+            </div>
+
+            <div class="form-group pe-0 col-12>
+              <label for="logradouro_profissional">Logradouro</label>
+              <input type="text" name="logradouro_profissional" id="logradouro_profissional" class="form-control form-control-lg">
             </div>
           </div>
           <div class="d-flex">
@@ -183,10 +188,10 @@
           <div class="pb-3">
             <h4>Informações profissionais</h4>
           </div>
-          <div class="form-group pb-2">
+          <!--<div class="form-group pb-2">
             <label for="servico">Serviço</label>
             <input type="text" name="servico_profissional" id="servico" class="form-control form-control-lg">
-          </div>
+          </div>-->
           <div class="form-group pb-2">
             <label for="numero_registro_profissional">Número de registro</label>
             <input type="text" name="numero_registro_profissional" id="numero_registro_profissional" class="form-control form-control-lg">
@@ -311,6 +316,7 @@
           }
 
     ?>
+
 
 </body>
 
