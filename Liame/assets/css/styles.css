@@ -1,15 +1,4 @@
-/*fonte poppins regular, medium, semi-bold, bold*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/*GERAIS*/
-html, body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #FAF9F8;
-}
-
-main {
-  color: #49626F;
-}
+@import url(bootstrap.min.css);
 
 .row {
   margin: 0;
@@ -23,31 +12,12 @@ p {
   font-size: 16px;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
 a {
   text-decoration: none;
 }
 
 /*cabeçalho*/
 
-.scrolling-active {
-  background-color: #FFF;
-  box-shadow: 0 3px 1rem rgba(0,0,0,.1);
-}
-#linksnavbar a {
-  color: #ffffff;
-}
-
-#linksnavbar a:hover {
-  color: #ffffff;
-}
-
-.logo {
-  width: 50px;
-}
 
 /*rodapé*/
 
@@ -109,28 +79,15 @@ footer i {
   padding: 30px;
 }
 
-#servicos a {
-  color: #49626F;
-  font-weight: 700;
-}
 
 #servicos i {
   font-size: 50px;
 }
 
-.descricao {
-  padding: 25px;
-  background-color: #ffffff;
-  color: #49626F;
-}
-
-h3 {
-  font-weight: 600;
-}
 
 
 
-.btn {
+/*.btn {
   flex: 1 1 auto;
   margin: 10 0 0 10px;
   padding: 15px 30px;
@@ -184,7 +141,7 @@ h3 {
 
 .btn-transparent:hover{
   background-image: linear-gradient(to right, #F7E0DE 0%, #A3A3B4 51%, #F7E0DE 100%);
-}
+} */
 
 #planos i {
   font-size: 35px;

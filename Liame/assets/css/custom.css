@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFF;
+}
+
+#header {
+  width: 100%;
+  background-color: transparent;
+  transition: background ease-out 0.2s;
+  z-index: 9999;
+}
+
+#header.active {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+#header .navbar-collapse {
+  width: auto;
+}
+
+#header .nav-link {
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: var(--primary);
+  border-bottom: solid 4px transparent;
+}
+
+#header .nav-link:hover {
+  border-bottom: solid 4px var(--secondary);
+  color: var(--secondary);
+}
+
+#header .navbar-brand:hover {
+  filter: opacity(70%);
+  transition: 0.2s;
+}
+#header #logo {
+  width: 55px;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-1.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#hero h1 {
+  font-weight: 700;
+}
+
+#servicos {
+  background: var(--primary-light-rgba);
+  padding-top: 250px;
+  padding-bottom: 250px;
+  overflow: hidden;
+}
+
+#servicos a.destaque {
+  display: block;
+  background: var(--light);
+  border-radius: 10px;
+  text-align: center;
+  padding: 50px;
+  color: #000;
+  text-decoration: none;
+  transition: all ease-out 0.2s;
+}
+
+#servicos a.destaque:hover {
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
+  transform: scale(1.05);
+}
+
+#servicos a.destaque .img-container img {
+  max-height: 160px;
+}
+
+#servicos a.destaque .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+#servicos #dots-vector {
+  width: 200px;
+}
+
+#servicos #dots-container {
+  bottom: 50px;
+  right: -100px;
+}

@@ -1,4 +1,4 @@
-const slidePage = document.querySelector(".slidepage");
+/*const slidePage = document.querySelector(".slidepage");
 const firtNextBtn = document.querySelector(".nextBtn");
 const prevBtnSec = document.querySelector(".prev-1");
 
@@ -14,4 +14,4 @@ window.addEventListener('scroll', function (){
   Let cabecalho - document.querySelector('header');
 
   cabecalho.classList.toggle('scrolling-active');
-})
+})*/

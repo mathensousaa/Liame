@@ -1,0 +1,57 @@
+.hero-button {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1rem 6rem 1rem 6rem;
+  border-radius: 30px;
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 30px;
+  color: #FFF;
+}
+
+.button-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.button-primary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+  color: #FFF;
+}
+
+.button-primary-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.button-primary-outline:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+  color: #FFF;
+}
+a {
+  color: var(--tertiary);
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+.subtitle {
+  color: var(--subtitle);
+}
+
+.highlight {
+  color: var(--primary)
+}
+
+
+.vector-container {
+  position: absolute;
+}

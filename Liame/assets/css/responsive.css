@@ -1,0 +1,46 @@
+/* max width */
+@media (max-width: 991.98px) {
+  #header .navbar-collapse {
+    width: 100%;
+  }
+  #header .nav-link {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  #servicos {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #header #logo {
+    width: 40px;
+  }
+
+  #hero {
+    display: flex;
+    justify-content: center;
+  }
+  #hero .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  #hero h5 {
+    font-size: 14px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  #servicos a.destaque .img-container {
+    height: 120px;
+  }
+  #servicos a.destaque .img-container img {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 575.98) {
+
+}
