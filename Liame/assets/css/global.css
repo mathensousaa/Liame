@@ -24,6 +24,17 @@
   color: #FFF;
 }
 
+.button-tertiary {
+  background-color: var(--tertiary);
+  border-color: var(--tertiary);
+}
+
+.button-tertiary:hover {
+  background-color: var(--tertiary-medium);
+  border-color: var(--tertiary-medium);
+  color: #fff;
+}
+
 .button-primary-outline {
   border-color: var(--primary);
   color: var(--primary);
@@ -47,10 +58,17 @@ a {
   color: var(--subtitle);
 }
 
-.highlight {
-  color: var(--primary)
+.subtitle-2 {
+  color: var(--medium);
 }
 
+.highlight {
+  color: var(--primary);
+}
+
+.highlight-2 {
+  color: var(--tertiary);
+}
 
 .vector-container {
   position: absolute;

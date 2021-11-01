@@ -8,4 +8,26 @@ jQuery(document).ready(function($){
       $("#header").removeClass("active");
     }
   }
+
+  //OWL
+  $(".owl-carousel").owlCarousel({
+    loop: false,
+    margin: 30,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    dots: true,
+    lazyLoad: true,
+    nav: false,
+    responsive: {
+      500: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items:4,
+      },
+    },
+  });
 });

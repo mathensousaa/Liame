@@ -9,6 +9,8 @@
   <title>Liame - unindo do início ao fim.</title>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!--favicon-->
@@ -30,7 +32,7 @@
               <img class="img-fluid" id="logo" src="assets/img/logo_liame.png" alt="Liame">
             </a>
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigati">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -89,7 +91,6 @@
     <!-- //Hero -->
 
     <!-- Serviços -->
-
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
         <div class="row text-center mb-5">
@@ -132,14 +133,92 @@
           </div>
         </div>
       </div>
-      <div id="dots-container" class="vector-container">
-        <img id="dots-vector" src="assets/img/dots.svg" class="vector">
+      <div id="nuvem-container" class="vector-container">
+        <img id="nuvem-vector" src="assets/img/nuvem2.svg" class="vector">
+      </div>
+      <div id="nuvem2-container" class="vector-container">
+        <img id="nuvem2-vector" src="assets/img/nuvem1.svg" class="vector">
       </div>
     </div>
+    <!-- //Serviços -->
 
+    <!-- Busca -->
+    <div id="busca" class="container-fluid block position-relative">
+      <div class="container">
+        <div id="linha1-busca" class="row text-center">
+          <h2 class="title">
+            Busque por
+            <span class="highlight-2">
+              especialistas
+            </span>
+          </h2>
+          <h5 class="subtitle-2">
+            Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição.
+          </h5>
+          <form class="mb-5" action="" method="get">
+            <div class="input-group mt-5 mb-5">
+              <input id="input-busca" type="text" class="input-busca form-control" placeholder="Busque especilistas por nome, motivo ou especialidade" aria-label="Busca" aria-describedby="button-addon2">
+              <button class="button-tertiary button btn" type="button" id="button-addon2">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
-    <!-- redes sociais  -->
-    <!--<div class="mt-5 container-fluid degrade-diagonal">
+      <div id="especialidades" class="mt-5 container-fluid block position-relative">
+        <div class="container">
+          <h2 class="title"></h2>
+          <h4 class="subtitle"></h4>
+
+          <div class="owl-carousel owl-theme owl-loaded">
+              <div class="item">
+                <a href="#" class="carrossel">
+                  <div class="card">
+                    <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Pré-natal</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+                <a href="#" class="carrossel">
+                  <div class="card">
+                    <img src="assets/img/doppler.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Ultrassom</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+                <a href="#" class="carrossel">
+                  <div class="card">
+                    <img src="assets/img/ultrassom.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Ultrassom morfológico</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+                <a href="#" class="carrossel">
+                  <div class="card">
+                    <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Pré-natal</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- //Busca -->
+
+      <!-- redes sociais  -->
+      <!--<div class="mt-5 container-fluid degrade-diagonal">
       <div class="d-flex justify-content-center align-items-center text-center row">
         <div class="col ms-5 me-5 redes-sociais">
           <div class="col text-center">
@@ -215,8 +294,8 @@
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 
