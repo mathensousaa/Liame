@@ -5,7 +5,7 @@
 </head>
 <body>
 <form name="confgconta" action=# method="POST">
-		 		<h1>Informações Básicas</h1>
+		 		<h1>Informações da Mãe </h1>
         		Nome:
         		<input type="text" name ="nome_profissional" placeholder="Nome do usuario..."><br>
         				Foto de Perfil:
