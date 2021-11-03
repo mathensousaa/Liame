@@ -19,15 +19,15 @@ jQuery(document).ready(function($){
     lazyLoad: true,
     nav: false,
     responsive: {
-      500: {
+      0: {
         items: 1,
       },
-      600: {
+      500: {
         items: 2,
       },
       1000: {
         items:4,
-      },
+      }, 
     },
   });
 });
