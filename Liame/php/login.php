@@ -155,6 +155,8 @@
    include("conexao.php");
 
    global $mysqli;
+
+   $erro = 0;
    
     if(isset($_POST['submit']/*$_SESSION*/)){
 
@@ -168,19 +170,25 @@
     $total=mysqli_num_rows($dado);/*->num_rows;*/
 
     if($total == 0){
-      $erro[] = "Este email não pertence a nenhum usuário.";
-    }else{
+      $erro= $erro+1;
+      echo "Este email não pertence a nenhum usuário.";
+    /*}else{
       if($dado['senha'] == $_SESSION['senha']){
         $_SESSION['usuário'] = $dado['codigo'];
       }else{
         $erro[] ="senha incorreta.";
-    }
+    }*/
   }
-}
+
   if($erro == 0){
     if($dado['senha'] == $_SESSION['senha']){
       $_SESSION['usuário'] = $dado['codigo'];
 
-    }
+      header ("Location: php/index.php"); exit;
+    }else{
+      echo "senha incorreta";
+      
+     
   }
+}}
  ?>
