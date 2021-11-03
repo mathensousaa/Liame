@@ -154,15 +154,18 @@
 <?php
    include("conexao.php");
 
-    if(!isset($_SESSION))
+   global $mysqli;
+   
+    if(isset($_POST['submit']/*$_SESSION*/)){
 
-    $_SESSION['email'] = $mysqli->escape_string($_POST['email']);
-    $_SESSION['senha'] =md5(md5($_POST['senha_func']));
+    $_SESSION['email'] = /*$mysqli->escape_string*/($_POST['email']);
+    $_SESSION['senha'] =(md5($_POST['senha_func']));
 
     $sql_code ="SELECT senha, codigo FROM usuário WHERE email ='$_SESSION[email]'";
-    $sql_query =$mysqli->query($sql_code) or die ($mysqli->error);
-    $dado =$sql_query->fetch_assoc();
-    $total=$sql_query->num_rows;
+    $sql_query =  mysqli_query( $link, $sql_code );/*$link->query($sql_code) or die ($mysqli->error);*/
+    $dado = mysqli_fetch_assoc($sql_query);/*->fetch_assoc();*/
+    
+    $total=mysqli_num_rows($dado);/*->num_rows;*/
 
     if($total == 0){
       $erro[] = "Este email não pertence a nenhum usuário.";
@@ -173,7 +176,11 @@
         $erro[] ="senha incorreta.";
     }
   }
-  if(count($erro) == 0 || !isset($erro)){
+}
+  if($erro == 0){
+    if($dado['senha'] == $_SESSION['senha']){
+      $_SESSION['usuário'] = $dado['codigo'];
 
+    }
   }
  ?>
