@@ -73,3 +73,14 @@ a {
 .vector-container {
   position: absolute;
 }
+
+.input {
+  font-weight: 500;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 30px;
+  color: #FFF;
+}
+
+.logo-footer {
+  height: 100px;
+}

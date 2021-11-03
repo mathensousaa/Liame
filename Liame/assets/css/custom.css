@@ -176,3 +176,21 @@ html, body {
 #busca #especialidades .owl-carousel .item {
   padding: 20px;
 }
+
+.login img{
+    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+}
+#login-container {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-1.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#login-container h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
