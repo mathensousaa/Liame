@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 02-Nov-2021 às 04:04
+-- Tempo de geração: 03-Nov-2021 às 01:20
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -31,7 +31,7 @@ USE `liame`;
 
 DROP TABLE IF EXISTS `adm`;
 CREATE TABLE IF NOT EXISTS `adm` (
-  `id_adm` int(6) NOT NULL,
+  `id_adm` int(6) NOT NULL AUTO_INCREMENT,
   `nome_adm` varchar(100) DEFAULT NULL,
   `email_adm` varchar(100) DEFAULT NULL,
   `senha_adm` varchar(32) DEFAULT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `ativacao` (
 
 DROP TABLE IF EXISTS `avaliacao`;
 CREATE TABLE IF NOT EXISTS `avaliacao` (
-  `id_avaliacao` int(6) NOT NULL,
+  `id_avaliacao` int(6) NOT NULL AUTO_INCREMENT,
   `valor_avaliacao` char(1) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `id_mae` int(6) DEFAULT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
 
 DROP TABLE IF EXISTS `bebe`;
 CREATE TABLE IF NOT EXISTS `bebe` (
-  `id_bebe` int(6) NOT NULL,
+  `id_bebe` int(6) NOT NULL AUTO_INCREMENT,
   `nome_bebe` varchar(100) DEFAULT NULL,
   `sexo_bebe` varchar(15) DEFAULT NULL,
   `idade_bebe` varchar(15) DEFAULT NULL,
@@ -111,12 +111,12 @@ CREATE TABLE IF NOT EXISTS `contem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `diarioi_bordo_crianca`
+-- Estrutura da tabela `diario_bordo_crianca`
 --
 
-DROP TABLE IF EXISTS `diarioi_bordo_crianca`;
-CREATE TABLE IF NOT EXISTS `diarioi_bordo_crianca` (
-  `id_diario_crianca` int(6) NOT NULL,
+DROP TABLE IF EXISTS `diario_bordo_crianca`;
+CREATE TABLE IF NOT EXISTS `diario_bordo_crianca` (
+  `id_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
   `id_mae` int(6) DEFAULT NULL,
   `id_bebe` int(6) DEFAULT NULL,
   `fk_mae_id_mae` int(6) DEFAULT NULL,
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `diarioi_bordo_crianca` (
 
 DROP TABLE IF EXISTS `diario_brodo_gestacao`;
 CREATE TABLE IF NOT EXISTS `diario_brodo_gestacao` (
-  `id_diario_gestacao` int(6) NOT NULL,
+  `id_diario_gestacao` int(6) NOT NULL AUTO_INCREMENT,
   `id_mae` int(6) DEFAULT NULL,
   `id_bebe` int(6) DEFAULT NULL,
   `fk_mae_id_mae` int(6) DEFAULT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
   `bairro` varchar(50) DEFAULT NULL,
   `numero_endereco` varchar(6) DEFAULT NULL,
   `descricao_endereco` varchar(250) DEFAULT NULL,
-  `id_endereco` int(6) NOT NULL,
+  `id_endereco` int(6) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_endereco`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
 
 DROP TABLE IF EXISTS `especialidade_profissional_especialidade`;
 CREATE TABLE IF NOT EXISTS `especialidade_profissional_especialidade` (
-  `id_especialidade_profissional` int(6) NOT NULL,
+  `id_especialidade_profissional` int(6) NOT NULL AUTO_INCREMENT,
   `numero_registro_profissional` varchar(20) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `id_especialidade` int(6) NOT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `especializa` (
 
 DROP TABLE IF EXISTS `experiencia_profissional`;
 CREATE TABLE IF NOT EXISTS `experiencia_profissional` (
-  `id_experiencia` int(6) NOT NULL,
+  `id_experiencia` int(6) NOT NULL AUTO_INCREMENT,
   `experiencia_profissional` varchar(250) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_experiencia`)
@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `experiencia_profissional` (
 
 DROP TABLE IF EXISTS `formacao_profissional`;
 CREATE TABLE IF NOT EXISTS `formacao_profissional` (
-  `id_formacao` int(6) NOT NULL,
+  `id_formacao` int(6) NOT NULL AUTO_INCREMENT,
   `formacao_profissional` varchar(250) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_formacao`)
@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `formacao_profissional` (
 
 DROP TABLE IF EXISTS `galeria_imagem_profissional`;
 CREATE TABLE IF NOT EXISTS `galeria_imagem_profissional` (
-  `id_imagem_galeria` int(6) NOT NULL,
+  `id_imagem_galeria` int(6) NOT NULL AUTO_INCREMENT,
   `imagem_galeria_profissional` varchar(32) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `fk_profissional_id_profissional` int(6) DEFAULT NULL,
@@ -242,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `galeria_imagem_profissional` (
 
 DROP TABLE IF EXISTS `mae`;
 CREATE TABLE IF NOT EXISTS `mae` (
-  `id_mae` int(6) NOT NULL,
+  `id_mae` int(6) NOT NULL AUTO_INCREMENT,
   `nome_mae` varchar(100) DEFAULT NULL,
   `email_mae` varchar(100) DEFAULT NULL,
   `senha_mae` varchar(32) DEFAULT NULL,
@@ -251,7 +251,18 @@ CREATE TABLE IF NOT EXISTS `mae` (
   `id_diario_gestacao` int(6) DEFAULT NULL,
   `id_diario_crianca` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_mae`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `mae`
+--
+
+INSERT INTO `mae` (`id_mae`, `nome_mae`, `email_mae`, `senha_mae`, `foto_perfil_mae`, `id_bebe`, `id_diario_gestacao`, `id_diario_crianca`) VALUES
+(1, 'Agatha Amaral', 'agatha.amaral@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(2, 'Vanessa Ramario', 'vanessa.ramario@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(3, 'Jessica Santos', 'jessica.santos@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(4, 'Gloria Damasco', 'gloria.damasco@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(5, 'Domingas Osvaldo', 'domingas.osvaldo@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -284,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `id_experiencia` int(6) DEFAULT NULL,
   `id_formacao` int(6) DEFAULT NULL,
   `id_especialidade_profissional` int(6) DEFAULT NULL,
-  `id_profissional` int(6) NOT NULL,
+  `id_profissional` int(6) NOT NULL AUTO_INCREMENT,
   `id_rede_social` int(6) DEFAULT NULL,
   `id_telefone` int(6) DEFAULT NULL,
   `id_imagem_galeria` int(6) DEFAULT NULL,
@@ -292,7 +303,18 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `fk_endereco_profissional_id_endereco` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_profissional`),
   KEY `FK_profissional_2` (`fk_endereco_profissional_id_endereco`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `profissional`
+--
+
+INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `sobre_mim_profissional`, `status_profissional`, `id_experiencia`, `id_formacao`, `id_especialidade_profissional`, `id_profissional`, `id_rede_social`, `id_telefone`, `id_imagem_galeria`, `id_endereco`, `fk_endereco_profissional_id_endereco`) VALUES
+('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL),
+('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL),
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -302,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 
 DROP TABLE IF EXISTS `rede_social_profissional`;
 CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
-  `id_rede_social` int(6) NOT NULL,
+  `id_rede_social` int(6) NOT NULL AUTO_INCREMENT,
   `youtube_profissional` varchar(11) DEFAULT NULL,
   `whatsapp_profissional` varchar(255) DEFAULT NULL,
   `instagram_profissional` varchar(20) DEFAULT NULL,
@@ -323,7 +345,7 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
 
 DROP TABLE IF EXISTS `registro_diario_crianca`;
 CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
-  `id_registro_diario_crianca` int(6) NOT NULL,
+  `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
   `texto_diario_crianca` text,
   `imagem_diario_crianca` varchar(32) DEFAULT NULL,
   `video_diario_crianca` varchar(32) DEFAULT NULL,
@@ -342,7 +364,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
 
 DROP TABLE IF EXISTS `registro_diario_gestacao`;
 CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
-  `id_registro_diario_gestcao` int(6) NOT NULL,
+  `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
   `texto_diario_gestacao` text,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
   `video_diario_gestacao` varchar(32) DEFAULT NULL,
@@ -361,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
 
 DROP TABLE IF EXISTS `telefone_profissional`;
 CREATE TABLE IF NOT EXISTS `telefone_profissional` (
-  `id_telefone` int(6) NOT NULL,
+  `id_telefone` int(6) NOT NULL AUTO_INCREMENT,
   `ddd_telefone_profissional` char(2) DEFAULT NULL,
   `numero_telefone_profissional` char(9) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
