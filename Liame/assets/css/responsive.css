@@ -24,6 +24,10 @@
 }
 
 @media (max-width: 767.98px) {
+  #login-container form {
+    width: 100%;
+  }
+  
   #header #logo {
     width: 40px;
   }
