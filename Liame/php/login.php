@@ -1,138 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Cache-Control" content="no-cache" />
 
-  <title>Liame - unindo do início ao fim.</title>
+  <title>Liame - Unindo do início ao fim.</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
-  <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
+  <!--implementação bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+  <!--css-->
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+
 </head>
 
-<body>
-      <!--navbar-->
-      <div id="header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-          <div class="container-fluid">
-            <a href="index.php" class="navbar-brand">
-              <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-            </a>
+<body class="fundo">
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <!--cabeçalho-->
+  <header class="cabecalho cabecalho-2">
+    <div class="container-fluid" id="nav-container">
+      <nav class="navbar navbar-expand-lg navbar-light flex-md-row bd-navbar">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="index.php">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="php/especialistas.php">Buscar especialistas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
-                </li>
-              </ul>
-              <!--entrar/cadastro-->
-              <div id="login" class="nav navbar-nav">
-                <div class="nav-item">
-                  <a href="php/login.php">
-                    <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Entrar
-                    </button>
-                  </a>
-                </div>
-              </div>
+        <!--logo-->
+        <a href="../index.php" class="navbar-brand ms-5">
+          <img class="logo" src="../assets/img/logo-liame-branca.png" alt="Liame">
+        </a>
+        <!--botão para menu hamburguer mobile-->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target-"#linksnavbar" aria-controls="liksnavbar" aria-expanded="false" aria-label="toggle">
+          <span class="uil uil-bars"></span>
+        </button>
+        <!--link cabeçalho-->
+        <div class="collapse navbar-collapse" id="linksnavbar">
+          <div class="navbar-nav navbar-collapse justify-content-center">
+            <a class="nav-item nav-link" id="consultas-menu" href="esqpecialistas.php">Consultas</a>
+            <a class="nav-item nav-link" id="diário-de-bordo-menu" href="diario_bordo.php">Diário de Bordo</a>
+            <a class="nav-item nav-link" id="quem-somos-menu" href="../layouts/quem_somos.html">Quem Somos</a>
+            <a class="nav-item nav-link" id="planos-menu" href="planos.php">Planos para Especialistas</a>
+          </div>
+          <!--entrar/cadastro-->
+          <div id="login" class="nav navbar-nav mr-5">
+            <div class="nav-item">
+              <a class="nav-item nav-link" href="login.php">
+                <i class="uil uil-user"></i>
+                Entrar
+              </a>
             </div>
           </div>
-        </nav>
-      </div>
-
+        </div>
+      </nav>
     </div>
-    <!--//navbar-->
-  <main>
+  </header>
 
 
-  <div id="login-container" class="d-flex">
-      <div class="container justify-content-center align-self-center">
-        <div class="row">
-          <div class="col-md-6 d-flexalign-center text-center">
-            <h1 class="hero-title">
-              Login
-            </h1>
-            <h5 class="mb-5 subtitle">Bem-vindo!</h5>
-            <div class="">
-            <form class="ps-lg-5 me-lg-5" action="login.php" method="post">
-              <div class="mb-3">
-                <input type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+  <div class="container formulario">
+      <div class="registro text-center p-5">
+        <h1>Login</h2>
+      </div>
+      <div class="estrutura">
+      <form class="" action="conexao.php" method="POST">
+        <div class="page col-12">
+          <div class="pb-3">
+            <h4>Informações básicas</h4>
+          </div>
+					<div class="form-group pb-2">
+            <label for="email_mae">Email</label>
+            <input type="text" name="email_mae" id="email_mae" class="form-control form-control-lg" required>
+          </div>
+					<div class="form-grou pb-2">
+						<label for="senha_mae">Senha</label>
+						<input type="password" name="senha_mae " id="senha_mae" class="form-control form-control-lg"  required>
+					</div>
+          <div class="d-flex nextBtn">
+            <input class="submit col-6 m-1 btn btn-1" type="submit" name="enviar" value="Enviar">
+          </div>
+          <div class="text-center mt-3">
+            <small>
+              <div class="row justify-content-center">
+                Não tem uma conta?
               </div>
-              <div class="mb-3">
-                <input type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+              <div class="row">
+                <div class="col">
+              <button type="button" class="btn-small btn-1" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Criar
+              </button>
               </div>
-              <div class="mb-3">
-                <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
               </div>
-            </form>
+						</small>
+
+          </div>
+				</div>
+      </form>
+    </div>
+  </div>
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="row modal-body justify-content-center align-">
+
+          <div class="col-12 d-flex profissional-content justify-content-center">
+            <div class="botao">
+              <a href="cadastro_profissional1.php">
+                <i class="uil uil-medkit"></i>
+                <h4>Profissional</h4>
+              </a>
             </div>
           </div>
-          <div class="col-md-6 align-self-center">
 
+          <div class="col-12 d-flex mae-content justify-content-center">
+            <div class="botao">
+              <a href="cadastro_mae1.php">
+                <i class="uil uil-user"></i>
+                <h4>Mãe</h4>
+              </a>
+            </div>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-1" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
-
-      <!--implementação jquery, poppers.js e plugin bootstrap-->
+  <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="../assets/js/owl.carousel.min.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/scripts.js"></script>
 
+  <!--progressbar-->
+  <script src="../assets/js/progressbar.min.js"></script>
 
+  <!--biblioteca parallax-->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
-   global $mysqli;
+</html>
 
-   $erro = 0;
-   
-    if(isset($_POST['submit']/*$_SESSION*/)){
+<?php
+ include("conexao.php");
+if(isset($_POST['enviar'])){
 
-    $_SESSION['email'] = /*$mysqli->escape_string*/($_POST['email']);
-    $_SESSION['senha'] =(md5($_POST['senha_func']));
+$email_mae = $_POST['email_mae'];
+$senha_mae = MD5($_POST['senha_mae']);
+$entrar = $_POST['enviar'];
+}
 
-    $sql_code ="SELECT senha, codigo FROM usuário WHERE email ='$_SESSION[email]'";
-    $sql_query =  mysqli_query( $link, $sql_code );/*$link->query($sql_code) or die ($mysqli->error);*/
-    $dado = mysqli_fetch_assoc($sql_query);/*->fetch_assoc();*/
-    
-    $total=mysqli_num_rows($dado);/*->num_rows;*/
+if (isset($entrar)) {
 
-    if($total == 0){
-      $erro= $erro+1;
-      echo "Este email não pertence a nenhum usuário.";
+  $verifica = mysqli_query("SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'") or die("erro ao selecionar");
+    if (mysqli_num_rows($verifica)<=0){
+      echo"<script language='javascript' type='text/javascript'>
+      alert('Login e/ou senha incorretos');window.location
+      .href='login.php';</script>";
+      die();
     }else{
-      if($dado['senha'] =! $_SESSION['senha']){
-        echo "senha incorreta.";
-    
-  }
-}}
-    
-    if($erro == 0){
-
-      
+      //setcookie("email_mae",$email_mae);
+      header("Location:perfil_mae.php");
     }
+}
+
  ?>
