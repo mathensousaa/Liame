@@ -2,9 +2,9 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 03-Nov-2021 às 01:20
--- Versão do servidor: 5.7.31
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 03-Nov-2021 às 14:12
+-- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   `valor_avaliacao` char(1) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `id_mae` int(6) DEFAULT NULL,
-  `comentario_avaliacao` text,
+  `comentario_avaliacao` text DEFAULT NULL,
   `data_comentario` datetime DEFAULT NULL,
   `fk_mae_id_mae` int(6) DEFAULT NULL,
   `fk_profissional_id_profissional` int(6) DEFAULT NULL,
@@ -163,6 +163,39 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `especialidade`
+--
+
+DROP TABLE IF EXISTS `especialidade`;
+CREATE TABLE IF NOT EXISTS `especialidade` (
+  `id_especialidade` int(6) NOT NULL AUTO_INCREMENT,
+  `especialidade` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_especialidade`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `especialidade`
+--
+
+INSERT INTO `especialidade` (`id_especialidade`, `especialidade`) VALUES
+(1, 'Anestesista'),
+(2, 'Dermatologista'),
+(3, 'Doula'),
+(4, 'Enfermeira obstetra\r'),
+(5, 'Fisioterapeuta'),
+(6, 'Ginecologista'),
+(7, 'Imunologista'),
+(8, 'Mastologista'),
+(9, 'Medicina fetal'),
+(10, 'Nutricionista'),
+(11, 'Obstetra'),
+(12, 'Pediatra'),
+(13, 'Psicólogo'),
+(14, 'Psiquiatra');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `especialidade_profissional_especialidade`
 --
 
@@ -173,7 +206,9 @@ CREATE TABLE IF NOT EXISTS `especialidade_profissional_especialidade` (
   `id_profissional` int(6) DEFAULT NULL,
   `id_especialidade` int(6) NOT NULL,
   `especialidade` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id_especialidade_profissional`,`id_especialidade`)
+  PRIMARY KEY (`id_especialidade_profissional`,`id_especialidade`),
+  KEY `fk_especialidade_profissional_especialidade` (`id_profissional`),
+  KEY `fk_especialidade_profissional` (`id_especialidade`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -346,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
 DROP TABLE IF EXISTS `registro_diario_crianca`;
 CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
   `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_crianca` text,
+  `texto_diario_crianca` text DEFAULT NULL,
   `imagem_diario_crianca` varchar(32) DEFAULT NULL,
   `video_diario_crianca` varchar(32) DEFAULT NULL,
   `data_hora_diario_crianca` datetime DEFAULT NULL,
@@ -365,7 +400,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
 DROP TABLE IF EXISTS `registro_diario_gestacao`;
 CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
   `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_gestacao` text,
+  `texto_diario_gestacao` text DEFAULT NULL,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
   `video_diario_gestacao` varchar(32) DEFAULT NULL,
   `data_hora_registro_diario_gestacao` datetime DEFAULT NULL,

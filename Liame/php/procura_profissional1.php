@@ -11,17 +11,32 @@
 	        <input name="profissional" list= "profissional" size ="30" placeholder = "Escolha seu profissional...">
 	        <datalist id="profissional">
 			<?php
-			$sqlesp = 'select * from especialidade;';
-			$resul = mysqli_query($link, $sqlesp);
-			while($con = myslqi_fetch_array($resul)){
+				$sql_especialidade = 'select * from especialidade;';
+				$resul_especialidade = mysqli_query($link, $sql_especialidade);
+				while($con = mysqli_fetch_array($resul_especialidade)){
 			?>
 	            <option value="<?php echo $con['especialidade']; ?>" />
 			<?php
-			}
+				}
 			?>
+
+			</datalist>
+			Em qual estado?
+	        <input name="estado" list= "estado" size ="30" placeholder = "Escolha seu estado...">
+	        <datalist id="estado">
+			<?php
+				$sql_estado = 'select * from estados;';
+				$resul_estado = mysqli_query($link, $sql_estado);
+				while($con = mysqli_fetch_array($resul_estado)){
+			?>
+	            <option value="<?php echo $con['estado']; ?>" />
+			<?php
+				}
+			?>
+
 	        </datalist>
 
-					Em que estado?
+					<!-- Em que estado?
 					<input name="estado" list= "estado" size ="30" placeholder = "Escolha o Estado...">
  				 <datalist id="estado">
  						 <option value="Acre" />
@@ -51,7 +66,7 @@
 						 <option value="São Paulo" />
 						 <option value="Sergipe" />
 						 <option value="Tocantins" />
- 				 </datalist>
+ 				 </datalist> -->
 					<input type="submit" value="Buscar">
 
 	    </form>
