@@ -84,3 +84,8 @@ a {
 .logo-footer {
   height: 100px;
 }
+
+.modal {
+  border-radius: 10px;
+  border: none;
+}

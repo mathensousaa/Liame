@@ -51,11 +51,46 @@
               <!--entrar/cadastro-->
               <div id="login" class="nav navbar-nav">
                 <div class="nav-item">
-                  <a href="php/login.php">
-                    <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
                       Entrar
                     </button>
                   </a>
+                  <!-- Modal -->
+                  <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container-fluid block">
+                          <div class="container my-4">
+                            <div class="row">
+                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                                <a href="php/login-profissional.php" class="destaque">
+                                  <div class="img-container mb-3">
+                                    <img class="img-fluid" src="assets/img/Medico_home.png" alt="">
+                                  </div>
+                                  <div class="text-container">
+                                    <h5>Especialista</h5>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                                <a href="php/login.php" class="destaque">
+                                  <div class="img-container mb-3">
+                                    <img class="img-fluid" src="assets/img/Vaccine.png" alt="">
+                                  </div>
+                                  <div class="text-container">
+                                    <h5>Mãe</h5>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,22 +191,28 @@
             Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição.
           </h5>
 
-          <select class="button button-tertiary form-select" aria-label="Selecione o especialista que deseja buscar">
-            <option>Anestesista</option>
-            <option>Dermatologista</option>
-            <option>Doula</option>
-            <option>Enfermeira Obstétra</option>
-            <option>Fisioterapeuta</option>
-            <option>Ginecologista</option>
-            <option>Imunologista</option>
-            <option>Mastologista</option>
-            <option>Médico fetal</option>
-            <option>Nutricionista</option>
-            <option>Obstétra</option>
-            <option>Pediatra</option>
-            <option>Psicólogo</option>
-            <option>Psiquiatra</option>
-          </select>
+          <div class="input-group my-5">
+            <select id="select-busca" class="form-select" aria-label="Seleção de especialista">
+              <option selected>Selecione o especialista que deseja</option>
+              <option value="1">Anestesista</option>
+              <option value="2">Dermatologista</option>
+              <option value="3">Doula</option>
+              <option value="4">Enfermeira Obstétra</option>
+              <option value="5">Fisioterapeuta</option>
+              <option value="6">Ginecologista</option>
+              <option value="7">Imunologista</option>
+              <option value="8">Mastologista</option>
+              <option value="9">Médico fetal</option>
+              <option value="10">Nutricionista</option>
+              <option value="11">Obstétra</option>
+              <option value="12">Pediatra</option>
+              <option value="13">Psicólogo</option>
+              <option value="14">Psiquiatra</option>
+            </select>
+            <div class="btn-container">
+              <a href="#" class="button button-tertiary btn btn-primary">Buscar</a>
+            </div>
+          </div>
         </div>
       </div>
 
