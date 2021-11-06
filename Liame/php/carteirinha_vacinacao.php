@@ -18,14 +18,15 @@ session_start ()  or die('A sessão não pode ser iniciada');
       if(!isset($session)){
           session_start();
           
-          echo "coco";}
+          }
 
       if(!isset($_session['usuario']) || !is_numeric($_session['usuario'])){
         header("Location: login.php");
 
-        echo "coco";
+      
       }
     }
   }
+  
 
  ?>

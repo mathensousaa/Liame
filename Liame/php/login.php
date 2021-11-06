@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -68,13 +71,13 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="login.php" method="post">
                 <div class="mb-3">
-                  <input type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name= "email_mae" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name = "senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <div class="mb-3">
-                  <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
+                  <input type="submit" name="enviar" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
               </form>
             </div>
@@ -96,25 +99,27 @@
 
 <?php
  include("conexao.php");
-if(isset($_POST['enviar'])){
 
-$email_mae = $_POST['email_mae'];
-$senha_mae = MD5($_POST['senha_mae']);
-$entrar = $_POST['enviar'];
-}
-
-if (isset($entrar)) {
-
-  $verifica = mysqli_query("SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'") or die("erro ao selecionar");
-    if (mysqli_num_rows($verifica)<=0){
-      echo"<script language='javascript' type='text/javascript'>
-      alert('Login e/ou senha incorretos');window.location
-      .href='login.php';</script>";
-      die();
-    }else{
-      //setcookie("email_mae",$email_mae);
-      header("Location:perfil_mae.php");
-    }
-}
-
+ 
+  if(isset($_POST['enviar'])){
+  
+ $email_mae = $_POST['email_mae'];
+ $senha_mae = $_POST['senha_mae'];
+  
+ $query = "SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'";
+  echo $query;
+ $result = mysqli_query($link, $query);
+  
+ $row = mysqli_num_rows($result);
+ echo $row;
+  
+ if($row == 0) {
+  $_SESSION['nao_autenticado'] = true;
+  echo "eror";
+ } else {
+  $_SESSION['email_mae'] = $email_mae;
+   header('Location: liame/php/perfil_mae.php');
+   echo "h=uau";
+ }
+  }
  ?>
