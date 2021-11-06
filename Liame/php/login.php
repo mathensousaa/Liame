@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="index.php">Página Inicial</a>
+                <a class="nav-link active" href="../index.html">Página Inicial</a> 
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="php/especialistas.php">Buscar especialistas</a>
