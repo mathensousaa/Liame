@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="../index.html">Página Inicial</a>
+                  <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="php/procura_profissional1.php">Buscar especialistas</a>
@@ -51,9 +51,9 @@
               <!--entrar/cadastro-->
               <div id="login" class="nav navbar-nav">
                 <div class="nav-item">
-                    <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
-                      Entrar
-                    </button>
+                  <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
+                    Entrar
+                  </button>
                   </a>
                   <!-- Modal -->
                   <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -87,6 +87,7 @@
                                 </a>
                               </div>
                             </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -94,7 +95,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </nav>
       </div>
 
