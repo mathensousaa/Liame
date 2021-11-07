@@ -227,3 +227,51 @@ html, body {
   justify-content: center;
   height: 100px;
 }
+
+#rodape h5 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#rodape a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#rodape a:hover {
+  color: var(--primary);
+  transition: 0.2s;
+}
+
+
+
+#rodape .social ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#rodape .social ul li {
+  display: flex;
+  list-style-type: none;
+  margin-left: 25px;
+  width: 50px;
+}
+
+#rodape .social ul li:first-child{
+  margin-left: 0;
+}
+
+#rodape .social img {
+  height: 55px;
+}
+
+#rodape .logo img{
+  width: 55px;
+}
+#pre-footer {
+  width: 100%;
+  background: url("assets/img/wave.svg") center no-repeat;
+  background-size: cover;
+}

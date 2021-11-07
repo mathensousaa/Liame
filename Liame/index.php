@@ -136,7 +136,7 @@
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <a href="#" class="destaque">
               <div class="img-container mb-3">
-                <img class="img-fluid" src="assets/img/Medico_home.png" alt="">
+                <img class="img-fluid" src="assets/img/icon_especialistas.svg" alt="">
               </div>
               <div class="text-container">
                 <h5 class="text-uppercase">Consultas</h5>
@@ -147,11 +147,11 @@
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <a href="#" class="destaque">
               <div class="img-container mb-3">
-                <img class="img-fluid" src="assets/img/Vaccine.png" alt="">
+                <img class="img-fluid" src="assets/img/icon_vacina.svg" alt="">
               </div>
               <div class="text-container">
                 <h5 class="text-uppercase">Carteirinha</h5>
-                <p class="mb-0 subtitle">Tenha uma carteirinha digital para acompanhar o calendário de imunização de seu filho.</p>
+                <p class="mb-0 subtitle">Tenha uma carteirinha digital para acompanhar o calendário de vacinação de seu filho.</p>
               </div>
             </a>
           </div>
@@ -269,44 +269,59 @@
     </div>
   </main>
 
+  <div id="pre-footer" class="pre-footer">
 
+  </div>
   <footer>
-    <div class="container">
-      <div class="logo py-4">
+    <div id="rodape" class="container">
+      <div class="conteudo py-5">
         <div class="row">
-          <div class="col-md-4 align-self-center">
-            <img class="logo-footer img-fluid" src="assets/img/logo_liame.png" alt="">
-
+          <div class="logo col-md-2">
+            <img id="logo" class="img-fluid" src="assets/img/logo_liame.png" alt="">
           </div>
-          <div class="col-md-4 align-self-center">
-            <h5 class="text-uppercase">Mães</h5>
-            <ul class="list-unstyled">
-              <li class=""><a href="php/especialistas.php">Consultas</a></li>
-              <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
-              <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
-            </ul>
+          <div class="col-md-8 d-flex justify-content-center align-self-center">
+            <div class="px-4">
+              <h5 class="text-uppercase">Mães</h5>
+              <ul class="list-unstyled">
+                <li class=""><a href="php/especialistas.php">Consultas</a></li>
+                <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
+                <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
+              </ul>
+            </div>
+            <div class="px-4">
+              <h5 class="text-uppercase">Especialistas</h5>
+              <ul class="list-unstyled">
+                <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
+                <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+              </ul>
+            </div>
+            <div class="px-4">
+              <h5 class="text-uppercase">Serviços</h5>
+              <ul class="list-unstyled">
+                <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
+                <li class=""><a href="php/contato.php">Contato</a></li>
+                <li class=""><a href="layouts/privacidade_cookies.html">Privacidade e cookies</a></li>
+                <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="col">
-            <h5 class="text-uppercase">Especialistas</h5>
-            <ul class="list-unstyled">
-              <li class=""><a href="php/planos.php">Planos para especialistas</a></li>
-              <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
-              <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
-            </ul>
-          </div>
-          <div class="col">
-            <h5 class="text-uppercase">Serviços</h5>
-            <ul class="list-unstyled">
-              <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
-              <li class=""><a href="php/contato.php">Contato</a></li>
-              <li class=""><a href="layouts/privacidade_cookies.html">Privacidade e cookies</a></li>
-              <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
+          <div class="social col-md-2">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/projeto_liame/">
+                <img src="assets/img/instagram.svg" alt="Icone Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
+                <img src="assets/img/facebook.svg" alt="Icone Facebook">
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
   </footer>
   <!-- rodape -->
   <!--<footer class="footer-home">

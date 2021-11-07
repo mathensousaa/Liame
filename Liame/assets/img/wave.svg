@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="300" viewBox="0 0 1920 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Prancheta_1" data-name="Prancheta 1">
+    <path id="Forma_2" data-name="Forma 2" class="cls-1" d="M0,0A1009.3,1009.3,0,0,0,103,40C442.372,150.866,777.907.337,960,0c180.22-.334,539.35,156.538,878,36,28.33-10.085,55.93-21.39,83-34l4,299L-7,303"/>
+  </g>
+</svg>
