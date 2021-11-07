@@ -9,24 +9,40 @@
   $logado = $_SESSION['nome_mae'];
 ?>*/
 
-session_start ()  or die('A sessão não pode ser iniciada');
+/*session_start ()  or die('A sessão não pode ser iniciada');
 
-  if(!function_exists("protect")){
+  if(function_exists("protect")){
    
     function protect(){
 
-      if(!isset($session)){
+      if(isset($session)){
           session_start();
+          echo "eee";
           
           }
 
-      if(!isset($_session['usuario']) || !is_numeric($_session['usuario'])){
+      if(!isset($_session['email_mae']) || !is_numeric($_session['email_mae'])){
         header("Location: login.php");
 
       
       }
     }
+  }*/
+  //start session
+  if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+    session_start();
   }
+
+//check do the person logged in
+if($_SESSION['email_mae']==NULL){
+    //haven't log in
+    echo "Você não está logado";
+}else{
+    //Logged in
+    echo "Logado com sucesso!";
+}
+
+
   
 
  ?>

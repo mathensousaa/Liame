@@ -67,7 +67,7 @@
                           <div class="container my-4">
                             <div class="row">
                               <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="php/login-profissional.php" class="destaque">
+                                <a href="php/login_profissional.php" class="destaque">
                                   <div class="img-container mb-3">
                                     <img class="img-fluid" src="assets/img/Medico_home.png" alt="">
                                   </div>
@@ -77,7 +77,7 @@
                                 </a>
                               </div>
                               <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="php/login.php" class="destaque">
+                                <a href="php/login_mae.php" class="destaque">
                                   <div class="img-container mb-3">
                                     <img class="img-fluid" src="assets/img/Vaccine.png" alt="">
                                   </div>

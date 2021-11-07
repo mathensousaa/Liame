@@ -1,3 +1,20 @@
+<?php
+
+if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+    session_start();
+  }
+
+//check do the person logged in
+if($_SESSION['email_profissional']==NULL){
+    //haven't log in
+    echo "Você não está logado";
+}else{
+    //Logged in
+    echo "Bem-vindo" . $_SESSION['email_profissional'];
+   
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +31,7 @@
         if(!isset($session))
             session_start();
 
-        if(!isset($_session['usuario']) || !is_numeric($_session['usuario'])){
+        if(!isset($_session['email_profissional']) || !is_numeric($_session['email_profissional'])){
           header("Location: login.php");
         }
       }
@@ -51,10 +68,9 @@
 <?php
 if($_SERVER['REQUEST_METHOD']=='GET'){
     isset($_GET['id']) ? $busca=mysql_query("SELECT * FROM dados WHERE id='".$_GET['id']."'") : die(mysql_error());
- 
     $dados = mysql_fetch_array($busca);
  
-}else
+}else{
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
       if( isset ($_POST['confgconta'])){
