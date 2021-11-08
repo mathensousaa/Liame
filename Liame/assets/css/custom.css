@@ -228,6 +228,34 @@ html, body {
   height: 100px;
 }
 
+#modal-registro a.destaque {
+  display: block;
+  background: var(--light);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  color: #000;
+  text-decoration: none;
+  transition: all ease-out 0.2s;
+}
+
+#modal-registro a.destaque:hover {
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
+  transform: scale(1.05);
+}
+
+#modal-registro a.destaque .img-container img {
+  max-height: 80px;
+}
+
+#modal-registro a.destaque .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
 #rodape h5 {
   font-weight: 600;
   font-size: 18px;
@@ -274,4 +302,9 @@ html, body {
   width: 100%;
   background: url("assets/img/wave.svg") center no-repeat;
   background-size: cover;
+}
+
+#icone {
+  width: 55px;
+  margin-bottom: 20px;
 }

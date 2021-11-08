@@ -114,9 +114,49 @@
             </h1>
             <h5 class="mb-5 subtitle">Juntos podemos fazer o melhor para o seu bebê e você, com acesso a um diário de bordo e profissionais à sua disposição.</h5>
             <div class="btn-container">
-              <a href="#" class="hero-button button-primary btn btn-primary">Comece já</a>
+              <button type="button" class="hero-button button-primary btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-registro">
+                Comece já
+              </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="modal-registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body container-fluid block">
+                    <div class="container my-4">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                          <a href="php/cadastro_profissional1.php" class="destaque">
+                            <div class="img-container mb-3">
+                              <img class="img-fluid" src="assets/img/Medico_home.png" alt="">
+                            </div>
+                            <div class="text-container">
+                              <h5>Especialista</h5>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                          <a href="php/cadastro_mae1.php" class="destaque">
+                            <div class="img-container mb-3">
+                              <img class="img-fluid" src="assets/img/Vaccine.png" alt="">
+                            </div>
+                            <div class="text-container">
+                              <h5>Mãe</h5>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div class="col-md-6 align-self-center">
 
           </div>
@@ -147,7 +187,7 @@
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <a href="#" class="destaque">
               <div class="img-container mb-3">
-                <img class="img-fluid" src="assets/img/icon_vacina.svg" alt="">
+                <img class="img-fluid" src="assets/img/icon_vacina.png" alt="vacinação">
               </div>
               <div class="text-container">
                 <h5 class="text-uppercase">Carteirinha</h5>
@@ -158,7 +198,7 @@
           <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
             <a href="#" class="destaque">
               <div class="img-container mb-3">
-                <img class="img-fluid" src="assets/img/Diario_de_bordo.png" alt="">
+                <img class="img-fluid" src="assets/img/icon_diario.svg" alt="">
               </div>
               <div class="text-container">
                 <h5 class="text-uppercase">Diário de bordo</h5>
@@ -262,6 +302,16 @@
                 </div>
               </a>
             </div>
+            <div class="item">
+              <a href="#" class="carrossel">
+                <div class="card">
+                  <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Pré-natal</h5>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -279,23 +329,23 @@
           <div class="logo col-md-2">
             <img id="logo" class="img-fluid" src="assets/img/logo_liame.png" alt="">
           </div>
-          <div class="col-md-8 d-flex justify-content-center align-self-center">
-            <div class="px-4">
+          <div class="py-lg-0 py-mb-5 col-md-8 d-flex justify-content-center align-self-center">
+            <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Mães</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="php/especialistas.php">Consultas</a></li>
+                <li class=""><a href="php/procura_profissional1.php">Consultas</a></li>
                 <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
                 <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
               </ul>
             </div>
-            <div class="px-4">
+            <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Especialistas</h5>
               <ul class="list-unstyled">
                 <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
                 <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
               </ul>
             </div>
-            <div class="px-4">
+            <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Serviços</h5>
               <ul class="list-unstyled">
                 <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
@@ -323,51 +373,7 @@
       </div>
     </div>
   </footer>
-  <!-- rodape -->
-  <!--<footer class="footer-home">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <a href="index.php"><img src="assets/img/logo.png" class="img-fluid logo-footer" alt="logo liame"></a>
-        </div>
-        <div class="col">
-          <h5 class="text-uppercase">Mães</h5>
-          <ul class="list-unstyled">
-            <li class=""><a href="php/especialistas.php">Consultas</a></li>
-            <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
-            <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <h5 class="text-uppercase">Especialistas</h5>
-          <ul class="list-unstyled">
-            <li class=""><a href="php/planos.php">Planos para especialistas</a></li>
-            <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
-            <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <h5 class="text-uppercase">Serviços</h5>
-          <ul class="list-unstyled">
-            <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
-            <li class=""><a href="php/contato.php">Contato</a></li>
-            <li class=""><a href="layouts/privacidade_cookies.html">Privacidade e cookies</a></li>
-            <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <div class="social-links">
-            <a class="nav-item nav-link" href="https://www.instagram.com/projeto_liame/">
-              <i class="uil uil-instagram"></i>
-            </a>
-            <a class="nav-item nav-link" href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
-              <i class="uil uil-facebook"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>-->
+
 
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>

@@ -1,3 +1,7 @@
+body {
+  background: #fff;
+}
+
 .hero-button {
   text-transform: uppercase;
   font-weight: 700;
@@ -85,7 +89,21 @@ a {
   height: 100px;
 }
 
-.modal {
+.modal-content {
   border-radius: 10px;
   border: none;
+}
+
+#logo {
+  width: 55px;
+}
+
+
+
+.content {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  padding: 80px;
+  background: var(--light);
+  border-radius: 30px;
 }

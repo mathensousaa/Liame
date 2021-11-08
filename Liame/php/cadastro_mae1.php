@@ -5,13 +5,13 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Liame - unindo do início ao fim.</title>
+  <title>Cadastro - Mães | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -20,37 +20,11 @@
   <!--navbar-->
   <div id="header" class="fixed-top">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
         <div class="container-fluid">
-          <a href="index.php" class="navbar-brand">
+          <a href="../index.php" class="navbar-brand">
             <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
           </a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="../index.html">Página Inicial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="php/especialistas.php">Buscar especialistas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
-              </li>
-            </ul>
-            <!--entrar/cadastro-->
-            <div id="login" class="nav navbar-nav">
-              <div class="nav-item">
-                <a href="php/login.php">
-                  <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Entrar
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </nav>
     </div>
@@ -61,10 +35,11 @@
       <div class="container justify-content-center align-self-center">
         <div class="row">
           <div class="col-md-6 align-center text-center">
+            <img id="icone" class="img-fluid" src="../assets/img/icone-mae.png" alt="">
             <h1 class="hero-title">
-              Login
+              Cadastro
             </h1>
-            <h5 class="mb-5 subtitle">Bem-vindo!</h5>
+            <h6 class="mb-5 subtitle">Bem-vindo! Faça seu cadastro para começar.</h6>
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="cadastro_mae2.php" method="post">
                 <div class="mb-3">

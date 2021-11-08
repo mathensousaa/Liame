@@ -8,13 +8,13 @@ session_start();
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Liame - unindo do início ao fim.</title>
+  <title>Login - Profissionais | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
   <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -23,37 +23,11 @@ session_start();
   <!--navbar-->
   <div id="header" class="fixed-top">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
         <div class="container-fluid">
-          <a href="index.php" class="navbar-brand">
+          <a href="../index.php" class="navbar-brand">
             <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
           </a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="../index.html">Página Inicial</a> 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="php/especialistas.php">Buscar especialistas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
-              </li>
-            </ul>
-            <!--entrar/cadastro-->
-            <div id="login" class="nav navbar-nav">
-              <div class="nav-item">
-                <a href="php/login.php">
-                  <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Entrar
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </nav>
     </div>
@@ -64,10 +38,11 @@ session_start();
       <div class="container justify-content-center align-self-center">
         <div class="row">
           <div class="col-md-6 d-flexalign-center text-center">
+            <img id="icone" class="img-fluid" src="../assets/img/icone-especialista.png" alt="">
             <h1 class="hero-title">
               Login
             </h1>
-            <h5 class="mb-5 subtitle">Bem-vindo!</h5>
+            <h6 class="mb-5 subtitle">Bem-vindo! Faça seu login para começar.</h6>
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="login_profissional.php" method="post">
                 <div class="mb-3">
@@ -100,19 +75,19 @@ session_start();
 <?php
  /*include("conexao.php");
 
- 
+
   if(isset($_POST['enviar'])){
-  
+
  $email_mae = $_POST['email_mae'];
  $senha_mae = $_POST['senha_mae'];
-  
+
  $query = "SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'";
   echo $query;
  $result = mysqli_query($link, $query);
-  
+
  $row = mysqli_num_rows($result);
  echo $row;
-  
+
  if($row == 0) {
   $_SESSION['nao_autenticado'] = true;
   echo "eror";
@@ -125,30 +100,30 @@ session_start();
 
   include("conexao.php");
     if(isset($_POST['enviar'])){
-    
+
     $email_profissional = $_POST['email_profissional'];
     $senha_profissional = MD5($_POST['senha_profissional']);
-    
 
-    
+
+
       $query ="SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
-      
+
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);
-     
+
         if ($linhas<=0){
           echo "inexistente";
         }else{
-          
+
           $_SESSION['email_profissional'] = $email_profissional;
-         
+
           echo "Login feito com sucesso";
-            
-            
+
+
           //$_SESSION['email_profissional'] = $email_profissional;
           //setcookie("email_mae",$email_mae);
-          
+
         }
-        
+
     }
  ?>
