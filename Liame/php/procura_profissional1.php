@@ -19,8 +19,8 @@
 			<?php
 				}
 			?>
-
 			</datalist>
+
 			Em qual estado?
 	        <input name="estado" list= "estado" size ="30" placeholder = "Escolha seu estado...">
 	        <datalist id="estado">
@@ -33,7 +33,6 @@
 			<?php
 				}
 			?>
-
 	        </datalist>
 
 					<!-- Em que estado?
