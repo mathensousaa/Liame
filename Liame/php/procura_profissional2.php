@@ -31,6 +31,6 @@
   		}
 	}else{
 // caso não tenha encontrado nehum profissinal 
-		echo "Nenhum Profissional encontrado nessa área.";
+		echo "Nenhum profissional encontrado nessa área.";
 	}
 ?>
