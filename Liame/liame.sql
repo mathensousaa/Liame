@@ -2,9 +2,9 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Tempo de geração: 03-Nov-2021 às 14:12
--- Versão do servidor: 10.4.13-MariaDB
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 08-Nov-2021 às 15:03
+-- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   `valor_avaliacao` char(1) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `id_mae` int(6) DEFAULT NULL,
-  `comentario_avaliacao` text DEFAULT NULL,
+  `comentario_avaliacao` text,
   `data_comentario` datetime DEFAULT NULL,
   `fk_mae_id_mae` int(6) DEFAULT NULL,
   `fk_profissional_id_profissional` int(6) DEFAULT NULL,
@@ -228,6 +228,52 @@ CREATE TABLE IF NOT EXISTS `especializa` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `estados`
+--
+
+DROP TABLE IF EXISTS `estados`;
+CREATE TABLE IF NOT EXISTS `estados` (
+  `id` int(11) NOT NULL,
+  `estado` varchar(75) DEFAULT NULL,
+  `uf` varchar(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estados`
+--
+
+INSERT INTO `estados` (`id`, `estado`, `uf`) VALUES
+(1, 'Acre', 'AC'),
+(2, 'Alagoas', 'AL'),
+(3, 'Amazonas', 'AM'),
+(4, 'Amapá', 'AP'),
+(5, 'Bahia', 'BA'),
+(6, 'Ceará', 'CE'),
+(7, 'Distrito Federal', 'DF'),
+(8, 'Espírito Santo', 'ES'),
+(9, 'Goiás', 'GO'),
+(10, 'Maranhão', 'MA'),
+(11, 'Minas Gerais', 'MG'),
+(12, 'Mato Grosso do Sul', 'MS'),
+(13, 'Mato Grosso', 'MT'),
+(14, 'Pará', 'PA'),
+(15, 'Paraíba', 'PB'),
+(16, 'Pernambuco', 'PE'),
+(17, 'Piauí', 'PI'),
+(18, 'Paraná', 'PR'),
+(19, 'Rio de Janeiro', 'RJ'),
+(20, 'Rio Grande do Norte', 'RN'),
+(21, 'Rondônia', 'RO'),
+(22, 'Roraima', 'RR'),
+(23, 'Rio Grande do Sul', 'RS'),
+(24, 'Santa Catarina', 'SC'),
+(25, 'Sergipe', 'SE'),
+(26, 'São Paulo', 'SP'),
+(27, 'Tocantins', 'TO');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `experiencia_profissional`
 --
 
@@ -286,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `mae` (
   `id_diario_gestacao` int(6) DEFAULT NULL,
   `id_diario_crianca` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_mae`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `mae`
@@ -338,7 +384,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `fk_endereco_profissional_id_endereco` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_profissional`),
   KEY `FK_profissional_2` (`fk_endereco_profissional_id_endereco`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `profissional`
@@ -381,7 +427,7 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
 DROP TABLE IF EXISTS `registro_diario_crianca`;
 CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
   `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_crianca` text DEFAULT NULL,
+  `texto_diario_crianca` text,
   `imagem_diario_crianca` varchar(32) DEFAULT NULL,
   `video_diario_crianca` varchar(32) DEFAULT NULL,
   `data_hora_diario_crianca` datetime DEFAULT NULL,
@@ -400,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
 DROP TABLE IF EXISTS `registro_diario_gestacao`;
 CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
   `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_gestacao` text DEFAULT NULL,
+  `texto_diario_gestacao` text,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
   `video_diario_gestacao` varchar(32) DEFAULT NULL,
   `data_hora_registro_diario_gestacao` datetime DEFAULT NULL,

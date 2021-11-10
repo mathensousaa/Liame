@@ -45,7 +45,7 @@ session_start();
             <h6 class="mb-5 subtitle">Bem-vindo! Faça seu login para começar.</h6>
 
             <div class="">
-              <form class="ps-lg-5 me-lg-5" action="login.php" method="post">
+              <form class="ps-lg-5 me-lg-5" action="login_mae.php" method="post">
                 <div class="mb-3">
                   <input type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
