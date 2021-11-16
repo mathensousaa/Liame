@@ -2,9 +2,9 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Nov-2021 às 14:15
--- Versão do servidor: 5.7.31
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 16-Nov-2021 às 18:05
+-- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
   `valor_avaliacao` char(1) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   `id_mae` int(6) DEFAULT NULL,
-  `comentario_avaliacao` text,
+  `comentario_avaliacao` text DEFAULT NULL,
   `data_comentario` datetime DEFAULT NULL,
   `fk_mae_id_mae` int(6) DEFAULT NULL,
   `fk_profissional_id_profissional` int(6) DEFAULT NULL,
@@ -7644,10 +7644,10 @@ CREATE TABLE IF NOT EXISTS `diario_brodo_gestacao` (
 DROP TABLE IF EXISTS `endereco_profissional`;
 CREATE TABLE IF NOT EXISTS `endereco_profissional` (
   `cep` varchar(8) DEFAULT NULL,
-  `tipo_logradouro` varchar(15) DEFAULT NULL,
+  `id_tipo_logradouro` varchar(15) DEFAULT NULL,
   `logradouro` varchar(100) DEFAULT NULL,
-  `cidade` varchar(50) DEFAULT NULL,
-  `estado` char(2) DEFAULT NULL,
+  `id_cidade` varchar(50) DEFAULT NULL,
+  `id_estado` char(2) DEFAULT NULL,
   `bairro` varchar(50) DEFAULT NULL,
   `numero_endereco` varchar(6) DEFAULT NULL,
   `descricao_endereco` varchar(250) DEFAULT NULL,
@@ -7922,7 +7922,7 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
 DROP TABLE IF EXISTS `registro_diario_crianca`;
 CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
   `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_crianca` text,
+  `texto_diario_crianca` text DEFAULT NULL,
   `imagem_diario_crianca` varchar(32) DEFAULT NULL,
   `video_diario_crianca` varchar(32) DEFAULT NULL,
   `data_hora_diario_crianca` datetime DEFAULT NULL,
@@ -7941,7 +7941,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
 DROP TABLE IF EXISTS `registro_diario_gestacao`;
 CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
   `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_gestacao` text,
+  `texto_diario_gestacao` text DEFAULT NULL,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
   `video_diario_gestacao` varchar(32) DEFAULT NULL,
   `data_hora_registro_diario_gestacao` datetime DEFAULT NULL,
@@ -7967,6 +7967,68 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
   PRIMARY KEY (`id_telefone`),
   KEY `FK_telefone_profissional_2` (`fk_profissional_id_profissional`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_logradouro`
+--
+
+DROP TABLE IF EXISTS `tipo_logradouro`;
+CREATE TABLE IF NOT EXISTS `tipo_logradouro` (
+  `id_tipo_logradouro` int(11) NOT NULL,
+  `tipo_logradouro` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipo_logradouro`
+--
+
+INSERT INTO `tipo_logradouro` (`id_tipo_logradouro`, `tipo_logradouro`) VALUES
+(1, 'aeroporto'),
+(2, 'alameda'),
+(3, 'área'),
+(4, 'avenida'),
+(5, 'campo'),
+(6, 'chácara'),
+(7, 'colônia'),
+(8, 'condomínio'),
+(9, 'conjunto'),
+(10, 'distrito'),
+(11, 'esplanada'),
+(12, 'estação'),
+(13, 'estrada'),
+(14, 'favela'),
+(15, 'fazenda'),
+(16, 'feira'),
+(17, 'jardim'),
+(18, 'ladeira'),
+(19, 'lago'),
+(20, 'lagoa'),
+(21, 'largo'),
+(22, 'loteamento'),
+(23, 'morro'),
+(24, 'núcleo'),
+(25, 'parque'),
+(26, 'passarela'),
+(27, 'pátio'),
+(28, 'praça'),
+(29, 'quadra'),
+(30, 'recanto'),
+(31, 'residencial'),
+(32, 'rodovia'),
+(33, 'rua'),
+(34, 'setor'),
+(35, 'sítio'),
+(36, 'travessa'),
+(37, 'trecho'),
+(38, 'trevo'),
+(39, 'vale'),
+(40, 'vereda'),
+(41, 'via'),
+(42, 'viaduto'),
+(43, 'viela'),
+(44, 'vila');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
