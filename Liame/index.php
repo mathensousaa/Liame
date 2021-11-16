@@ -1,3 +1,4 @@
+<?php include 'php/conexao.php'; ?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -232,22 +233,35 @@
           </h5>
 
           <div class="input-group my-5">
-            <select id="select-busca" class="form-select" aria-label="Seleção de especialista">
-              <option selected>Selecione o especialista que deseja</option>
-              <option value="1">Anestesista</option>
-              <option value="2">Dermatologista</option>
-              <option value="3">Doula</option>
-              <option value="4">Enfermeira Obstétra</option>
-              <option value="5">Fisioterapeuta</option>
-              <option value="6">Ginecologista</option>
-              <option value="7">Imunologista</option>
-              <option value="8">Mastologista</option>
-              <option value="9">Médico fetal</option>
-              <option value="10">Nutricionista</option>
-              <option value="11">Obstétra</option>
-              <option value="12">Pediatra</option>
-              <option value="13">Psicólogo</option>
-              <option value="14">Psiquiatra</option>
+            <div class="col-md-7">
+            <select name="profissional" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
+                <option selected disabled>Selecione a especialidade </option>
+					      <?php
+						        $sql_especialidade = 'select id_especialidade, especialidade from especialidade;';
+						        $resul_especialidade = mysqli_query($link, $sql_especialidade);
+						        if($resul_especialidade->num_rows > 0){
+						  	    while($exibe = $resul_especialidade->fetch_array()){
+					      ?>
+						    <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo $exibe['especialidade']; ?></option>
+					      <?php
+							}
+						}
+				?>
+            </select>
+            </div>
+            <select name="estado" id="select-busca2" class="form-select" aria-label="Seleção de especialista">
+            <option selected disabled>Selecione o estado </option>
+					<?php
+						$sql_estado = 'select id_estado, estado from estado;';
+						$resul_estado = mysqli_query($link, $sql_estado);
+						if($resul_estado->num_rows > 0){
+							while($exibe = $resul_estado->fetch_array()){
+					?>
+						<option value="<?php echo $exibe['id_estado']; ?>"> <?php echo $exibe['estado']; ?></option>
+					<?php
+							}
+						}
+				?>
             </select>
             <div class="btn-container">
               <a href="#" class="button button-tertiary btn btn-primary">Buscar</a>
