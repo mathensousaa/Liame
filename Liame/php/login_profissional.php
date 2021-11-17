@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -100,12 +97,8 @@ session_start();
 
   include("conexao.php");
     if(isset($_POST['enviar'])){
-
-    $email_profissional = $_POST['email_profissional'];
-    $senha_profissional = MD5($_POST['senha_profissional']);
-
-
-
+      $email_profissional = $_POST['email_profissional'];
+      $senha_profissional = MD5($_POST['senha_profissional']);
       $query ="SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
 
       $resultado = mysqli_query($link, $query);
@@ -114,7 +107,7 @@ session_start();
         if ($linhas<=0){
           echo "inexistente";
         }else{
-
+          session_start();
           $_SESSION['email_profissional'] = $email_profissional;
 
           echo "Login feito com sucesso";

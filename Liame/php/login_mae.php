@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -45,12 +42,12 @@ session_start();
             <h6 class="mb-5 subtitle">Bem-vindo! Faça seu login para começar.</h6>
 
             <div class="">
-              <form class="ps-lg-5 me-lg-5" action="login_mae.php" method="post">
+              <form class="ps-lg-5 me-lg-5" method="post">
                 <div class="mb-3">
-                  <input type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name="senha" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
@@ -99,32 +96,28 @@ session_start();
  }
   }*/
 
-  include("conexao.php");
-    if(isset($_POST['enviar'])){
-
-    $email_mae = $_POST['email_mae'];
-    $senha_mae = MD5($_POST['senha_mae']);
-
-
-
-
-
-      $query ="SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'";
-
+  include "conexao.php";
+    if(isset($_POST)){
+      $email_mae = $_POST['email'];
+      $senha_mae = MD5($_POST['senha']);
+      $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);
 
         if ($linhas<=0){
           echo "inexistente";
-        }else{
-          $_SESSION['email_mae'] = $email_mae;
-
-          echo "Login feito com sucesso";
-
-
+        }
+        else{
+          $r = $resultado->fetch_array();
+          session_start();
+          $_SESSION['id'] = $r['id_mae'];
+          $_SESSION['nome'] = $r['nome_mae'];
+          $_SESSION['email'] = $r['email_mae'];
+          header('Location: ../index.php');
+        }
           //setcookie("email_mae",$email_mae);
 
-        }
-
     }
+
+    
  ?>
