@@ -258,7 +258,7 @@ include 'php/conexao.php';
               <h5 class="text-uppercase">Serviços</h5>
               <ul class="list-unstyled">
                 <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
-                <li class=""><a href="php/contato.php">Contato</a></li>
+                <li class=""><a href="layouts/Contatos.html">Contato</a></li>
                 <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
               </ul>
             </div>

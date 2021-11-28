@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
   <main>
     <!--navbar-->
     <div id="header" class="fixed-top">
@@ -100,6 +101,7 @@
       </div>
 
     </div>
+    
 		<h2>Encontre agora um especialista:</h2>
 
 		<form name="pesquisar" class="" action="procura_profissional2.php" method="POST">
@@ -183,7 +185,6 @@
               <ul class="list-unstyled">
                 <li class="list-item"><a href="quem_somos.html">Quem somos</a></li>
                 <li class=""><a href="../php/contato.php">Contato</a></li>
-                <li class=""><a href="privacidade_cookies.html">Privacidade e cookies</a></li>
                 <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
               </ul>
             </div>
