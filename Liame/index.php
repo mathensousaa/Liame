@@ -161,46 +161,9 @@ include 'php/conexao.php';
             </span>
           </h2>
           <h5 class="subtitle-2">
-            Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição.
+            Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição. Veja alguns dos exames que você pode encontrar com nossos profissionais:
           </h5>
 
-          <div class="input-group my-5">
-            <div class="col-md-7">
-            <select name="profissional" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
-                <option selected disabled>Selecione a especialidade </option>
-					      <?php
-						        $sql_especialidade = 'select id_especialidade, especialidade from especialidade;';
-						        $resul_especialidade = mysqli_query($link, $sql_especialidade);
-						        if($resul_especialidade->num_rows > 0){
-						  	    while($exibe = $resul_especialidade->fetch_array()){
-					      ?>
-						    <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo $exibe['especialidade']; ?></option>
-					      <?php
-							}
-						}
-				?>
-            </select>
-            </div>
-            <select name="estado" id="select-busca2" class="form-select" aria-label="Seleção de especialista">
-            <option selected disabled>Selecione o estado </option>
-					<?php
-						$sql_estado = 'select id_estado, estado from estado;';
-						$resul_estado = mysqli_query($link, $sql_estado);
-						if($resul_estado->num_rows > 0){
-							while($exibe = $resul_estado->fetch_array()){
-					?>
-						<option value="<?php echo $exibe['id_estado']; ?>"> <?php echo $exibe['estado']; ?></option>
-					<?php
-							}
-						}
-				?>
-            </select>
-            <div class="btn-container">
-              <a href="#" class="button button-tertiary btn btn-primary">Buscar</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div id="especialidades" class="mt-5 container-fluid block position-relative">
         <div class="container">
@@ -241,9 +204,9 @@ include 'php/conexao.php';
             <div class="item">
               <a href="#" class="carrossel">
                 <div class="card">
-                  <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
+                  <img src="assets/img/Hemograna.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Pré-natal</h5>
+                    <h5 class="card-title">Hemograma</h5>
                   </div>
                 </div>
               </a>
@@ -251,9 +214,9 @@ include 'php/conexao.php';
             <div class="item">
               <a href="#" class="carrossel">
                 <div class="card">
-                  <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
+                  <img src="assets/img/RH.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Pré-natal</h5>
+                    <h5 class="card-title">RH negativo ou positivo</h5>
                   </div>
                 </div>
               </a>
@@ -296,7 +259,6 @@ include 'php/conexao.php';
               <ul class="list-unstyled">
                 <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
                 <li class=""><a href="php/contato.php">Contato</a></li>
-                <li class=""><a href="layouts/privacidade_cookies.html">Privacidade e cookies</a></li>
                 <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
               </ul>
             </div>
