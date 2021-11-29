@@ -61,6 +61,16 @@
             </div>
           </div>
           <div class="col-md-6 align-self-center">
+          <!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>tinymce.init({selector:'#flavia'});</script>
+</head>
+<body>
+  <textarea id="flavia">Next, use our Get Started docs to setup Tiny!</textarea>
+</body>
+</html>
           </div>
         </div>
       </div>

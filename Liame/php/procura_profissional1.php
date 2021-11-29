@@ -101,25 +101,17 @@
       </div>
 
     </div>
-    
-		<h2>Encontre agora um especialista:</h2>
+    <div id="busca-container" class="d-flex">
+      <div class="container justify-content-center align-self-center">
+        <div class="row">
+          <div class="col-md-12 align-center text-center">
+            <h1 class="hero-title">
+            Encontre agora um especialista
+            </h1>
 
-		<form name="pesquisar" class="" action="procura_profissional2.php" method="POST">
-				O que está procurando?
-				
-					<?php
-						$sql_especialidade = 'select id_especialidade, especialidade from especialidade;';
-						$resul_especialidade = mysqli_query($link, $sql_especialidade);
-						if($resul_especialidade->num_rows > 0){
-							while($exibe = $resul_especialidade->fetch_array()){
-					?>
-						<option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo $exibe['especialidade']; ?></option>
-					<?php
-							}
-						}
-				?>
-				</select>
-				<div class="input-group my-5">
+            <div class="">
+              <form name="pesquisa-profissional" action="procura_profissional2.php" class="ps-lg-5 me-lg-5" method="post">
+              <div class="input-group my-5">
             <div class="col-md-7">
             <select name="profissional" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
                 <option selected disabled>Selecione a especialidade </option>
@@ -129,7 +121,7 @@
 						        if($resul_especialidade->num_rows > 0){
 						  	    while($exibe = $resul_especialidade->fetch_array()){
 					      ?>
-						    <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo $exibe['especialidade']; ?></option>
+						    <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo utf8_encode($exibe['especialidade']); ?></option>
 					      <?php
 							}
 						}
@@ -144,19 +136,26 @@
 						if($resul_estado->num_rows > 0){
 							while($exibe = $resul_estado->fetch_array()){
 					?>
-						<option value="<?php echo $exibe['id_estado']; ?>"> <?php echo $exibe['estado']; ?></option>
+						<option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
 					<?php
 							}
 						}
 				?>
             </select>
             <div class="btn-container">
-              <a href="#" class="button button-tertiary btn btn-primary">Buscar</a>
+              <a href="#" class="button button-primary btn btn-primary">Buscar</a>
             </div>
           </div>
         </div>
       </div>
-	
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
 	<footer>
     <div id="rodape" class="container">
       <div class="conteudo py-5">
