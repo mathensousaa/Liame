@@ -1,7 +1,7 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
-include 'php/conexao.php'; 
+include 'php/conexao.php';
 
 ?>
 <!doctype html>
@@ -29,9 +29,9 @@ include 'php/conexao.php';
 
 <body>
   <main>
-    <?php 
-    include 'menu.php'; 
-      Menu($_SESSION['id']);
+    <?php
+    include 'menu.php';
+    Menu($_SESSION['id']);
     ?>
 
     <!-- Hero -->
@@ -118,7 +118,7 @@ include 'php/conexao.php';
             </a>
           </div>
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <a href="#" class="destaque">
+            <a href="php/carteirinha_vacinacao.php" class="destaque">
               <div class="img-container mb-3">
                 <img class="img-fluid" src="assets/img/icon_vacina.png" alt="vacinação">
               </div>
