@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 30-Nov-2021 às 00:03
+-- Tempo de geração: 29-Nov-2021 às 23:35
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -7704,6 +7704,36 @@ INSERT INTO `estado` (`id_estado`, `estado`, `uf`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `experiencia_profissional`
+--
+
+DROP TABLE IF EXISTS `experiencia_profissional`;
+CREATE TABLE IF NOT EXISTS `experiencia_profissional` (
+  `id_experiencia` int(6) NOT NULL AUTO_INCREMENT,
+  `experiencia_profissional` varchar(250) DEFAULT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_experiencia`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `formacao_profissional`
+--
+
+DROP TABLE IF EXISTS `formacao_profissional`;
+CREATE TABLE IF NOT EXISTS `formacao_profissional` (
+  `id_formacao` int(6) NOT NULL AUTO_INCREMENT,
+  `instituicao_formacao_profissional` varchar(250) DEFAULT NULL,
+  `data_formacao_profissional` date NOT NULL,
+  `id_profissional` int(6) DEFAULT NULL,
+  PRIMARY KEY (`id_formacao`),
+  KEY `id_profissional` (`id_profissional`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `galeria_imagem_profissional`
 --
 
@@ -7761,6 +7791,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `email_profissional` varchar(100) DEFAULT NULL,
   `senha_profissional` varchar(32) DEFAULT NULL,
   `foto_perfil_profissional` varchar(32) DEFAULT NULL,
+  `status_profissional` char(1) DEFAULT NULL,
   `id_profissional` int(6) NOT NULL AUTO_INCREMENT,
   `id_telefone` int(6) DEFAULT NULL,
   `id_endereco` int(6) DEFAULT NULL,
@@ -7773,12 +7804,12 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 -- Extraindo dados da tabela `profissional`
 --
 
-INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`) VALUES
-('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, NULL, NULL),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, NULL, NULL),
-('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, NULL, NULL),
-('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, NULL, NULL),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, NULL, NULL);
+INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `status_profissional`, `id_profissional`, `id_telefone`, `id_endereco`) VALUES
+('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, 1, NULL, NULL),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, 2, NULL, NULL),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, 3, NULL, NULL),
+('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, 4, NULL, NULL),
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -7909,26 +7940,6 @@ INSERT INTO `tipo_logradouro` (`id_tipo_logradouro`, `tipo_logradouro`) VALUES
 (42, 'viaduto'),
 (43, 'viela'),
 (44, 'vila');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `validacao_profissional`
---
-
-DROP TABLE IF EXISTS `validacao_profissional`;
-CREATE TABLE IF NOT EXISTS `validacao_profissional` (
-  `id_validacao` int(11) NOT NULL AUTO_INCREMENT,
-  `id_profissional` int(11) NOT NULL,
-  `data_validacao` date NOT NULL,
-  `curriculo_validacao` varchar(32) NOT NULL,
-  `extensao_documento_validacao` varchar(5) NOT NULL,
-  `status_validacao` char(1) NOT NULL,
-  `id_especialidade_profissional` int(11) NOT NULL,
-  PRIMARY KEY (`id_validacao`),
-  KEY `id_profissional` (`id_profissional`),
-  KEY `id_especialidade_profissional` (`id_especialidade_profissional`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
