@@ -569,16 +569,16 @@
           <div class="px-lg-4 px-mb-1">
             <h5 class="text-uppercase">Especialistas</h5>
             <ul class="list-unstyled">
-              <li class=""><a href="central_ajuda.html">Central de ajuda</a></li>
-              <li class=""><a href="termos_uso_profissional.html">Termos de uso de profissional</a></li>
+              <li class=""><a href="../layouts/central_ajuda.html">Central de ajuda</a></li>
+              <li class=""><a href="../layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
             </ul>
           </div>
           <div class="px-lg-4 px-mb-1">
             <h5 class="text-uppercase">Serviços</h5>
             <ul class="list-unstyled">
-              <li class="list-item"><a href="quem_somos.html">Quem somos</a></li>
-              <li class=""><a href="Contatos.html">Contato</a></li>
-              <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
+              <li class="list-item"><a href="../layouts/quem_somos.html">Quem somos</a></li>
+              <li class=""><a href="../layouts/Contatos.html">Contato</a></li>
+              <li class=""><a href="../layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
             </ul>
           </div>
         </div>
@@ -601,13 +601,14 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
-  referrerpolicy="no-referrer"></script>
-<script src="../assets/js/owl.carousel.min.js"></script>
-<script src="../assets/js/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+      <script src="../assets/js/owl.carousel.min.js"></script>
+      <script src="../assets/js/main.js"></script>
+
 </body>
 
 </html>

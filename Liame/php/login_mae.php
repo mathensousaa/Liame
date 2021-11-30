@@ -52,6 +52,9 @@
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
+              <ul class="list-unstyled">
+                  <li class="list-item"><a href="cadastro_mae1.php">Crie seu cadastro</a></li>
+              </ul>
               </form>
             </div>
           </div>
@@ -60,6 +63,7 @@
         </div>
       </div>
     </div>
+    
 </main>
     <!--implementação jquery, poppers.js e plugin bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>

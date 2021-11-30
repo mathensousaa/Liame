@@ -57,20 +57,13 @@
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
+                <ul class="list-unstyled">
+                  <li class="list-item"><a href="login_mae.php">Faça seu login</a></li>
+              </ul>
               </form>
             </div>
           </div>
-          <div class="col-md-6 align-self-center">
-          <!DOCTYPE html>
-<html>
-<head>
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>tinymce.init({selector:'#flavia'});</script>
-</head>
-<body>
-  <textarea id="flavia">Next, use our Get Started docs to setup Tiny!</textarea>
-</body>
-</html>
+
           </div>
         </div>
       </div>
