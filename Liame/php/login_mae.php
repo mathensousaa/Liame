@@ -42,15 +42,15 @@
             <h6 class="mb-5 subtitle">Bem-vindo! Faça seu login para começar.</h6>
 
             <div class="">
-              <form class="ps-lg-5 me-lg-5" method="post">
+              <form class="ps-lg-5 me-lg-5" action= "login_mae.php" method="post">
                 <div class="mb-3">
-                  <input type="email" name="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name="email_mae" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                  <input type="password" name="senha" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name="senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <div class="mb-3">
-                  <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
+                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
               </form>
             </div>
@@ -96,10 +96,11 @@
  }
   }*/
 
-  include "conexao.php";
-    if(isset($_POST)){
-      $email_mae = $_POST['email'];
-      $senha_mae = MD5($_POST['senha']);
+  include ('conexao.php');
+    if(isset($_POST['submit'])){
+      echo "cu";
+      $email_mae = $_POST['email_mae'];
+      $senha_mae = MD5($_POST['senha_mae']);
       $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);
@@ -110,9 +111,9 @@
         else{
           $r = $resultado->fetch_array();
           session_start();
-          $_SESSION['id'] = $r['id_mae'];
-          $_SESSION['nome'] = $r['nome_mae'];
-          $_SESSION['email'] = $r['email_mae'];
+          $_SESSION['id_mae'] = $r['id_mae'];
+          $_SESSION['nome_mae'] = $r['nome_mae'];
+          $_SESSION['email_mae'] = $r['email_mae'];
           header('Location: ../index.php');
         }
           //setcookie("email_mae",$email_mae);

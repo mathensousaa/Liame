@@ -31,7 +31,7 @@ include 'php/conexao.php';
   <main>
     <?php 
     include 'menu.php'; 
-      Menu($_SESSION['id']);
+      Menu($_SESSION['id_mae']);
     ?>
 
     <!-- Hero -->

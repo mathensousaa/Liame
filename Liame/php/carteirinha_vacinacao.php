@@ -40,6 +40,7 @@ if($_SESSION['email_mae']==NULL){
 }else{
     //Logged in
     echo "Logado com sucesso!";
+    echo "pagina da carteirinha";
 }
 
 
