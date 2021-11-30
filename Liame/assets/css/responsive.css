@@ -21,6 +21,19 @@
     display: none;
   }
 
+  #cartilha {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  #cartilha #nuvem-container {
+    display: none;
+  }
+
+  #cartilha #nuvem2-container {
+    display: none;
+  }
+
   #busca .input-group {
     padding-left: none;
     padding-right: none;
@@ -56,6 +69,14 @@
   #servicos a.destaque .img-container img {
     max-height: 120px;
   }
+
+  #cartilha a.destaque .img-container {
+    height: 120px;
+  }
+  #cartilha a.destaque .img-container img {
+    max-height: 120px;
+  }
+
 
   #rodape .logo img{
     display: flex;

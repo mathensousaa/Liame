@@ -37,9 +37,9 @@
           <div class="col-md-6 align-center text-center">
             <img id="icone" class="img-fluid" src="../assets/img/icone-mae.png" alt="">
             <h1 class="hero-title">
-              Login
+              Bem-vindo
             </h1>
-            <h6 class="mb-5 subtitle">Bem-vindo! Faça seu login para começar.</h6>
+            <h6 class="mb-5 subtitle">Busque por um profissional!</h6>
 
             <div class="">
               <form class="ps-lg-5 me-lg-5" action= "login_mae.php" method="post">
@@ -52,6 +52,9 @@
                 <div class="mb-3">
                   <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
+              <ul class="list-unstyled">
+                  <li class="list-item"><a href="cadastro_mae1.php">Crie seu cadastro</a></li>
+              </ul>
               </form>
             </div>
           </div>
@@ -60,6 +63,8 @@
         </div>
       </div>
     </div>
+    
+</main>
     <!--implementação jquery, poppers.js e plugin bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
@@ -98,7 +103,7 @@
 
   include ('conexao.php');
     if(isset($_POST['submit'])){
-      echo "cu";
+     ;
       $email_mae = $_POST['email_mae'];
       $senha_mae = MD5($_POST['senha_mae']);
       $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';
