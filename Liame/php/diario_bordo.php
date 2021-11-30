@@ -570,7 +570,7 @@
             <h5 class="text-uppercase">Especialistas</h5>
             <ul class="list-unstyled">
               <li class=""><a href="../layouts/central_ajuda.html">Central de ajuda</a></li>
-              <li class=""><a href="../layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+              <li class=""><a href="../git push origin mainlayouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
             </ul>
           </div>
           <div class="px-lg-4 px-mb-1">
