@@ -5,8 +5,10 @@
   		$buscarprofissional = $_POST ['profissional'];
 		$buscarestado = $_POST['estado'];
 // procura no banco de dados
+//faezr comparação dos id da especialidade e estado escolhido com os id da especialidade e estado do profissional
 		$sql_busca = ("SELECT id_especialidade, id_estado FROM especialidade_profissional, endereco_profissional WHERE id_especialidade like '%$buscarprofissional%' = estado like '%$buscarestado%'" );
-  		$consulta = mysqli_query($link, $sql_busca);
+  		
+		$consulta = mysqli_query($link, $sql_busca);
 
 // ver dados do profissional que bate com os dados selecionados 
 		while ($vetor = mysqli_fetch_array($consulta)){
