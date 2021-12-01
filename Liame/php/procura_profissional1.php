@@ -1,3 +1,5 @@
+
+
 <?php include 'conexao.php'; ?>
 <!doctype html>
 <html lang="pt-br">
@@ -143,7 +145,7 @@
 				?>
             </select>
             <div class="btn-container">
-              <a href="procura_profissional2.php" class="button button-primary btn btn-primary">Buscar</a>
+              <input type="submit" class="button button-primary btn btn-primary" value="Buscar">
             </div>
           </div>
         </div>
