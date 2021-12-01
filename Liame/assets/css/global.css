@@ -1,5 +1,13 @@
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
 body {
   background: #fff;
+  position: relative;
+  transition: .5s;
 }
 
 .hero-button {
@@ -51,6 +59,7 @@ body {
 }
 a {
   color: var(--tertiary);
+  text-decoration: none;
 }
 
 .title {
@@ -97,8 +106,6 @@ a {
 #logo {
   width: 55px;
 }
-
-
 
 .content {
   margin-top: 150px;

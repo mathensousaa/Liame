@@ -45,6 +45,104 @@ html, body {
   width: 55px;
 }
 
+#header-secondary {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-beetween;
+  padding: 0 1rem;
+  background-color: transparent;
+  transition: background ease-out 0.2s;
+  z-index: 9999;
+}
+
+#header-secondary.active {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+#header-secondary .navbar-collapse {
+  width: auto;
+}
+
+#header-secondary .nav-link {
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: var(--primary);
+  border-bottom: solid 4px transparent;
+}
+
+#header-secondary .nav-link:hover {
+  border-bottom: solid 4px var(--secondary);
+  color: var(--secondary);
+}
+
+#header-secondary .navbar-brand:hover {
+  filter: opacity(70%);
+  transition: 0.2s;
+}
+#header-secondary #logo {
+  width: 55px;
+}
+
+#header-secondary i {
+  color: var(--primary);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#header-secondary .header-img {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#header-secondary .header-img img{
+  width: 45px;
+}
+
+#lateral-navbar {
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--primary);
+  padding: 0.5rem 1 0 0;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+#lateral-navbar #logo {
+  width: 2rem;
+}
+
+#lateral-navbar .nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+#lateral-navbar .nav_logo,
+#lateral-navbar .nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+
 #hero {
   width: 100%;
   height: 100vh;

@@ -10,4 +10,7 @@
   --light: #f0f0f0;
   --medium: #cacaca;
   --dark: #a2a2a2;
+  --header-height: 3rem;
+  --nav-width: 68px;
+  --z-fixed: 100
 }
