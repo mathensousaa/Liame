@@ -1,0 +1,8 @@
+select esp.id_especialidade, especialidade, est.id_estado, estado, uf 
+from especialidade as es
+inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade
+inner join profissional as pro on pro.id_profissional = esp.id_profissional
+inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco
+inner join estado as est on ende.id_estado = est.id_estado
+
+select esp.id_especialidade, especialidade, est.id_estado, estado, uf, nome_profissional, email_profissional, ddd_telefone, numero_telefone, logradouro, numero_endereco, cep, bairro  from especialidade as es inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade inner join profissional as pro on pro.id_profissional = esp.id_profissional inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco inner join estado as est on ende.id_estado = est.id_estado inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone WHERE esp.id_especialidade = '1' AND est.id_estado = '1'
