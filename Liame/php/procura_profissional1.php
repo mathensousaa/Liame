@@ -101,6 +101,7 @@
     </div>
 
   </div>
+  <br><br><br><br>
     <div id="busca-container" class="d-flex">
       <div class="container justify-content-center align-self-center">
         <div class="row">
@@ -161,11 +162,7 @@
             <div class="col-4">
 
             </div>
-            <div class="col-8">
-              <div>
-                <h5 name="nome_profissional">Nome Profissional</h5>
-              </div>
-            </div>
+            
         </div>
         <div class="col">
           

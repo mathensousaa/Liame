@@ -143,6 +143,7 @@ if (isset($_POST['exibir'])){
     ?>
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <?php
+  
     }else if($id_profissional== 0){
         echo"sai daqui";
         
