@@ -1,5 +1,17 @@
 <?php
 session_start();
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+}
+else{
+  $id_mae = 0;
+}
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+}
+else{
+  $id_profissional = 0;
+}
 
 include 'php/conexao.php';
 
@@ -31,7 +43,8 @@ include 'php/conexao.php';
   <main>
     <?php
     include 'menu.php';
-    Menu($_SESSION['id_mae']);
+    Menu($id_mae, $id_profissional);
+    
     ?>
 
     <!-- Hero -->

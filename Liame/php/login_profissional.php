@@ -99,10 +99,12 @@
   }*/
 
   include("conexao.php");
-    if(isset($_POST['enviar'])){
+    if(isset($_POST)){
       $email_profissional = $_POST['email_profissional'];
       $senha_profissional = MD5($_POST['senha_profissional']);
-      $query ="SELECT * FROM profissional WHERE email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
+      $query ="SELECT id_profissional, nome_profissional FROM profissional 
+      WHERE 
+      email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
 
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);
@@ -110,10 +112,14 @@
         if ($linhas<=0){
           echo "inexistente";
         }else{
+          $r = $resultado->fetch_array();
           session_start();
-          $_SESSION['email_profissional'] = $email_profissional;
+          $_SESSION['id_profissional'] = $r['id_profissional'];
+          $_SESSION['nome'] = $r['nome_profissional'];
+          header("Location: ../index.php");
+          //$_SESSION['email_profissional'] = $email_profissional;
 
-          echo "Login feito com sucesso";
+          //echo "Login feito com sucesso";
 
 
           //$_SESSION['email_profissional'] = $email_profissional;

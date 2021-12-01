@@ -1,3 +1,17 @@
+<?php
+session_start();
+if(isset($_SESSION['id_mae'])){
+  echo "ooooo";
+  $id_mae = $_SESSION['id_mae'];
+}else{
+  
+  $id_mae = 0;
+}
+if (isset($_SESSION['id_profissional'])){
+  
+  echo "Você não tem acesso a essa página";
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 
