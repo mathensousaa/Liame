@@ -1,5 +1,3 @@
-
-
 <?php include 'conexao.php'; ?>
 <!doctype html>
 <html lang="pt-br">
