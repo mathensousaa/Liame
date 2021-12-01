@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 01-Dez-2021 às 12:58
+-- Tempo de geração: 30-Nov-2021 às 23:09
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -7601,17 +7601,7 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
   KEY `id_tipo_logradouro` (`id_tipo_logradouro`),
   KEY `id_cidade` (`id_cidade`),
   KEY `id_estado` (`id_estado`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `endereco_profissional`
---
-
-INSERT INTO `endereco_profissional` (`cep`, `id_tipo_logradouro`, `logradouro`, `id_cidade`, `id_estado`, `bairro`, `numero_endereco`, `descricao_endereco`, `id_endereco`) VALUES
-('07500000', '7', 'Manuel Fernadno Sales', '1', '1', 'Jardim Eldorado', '20', '', 1),
-('07500000', '10', 'Professora Ana Maria', '5', '20', 'Vila Amelia', '30', '', 2),
-('04582115', '9', 'Manuel Fernadno Sales', '3', '7', 'Jardim Eldorado', '820', '', 3),
-('14578965', '8', 'Damasco Ferreira', '6', '1', 'Vila Guilherme', '5045', '', 4);
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -7661,18 +7651,7 @@ CREATE TABLE IF NOT EXISTS `especialidade_profissional` (
   PRIMARY KEY (`id_especialidade_profissional`),
   KEY `id_especialidade` (`id_especialidade`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `especialidade_profissional`
---
-
-INSERT INTO `especialidade_profissional` (`id_especialidade_profissional`, `numero_registro_profissional`, `id_especialidade`, `id_profissional`) VALUES
-(1, '1856-7', 5, 2),
-(2, '4598-5', 6, 3),
-(3, '1257-9', 1, 1),
-(4, '45879-6', 1, 4),
-(5, '45678-9', 1, 5);
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -7793,11 +7772,11 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 --
 
 INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`) VALUES
-('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4),
-('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2),
-('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3);
+('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, NULL, NULL),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, NULL, NULL),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, NULL, NULL),
+('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, NULL, NULL),
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -7864,15 +7843,7 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
   `ddd_telefone_profissional` char(2) DEFAULT NULL,
   `numero_telefone_profissional` char(9) DEFAULT NULL,
   PRIMARY KEY (`id_telefone`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `telefone_profissional`
---
-
-INSERT INTO `telefone_profissional` (`id_telefone`, `ddd_telefone_profissional`, `numero_telefone_profissional`) VALUES
-(1, '11', '3125-6584'),
-(2, '12', '4568-6589');
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

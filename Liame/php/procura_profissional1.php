@@ -143,7 +143,7 @@
 				?>
             </select>
             <div class="btn-container">
-              <input type="submit" class="button button-primary btn btn-primary" value="Buscar">
+              <a href="procura_profissional2.php" class="button button-primary btn btn-primary">Buscar</a>
             </div>
           </div>
         </div>
