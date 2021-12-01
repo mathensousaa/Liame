@@ -72,62 +72,7 @@ if($_SESSION['id_mae']==NULL){
 
 }else{
   ?>
-
-    <!--Container Main end-->
-  <body>
-    <div class="header" id="header-secondary">
-      <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-        <div class="container-fluid">
-            <div class="header-toggle" id="header-toggle">
-              <i class='uil uil-bars' id="header-toggle"></i>
-            </div>
-            <div class="header-img">
-              <img src="https://i.imgur.com/hczKIze.jpg" alt="">
-            </div>
-        </div>
-      </nav>
-    </div>
-      <div class="l-navbar" id="lateral-navbar">
-        <nav class="nav">
-            <div>
-              <a href="index.php" class="navbar-brand">
-                <img class="nav-logo img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-                 <span class="nav_logo-name">
-                   Home
-                 </span>
-               </a>
-               <div class="nav_list">
-                 <a href="#" class="nav_link active">
-                   <i class='uil uil-diary nav_icon'></i>
-                   <span class="nav_name">Diário de bordo</span>
-                 </a>
-                 <a href="#" class="nav_link">
-                   <i class='uil uil-syringe nav_icon'></i>
-                   <span class="nav_name">Cartilha de vacinação</span>
-                 </a>
-                 <a href="#" class="nav_link">
-                   <i class='uil uil-user nav_icon'></i>
-                   <span class="nav_name">Perfil</span>
-                 </a>
-                 <a href="#" class="nav_link">
-                     <i class='uil uil-medkit nav_icon'></i>
-                     <span class="nav_name">Consultas</span>
-                   </a>
-                 </div>
-            </div>
-            <a href="#" class="nav_link">
-              <i class='uil uil-signout nav_icon'></i>
-              <span class="nav_name">Deslogar</span>
-            </a>
-        </nav>
-    </div>
-
-    <div class="height-100 bg-light">
-        <h4>Main Components</h4>
-    </div>
-
-
-  <!--  <div id="cartilha" class="container-fluid block position-relative">
+  <div id="cartilha" class="container-fluid block position-relative">
       <div class="container">
         <div class="row text-center mb-5">
           <h2 class="title">Cartilha de vacinação</h2>
@@ -568,7 +513,7 @@ if($_SESSION['id_mae']==NULL){
         </div>
       </div>
     </div>
-  </footer>-->
+  </footer>
 
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
