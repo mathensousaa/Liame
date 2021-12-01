@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 30-Nov-2021 às 00:03
+-- Tempo de geração: 30-Nov-2021 às 23:09
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -48,8 +48,6 @@ DROP TABLE IF EXISTS `bebe`;
 CREATE TABLE IF NOT EXISTS `bebe` (
   `id_bebe` int(6) NOT NULL AUTO_INCREMENT,
   `nome_bebe` varchar(100) DEFAULT NULL,
-  `sexo_bebe` varchar(15) DEFAULT NULL,
-  `idade_bebe` varchar(15) DEFAULT NULL,
   `id_mae` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_bebe`),
   KEY `id_mae` (`id_mae`)
@@ -7569,11 +7567,11 @@ CREATE TABLE IF NOT EXISTS `diario_bordo_crianca` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `diario_brodo_gestacao`
+-- Estrutura da tabela `diario_bordo_gestacao`
 --
 
-DROP TABLE IF EXISTS `diario_brodo_gestacao`;
-CREATE TABLE IF NOT EXISTS `diario_brodo_gestacao` (
+DROP TABLE IF EXISTS `diario_bordo_gestacao`;
+CREATE TABLE IF NOT EXISTS `diario_bordo_gestacao` (
   `id_diario_gestacao` int(6) NOT NULL AUTO_INCREMENT,
   `id_mae` int(6) DEFAULT NULL,
   `id_bebe` int(6) DEFAULT NULL,
@@ -7811,7 +7809,6 @@ CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
   `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
   `texto_diario_crianca` text DEFAULT NULL,
   `imagem_diario_crianca` varchar(32) DEFAULT NULL,
-  `video_diario_crianca` varchar(32) DEFAULT NULL,
   `data_hora_diario_crianca` datetime DEFAULT NULL,
   `id_diario_crianca` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_registro_diario_crianca`),

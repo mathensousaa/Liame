@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cadastro - Profissionais | Liame</title>
+  <title>Cadastro - Administradores | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -41,24 +41,24 @@
             </h1>
             <h6 class="mb-5 subtitle">Bem-vindo! Faça seu cadastro para começar.</h6>
             <div class="">
-              <form class="ps-lg-5 me-lg-5" action="cadastro_profissional2.php" method="post">
+              <form class="ps-lg-5 me-lg-5" action="cadastro_adm2.php" method="post">
                 <div class="mb-3">
-                  <input name="nome_profissional" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome">
+                  <input name="nome_adm" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome">
                 </div>
                 <div class="mb-3">
-                  <input name="email_profissional" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input name="email_adm" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                  <input name="senha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input name="senha_adm" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <div class="mb-3">
-                  <input name="confirmarsenha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha">
+                  <input name="confirmarsenha_adm" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha">
                 </div>
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
                 <ul class="list-unstyled">
-                  <li class="list-item"><a href="login_profissional.php">Faça seu login</a></li>
+                  <li class="list-item"><a href="login_adm.php">Faça seu login</a></li>
               </ul>
               </form>
             </div>

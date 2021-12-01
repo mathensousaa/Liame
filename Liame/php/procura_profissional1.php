@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Central de ajuda | Liame</title>
+  <title>Procura por profissional | Liame</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
@@ -143,7 +143,7 @@
 				?>
             </select>
             <div class="btn-container">
-              <a href="#" class="button button-primary btn btn-primary">Buscar</a>
+              <a href="procura_profissional2.php" class="button button-primary btn btn-primary">Buscar</a>
             </div>
           </div>
         </div>
@@ -154,6 +154,26 @@
         </div>
       </div>
     </div>
+    <!-- EXIBICAO PROFISSIONAL -->
+    <div class="profissional-container container">
+      <div class="row">
+        <div class="col">
+            <div class="col-4">
+
+            </div>
+            <div class="col-8">
+              <div>
+                <h5 name="nome_profissional">Nome Profissional</h5>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+          
+        </div>
+
+      </div>
+    </div>
+    <!--EXIBICAO PROFISSIONAL -->
   </main>
 
 	<footer>
@@ -169,22 +189,22 @@
               <ul class="list-unstyled">
                 <li class=""><a href="../php/procura_profissional1.php">Consultas</a></li>
                 <li class=""><a href="../php/diario_bordo.php">Diário de bordo</a></li>
-                <li class=""><a href="../php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
+                <li class=""><a href="../php/cadastro_mae1.php">Carteira de vacinação</a></li>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Especialistas</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="central_ajuda.html">Central de ajuda</a></li>
-                <li class=""><a href="termos_uso_profissional.html">Termos de uso de profissional</a></li>
+                <li class=""><a href="../layouts/central_ajuda.html">Central de ajuda</a></li>
+                <li class=""><a href="../layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Serviços</h5>
               <ul class="list-unstyled">
-                <li class="list-item"><a href="quem_somos.html">Quem somos</a></li>
-                <li class=""><a href="../php/contato.php">Contato</a></li>
-                <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
+                <li class="list-item"><a href="../layouts/quem_somos.html">Quem somos</a></li>
+                <li class=""><a href="../layouts/Contatos.html">Contato</a></li>
+                <li class=""><a href="../layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
               </ul>
             </div>
           </div>
