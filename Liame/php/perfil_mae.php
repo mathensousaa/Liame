@@ -1,18 +1,38 @@
 <?php
-if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
-    session_start();
-  }
+session_start();
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  
+  $id_profissional = 0;
+}
+else{
+   $id_profissional = 0;
+}
 
-//check do the person logged in
-if($_SESSION['email_mae']==NULL){
-    //haven't log in
-    echo "Você não está logado";
-    header("Location:login_mae.php");
-}else{
+if(($id_mae != 0)){
+
+
     //Logged in
+    /*session_start();
     include ('conexao.php');
-
-    
+    if(isset($_SESSION['id_mae'])){
+        $id_mae = $_SESSION['id_mae'];
+      }else{
+        
+        $id_mae = 10 ;
+      }
+      if (isset($_SESSION['id_profissional'])){
+        
+        echo "Você não tem acesso a essa página";
+      }
+    */
 
 
 ?>
@@ -100,9 +120,14 @@ if (isset($_POST['exibir'])){
     
     }
 }
-}
+
     ?>
     <button><a href="edicaodedados.php">Editar Conta</a></button>
-    
+    <?php
+    }else if($id_profissional== 0){
+        echo"sai daqui";
+        
+    }
+    ?>
 </body>
 </html>

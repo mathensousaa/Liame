@@ -115,7 +115,7 @@
           $r = $resultado->fetch_array();
           session_start();
           $_SESSION['id_profissional'] = $r['id_profissional'];
-          $_SESSION['nome'] = $r['nome_profissional'];
+          $_SESSION['nome_profissional'] = $r['nome_profissional'];
           header("Location: ../index.php");
           //$_SESSION['email_profissional'] = $email_profissional;
 
