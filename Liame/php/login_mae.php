@@ -102,10 +102,10 @@
   }*/
 
   include ('conexao.php');
-    if(isset($_POST['submit'])){
+    if(!empty($_POST)){
      ;
       $email_mae = $_POST['email_mae'];
-      $senha_mae = MD5($_POST['senha_mae']);
+      $senha_mae = md5($_POST['senha_mae']);
       $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);
@@ -125,5 +125,5 @@
 
     }
 
-    
+
  ?>
