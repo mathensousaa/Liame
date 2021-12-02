@@ -108,8 +108,8 @@ if (isset($_POST['exibir'])){
 
     while($row = mysqli_fetch_array($dados))
     {
-        echo "<table>";
-        echo "<td>" . $row['id_bebe'] . "</td>";
+    echo "<table>";
+    echo "<td>" . $row['id_bebe'] . "</td>";
     echo "<td>" . $row['nome_bebe'] . "</td>";
     echo "<td>" . $row['sexo_bebe'] . "</td>";
     echo "<td>    " . $row['idade_bebe'];
@@ -123,16 +123,20 @@ if (isset($_POST['exibir'])){
     echo "</table>";
   
 
+    
+}
+
 if (isset($_POST['excluir'])){
-    $id_bebe=$row['id_bebe'];
-    $excluir= 'DELETE FROM bebe WHERE id_bebe = '.$id_bebe.'';
-echo "oooo";
+    $row=mysqli_fetch_array($dados);
+    $id_bebe= $row['id_bebe'];
+    echo $id_bebe;
+    $excluir= "DELETE FROM bebe WHERE id_bebe = '.$id_bebe.'";
+    echo "oooo";
     if(mysqli_query($link,$excluir)){
         echo "Excluido com sucesso!";
     }else{
         echo "Erro ao excluir!";
     }
-}
 }
 
 
