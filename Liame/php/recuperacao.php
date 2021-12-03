@@ -1,15 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Procura de profissionais | Liame</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+  <head>
+    <title>Dados errados</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 
@@ -99,106 +93,13 @@
       </div>
 
     </div>
-	<br><br><br><br>
-	<div id="busca-container" class="d-flex">
-      <div class="container justify-content-center align-self-center">
-
-	<br><br><br><br><br><br><br><br>
-  
-	
-	<style>
-		#img_exibe{
-			width: 50%;
-			padding-top:3%;
-			margin:2%;
-		}
-		.texto{
-			padding-top:1%;
-		}
-		.row{
-			margin-top: 2%;
-		}
-		.card-footer{
-			background-color: white;
-		}
-	</style>
-	<body>
-  		<div class="container">
-		  <div class="row">
-
-              
-    <a href="procura_profissional1.php"> <font color="white"> < Voltar </font></a>
-                
-<?php
-	include ('conexao.php');
- 	//resgata dados selecionados
-	if(isset($_POST)){
-  	$buscarprofissional = $_POST ['especialidade'];
-		$buscarestado = $_POST['estado'];
-// procura no banco de dados
-		$sql_busca = ("select esp.id_especialidade, especialidade, est.id_estado, estado, uf, pro.id_profissional as id, nome_profissional, 
-						email_profissional, foto_perfil_profissional, descricao_endereco,
-						ddd_telefone_profissional, numero_telefone_profissional, logradouro, numero_endereco, cep, cidade, estado, bairro  
-						from especialidade as es 
-						inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade 
-						inner join profissional as pro on pro.id_profissional = esp.id_profissional 
-						inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco 
-						inner join estado as est on ende.id_estado = est.id_estado 
-						inner join cidade as cid on ende.id_cidade = cid.id_cidade 
-						inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
-						WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
-  		
-		$consulta = mysqli_query($link, $sql_busca);
-		if($consulta->num_rows > 0){
-			while ($vetor = mysqli_fetch_array($consulta)){
-				$nome_profissional= $vetor['nome_profissional'];
-				$especialidade_profissional=$vetor['especialidade'];
-				$estado_profissional=$vetor['estado'];
-				$cidade_profissional=$vetor['cidade'];
-				$cep_profissional=$vetor['cep'];
-				$foto_profissional=$vetor['foto_perfil_profissional'];
-				//$telefone_profissional= '('.$vetor['ddd_telefone_profissional'].') '.$vetor['numero_telefone_profissional'];
-				?>
-		 		
-					<div class="col-sm-3">
-						<div class="card">
-							<div class="card-img-top text-center">
-									<?php
-										if ($foto_profissional != ""){
-											?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
-										}else{
-											?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
-										}
-									?>
-							</div>
-							<hr>
-							<div class="card-body">
-								<?php
-									echo utf8_encode ('Nome: ' .$nome_profissional.'<br>');
-									echo utf8_encode ('Especialidade: ' .$especialidade_profissional.'<br>');	
-									echo utf8_encode ('Estado: ' .$estado_profissional.'<br>');		
-									echo utf8_encode ('Cidade: ' .$cidade_profissional.'<br>');
-									echo utf8_encode ('CEP: ' .$cep_profissional.'<br>');	
-								?>
-							</div>
-							<div class="card-footer text-center">
-								<a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="btn btn-primary btn-sm">Ver mais</a>
-							</div>
-						</div>
-					</div>
-				<br>
-				<?php
-			}
-		}
-	}else{
-// caso não tenha encontrado nehum profissinal 
-		echo "Nenhum profissional encontrado nessa área.";
-	}
-?>
-	</div>
-</div>
-	
-<footer>
+    <?php
+        echo " <div class='senhaiguais'>Atenção! Senhas precisam ser iguais. </div>";
+    ?>
+    <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
+                    Voltar para o cadastro
+                  </button>
+  <footer>
   <div id="rodape" class="container">
     <div class="conteudo py-5">
       <div class="row">
