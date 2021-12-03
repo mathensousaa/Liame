@@ -24,6 +24,7 @@
             
             if (mysqli_query($link, $query)){
                 echo "Cadastrado com sucesso";
+                header('Location: ../index.php');
             }else{
                 echo "Erro ao cadastrar";
             }

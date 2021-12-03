@@ -1,3 +1,8 @@
+<?php 
+    include 'conexao.php'; 
+    $nome_profissional = "Milena Soares";
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -6,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Procura de profissionais | Liame</title>
+  <title><?php echo $nome_profissional;?> | Liame</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
@@ -104,7 +109,7 @@
       <div class="container justify-content-center align-self-center">
 
 	<br><br><br><br><br><br><br><br>
-  
+
 	
 	<style>
 		#img_exibe{
@@ -126,9 +131,7 @@
   		<div class="container">
 		  <div class="row">
 
-              
-                  <a href="../php/procura_profissional1.php"> <font color="white"> <-Voltar </font></a></li>
-                
+		 
 <?php
 	include ('conexao.php');
  	//resgata dados selecionados

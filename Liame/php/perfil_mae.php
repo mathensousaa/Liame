@@ -18,6 +18,7 @@
 
 <?php
 session_start();
+include ('conexao.php');
 if(isset($_SESSION['id_mae'])){
   $id_mae = $_SESSION['id_mae'];
 } 
@@ -131,26 +132,50 @@ echo $total;*/
 
     <?php
 if (isset($_POST['exibir'])){
-    while($row = mysqli_fetch_assoc($dados)){
-        echo "<table>";
-        echo "<td>" . $row['nome_bebe'] . "</td>";
-        echo"</table>";
+
+    while($row = mysqli_fetch_array($dados))
+    {
+    echo "<table>";
     
+    echo "<td>" . $row['nome_bebe'] . "</td>";
+    
+    ?>
+    <input type="submit" name="editar" value ="Editar">
+    <input type="submit" name="excluir" value ="Excluir"></td>
+   <?php
     }
-}
-<<<<<<< HEAD
+
+    echo "</table>";
+  
+
+    
+
+
+if (isset($_POST['excluir'])){
+    $row=mysqli_fetch_array($dados);
+    $id_bebe= $row['id_bebe'];
+    echo $id_bebe;
+    $excluir= "DELETE FROM bebe WHERE id_bebe = '.$id_bebe.'";
+    echo "oooo";
+    if(mysqli_query($link,$excluir)){
+        echo "Excluido com sucesso!";
+    }else{
+        echo "Erro ao excluir!";
+    }
+}}
+
 
     ?>
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <?php
   
-    }else if($id_profissional== 0){
+    }else if($id_profissional == 0){
         echo"sai daqui";
         
     }
     ?>
-=======
-?>
+
+
 <div id="pre-footer" class="pre-footer">
 
   </div>
@@ -218,7 +243,7 @@ if (isset($_POST['exibir'])){
 
 
 
->>>>>>> afda26f4530f036438f96508fdd12bb579208a41
+
 </body>
 
 </html>

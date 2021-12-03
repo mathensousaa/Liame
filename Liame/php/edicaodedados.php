@@ -1,3 +1,24 @@
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  
+  $id_profissional = 0;
+}
+else{
+   $id_profissional = 0;
+}
+
+if(($id_mae != 0)){
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +27,7 @@
 <body>
   <?php
   // verificar se o user esta logado
-    if(!function_exists("protect")){
+    /*if(!function_exists("protect")){
 
       function protect(){
 
@@ -17,7 +38,7 @@
           header("Location: login.php");
         }
       }
-    }
+    }*/
 
    ?>
 
@@ -36,12 +57,27 @@
         $alterar_nome_mae = $_POST ['novo_nome_mae'];
         $alterar_email_mae = $_POST['novo_email_mae'];
 
-  $atualizar = mysqli_query("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae'")or die(mysql_error());
-  ($atualizar) ? print 'Dados alterados com sucesso' : die('Falha ao alterar dados');
+        $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae'");
+
+//echo $sql;
+
+if(mysqli_query($link,$query)){
+    echo "Atualizado com sucesso!";
+}else{
+    echo "Erro ao gravar!";
+}
+
+  
+}
+
+?>
+  <br><a href=perfil_mae.php><button>Voltar para perfil</button></a><br>
+<?php
+}else if($id_profissional == 0){
+  echo"sai daqui";
+  
 }
 ?>
-  <br><a href=paginadeperfil.php><button>Voltar para perfil</button></a><br>
-
 
 </body>
 </html>

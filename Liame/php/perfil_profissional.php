@@ -28,10 +28,10 @@ if($_SESSION['email_profissional']==NULL){
 
       function protect(){
 
-        if(!isset($session))
+        if(!isset($_SESSION))
             session_start();
 
-        if(!isset($_session['email_profissional']) || !is_numeric($_session['email_profissional'])){
+        if(!isset($_SESSION['email_profissional']) || !is_numeric($_SESSION['email_profissional'])){
           header("Location: login.php");
         }
       }
@@ -39,7 +39,7 @@ if($_SESSION['email_profissional']==NULL){
 
    ?>
 
-	 <form name="confgconta" action=# method="POST">
+	 <form name="confgconta" action=# method="GET">
 		 		<h1>Informações Básicas</h1>
         		Nome:
         		<input type="text" name ="nome_profissional" placeholder="Nome do usuario..."><br>
@@ -67,7 +67,10 @@ if($_SESSION['email_profissional']==NULL){
     					</form>
 <?php
 if($_SERVER['REQUEST_METHOD']=='GET'){
-    isset($_GET['id']) ? $busca=mysql_query("SELECT * FROM dados WHERE id='".$_GET['id']."'") : die(mysql_error());
+	
+   $id_profissional=$_SESSION['id_profissional'];
+
+$dados=mysql_query("SELECT * FROM dados WHERE id='".$_GET['id']."'");
     $dados = mysql_fetch_array($busca);
  
 }else{

@@ -1,16 +1,23 @@
 <?php
+
 session_start();
+include ('conexao.php');
 if(isset($_SESSION['id_mae'])){
-  echo " ";
   $id_mae = $_SESSION['id_mae'];
-}else{
-  
+} 
+else{
   $id_mae = 0;
-}
-if (isset($_SESSION['id_profissional'])){
   
-  echo "Você não tem acesso a essa página";
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
 }
+else{
+   $id_profissional = 0;
+}
+
+if(($id_mae != 0)){
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -144,16 +151,11 @@ if (isset($_SESSION['id_profissional'])){
     }
   }*/
   //start session
-  if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
-    session_start();
-  }
-
-//check do the person logged in
-if($_SESSION['id_mae']==NULL){
-    //haven't log in
-
-}else{
   ?>
+
+
+ 
+
   <div id="cartilha" class="container-fluid block position-relative">
       <div class="container">
         <div class="row text-center mb-5">
@@ -544,6 +546,10 @@ if($_SESSION['id_mae']==NULL){
 
   <?php
 }
+}else if($id_profissional == 0){
+  echo"sai daqui";
+  
+}
   ?>
 
   <footer>
@@ -603,6 +609,8 @@ if($_SESSION['id_mae']==NULL){
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="../assets/js/owl.carousel.min.js"></script>
   <script src="../assets/js/main.js"></script>
+
+  
   </body>
 
 
