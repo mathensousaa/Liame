@@ -21,7 +21,22 @@
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
-
+<style>
+		#img_exibe{
+			width: 50%;
+			padding-top:3%;
+			margin:2%;
+		}
+		.texto{
+			padding-top:1%;
+		}
+		.row{
+			margin-top: 2%;
+		}
+		.card-footer{
+			background-color: white;
+		}
+	</style>
 <body>
 
 <main>
@@ -114,38 +129,38 @@
               <form name="pesquisa-profissional" action="procura_profissional2.php" class="ps-lg-5 me-lg-5" method="post">
               <div class="input-group my-5">
             <div class="col-md-7">
-            <select name="profissional" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
+              <select name="especialidade" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
                 <option selected disabled>Selecione a especialidade </option>
-					      <?php
-						        $sql_especialidade = 'select id_especialidade, especialidade from especialidade;';
-						        $resul_especialidade = mysqli_query($link, $sql_especialidade);
-						        if($resul_especialidade->num_rows > 0){
-						  	    while($exibe = $resul_especialidade->fetch_array()){
-					      ?>
-						    <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo utf8_encode($exibe['especialidade']); ?></option>
-					      <?php
-							}
-						}
-				?>
-            </select>
+                  <?php
+                    $sql_especialidade = 'select id_especialidade, especialidade from especialidade;';
+                    $resul_especialidade = mysqli_query($link, $sql_especialidade);
+                    if($resul_especialidade->num_rows > 0){
+                      while($exibe = $resul_especialidade->fetch_array()){
+                        ?>
+                          <option value="<?php echo $exibe['id_especialidade']; ?>"> <?php echo utf8_encode($exibe['especialidade']); ?></option>
+                        <?php
+                      }
+                    }
+                  ?>
+              </select>
             </div>
             <select name="estado" id="select-busca2" class="form-select" aria-label="Seleção de especialista">
-                <option selected disabled>Selecione o estado </option>
+              <option selected disabled>Selecione o estado </option>
             
-					<?php
-						$sql_estado = 'select id_estado, estado from estado;';
-						$resul_estado = mysqli_query($link, $sql_estado);
-						if($resul_estado->num_rows > 0){
-							while($exibe = $resul_estado->fetch_array()){
-					?>
-						<option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
-					<?php
-							}
-						}
-				?>
+              <?php
+                $sql_estado = 'select id_estado, estado from estado;';
+                $resul_estado = mysqli_query($link, $sql_estado);
+                if($resul_estado->num_rows > 0){
+                  while($exibe = $resul_estado->fetch_array()){
+                    ?>
+                      <option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
+                    <?php
+                  }
+                }
+              ?>
             </select>
             <div class="btn-container">
-              <input type="submit" class="button button-primary btn btn-primary" value="Buscar">
+              <input type="submit" class="button button-primary btn btn-primary" name="buscar" value="Buscar">
             </div>
           </div>
         </div>
@@ -156,22 +171,90 @@
         </div>
       </div>
     </div>
-    <!-- EXIBICAO PROFISSIONAL -->
-    <div class="profissional-container container">
-      <div class="row">
-        <div class="col">
-            <div class="col-4">
-
-            </div>
+    
+    
+    
+    
+    
+                <!-- EXIBICAO PROFISSIONAL -->
+    
+      <?php
+        //resgata dados selecionados
+        if(isset($_POST['buscar'])){
+          $buscarprofissional = $_POST ['especialidade'];
+          $buscarestado = $_POST['estado'];
+      // procura no banco de dados
+          $sql_busca = ("select esp.id_especialidade, especialidade, est.id_estado, estado, uf, pro.id_profissional as id, nome_profissional, 
+                  email_profissional, foto_perfil_profissional, descricao_endereco,
+                  ddd_telefone_profissional, numero_telefone_profissional, logradouro, numero_endereco, cep, cidade, estado, bairro  
+                  from especialidade as es 
+                  inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade 
+                  inner join profissional as pro on pro.id_profissional = esp.id_profissional 
+                  inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco 
+                  inner join estado as est on ende.id_estado = est.id_estado 
+                  inner join cidade as cid on ende.id_cidade = cid.id_cidade 
+                  inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
+                  WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
             
-        </div>
-        <div class="col">
-          
-        </div>
-
+          $consulta = mysqli_query($link, $sql_busca);
+          if($consulta->num_rows > 0){
+            while ($vetor = mysqli_fetch_array($consulta)){
+              $nome_profissional= $vetor['nome_profissional'];
+              $especialidade_profissional=$vetor['especialidade'];
+              $estado_profissional=$vetor['estado'];
+              $cidade_profissional=$vetor['cidade'];
+              $cep_profissional=$vetor['cep'];
+              $foto_profissional=$vetor['foto_perfil_profissional'];
+              //$telefone_profissional= '('.$vetor['ddd_telefone_profissional'].') '.$vetor['numero_telefone_profissional'];
+              ?>
+              
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-img-top text-center">
+                        <?php
+                          if ($foto_profissional != ""){
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+                          }else{
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+                          }
+                        ?>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                      <?php
+                        echo utf8_encode ('Nome: ' .$nome_profissional.'<br>');
+                        echo utf8_encode ('Especialidade: ' .$especialidade_profissional.'<br>');	
+                        echo utf8_encode ('Estado: ' .$estado_profissional.'<br>');		
+                        echo utf8_encode ('Cidade: ' .$cidade_profissional.'<br>');
+                        echo utf8_encode ('CEP: ' .$cep_profissional.'<br>');	
+                      ?>
+                    </div>
+                    <div class="card-footer text-center">
+                      <a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="btn btn-primary btn-sm">Ver mais</a>
+                    </div>
+                  </div>
+                </div>
+              <br>
+              <?php
+            }
+          }
+        }else{
+      // caso não tenha encontrado nehum profissinal 
+          //echo "Nenhum profissional encontrado nessa área.";
+        }
+      ?>
       </div>
     </div>
   </main>
+
+
+
+
+
+
+
+
+
 
 	<footer>
     <div id="rodape" class="container">

@@ -127,13 +127,13 @@
 		  <div class="row">
 
               
-                  <a href="../php/procura_profissional1.php"> <font color="white"> <-Voltar </font></a></li>
+    <a href="procura_profissional1.php"> <font color="white"> < Voltar </font></a>
                 
 <?php
 	include ('conexao.php');
  	//resgata dados selecionados
 	if(isset($_POST)){
-  	$buscarprofissional = $_POST ['profissional'];
+  	$buscarprofissional = $_POST ['especialidade'];
 		$buscarestado = $_POST['estado'];
 // procura no banco de dados
 		$sql_busca = ("select esp.id_especialidade, especialidade, est.id_estado, estado, uf, pro.id_profissional as id, nome_profissional, 
