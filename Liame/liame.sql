@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 03-Dez-2021 às 18:11
+-- Tempo de geração: 03-Dez-2021 às 18:29
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -7850,6 +7850,7 @@ CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
   `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
   `texto_diario_gestacao` text DEFAULT NULL,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
+  `data_hora_diario_gestacao` datetime NOT NULL,
   `id_diario_gestacao` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_registro_diario_gestcao`),
   KEY `id_diario_gestacao` (`id_diario_gestacao`)
