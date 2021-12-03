@@ -3,7 +3,7 @@
     include ('conexao.php');
 
     //variavel da sessao
-    $nome_adm = $_POST['nome_adm'];
+    $nome_adm = $_POST["nome_adm"];
     $email_adm = $_POST['email_adm'];
     $senha_adm = $_POST['senha_adm'];
     $confirmarsenha_adm = $_POST['confirmarsenha_adm'];
