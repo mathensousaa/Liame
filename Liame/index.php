@@ -52,9 +52,9 @@ if(isset($_SESSION['id_mae'])){
   <main>
     <?php
 
-    
-    /*include 'menu.php';
-    Menu($_SESSION['id_mae']);*/
+
+    include 'menu.php';
+    Menu($id_mae, $id_profissional);
     ?>
 
     <!-- Hero -->
@@ -351,7 +351,7 @@ include 'php/conexao.php';
     <?php
     include 'menu.php';
     Menu($id_mae, $id_profissional);
-    
+
     ?>
 
     <!-- Hero -->
@@ -417,9 +417,16 @@ include 'php/conexao.php';
       </div>
     </div>
     <!-- //Hero -->
+<<<<<<< HEAD
     
     <div class="publicidade col-md-15">
     
+=======
+
+    <div class="publicidade col-md-20">
+
+    </div>
+>>>>>>> cee4401e440c6f61f5b8de790082b39cc51bbe62
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">

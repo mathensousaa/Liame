@@ -317,10 +317,11 @@ html, body {
 }
 
 #cartilha {
-  background: var(--primary-light);
+  background: var(--tertiary-light);
   padding-top: 50px;
   padding-bottom: 50px;
   overflow: hidden;
+  height: 600px;
 }
 
 #cartilha a.destaque {
@@ -339,6 +340,13 @@ html, body {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
   transform: scale(1.05);
 }
+
+#cartilha a.destaque:visited {
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.12);
+  transform: scale(1.05);
+}
+
 
 #cartilha a.destaque .img-container img {
   max-height: 160px;
@@ -367,6 +375,12 @@ html, body {
 #cartilha #nuvem2-container {
   bottom: 100px;
   left: -30px;
+}
+
+#vacinas-crianca {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 #vacinas-crianca .vacina img{
@@ -399,6 +413,12 @@ html, body {
 
 #vacinas-gestante .vacina .dose {
   font-weight: 600;
+}
+
+#vacinas-gestante {
+  display: none;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 
@@ -454,8 +474,10 @@ html, body {
   margin-top: 200px;
   border-radius: 20px;
   font-size: 30px;
-  color: #EEE; 
+  color: #EEE;
 }
 
-
-  
+.text-vacina {
+  padding-left: 200px;
+  padding-right: 200px;
+}
