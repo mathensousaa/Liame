@@ -418,12 +418,16 @@ include 'php/conexao.php';
     </div>
     <!-- //Hero -->
     
-    <div class="publicidade col-md-20">
+    <div class="publicidade col-md-15">
     
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
+      <center>
+          <img id="avast" class="img-fluid" src="assets/img/Oi.png">
+        </center>
         <div class="row text-center mb-5">
+          
           <h2 class="title">Nossos serviços</h2>
           <h5 class="subtitle">Que vão desde o início da gravidez até um ano de seu filho.</h5>
         </div>
@@ -472,10 +476,15 @@ include 'php/conexao.php';
     </div>
     <!-- //Serviços -->
 
+  
+  
     <!-- Busca -->
     <div id="busca" class="container-fluid block position-relative">
       <div class="container">
         <div id="linha1-busca" class="row text-center">
+        <div class="avast col-md-20">
+     
+  </div>
           <h2 class="title">
             Busque por
             <span class="highlight-2">
@@ -543,9 +552,13 @@ include 'php/conexao.php';
                 </div>
               </a>
             </div>
-          </div>
-
+            </div>
         </div>
+        <br>
+        <center>
+          <img id="avast" class="img-fluid" src="assets/img/AVAST.jpeg">
+        </center>
+    
       </div>
     </div>
   </main>

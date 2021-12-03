@@ -233,6 +233,7 @@
                       <a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="btn btn-primary btn-sm">Ver mais</a>
                     </div>
                   </div>
+                  
                 </div>
               <br>
               <?php
@@ -277,6 +278,7 @@
               <ul class="list-unstyled">
                 <li class=""><a href="../layouts/central_ajuda.html">Central de ajuda</a></li>
                 <li class=""><a href="../layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+                <li class=""></li><a href="../index.php">Página Inicial</a>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">
