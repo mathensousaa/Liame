@@ -25,7 +25,7 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> 
+            <div>
                 <a href="#" class="nav_logo">
                     <i class='uil uil-diary nav_logo-icon'></i>
                     <span class="nav_logo-name">Home</span>
@@ -41,13 +41,13 @@
                     </a> <a href="#" class="nav_link">
                         <i class='uil uil-user nav_icon'></i>
                         <span class="nav_name">Perfil</span>
-                    </a> 
+                    </a>
                     <a href="#" class="nav_link">
                         <i class='uil uil-medkit nav_icon'></i>
                         <span class="nav_name">Consultas</span>
-                    </a> 
+                    </a>
                 </div>
-            </div> 
+            </div>
             <a href="#" class="nav_link">
                 <i class='uil uil-signout nav_icon'></i>
                 <span class="nav_name">Deslogar</span>

@@ -23,7 +23,7 @@ if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
 if(isset($_SESSION['id_mae'])){
   //haven't log in
   include 'menu.php';
-  Menu($_SESSION['id_mae']);
+  Menu($id_mae, $id_profissional);
   ?>
 <!doctype html>
 <html lang="pt-br">
@@ -420,6 +420,7 @@ include 'php/conexao.php';
 
     <div class="publicidade col-md-20">
 
+    </div>
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">

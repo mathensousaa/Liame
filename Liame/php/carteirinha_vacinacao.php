@@ -1,17 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['id_mae'])){
-  echo " ";
-  $id_mae = $_SESSION['id_mae'];
-}else{
-  
-  $id_mae = 0;
-}
-if (isset($_SESSION['id_profissional'])){
-  
-  echo "Você não tem acesso a essa página";
-}
-?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -32,196 +18,39 @@ if (isset($_SESSION['id_profissional'])){
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+}
+else{
+  $id_mae = 0;
+
+}
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+}
+else{
+   $id_profissional = 0;
+}
+
+if(($id_mae != 0)){
+
+?>
+
 
 <body>
   <main>
-    <!--navbar-->
-    <div id="header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-          <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
-              <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-            </a>
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../php/procura_profissional1.php">Buscar especialistas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
-                </li>
-              </ul>
-              <!--entrar/cadastro-->
-              <div id="login" class="nav navbar-nav">
-                <div class="nav-item">
-                  <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
-                    Entrar
-                  </button>
-                  </a>
-                  <!-- Modal -->
-                  <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body container-fluid block">
-                          <div class="container my-4">
-                            <div class="row">
-                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="../php/login_profissional.php" class="destaque">
-                                  <div class="img-container mb-3">
-                                    <img class="img-fluid" src="../assets/img/Medico_home.png" alt="">
-                                  </div>
-                                  <div class="text-container">
-                                    <h5>Especialista</h5>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="../php/login_mae.php" class="destaque">
-                                  <div class="img-container mb-3">
-                                    <img class="img-fluid" src="../assets/img/Vaccine.png" alt="">
-                                  </div>
-                                  <div class="text-container">
-                                    <h5>Mãe</h5>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </nav>
-      </div>
-
-    </div>
-    <br><br><br><br>
-
-<?php
-  /*session_start();
-  if((!isset ($_SESSION['email_mae']) == true) and (!isset ($_SESSION['nome_mae']) == true)){
-    unset($_SESSION['email_mae']);
-    unset($_SESSION['nome_mae']);
-    echo "Bem vindo $logado";
-  }
-  echo "uauuu";
-  $logado = $_SESSION['nome_mae'];
-?>*/
-
-/*session_start ()  or die('A sessão não pode ser iniciada');
-
-  if(function_exists("protect")){
-
-    function protect(){
-
-      if(isset($session)){
-          session_start();
-          echo "eee";
-
-          }
-
-      if(!isset($_session['email_mae']) || !is_numeric($_session['email_mae'])){
-        header("Location: login.php");
-
-
-      }
-    }
-  }*/
-  //start session
-  if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
-    session_start();
-  }
-
-//check do the person logged in
-if($_SESSION['id_mae']==NULL){
-    //haven't log in
-
-}else{
-  ?>
-<<<<<<< HEAD
-
-    <!--Container Main end-->
-  <body>
-    <div class="header" id="header-secondary">
-      <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-        <div class="container-fluid">
-            <div class="header-toggle" id="header-toggle">
-              <i class='uil uil-bars' id="header-toggle"></i>
-            </div>
-            <div class="header-img">
-              <img src="https://i.imgur.com/hczKIze.jpg" alt="">
-            </div>
-        </div>
-      </nav>
-    </div>
-      <div class="l-navbar" id="lateral-navbar">
-        <nav class="nav">
-            <div>
-              <a href="index.php" class="navbar-brand">
-                <img class="nav-logo img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-                 <span class="nav-logo-name">
-                   Home
-                 </span>
-               </a>
-               <div class="nav-list">
-                 <a href="#" class="nav-link active">
-                   <i class='uil uil-diary nav_icon'></i>
-                   <span class="nav-name">Diário de bordo</span>
-                 </a>
-                 <a href="#" class="nav-link">
-                   <i class='uil uil-syringe nav_icon'></i>
-                   <span class="nav-name">Cartilha de vacinação</span>
-                 </a>
-                 <a href="#" class="nav-link">
-                   <i class='uil uil-user nav_icon'></i>
-                   <span class="nav-name">Perfil</span>
-                 </a>
-                 <a href="#" class="nav-link">
-                     <i class='uil uil-medkit nav_icon'></i>
-                     <span class="nav-name">Consultas</span>
-                   </a>
-                 </div>
-            </div>
-            <a href="#" class="nav-link">
-              <i class='uil uil-signout nav_icon'></i>
-              <span class="nav-name">Deslogar</span>
-            </a>
-        </nav>
-    </div>
-
-    <div class="height-100 bg-light">
-        <h4>Main Components</h4>
-    </div>
-
-
-  <!--  <div id="cartilha" class="container-fluid block position-relative">
-=======
   <div id="cartilha" class="container-fluid block position-relative">
->>>>>>> cdbf4bcb72187b3634a8a9d12fb795c8f4131210
       <div class="container">
         <div class="row text-center mb-5">
           <h2 class="title">Cartilha de vacinação</h2>
         </div>
         <div class="row justify-content-center align-self-center">
-
           <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
-            <a href="#" class="destaque">
+            <a id="link-crianca" href="#" class="destaque">
               <div class="img-container mb-3">
                 <img class="img-fluid" src="../assets/img/crianca.svg" alt="vacinação">
               </div>
@@ -232,7 +61,7 @@ if($_SESSION['id_mae']==NULL){
             </a>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
-            <a href="#" class="destaque">
+            <a id="link-gestante" href="#" class="destaque">
               <div class="img-container mb-3">
                 <img class="img-fluid" src="../assets/img/gestante.svg" alt="">
               </div>
@@ -251,12 +80,12 @@ if($_SESSION['id_mae']==NULL){
         <img id="nuvem2-vector" src="../assets/img/nuvem1.svg" class="vector">
       </div>
     </div>
-
-    <div id="vacinas-crianca">
+    <div class="container">
+      <div id="vacinas-crianca">
       <div class="container">
         <div class="row text-center mt-5 mb-5 ">
           <h2>Vacinas para crianças</h2>
-          <p>Para vacinar, basta levar a criança a um posto ou Unidade Básica de Saúde (UBS) com o cartão criança O ideal é que toda dose seja administrada na idade recomendada mas se perdeu o prazo vá à unidade de saúde e atualize as vacinas.</p>
+          <p class="text-vacina">Para vacinar, basta levar a criança a um posto ou Unidade Básica de Saúde (UBS) com o cartão criança O ideal é que toda dose seja administrada na idade recomendada mas se perdeu o prazo vá à unidade de saúde e atualize as vacinas.</p>
         </div>
         <div class="row justify-content-center align-self-center">
           <div class="col-lg-8 col-md-8 col-sm-12 mb-lg-0">
@@ -550,13 +379,11 @@ if($_SESSION['id_mae']==NULL){
         </div>
       </div>
     </div>
-
-
-    <div id="vacinas-gestante">
+      <div id="vacinas-gestante">
       <div class="container">
         <div class="row text-center mt-5 mb-5 ">
           <h2>Vacinas para gestantes</h2>
-          <p>A vacina para mulheres grávidas é essencial para previnir doenças para sí e para o bebê. Elas não podem tomar as mesmas vacinas que qualquer adulto e, portanto, têm um esquema vacinal diferente.</p>
+          <p class="text-vacina">A vacina para mulheres grávidas é essencial para previnir doenças para sí e para o bebê. Elas não podem tomar as mesmas vacinas que qualquer adulto e, portanto, têm um esquema vacinal diferente.</p>
         </div>
         <div class="row justify-content-center align-self-center">
           <div class="col-lg-8 col-md-8 col-sm-12 mb-lg-0">
@@ -598,70 +425,47 @@ if($_SESSION['id_mae']==NULL){
         </div>
       </div>
     </div>
-
-
-
-  <?php
-}
-  ?>
-
-  <footer>
-    <div id="rodape" class="container">
-      <div class="conteudo py-5">
-        <div class="row">
-          <div class="logo col-md-2">
-            <img id="logo" class="img-fluid" src="../assets/img/logo_liame.png" alt="">
-          </div>
-          <div class="py-lg-0 py-mb-5 col-md-8 d-flex justify-content-center align-self-center">
-            <div class="px-lg-4 px-mb-1">
-              <h5 class="text-uppercase">Mães</h5>
-              <ul class="list-unstyled">
-                <li class=""><a href="../php/procura_profissional1.php">Consultas</a></li>
-                <li class=""><a href="../php/diario_bordo.php">Diário de bordo</a></li>
-                <li class=""><a href="../php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
-              </ul>
-            </div>
-            <div class="px-lg-4 px-mb-1">
-              <h5 class="text-uppercase">Especialistas</h5>
-              <ul class="list-unstyled">
-                <li class=""><a href="central_ajuda.html">Central de ajuda</a></li>
-                <li class=""><a href="termos_uso_profissional.html">Termos de uso de profissional</a></li>
-              </ul>
-            </div>
-            <div class="px-lg-4 px-mb-1">
-              <h5 class="text-uppercase">Serviços</h5>
-              <ul class="list-unstyled">
-                <li class="list-item"><a href="quem_somos.html">Quem somos</a></li>
-                <li class=""><a href="Contatos.html">Contato</a></li>
-                <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="social col-md-2">
-            <ul>
-              <li>
-                <a href="https://www.instagram.com/projeto_liame/">
-                  <img src="../assets/img/instagram.svg" alt="Icone Instagram">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
-                  <img src="../assets/img/facebook.svg" alt="Icone Facebook">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </footer>
-
+  </main>
+  <?php
+  }else if($id_profissional == 0){
+  echo"sai feio (menos o matheus lindo)";
+  }
+  ?>
   <!--implementação jquery, poppers.js e plugin bootstrap-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+  <script>
+  var btnCrianca = document.querySelector('#link-crianca');
+  var containerCrianca = document.querySelector('#vacinas-crianca');
+  var btnGestante = document.querySelector('#link-gestante');
+  var containerGestante = document.querySelector('#vacinas-gestante');
+
+  btnCrianca.addEventListener('click', function(){
+
+    if (containerCrianca.style.display === 'none') {
+      containerCrianca.style.display = 'flex';
+      containerGestante.style.display = 'none';
+    } else {
+      containerGestante.style.display = 'none';
+    }
+  });
+
+  btnGestante.addEventListener('click', function(){
+
+    if (containerGestante.style.display === 'flex') {
+      containerCrianca.style.display = 'none';
+    } else {
+      containerGestante.style.display = 'flex';
+      containerCrianca.style.display = 'none';
+    }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="../assets/js/owl.carousel.min.js"></script>
   <script src="../assets/js/main.js"></script>
+
+
   </body>
 
 

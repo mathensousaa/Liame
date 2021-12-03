@@ -67,6 +67,7 @@ if($_SESSION['email_profissional']==NULL){
     					</form>
 <?php
 if($_SERVER['REQUEST_METHOD']=='GET'){
+	
    $id_profissional=$_SESSION['id_profissional'];
 
 $dados=mysql_query("SELECT * FROM dados WHERE id='".$_GET['id']."'");
