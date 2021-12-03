@@ -130,7 +130,8 @@
             </select>
             </div>
             <select name="estado" id="select-busca2" class="form-select" aria-label="Seleção de especialista">
-            <option selected disabled>Selecione o estado </option>
+                <option selected disabled>Selecione o estado </option>
+            
 					<?php
 						$sql_estado = 'select id_estado, estado from estado;';
 						$resul_estado = mysqli_query($link, $sql_estado);

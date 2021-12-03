@@ -105,7 +105,7 @@
       <div class="container justify-content-center align-self-center">
 
 	<br><br><br><br><br><br><br><br>
-
+  
 	
 	<style>
 		#img_exibe{
@@ -127,7 +127,9 @@
   		<div class="container">
 		  <div class="row">
 
-		 
+              
+                  <a href="../php/procura_profissional1.php"> <font color="white"> <-Voltar </font></a></li>
+                
 <?php
 	include ('conexao.php');
  	//resgata dados selecionados
