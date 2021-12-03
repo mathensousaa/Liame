@@ -78,32 +78,32 @@ if($_SESSION['id_mae']==NULL){
             <div>
               <a href="index.php" class="navbar-brand">
                 <img class="nav-logo img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-                 <span class="nav_logo-name">
+                 <span class="nav-logo-name">
                    Home
                  </span>
                </a>
-               <div class="nav_list">
-                 <a href="#" class="nav_link active">
+               <div class="nav-list">
+                 <a href="#" class="nav-link active">
                    <i class='uil uil-diary nav_icon'></i>
-                   <span class="nav_name">Diário de bordo</span>
+                   <span class="nav-name">Diário de bordo</span>
                  </a>
-                 <a href="#" class="nav_link">
+                 <a href="#" class="nav-link">
                    <i class='uil uil-syringe nav_icon'></i>
-                   <span class="nav_name">Cartilha de vacinação</span>
+                   <span class="nav-name">Cartilha de vacinação</span>
                  </a>
-                 <a href="#" class="nav_link">
+                 <a href="#" class="nav-link">
                    <i class='uil uil-user nav_icon'></i>
-                   <span class="nav_name">Perfil</span>
+                   <span class="nav-name">Perfil</span>
                  </a>
-                 <a href="#" class="nav_link">
+                 <a href="#" class="nav-link">
                      <i class='uil uil-medkit nav_icon'></i>
-                     <span class="nav_name">Consultas</span>
+                     <span class="nav-name">Consultas</span>
                    </a>
                  </div>
             </div>
-            <a href="#" class="nav_link">
+            <a href="#" class="nav-link">
               <i class='uil uil-signout nav_icon'></i>
-              <span class="nav_name">Deslogar</span>
+              <span class="nav-name">Deslogar</span>
             </a>
         </nav>
     </div>
