@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cadastro - Administradores | Liame</title>
+  <title>Cadastro - Mães | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -35,7 +35,7 @@
       <div class="container justify-content-center align-self-center">
         <div class="row">
           <div class="col-md-6 align-center text-center">
-            <img id="icone" class="img-fluid" src="../assets/img/icone-especialista.png" alt="">
+            <img id="icone" class="img-fluid" src="../assets/img/icone-mae.png" alt="">
             <h1 class="hero-title">
               Cadastro
             </h1>
@@ -63,7 +63,7 @@
               </form>
             </div>
           </div>
-          <div class="col-md-6 align-self-center">
+
           </div>
         </div>
       </div>

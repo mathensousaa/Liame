@@ -24,7 +24,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Termos de uso do profissional | Liame</title>
+  <title>Diario de bordo | Liame</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
@@ -117,8 +117,11 @@
       </div>
 
     </div>
+   
     <!--//navbar-->
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
+<div id="cartilha" class="container-fluid block position-relative">
+      <div class="container">
     <h1 class="hero-title">
               As pessoas ao meu redor...
             </h1>
@@ -548,7 +551,8 @@
         </div>
         </form>
     </div>
-
+    </div>
+    </div>
 
 <footer>
   <div id="rodape" class="container">

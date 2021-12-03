@@ -1,19 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cartilha de vacinação</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <!--favicon-->
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+  <!--unicons (icones que serão usados no site)-->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
 <?php
-if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
-    session_start();
-    
-  }
+session_start();
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  
+  $id_profissional = 0;
+}
+else{
+   $id_profissional = 0;
+}
 
-//check do the person logged in
-if($_SESSION['email_mae']==NULL){
-    //haven't log in
-    echo "Você não está logado";
-    header("Location:login_mae.php");
-}else{
+if(($id_mae != 0)){
+
+
     //Logged in
+    /*session_start();
     include ('conexao.php');
-
-    
+    if(isset($_SESSION['id_mae'])){
+        $id_mae = $_SESSION['id_mae'];
+      }else{
+        
+        $id_mae = 10 ;
+      }
+      if (isset($_SESSION['id_profissional'])){
+        
+        echo "Você não tem acesso a essa página";
+      }
+    */
 
 
 ?>
@@ -23,7 +60,7 @@ if($_SESSION['email_mae']==NULL){
 	<title>Sua Conta</title>
 </head>
 <body>
-<form name="confgconta" action=# method="POST"> 
+<form name="confgconta" action="#" method="POST"> 
 	<h1>Informações da Mãe </h1>
 
     <?php
@@ -45,14 +82,8 @@ if($_SESSION['email_mae']==NULL){
 			<h1> Informações do Bebê</h1>
         	Nome do Bebê
         	<input type="text" name ="nome_bebe" placeholder="Insira o nome do seu filho(a) ..."><br>
-        	Sexo do Bebê
-        	<input type="text" name ="sexo_bebe" placeholder="Insira o sexo do seu filho(a)..."><br>
-        	Idade do Bebê:
-        	<input type="text" name ="idade_bebe" placeholder="Insira a idade do seu filho(a)..."><br>
+        
     <input type="submit" name= "submit2" value="Salvar">
-
-
-
 
 
 
@@ -60,7 +91,6 @@ if($_SESSION['email_mae']==NULL){
 echo $foto_perfil_mae;
 $id=$_SESSION['id_mae'];
 if(isset($_POST['submit'])){
-
 
     echo $id;
 
@@ -75,14 +105,12 @@ if(mysqli_query($link,$query1)){
 }else{
     echo "Erro ao gravar!";
 }
+}
 
-
-}elseif(isset($_POST['submit2'])){
+if(isset($_POST['submit2'])){
 
 $nome_bebe = $_POST['nome_bebe'];
-$sexo_bebe = $_POST['sexo_bebe'];
-$idade_bebe = $_POST['idade_bebe'];
-$query2 = 'INSERT into bebe (nome_bebe, sexo_bebe, idade_bebe, id_mae) values("'.$nome_bebe.'", "'.$sexo_bebe.'", "'.$idade_bebe.'", "'.$id.'")';
+$query2 = 'INSERT into bebe (nome_bebe, id_mae) values("'.$nome_bebe.'", "'.$id.'")';
 
 
 if(mysqli_query($link,$query2)){
@@ -90,12 +118,10 @@ if(mysqli_query($link,$query2)){
 }else{
     echo "Erro ao gravar!";
 }
-}else{
-
 }
 
-$query ='SELECT id_bebe, nome_bebe, sexo_bebe, idade_bebe FROM bebe WHERE id_mae = "'.$id.'"';
-$dados = mysqli_query($link, $query) or die(mysql_error());
+$query ="SELECT id_bebe, nome_bebe FROM bebe WHERE id_mae = '$id'";
+$dados = mysqli_query($link, $query);
 /*$linha = mysqli_fetch_assoc($dados);
 $total = mysqli_num_rows($dados);
 echo $total;*/
@@ -103,54 +129,124 @@ echo $total;*/
 ?>
 <input type= "submit" name="exibir" value="Exibir bebês cadastrados">
 
-<?php
+    <?php
 if (isset($_POST['exibir'])){
 
     while($row = mysqli_fetch_array($dados))
     {
-        echo "<table>";
-        echo "<td>" . $row['id_bebe'] . "</td>";
+    echo "<table>";
+    echo "<td>" . $row['id_bebe'] . "</td>";
     echo "<td>" . $row['nome_bebe'] . "</td>";
     echo "<td>" . $row['sexo_bebe'] . "</td>";
     echo "<td>    " . $row['idade_bebe'];
     ?>
     <input type="submit" name="editar" value ="Editar">
     <input type="submit" name="excluir" value ="Excluir"></td>
-    
-    <?php
-    echo "</tr>";
+   <?php
     }
+<<<<<<< HEAD
     echo "</table>";
   
 
+    
+}
+
 if (isset($_POST['excluir'])){
-    $id_bebe=$row['id_bebe'];
-    $excluir= 'DELETE FROM bebe WHERE id_bebe = '.$id_bebe.'';
-echo "oooo";
+    $row=mysqli_fetch_array($dados);
+    $id_bebe= $row['id_bebe'];
+    echo $id_bebe;
+    $excluir= "DELETE FROM bebe WHERE id_bebe = '.$id_bebe.'";
+    echo "oooo";
     if(mysqli_query($link,$excluir)){
         echo "Excluido com sucesso!";
     }else{
         echo "Erro ao excluir!";
     }
 }
+=======
 }
+<<<<<<< HEAD
+>>>>>>> 3d83b92bcd561bad89f6cddd877c5c5bba4101d5
 
-
-
-/*
-if($total > 0) {
-    // inicia o loop que vai mostrar todos os dados
-    do {
+    ?>
+    <button><a href="edicaodedados.php">Editar Conta</a></button>
+    <?php
+  
+    }else if($id_profissional== 0){
+        echo"sai daqui";
+        
+    }
+    ?>
+=======
 ?>
-        <p><?=$linha['nome_bebe']?> / <?=$linha['sexo_bebe']?> / <?=$linha['idade_bebe']?></p>
-<?php
-    // finaliza o loop que vai mostrar os dados
-    }while($linha = mysqli_fetch_assoc($dados));
-// fim do if
-    
-}*/
+<div id="pre-footer" class="pre-footer">
 
-}
-?>
+  </div>
+  <footer>
+    <div id="rodape" class="container">
+      <div class="conteudo py-5">
+        <div class="row">
+          <div class="logo col-md-2">
+            <img id="logo" class="img-fluid" src="assets/img/logo_liame.png" alt="">
+          </div>
+          <div class="py-lg-0 py-mb-5 col-md-8 d-flex justify-content-center align-self-center">
+            <div class="px-lg-4 px-mb-1">
+              <h5 class="text-uppercase">Mães</h5>
+              <ul class="list-unstyled">
+                <li class=""><a href="php/procura_profissional1.php">Consultas</a></li>
+                <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
+                <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
+              </ul>
+            </div>
+            <div class="px-lg-4 px-mb-1">
+              <h5 class="text-uppercase">Especialistas</h5>
+              <ul class="list-unstyled">
+                <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
+                <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+              </ul>
+            </div>
+            <div class="px-lg-4 px-mb-1">
+              <h5 class="text-uppercase">Serviços</h5>
+              <ul class="list-unstyled">
+                <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
+                <li class=""><a href="layouts/Contatos.html">Contato</a></li>
+                <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="social col-md-2">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/projeto_liame/">
+                <img src="assets/img/instagram.svg" alt="Icone Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Liame-unindo-do-início-ao-fim-103264221864132">
+                <img src="assets/img/facebook.svg" alt="Icone Facebook">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--implementação jquery, poppers.js e plugin bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+
+
+>>>>>>> afda26f4530f036438f96508fdd12bb579208a41
 </body>
+
 </html>
