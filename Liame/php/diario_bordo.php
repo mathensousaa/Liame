@@ -609,7 +609,7 @@ echo "O";
     </div>
 <?php
          }else if($id_profissional == 0){
-         echo"sai daqui";
+            header('Location: login_mae.php');
          
      }
    ?>

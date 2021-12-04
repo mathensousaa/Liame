@@ -126,7 +126,7 @@
             </h1>
 
             <div class="">
-              <form name="pesquisa-profissional" action="procura_profissional2.php" class="ps-lg-5 me-lg-5" method="post">
+              <form name="pesquisa-profissional" action="procura_profissional1.php" class="ps-lg-5 me-lg-5" method="post">
               <div class="input-group my-5">
             <div class="col-md-7">
               <select name="especialidade" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
@@ -165,18 +165,8 @@
           </div>
         </div>
       </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    
-    
-                <!-- EXIBICAO PROFISSIONAL -->
+    </form>
+  <!-- EXIBICAO PROFISSIONAL -->
     
       <?php
         //resgata dados selecionados
@@ -241,21 +231,17 @@
           }
         }else{
       // caso não tenha encontrado nehum profissinal 
-          //echo "Nenhum profissional encontrado nessa área.";
+          echo "Nenhum profissional encontrado nessa área.";
         }
       ?>
       </div>
     </div>
-  </main>
-
-
-
-
-
-
-
-
-
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
 
 	<footer>
     <div id="rodape" class="container">

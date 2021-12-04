@@ -429,7 +429,7 @@ if(($id_mae != 0)){
   </main>
   <?php
   }else if($id_profissional == 0){
-  echo"sai feio (menos o matheus lindo)";
+    header('Location: login_mae.php');
   }
   ?>
   <!--implementação jquery, poppers.js e plugin bootstrap-->
