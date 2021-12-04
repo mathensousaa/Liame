@@ -35,7 +35,7 @@
       <div class="container justify-content-center align-self-center">
         <div class="row">
           <div class="col-md-6 align-center text-center">
-            <img id="icone" class="img-fluid" src="../assets/img/icone-mae.png" alt="">
+            
             <h1 class="hero-title">
               Cadastro
             </h1>
