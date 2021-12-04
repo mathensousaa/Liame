@@ -12,7 +12,26 @@
     }else{
         //Logged in
         echo "Bem-vindo " . $_SESSION['email_mae'];*/
-
+        session_start();
+        include ('conexao.php');
+        if(isset($_SESSION['id_mae'])){
+          $id_mae = $_SESSION['id_mae'];
+        } 
+        else{
+          $id_mae = 0;
+          
+        } 
+        if(isset($_SESSION['id_profissional'])){
+          $id_profissional = $_SESSION['id_profissional'];
+          
+          $id_profissional = 0;
+        }
+        else{
+           $id_profissional = 0;
+        }
+        
+        if(($id_mae != 0)){
+         
         ?>
 
 
@@ -36,6 +55,12 @@
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <!-- tinymce -->
+
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  
+   <script>tinymce.init({selector:'textarea'});</script>
 
 </head>
 
@@ -122,7 +147,36 @@
 <br><br><br><br><br>
 <div id="cartilha" class="container-fluid block position-relative">
       <div class="container">
-    <h1 class="hero-title">
+
+      <form action="diario_bordo.php" method="POST">
+
+      <textarea rows= "20" name="conteudo"></textarea>
+
+      <input type="submit" name="enviar" value="Salvar">
+   
+        </form>
+
+
+
+
+<?php
+
+if(isset($_POST['enviar'])){
+
+   $texto_diario_gestacao=$_POST['conteudo'];
+
+   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao) VALUES("'.$texto_diario_gestacao.'")');
+echo "O";
+   if (mysqli_query($link, $salvar)){
+   echo "Salvo com sucesso";
+   
+   }else{
+   echo "Erro ao salvar";
+}
+}
+
+?>
+   <!-- <h1 class="hero-title">
               As pessoas ao meu redor...
             </h1>
     <div class="">
@@ -549,12 +603,18 @@
             </div>
             </div>
         </div>
-        </form>
+        </form>-->
     </div>
     </div>
     </div>
+<?php
+         }else if($id_profissional == 0){
+            header('Location: login_mae.php');
+         
+     }
+   ?>
 
-<footer>
+<!--<footer>
   <div id="rodape" class="container">
     <div class="conteudo py-5">
       <div class="row">
@@ -611,8 +671,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
       <script src="../assets/js/owl.carousel.min.js"></script>
-      <script src="../assets/js/main.js"></script>
-
+      <script src="../assets/js/main.js"></script>-->
+<BR>
 </body>
 
 </html>

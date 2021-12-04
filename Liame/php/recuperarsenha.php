@@ -13,7 +13,7 @@
   $total = $sql_query -> num_rows;
 
     if($total == 0){
-       $erro[] = "O e-mail informado não existe"
+       $erro[] = "O e-mail informado não existe";
 
   	if(count($erro) == 0 && $total > 0)
 
@@ -40,10 +40,10 @@
     </head>
     		<body>
           <?php
-            if(count($erro) > 0 )
+            if(count($erro) > 0 ){
             foreach ($erro as $msg){
                echo "<p> $msg </p>";
-            }
+            }}
           ?>
             <form method = "POST" action ="">
               Insira seu email para redefinir a senha:<br>

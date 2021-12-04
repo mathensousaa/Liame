@@ -85,11 +85,7 @@ if(($id_mae != 0)){
       <div class="container">
         <div class="row text-center mt-5 mb-5 ">
           <h2>Vacinas para crianças</h2>
-<<<<<<< HEAD
           <p class="text-vacina">Para vacinar, basta levar a criança a um posto ou Unidade Básica de Saúde (UBS) com o cartão criança O ideal é que toda dose seja administrada na idade recomendada mas se perdeu o prazo vá à unidade de saúde e atualize as vacinas.</p>
-=======
-          <p>Para vacinar, basta levar a criança a um posto ou Unidade Básica de Saúde (UBS) com o cartão criança. O ideal é que toda dose seja administrada na idade recomendada mas se perdeu o prazo vá à unidade de saúde e atualize as vacinas.</p>
->>>>>>> 2322303fee6be18e10270dda6d517f9d42d375cd
         </div>
         <div class="row justify-content-center align-self-center">
           <div class="col-lg-8 col-md-8 col-sm-12 mb-lg-0">
@@ -433,7 +429,7 @@ if(($id_mae != 0)){
   </main>
   <?php
   }else if($id_profissional == 0){
-  echo"sai feio (menos o matheus lindo)";
+    header('Location: login_mae.php');
   }
   ?>
   <!--implementação jquery, poppers.js e plugin bootstrap-->

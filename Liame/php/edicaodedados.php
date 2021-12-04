@@ -74,7 +74,7 @@ if(mysqli_query($link,$query)){
   <br><a href=perfil_mae.php><button>Voltar para perfil</button></a><br>
 <?php
 }else if($id_profissional == 0){
-  echo"sai daqui";
+  header('Location: login_mae.php');
   
 }
 ?>
