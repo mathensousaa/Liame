@@ -454,10 +454,9 @@ html, body {
   border: 1px solid var(--dark);
 }
 
-#busca-container .btn-container a {
+#busca-container .btn-container input {
   border-radius: 0 30px 30px 0px;
   padding: 1rem 2rem 1rem 2rem;
-  border: 1px solid #FFF;
   text-transform: uppercase;
 }
 
@@ -465,13 +464,17 @@ html, body {
   color: #FFF;
 }
 
+#busca-container {
+
+}
+
 .senhaiguais {
-  width: 500px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   text-align: center;
   background-color: #8787a3;
-  margin-left: 500px;
-  margin-top: 200px;
+  margin-left: 600px;
+  margin-top: 250px;
   border-radius: 20px;
   font-size: 30px;
   color: #EEE;

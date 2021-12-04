@@ -30,7 +30,7 @@ else{
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
 
   <title>Liame - unindo do início ao fim.</title>
 
@@ -39,12 +39,12 @@ else{
   <link rel="stylesheet" href="assets/css/owl/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
-  <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+<!--favicon-->
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+  
 </head>
 
 <body>
@@ -64,7 +64,7 @@ else{
             <h5 class="mb-5 subtitle">Juntos podemos fazer o melhor para o seu bebê e você, com acesso a um diário de bordo e profissionais à sua disposição.</h5>
             <div class="btn-container">
               <button type="button" class="hero-button button-primary btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-registro">
-                Comece já
+                Comece já!
               </button>
             </div>
             <!-- Modal -->
@@ -147,7 +147,7 @@ else{
               </div>
               <div class="text-container">
                 <h5 class="text-uppercase">Carteirinha</h5>
-                <p class="mb-0 subtitle">Tenha uma carteirinha digital para acompanhar o calendário de vacinação de seu filho.</p>
+                <p class="mb-0 subtitle">Tenha uma carteirinha para acompanhar as vacinas para as crianças e as da gestação.</p>
               </div>
             </a>
           </div>

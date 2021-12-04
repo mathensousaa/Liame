@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Dados errados</title>
+    <title>Email repetido</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -18,11 +18,13 @@
 <body>
  
     <?php
-        echo " <div class='senhaiguais'>Atenção! Senhas precisam ser iguais. </div>";
+    
+        echo " <div class='senhaiguais'>Atenção! Esse email já está em uso. </div>";
         
     ?>
+    
     <h4>
-      <a href="cadastro_mae1.php"> <font color="#39396c"> <center><u> Corrigir </u></center> </font></a>
+      <a href="cadastro_adm1.php"> <font color="#39396c"> <center><u> Trocar email </u></center> </font></a>
     </h4>
     
     
