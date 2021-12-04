@@ -148,7 +148,34 @@
 <div id="cartilha" class="container-fluid block position-relative">
       <div class="container">
 
-      <textarea rows= "20" name="conteudo">Registre suas aventuras na maternidade aqui!</textarea>
+      <form action="diario_bordo.php" method="POST">
+
+      <textarea rows= "20" name="conteudo"></textarea>
+
+      <input type="submit" name="enviar" value="Salvar">
+   
+        </form>
+
+
+
+
+<?php
+
+if(isset($_POST['enviar'])){
+
+   $texto_diario_gestacao=$_POST['conteudo'];
+
+   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao) VALUES("'.$texto_diario_gestacao.'")');
+echo "O";
+   if (mysqli_query($link, $salvar)){
+   echo "Salvo com sucesso";
+   
+   }else{
+   echo "Erro ao salvar";
+}
+}
+
+?>
    <!-- <h1 class="hero-title">
               As pessoas ao meu redor...
             </h1>
@@ -587,7 +614,7 @@
      }
    ?>
 
-<footer>
+<!--<footer>
   <div id="rodape" class="container">
     <div class="conteudo py-5">
       <div class="row">
@@ -644,8 +671,8 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
       <script src="../assets/js/owl.carousel.min.js"></script>
-      <script src="../assets/js/main.js"></script>
-
+      <script src="../assets/js/main.js"></script>-->
+<BR>
 </body>
 
 </html>
