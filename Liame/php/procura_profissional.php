@@ -173,10 +173,11 @@
         if(isset($_POST['buscar'])){
           $buscarprofissional = $_POST ['especialidade'];
           $buscarestado = $_POST['estado'];
+          $status_profissional = 1;
       // procura no banco de dados
-          $sql_busca = ("select esp.id_especialidade, especialidade, 
+          $sql_busca = ("select  esp.id_especialidade, especialidade, 
                   est.id_estado, estado, uf, 
-                  pro.id_profissional as id, nome_profissional, email_profissional, foto_perfil_profissional, 
+                  pro.id_profissional as id, nome_profissional, email_profissional, foto_perfil_profissional, status_validacao_profissional,
                   ddd_telefone_profissional, numero_telefone_profissional, 
                   descricao_endereco, logradouro, numero_endereco, cep, tipo_logradouro, cidade, estado, bairro
 
@@ -190,7 +191,7 @@
                   inner join cidade as cid on ende.id_cidade = cid.id_cidade 
                   inner join tipo_logradouro as logr on ende.id_tipo_logradouro = logr.id_tipo_logradouro 
                   inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
-                  WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
+                  WHERE status_validacao_profissional = '$status_profissional' AND esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
             
           $consulta = mysqli_query($link, $sql_busca);
           if($consulta->num_rows > 0){

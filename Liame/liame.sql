@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 03-Dez-2021 às 18:29
+-- Tempo de geração: 04-Dez-2021 às 21:24
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -36,7 +36,14 @@ CREATE TABLE IF NOT EXISTS `adm` (
   `email_adm` varchar(100) DEFAULT NULL,
   `senha_adm` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id_adm`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `adm`
+--
+
+INSERT INTO `adm` (`id_adm`, `nome_adm`, `email_adm`, `senha_adm`) VALUES
+(1, 'Milena Soares', 'soares@gmail.com', '1b52a583020088fad8cc06fd0e67910e');
 
 -- --------------------------------------------------------
 
@@ -7785,7 +7792,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `id_telefone` int(6) DEFAULT NULL,
   `id_endereco` int(6) DEFAULT NULL,
   `documentacao_validacao_profissional` varchar(32) NOT NULL,
-  `satatus_validacao_profissional` int(1) NOT NULL,
+  `status_validacao_profissional` int(1) NOT NULL,
   PRIMARY KEY (`id_profissional`),
   KEY `id_endereco` (`id_endereco`),
   KEY `id_telefone` (`id_telefone`)
@@ -7795,12 +7802,12 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 -- Extraindo dados da tabela `profissional`
 --
 
-INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`, `documentacao_validacao_profissional`, `satatus_validacao_profissional`) VALUES
-('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1, '', 0),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 0),
-('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2, '', 0),
-('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4, '', 0),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 0);
+INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`, `documentacao_validacao_profissional`, `status_validacao_profissional`) VALUES
+('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1, '', 1),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 1),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2, '', 1),
+('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4, '', 1),
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 1);
 
 -- --------------------------------------------------------
 
@@ -7811,12 +7818,12 @@ INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_pr
 DROP TABLE IF EXISTS `rede_social_profissional`;
 CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
   `id_rede_social` int(6) NOT NULL AUTO_INCREMENT,
-  `youtube_profissional` varchar(11) DEFAULT NULL,
+  `youtube_profissional` varchar(255) DEFAULT NULL,
   `whatsapp_profissional` varchar(255) DEFAULT NULL,
-  `instagram_profissional` varchar(20) DEFAULT NULL,
+  `instagram_profissional` varchar(255) DEFAULT NULL,
   `linkedin_profissional` varchar(100) DEFAULT NULL,
   `facebook_profissional` varchar(255) DEFAULT NULL,
-  `telegram_profissional` varchar(11) DEFAULT NULL,
+  `telegram_profissional` varchar(255) DEFAULT NULL,
   `id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_rede_social`),
   KEY `id_profissional` (`id_profissional`)
