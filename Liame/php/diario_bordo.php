@@ -12,7 +12,26 @@
     }else{
         //Logged in
         echo "Bem-vindo " . $_SESSION['email_mae'];*/
-
+        session_start();
+        include ('conexao.php');
+        if(isset($_SESSION['id_mae'])){
+          $id_mae = $_SESSION['id_mae'];
+        } 
+        else{
+          $id_mae = 0;
+          
+        } 
+        if(isset($_SESSION['id_profissional'])){
+          $id_profissional = $_SESSION['id_profissional'];
+          
+          $id_profissional = 0;
+        }
+        else{
+           $id_profissional = 0;
+        }
+        
+        if(($id_mae != 0)){
+         
         ?>
 
 
@@ -36,6 +55,12 @@
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <!-- tinymce -->
+
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  
+   <script>tinymce.init({selector:'textarea'});</script>
 
 </head>
 
@@ -122,7 +147,9 @@
 <br><br><br><br><br>
 <div id="cartilha" class="container-fluid block position-relative">
       <div class="container">
-    <h1 class="hero-title">
+
+      <textarea rows= "20" name="conteudo">Registre suas aventuras na maternidade aqui!</textarea>
+   <!-- <h1 class="hero-title">
               As pessoas ao meu redor...
             </h1>
     <div class="">
@@ -549,10 +576,16 @@
             </div>
             </div>
         </div>
-        </form>
+        </form>-->
     </div>
     </div>
     </div>
+<?php
+         }else if($id_profissional == 0){
+         echo"sai daqui";
+         
+     }
+   ?>
 
 <footer>
   <div id="rodape" class="container">
