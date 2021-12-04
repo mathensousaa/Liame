@@ -454,15 +454,18 @@ html, body {
   border: 1px solid var(--dark);
 }
 
-#busca-container .btn-container a {
+#busca-container .btn-container input {
   border-radius: 0 30px 30px 0px;
   padding: 1rem 2rem 1rem 2rem;
-  border: 1px solid #FFF;
   text-transform: uppercase;
 }
 
 #busca-container .hero-title {
   color: #FFF;
+}
+
+#busca-container {
+
 }
 
 .senhaiguais {

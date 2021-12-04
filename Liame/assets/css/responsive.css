@@ -33,14 +33,19 @@
   #cartilha #nuvem2-container {
     display: none;
   }
-
-  #busca .input-group {
-    padding-left: none;
-    padding-right: none;
-  }
 }
 
 @media (max-width: 767.98px) {
+
+  #busca-container .input-group {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  #input-busca {
+    width: 100%;
+  }
+
   #login-container form {
     width: 100%;
   }
@@ -80,20 +85,20 @@
   #propaganda .publicidade{
     margin-left: auto;
     margin-right: auto;
-    height: 212px; 
+    height: 212px;
     width: 400px;
   }
   #oi.oi{
     margin-left: auto;
     margin-right: auto;
-    height: 180 px; 
+    height: 180 px;
     width: 350x;
   }
 
   #avast .avast{
     margin-left: auto;
     margin-right: auto;
-    height: 180 px; 
+    height: 180 px;
     width: 350x;
   }
 
