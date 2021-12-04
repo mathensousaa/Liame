@@ -120,9 +120,9 @@ else{
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
-      <center>
+      <div id="pub" class="d-flex justify-content-center pb-5">
           <img id="avast" class="img-fluid" src="assets/img/Oi.png">
-        </center><br><br>
+      </div>
         <div class="row text-center mb-5">
           
           <h2 class="title">Nossos serviços</h2>
@@ -251,11 +251,9 @@ else{
             </div>
             </div>
         </div>
-        <br>
-        <center>
+        <div id="pub" class="d-flex justify-content-center mt-5">
           <img id="avast" class="img-fluid" src="assets/img/AVAST.jpeg">
-        </center>
-    
+        </div>
       </div>
     </div>
   </main>
