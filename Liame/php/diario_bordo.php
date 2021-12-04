@@ -176,9 +176,8 @@ if(isset($_POST['enviar'])){
 
       $r = $resultado->fetch_array();
       
-      $_SESSION['id_diario_gestacao'] = $r['id_diario_gestacao'];
+      $id_diario_gestacao = $r['id_diario_gestacao'];
       $id_mae = $r['id_mae'];
-      echo $id_diario_gestacao;
 
    $update=("UPDATE registro_diario_gestacao SET id_diario_gestacao = '$id_diario_gestacao' WHERE id_mae = '$id_mae'");
      

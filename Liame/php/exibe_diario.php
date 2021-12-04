@@ -10,15 +10,14 @@ else{
 } 
 if(isset($_SESSION['id_profissional'])){
   $id_profissional = $_SESSION['id_profissional'];
-  
-  $id_profissional = 0;
+
 }
 else{
    $id_profissional = 0;
 }
 
 if(($id_mae != 0)){
-$id_diario_gestacao=$_SESSION['id_diario_gestacao'];
+
 $strSQL = "SELECT texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario_gestacao WHERE id_diario_gestacao = '$id_diario_gestacao' ORDER BY  data_hora_diario_gestacao DESC  ";
 $r = mysqli_query($link,$strSQL); 
 
