@@ -130,7 +130,7 @@ else{
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-          <a href="php/procura_profissional1.php" class="destaque">
+          <a href="php/procura_profissional.php" class="destaque">
               <div class="img-container mb-3">
                 <img class="img-fluid" src="assets/img/icon_especialistas.svg" alt="">
               </div>
@@ -272,7 +272,7 @@ else{
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Mães</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="php/procura_profissional1.php">Consultas</a></li>
+                <li class=""><a href="php/procura_profissiona.php">Consultas</a></li>
                 <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
                 <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
               </ul>
