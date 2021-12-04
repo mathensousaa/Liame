@@ -30,7 +30,7 @@
         $conta = mysqli_num_rows($resultado);
 
         if($conta>=1){
-                echo "Esse email já está em uso";
+            header('location: email_mae.php');
         }else{
             //criptografar senha
             $senha_criptografada_mae = md5($senha_mae);

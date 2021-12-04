@@ -17,7 +17,7 @@
         $conta = mysqli_num_rows($resultado);
 
         if($conta>=1){
-                echo "Esse email já está em uso";
+            header('location: email_adm.php');
         }else{
             //criptografar senha
             $senha_criptografada_adm = md5($senha_adm);
@@ -33,7 +33,8 @@
             }
         }
     }else{
-        echo "Senhas precisam ser iguais";
+        header('location: recuperacao_adm.php');
+        
     }     
     session_destroy(); 
 ?>
