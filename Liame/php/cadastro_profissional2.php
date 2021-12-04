@@ -1,8 +1,10 @@
 <?php
     session_start();
     include ('conexao.php');
+
+    if(isset($_POST['submit'])){
 //variavel da sessao
-    $nome_profissional = $_POST["nome_profissional"];
+    $nome_profissional = $_POST['nome_profissional'];
     $email_profissional = $_POST['email_profissional'];
     $senha_profissional = $_POST['senha_profissional'];
     $confirmarsenha_profissional = $_POST['confirmarsenha_profissional'];
@@ -21,7 +23,9 @@
 
             //inserir no banco de dados
             $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_criptografada_profissional.'")';
-            
+            echo $email_profissional;
+            echo $nome_profissional;
+            echo $senha_profissional;
             if (mysqli_query($link, $query)){
                 echo "Cadastrado com sucesso";
                 header('Location: ../index.php');
@@ -33,4 +37,5 @@
         echo "Senhas precisam ser iguais";
     }     
     session_destroy(); 
+}
 ?>

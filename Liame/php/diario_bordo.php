@@ -162,11 +162,12 @@
 <?php
 
 if(isset($_POST['enviar'])){
-
+   $data_hora = date ("Ymd H : i: s");
    $texto_diario_gestacao=$_POST['conteudo'];
+   echo $data_hora;
 
-   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao) VALUES("'.$texto_diario_gestacao.'")');
-echo "O";
+   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao, data_hora_diario_gestacao) VALUES("'.$texto_diario_gestacao.'","'.$data_hora.'")');
+
    if (mysqli_query($link, $salvar)){
    echo "Salvo com sucesso";
    
