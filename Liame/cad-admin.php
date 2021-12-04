@@ -1,3 +1,3 @@
 <?php
-    header('Location: php/cadastro_adm1.php');
+    header('Location: php/cadastro_adm_verificacao.php');
 ?>

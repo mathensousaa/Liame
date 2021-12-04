@@ -43,16 +43,16 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="cadastro_profissional2.php" method="post">
                 <div class="mb-3">
-                  <input name="nome_profissional" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome">
+                  <input name="nome_profissional" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome" required>
                 </div>
                 <div class="mb-3">
-                  <input name="email_profissional" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input name="email_profissional" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input name="senha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input name="senha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input name="confirmarsenha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha">
+                  <input name="confirmarsenha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
                 </div>
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">

@@ -52,9 +52,9 @@ if(isset($_SESSION['id_mae'])){
   <main>
     <?php
 
-    
-    /*include 'menu.php';
-    Menu($_SESSION['id_mae']);*/
+
+    include 'menu.php';
+    Menu($id_mae, $id_profissional);
     ?>
 
     <!-- Hero -->
@@ -351,7 +351,7 @@ include 'php/conexao.php';
     <?php
     include 'menu.php';
     Menu($id_mae, $id_profissional);
-    
+
     ?>
 
     <!-- Hero -->
@@ -417,13 +417,24 @@ include 'php/conexao.php';
       </div>
     </div>
     <!-- //Hero -->
+<<<<<<< HEAD
     
+    <div class="publicidade col-md-15">
+    
+=======
+
     <div class="publicidade col-md-20">
-    
+
+    </div>
+>>>>>>> cee4401e440c6f61f5b8de790082b39cc51bbe62
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
+      <center>
+          <img id="avast" class="img-fluid" src="assets/img/Oi.png">
+        </center>
         <div class="row text-center mb-5">
+          
           <h2 class="title">Nossos serviços</h2>
           <h5 class="subtitle">Que vão desde o início da gravidez até um ano de seu filho.</h5>
         </div>
@@ -472,10 +483,15 @@ include 'php/conexao.php';
     </div>
     <!-- //Serviços -->
 
+  
+  
     <!-- Busca -->
     <div id="busca" class="container-fluid block position-relative">
       <div class="container">
         <div id="linha1-busca" class="row text-center">
+        <div class="avast col-md-20">
+     
+  </div>
           <h2 class="title">
             Busque por
             <span class="highlight-2">
@@ -543,9 +559,13 @@ include 'php/conexao.php';
                 </div>
               </a>
             </div>
-          </div>
-
+            </div>
         </div>
+        <br>
+        <center>
+          <img id="avast" class="img-fluid" src="assets/img/AVAST.jpeg">
+        </center>
+    
       </div>
     </div>
   </main>
@@ -574,6 +594,7 @@ include 'php/conexao.php';
               <ul class="list-unstyled">
                 <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
                 <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+                <li class=""><a href="index.php">Página inicial</a></li>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">

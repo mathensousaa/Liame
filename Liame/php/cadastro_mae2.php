@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+   
+  </head>
+  <body>
+    
+  
 <?php
     session_start();
     include ('conexao.php');
@@ -32,8 +45,18 @@
                 echo "Erro ao cadastrar";
             }
         }
-    }else{
-        echo "Senhas precisam ser iguais";
-    }     
-    session_destroy(); 
-?>
+       
+        ?> 
+
+        
+        <?php 
+            }else{
+                header('location: recuperacao.php');
+               
+             }
+             ?> 
+             
+        </div>
+    
+    </body>
+    </html>

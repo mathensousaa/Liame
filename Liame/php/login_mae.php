@@ -39,18 +39,18 @@
             <h1 class="hero-title">
               Bem-vindo
             </h1>
-            <h6 class="mb-5 subtitle">Busque por um profissional!</h6>
+            <h6 class="mb-5 subtitle">Prencha com seus dados!</h6>
 
             <div class="">
               <form class="ps-lg-5 me-lg-5" action= "login_mae.php" method="post">
                 <div class="mb-3">
-                  <input type="email" name="email_mae" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name="email_mae" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input type="password" name="senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name="senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
+                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar" required>
                 </div>
               <ul class="list-unstyled">
                   <li class="list-item"><a href="cadastro_mae1.php">Crie seu cadastro</a></li>

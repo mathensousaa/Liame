@@ -43,13 +43,13 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="login_profissional.php" method="post">
                 <div class="mb-3">
-                  <input type="email" name= "email_profissional" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name= "email_profissional" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input type="password" name = "senha_profissional" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name = "senha_profissional" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input type="submit" name="enviar" class="hero-button button-primary btn btn-primary" value="Confirmar">
+                  <input type="submit" name="enviar" class="hero-button button-primary btn btn-primary" value="Confirmar" required>
                 </div>
                 <ul class="list-unstyled">
                   <li class="list-item"><a href="cadastro_profissional1.php">Crie seu cadastro</a></li>

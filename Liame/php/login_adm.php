@@ -35,7 +35,7 @@
       <div class="container justify-content-center align-self-center">
         <div class="row">
           <div class="col-md-6 align-center text-center">
-            <img id="icone" class="img-fluid" src="../assets/img/icone-mae.png" alt="">
+           
             <h1 class="hero-title">
               Bem-vindo
             </h1>
@@ -44,13 +44,13 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action= "login_adm.php" method="post">
                 <div class="mb-3">
-                  <input type="email" name="email_adm" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" name="email_adm" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input type="password" name="senha_adm" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha">
+                  <input type="password" name="senha_adm" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
+                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar" required>
                 </div>
               </form>
             </div>
