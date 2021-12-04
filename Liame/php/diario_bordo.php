@@ -162,19 +162,38 @@
 <?php
 
 if(isset($_POST['enviar'])){
-   $data_hora = date ("Ymd H : i: s");
+   $data_hora = date('d/m/Y H:i');
    $texto_diario_gestacao=$_POST['conteudo'];
    echo $data_hora;
+   $id_mae=$_SESSION['id_mae'];
 
-   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao, data_hora_diario_gestacao) VALUES("'.$texto_diario_gestacao.'","'.$data_hora.'")');
+   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao, data_hora_diario_gestacao) VALUES("'.$texto_diario_gestacao.'",now())');
+   $diario=('INSERT INTO diario_bordo_gestacao (id_mae) VALUES ("'.$id_mae.'")');
 
+   $id_diario=("SELECT * FROM diario_bordo_gestacao WHERE id_mae = '$id_mae'");
+   $resultado = mysqli_query($link, $id_diario);
+   $linhas = mysqli_num_rows($resultado);
+
+      $r = $resultado->fetch_array();
+      
+      $_SESSION['id_diario_gestacao'] = $r['id_diario_gestacao'];
+      $id_mae = $r['id_mae'];
+      echo $id_diario_gestacao;
+
+   $update=("UPDATE registro_diario_gestacao SET id_diario_gestacao = '$id_diario_gestacao' WHERE id_mae = '$id_mae'");
+     
    if (mysqli_query($link, $salvar)){
    echo "Salvo com sucesso";
    
    }else{
    echo "Erro ao salvar";
 }
-}
+if (mysqli_query($link, $diario)){
+   echo "Salvo com sucesso";
+   
+   }else{
+   echo "Erro ao salvar";
+}}
 
 ?>
    <!-- <h1 class="hero-title">
