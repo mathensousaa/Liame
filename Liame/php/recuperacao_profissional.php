@@ -18,11 +18,13 @@
 <body>
  
     <?php
+    
         echo " <div class='senhaiguais'>Atenção! Senhas precisam ser iguais. </div>";
         
     ?>
+    
     <h4>
-      <a href="cadastro_mae1.php"> <font color="#39396c"> <center><u> Corrigir </u></center> </font></a>
+      <a href="cadastro_profissional1.php"> <font color="#39396c"> <center><u> Corrigir </u></center> </font></a>
     </h4>
     
     
