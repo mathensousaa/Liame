@@ -44,7 +44,7 @@
 									<a class="nav-link active" href="../index.php">Página Inicial</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="../php/procura_profissional1.php">Buscar especialistas</a>
+									<a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
@@ -110,7 +110,7 @@
 						</h1>
 
 						<div class="">
-							<form name="pesquisa-profissional" action="procura_profissional1.php" class="ps-lg-5 me-lg-5" method="post">
+							<form name="pesquisa-profissional" action="procura_profissional.php" class="ps-lg-5 me-lg-5" method="post">
 								<div class="input-group my-5">
 									<div class="col">
 										<select name="especialidade" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
@@ -239,7 +239,7 @@
 						<div class="px-lg-4 px-mb-1">
 							<h5 class="text-uppercase">Mães</h5>
 							<ul class="list-unstyled">
-								<li class=""><a href="../php/procura_profissional1.php">Consultas</a></li>
+								<li class=""><a href="../php/procura_profissional.php">Consultas</a></li>
 								<li class=""><a href="../php/diario_bordo.php">Diário de bordo</a></li>
 								<li class=""><a href="../php/cadastro_mae1.php">Carteira de vacinação</a></li>
 							</ul>

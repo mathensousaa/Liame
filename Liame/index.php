@@ -40,7 +40,7 @@ else{
   <link rel="stylesheet" href="assets/css/main.css">
 
 <!--favicon-->
-  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -274,7 +274,7 @@ else{
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Mães</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="php/procura_profissiona.php">Consultas</a></li>
+                <li class=""><a href="php/procura_profissional.php">Consultas</a></li>
                 <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
                 <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
               </ul>
