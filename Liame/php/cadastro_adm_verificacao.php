@@ -42,12 +42,11 @@
             <h6 class="mb-5 subtitle">Página de verificação do administrador!</h6>
         <form action="cadastro_adm_verificacao.php" method="post">
         <div class="mb-3">
-                  <input type="Código de acesso" name="codigo" class="form-control input input-login" id="exampleInputEmail1"  placeholder="Código de acesso:" required>
+                  <input type="password" name="codigo" class="form-control input input-login" id="exampleInputEmail1"  placeholder="Código de acesso:" required>
                 </div>
                 <div class="mb-3">
                   <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Enviar" required>
                 </div>
-            <p><input type="submit" /></p>
         </form>
         <?php
             if(!empty($_POST)){

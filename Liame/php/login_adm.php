@@ -73,31 +73,6 @@
 </html>
 
 <?php
- /*include("conexao.php");
-
-
-  if(isset($_POST['enviar'])){
-
- $email_mae = $_POST['email_mae'];
- $senha_mae = $_POST['senha_mae'];
-
- $query = "SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'";
-  echo $query;
- $result = mysqli_query($link, $query);
-
- $row = mysqli_num_rows($result);
- echo $row;
-
- if($row == 0) {
-  $_SESSION['nao_autenticado'] = true;
-  echo "eror";
- } else {
-  $_SESSION['email_mae'] = $email_mae;
-   header('Location: liame/php/perfil_mae.php');
-   echo "h=uau";
- }
-  }*/
-
   include ('conexao.php');
     if(!empty($_POST)){
      ;
@@ -116,12 +91,9 @@
           $_SESSION['id_adm'] = $r['id_adm'];
           $_SESSION['nome_adm'] = $r['nome_adm'];
           $_SESSION['email_adm'] = $r['email_adm'];
-        echo "Bem vindo adm";
-          //header('Location: ../index.php');
+        
+          header('Location: validacao_profissional.php');
         }
-          //setcookie("email_mae",$email_mae);
 
     }
-
-
  ?>
