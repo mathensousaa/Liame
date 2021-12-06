@@ -22,7 +22,7 @@
                   <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="php/procura_profissional1.php">Buscar especialistas</a>
+                  <a class="nav-link" href="php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
@@ -102,7 +102,7 @@
                   <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="php/procura_profissional1.php">Buscar especialistas</a>
+                  <a class="nav-link" href="php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
@@ -181,7 +181,7 @@
                   <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="php/procura_profissional1.php">Buscar especialistas</a>
+                  <a class="nav-link" href="php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="php/diario_bordo.php">Diário de Bordo</a>
