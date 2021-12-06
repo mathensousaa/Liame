@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cadastro - Profissionais | Liame</title>
+  <title>Senhas iguais | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -17,8 +17,8 @@
 </head>
 
 <body>
-   <!--navbar-->
-   <div id="header" class="fixed-top">
+  <!--navbar-->
+  <div id="header" class="fixed-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
         <div class="container-fluid">
@@ -29,13 +29,18 @@
       </nav>
     </div>
   </div>
- 
+  <!--//navbar-->
+  <main>
+    <div id="login-container" class="d-flex">
+      <div class="container justify-content-center align-self-center">
+        <div class="row">
+          <div class="col-md-6 align-center text-center">
     <?php
         echo " <div class='senhaiguais'>Atenção! Senhas precisam ser iguais. </div>";
         
     ?>
     <h4>
-      <a href="cadastro_adm1.php"> <font color="#39396c"> <center><u> Corrigir </u></center> </font></a>
+      <a href="cadastro_adm1.php"> <font color="#39396c"> <center><u> < Corrigir </u></center> </font></a>
     </h4>
     
     
