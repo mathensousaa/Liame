@@ -163,22 +163,22 @@
 						$buscarestado = $_POST['estado'];
 					// procura no banco de dados
 						$sql_busca = ("select esp.id_especialidade, especialidade, 
-								est.id_estado, estado, uf, 
-								pro.id_profissional as id, nome_profissional, email_profissional, foto_perfil_profissional, 
-								ddd_telefone_profissional, numero_telefone_profissional, 
-								descricao_endereco, logradouro, numero_endereco, cep, tipo_logradouro, cidade, estado, bairro
-			  
-			  
-								from especialidade as es 
-			  
-								inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade 
-								inner join profissional as pro on pro.id_profissional = esp.id_profissional 
-								inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco 
-								inner join estado as est on ende.id_estado = est.id_estado 
-								inner join cidade as cid on ende.id_cidade = cid.id_cidade 
-								inner join tipo_logradouro as logr on ende.id_tipo_logradouro = logr.id_tipo_logradouro 
-								inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
-								WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
+										est.id_estado as estado, uf, 
+										pro.id_profissional as id, nome_profissional, email_profissional, foto_perfil_profissional, 
+										ddd_telefone_profissional, numero_telefone_profissional, 
+										descricao_endereco, logradouro, numero_endereco, cep, tipo_logradouro, cidade, estado, bairro
+					
+					
+										from especialidade as es 
+					
+										inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade 
+										inner join profissional as pro on pro.id_profissional = esp.id_profissional 
+										inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco 
+										inner join estado as est on ende.id_estado = est.id_estado 
+										inner join cidade as cid on ende.id_cidade = cid.id_cidade 
+										inner join tipo_logradouro as logr on ende.id_tipo_logradouro = logr.id_tipo_logradouro 
+										inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
+										WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
 						  
 						$consulta = mysqli_query($link, $sql_busca);
 						if($consulta->num_rows > 0){
