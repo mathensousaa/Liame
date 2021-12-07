@@ -33,7 +33,6 @@
 						<a href="../index.php" class="navbar-brand">
 							<img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
 						</a>
-
 						<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -44,7 +43,7 @@
 									<a class="nav-link active" href="../index.php">Página Inicial</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="../php/procura_profissional1.php">Buscar especialistas</a>
+									<a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
@@ -110,7 +109,7 @@
 						</h1>
 
 						<div class="">
-							<form name="pesquisa-profissional" action="procura_profissional1.php" class="ps-lg-5 me-lg-5" method="post">
+							<form name="pesquisa-profissional" action="procura_profissional.php" class="ps-lg-5 me-lg-5" method="post">
 								<div class="input-group my-5">
 									<div class="col">
 										<select name="especialidade" id="select-busca1" class="form-select" aria-label="Seleção de especialista">
@@ -160,32 +159,48 @@
 				<?php
 					//resgata dados selecionados
 					if(isset($_POST['buscar'])){
-					$buscarprofissional = $_POST ['especialidade'];
-					$buscarestado = $_POST['estado'];
+						$buscarprofissional = $_POST ['especialidade'];
+						$buscarestado = $_POST['estado'];
 					// procura no banco de dados
-					$sql_busca = ("select esp.id_especialidade, especialidade, est.id_estado, estado, uf, pro.id_profissional as id, nome_profissional,
-							email_profissional, foto_perfil_profissional, descricao_endereco,
-							ddd_telefone_profissional, numero_telefone_profissional, logradouro, numero_endereco, cep, cidade, estado, bairro
-							from especialidade as es
-							inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade
-							inner join profissional as pro on pro.id_profissional = esp.id_profissional
-							inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco
-							inner join estado as est on ende.id_estado = est.id_estado
-							inner join cidade as cid on ende.id_cidade = cid.id_cidade
-							inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone
-							WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
-
-					$consulta = mysqli_query($link, $sql_busca);
-					if($consulta->num_rows > 0){
-						while ($vetor = mysqli_fetch_array($consulta)){
-						$nome_profissional= $vetor['nome_profissional'];
-						$especialidade_profissional=$vetor['especialidade'];
-						$estado_profissional=$vetor['estado'];
-						$cidade_profissional=$vetor['cidade'];
-						$cep_profissional=$vetor['cep'];
-						$foto_profissional=$vetor['foto_perfil_profissional'];
-						//$telefone_profissional= '('.$vetor['ddd_telefone_profissional'].') '.$vetor['numero_telefone_profissional'];
-				?>
+						$sql_busca = ("select esp.id_especialidade, especialidade, 
+								est.id_estado, estado, uf, 
+								pro.id_profissional as id, nome_profissional, email_profissional, foto_perfil_profissional, 
+								ddd_telefone_profissional, numero_telefone_profissional, 
+								descricao_endereco, logradouro, numero_endereco, cep, tipo_logradouro, cidade, estado, bairro
+			  
+			  
+								from especialidade as es 
+			  
+								inner join especialidade_profissional as esp on esp.id_especialidade = es.id_especialidade 
+								inner join profissional as pro on pro.id_profissional = esp.id_profissional 
+								inner join endereco_profissional as ende on ende.id_endereco = pro.id_endereco 
+								inner join estado as est on ende.id_estado = est.id_estado 
+								inner join cidade as cid on ende.id_cidade = cid.id_cidade 
+								inner join tipo_logradouro as logr on ende.id_tipo_logradouro = logr.id_tipo_logradouro 
+								inner join telefone_profissional as tel on tel.id_telefone = pro.id_telefone 
+								WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
+						  
+						$consulta = mysqli_query($link, $sql_busca);
+						if($consulta->num_rows > 0){
+						  while ($vetor = mysqli_fetch_array($consulta)){
+							$nome_profissional= $vetor['nome_profissional'];
+							$especialidade_profissional=$vetor['especialidade'];
+							$estado_profissional=$vetor['estado'] . ' - '. $vetor['uf'];
+							$cidade_profissional=$vetor['cidade'];
+							$cep_profissional=$vetor['cep'];
+							$foto_profissional=$vetor['foto_perfil_profissional'];
+							$bairro_profissional=$vetor['bairro'];
+							$descricao_endereco_profissional=$vetor['descricao_endereco'];
+							$numero_endereco_profissional=$vetor['numero_endereco'];
+							$endereco_profissional= $vetor['tipo_logradouro'].': ' . $vetor['logradouro'];
+							$telefone_profissional= '('.$vetor['ddd_telefone_profissional'].') '.$vetor['numero_telefone_profissional'];
+							// $youtube_profissional = $vetor['youtube_profissional'];
+							// $whatsapp_profissional = $vetor['whatsapp_profissional'];
+							// $telegram_profissional = $vetor['telegram_profissional'];
+							// $facebook_profissional = $vetor['facebook_profissional'];
+							// $instagram_profissional = $vetor['instagram_profissional'];
+							// $linkedin_profissional = $vetor['linkedin_profissional'];
+							?>
 				<div class="col-lg-3 col-md-4 col-sm-12">
 					<div class="card">
 						<div class="card-img-top text-center">
@@ -201,15 +216,56 @@
 						</div>
 						<div class="card-body">
 							<?php
-								echo utf8_encode ('Nome: ' .$nome_profissional.'<br>');
-								echo utf8_encode ('Especialidade: ' .$especialidade_profissional.'<br>');
-								echo utf8_encode ('Estado: ' .$estado_profissional.'<br>');
-								echo utf8_encode ('Cidade: ' .$cidade_profissional.'<br>');
-								echo utf8_encode ('CEP: ' .$cep_profissional.'<br>');
+								echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
+								echo utf8_encode ('<b>Especialidade: </b>' .$especialidade_profissional.'<br>');	
+								echo utf8_encode ('<b>Telefone: </b>' . $telefone_profissional);
+								?><hr><?php	
+								echo utf8_encode ('<b>Endereço: </b>' .$endereco_profissional.'<br>');
+								echo utf8_encode ('<b>Número: </b>' .$numero_endereco_profissional.'<br>');
+								echo utf8_encode ('<b>Bairro: </b>' .$bairro_profissional.'<br>');
+								if ($descricao_endereco_profissional == ""){
+								echo "";
+								}else{
+								echo utf8_encode ('<b>Descrição: </b>' .$descricao_endereco_profissional.'<br>');
+								}
+								echo utf8_encode ('<b>CEP: </b>' .$cep_profissional.'<br>');	
+								echo utf8_encode ('<b>Cidade: </b>' .$cidade_profissional.'<br>');
+								echo utf8_encode ('<b>Estado: </b>' .$estado_profissional.'<br>');
+								?><hr><?php	
+								// if ($youtube_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Youtube: </b>' .$youtube_profissional.'<br>');
+								// }
+								// if ($whatsapp_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Whastapp: </b>' .$whatsapp_profissional.'<br>');
+								// }
+								// if ($instagram_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Instagram: </b>' .$instagram_profissional.'<br>');
+								// }
+								// if ($Linkedin_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Linkedin: </b>' .$linkedin_profissional.'<br>');
+								// }
+								// if ($facebook_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Facebook: </b>' .$facebook_profissional.'<br>');
+								// }
+								// if ($telegram_profissional == ""){
+								//   echo "";
+								// }else{
+								//   echo utf8_encode ('<b>Telegram: </b>' .$telegram_profissional.'<br>');
+								// }
 							?>
 						</div>
 						<div class="card-footer text-center">
-							<a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="btn btn-primary btn-sm">Ver mais</a>
+							<a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
 						</div>
 					</div>
 				</div>
@@ -239,7 +295,7 @@
 						<div class="px-lg-4 px-mb-1">
 							<h5 class="text-uppercase">Mães</h5>
 							<ul class="list-unstyled">
-								<li class=""><a href="../php/procura_profissional1.php">Consultas</a></li>
+								<li class=""><a href="../php/procura_profissional.php">Consultas</a></li>
 								<li class=""><a href="../php/diario_bordo.php">Diário de bordo</a></li>
 								<li class=""><a href="../php/cadastro_mae1.php">Carteira de vacinação</a></li>
 							</ul>

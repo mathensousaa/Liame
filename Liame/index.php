@@ -40,7 +40,7 @@ else{
   <link rel="stylesheet" href="assets/css/main.css">
 
 <!--favicon-->
-  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -120,9 +120,9 @@ else{
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
-      <center>
+      <div id="pub" class="d-flex justify-content-center pb-5">
           <img id="avast" class="img-fluid" src="assets/img/Oi.png">
-        </center><br><br>
+      </div>
         <div class="row text-center mb-5">
           
           <h2 class="title">Nossos serviços</h2>
@@ -251,11 +251,9 @@ else{
             </div>
             </div>
         </div>
-        <br>
-        <center>
+        <div id="pub" class="d-flex justify-content-center mt-5">
           <img id="avast" class="img-fluid" src="assets/img/AVAST.jpeg">
-        </center>
-    
+        </div>
       </div>
     </div>
   </main>
@@ -274,7 +272,7 @@ else{
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Mães</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="php/procura_profissiona.php">Consultas</a></li>
+                <li class=""><a href="php/procura_profissional.php">Consultas</a></li>
                 <li class=""><a href="php/diario_bordo.php">Diário de bordo</a></li>
                 <li class=""><a href="php/carteirinha_vacinacao.php">Carteira de vacinação</a></li>
               </ul>

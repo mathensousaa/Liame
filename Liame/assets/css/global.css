@@ -114,3 +114,15 @@ a {
   background: var(--light);
   border-radius: 30px;
 }
+
+.texto {
+  padding-top: 1%;
+}
+
+.row {
+  margin-top: 2%;
+}
+
+.card-footer {
+  background-color: white;
+}
