@@ -472,3 +472,80 @@ html, body {
   vertical-align: middle;
   
 }
+
+
+
+
+/* PERFIL MAE */
+
+#avatar-container {
+  height: 200px;
+  width: 200px;
+  margin: 50px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--primary);
+  box-shadow: 1px 1px 15px -5px black;
+  transition: all .3s ease;
+  
+	
+  
+
+  }
+  
+}
+
+#avatar-container &:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#avatar-container &:hover .imagem-perfil{
+  opacity: .5;
+}
+
+.imagem-perfil {
+  height: 100%;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+#imagem-perfil &:after {
+  content: "\f007";
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 190px;
+  background: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
+
+#avatar-container .botao-upload {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  .uil-arrow-up {
+    position: absolute;
+    font-size: 234px;
+
+  }
+
+
+
+
+
+#avatar-container .imagem-perfil {
+  height: 100%;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+#avatar-container &:after {
+  content: "\f007";
+  top: 0; left: 0;
+  width: 100%;
+  height:
+}
