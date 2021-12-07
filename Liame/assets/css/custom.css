@@ -74,6 +74,7 @@ html, body {
   color: #000;
   text-decoration: none;
   transition: all ease-out 0.2s;
+  z-index: 9999;
 }
 
 #servicos a.destaque:hover {
@@ -95,6 +96,7 @@ html, body {
 
 #servicos #nuvem-vector {
   width: 200px;
+  z-index: 1;
 }
 
 #servicos #nuvem-container {
@@ -104,6 +106,7 @@ html, body {
 
 #servicos #nuvem2-vector {
   width: 200px;
+  z-index: 1;
 }
 
 #servicos #nuvem2-container {
@@ -549,3 +552,25 @@ html, body {
   width: 100%;
   height:
 }
+
+#propaganda .publicidade{
+  margin-left: auto;
+  margin-right: auto;
+  height: 212px;
+  width: 400px;
+}
+#oi.oi{
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 100px;
+}
+
+#avast {
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 180 px;
+  width: 200px;
+}
+
+

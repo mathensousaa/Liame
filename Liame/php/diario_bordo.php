@@ -67,7 +67,7 @@
 <body>
   <main>
     <!--navbar-->
-    <div id="header" class="fixed-top">
+    <div id="header" class="">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
@@ -144,7 +144,7 @@
     </div>
    
     <!--//navbar-->
-<br><br><br><br><br>
+
 <div id="cartilha" class="container-fluid block position-relative">
    <div class="container">
 

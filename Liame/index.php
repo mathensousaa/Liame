@@ -119,15 +119,12 @@ if(isset($_SESSION['id_adm'])){
       </div>
     </div>
     <!-- //Hero -->
-
-    <div class="publicidade col-md-20">
-
-    </div>
+  
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
-      <div id="pub" class="d-flex justify-content-center pb-5">
-          <img id="avast" class="img-fluid" src="assets/img/Oi.png">
+      <div id="pub-pampers" class="d-flex justify-content-center pb-5">
+          <img id="pampers" class="img-fluid" src="assets/img/pampers.jpg">
       </div>
         <div class="row text-center mb-5">
           
@@ -185,9 +182,9 @@ if(isset($_SESSION['id_adm'])){
     <div id="busca" class="container-fluid block position-relative">
       <div class="container">
         <div id="linha1-busca" class="row text-center">
-        <div class="avast col-md-20">
+
      
-  </div>
+
           <h2 class="title">
             Busque por
             <span class="highlight-2">
@@ -197,7 +194,7 @@ if(isset($_SESSION['id_adm'])){
           <h5 class="subtitle-2">
             Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição. Veja alguns dos exames que você pode encontrar com nossos profissionais:
           </h5>
-
+        </div>
 
       <div id="especialidades" class="mt-5 container-fluid block position-relative">
         <div class="container">
@@ -206,7 +203,7 @@ if(isset($_SESSION['id_adm'])){
 
           <div class="owl-carousel owl-theme owl-loaded">
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -216,7 +213,7 @@ if(isset($_SESSION['id_adm'])){
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/doppler.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -226,7 +223,7 @@ if(isset($_SESSION['id_adm'])){
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/ultrassom.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -236,7 +233,7 @@ if(isset($_SESSION['id_adm'])){
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/Hemograna.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -246,7 +243,7 @@ if(isset($_SESSION['id_adm'])){
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/RH.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
