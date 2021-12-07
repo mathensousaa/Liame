@@ -54,6 +54,14 @@
                 <div class="mb-3">
                   <input name="confirmarsenha_mae" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
                 </div>
+                <form>
+                  <div>
+                    <ul class="list-unstyled">  
+                    <input type = "checkbox" id = "subscribeNews" name = "subscribe" value = "newsletter">
+                    <label for = "subscribeNews">Aceitar</label><li class="list-item"><a href="../layouts/termos_condicoes_uso.html">termos de condições de uso</a></li>
+              </ul>
+                  </div>
+                 
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
