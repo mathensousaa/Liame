@@ -146,15 +146,21 @@
     <!--//navbar-->
 <br><br><br><br><br>
 <div id="cartilha" class="container-fluid block position-relative">
-      <div class="container">
+   <div class="container">
 
       <form action="diario_bordo.php" method="POST">
 
-      <textarea rows= "20" name="conteudo"></textarea>
+      <textarea rows= "20"  name="conteudo"></textarea>
+
+     <style> tinyMCE.init{
+      width : "100%" ;
+      } 
+      </style>   
 
       <input type="submit" name="enviar" value="Salvar">
    
         </form>
+      </div>
 
 
 
