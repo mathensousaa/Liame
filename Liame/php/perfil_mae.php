@@ -61,11 +61,18 @@ if(($id_mae != 0)){
 	<title>Sua Conta</title>
 </head>
 <body>
+<div class="container">
+      <div class="d-flex justify-content-center" id="avatar-container">
+        <img class="imagem-perfil" src="" alt="Foto de Perfil">
+        <div class="botao-upload">
+          <i class="uil uil-arrow-up" aria-hidden="true"></i>
+        </div>
+        <input type="file" accept=".png, .jpg, .jpeg" name="avatar" id="avatar-input" class="avatar-input">   
+      </div>
+</div>
 <form name="confgconta" action="#" method="POST"> 
-	<h1>Informações da Mãe </h1>
-
     <?php
-    echo $_SESSION['nome_mae'];
+    echo $_SESSION['email_mae'];
     $foto_perfil_mae = null;
     ?> 
     

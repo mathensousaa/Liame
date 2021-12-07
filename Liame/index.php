@@ -40,7 +40,7 @@ else{
   <link rel="stylesheet" href="assets/css/main.css">
 
 <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
