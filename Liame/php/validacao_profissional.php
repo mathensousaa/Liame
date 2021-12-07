@@ -53,8 +53,8 @@
                 </table>
 <?php
 
-                if($consulta->num_rows > 0){
-                  while ($vetor = mysqli_fetch_array($consulta)){
+                if($resultado->num_rows > 0){
+                  while ($vetor = mysqli_fetch_array($resultado)){
                     $nome_profissional= $vetor['nome_profissional'];
                     $especialidade_profissional=$vetor['especialidade'];
                     $email_profissional=$vetor['email_profissional'];
@@ -88,10 +88,9 @@
           </div>
         <?php
   }else{
-    echo "nao";
-    /*header("Location:php/index.php");*/
+    
+    header("Location:../index.php");
 
   }
   ?>
   
-?>

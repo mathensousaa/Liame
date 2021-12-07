@@ -28,7 +28,7 @@
             echo $senha_profissional;
             if (mysqli_query($link, $query)){
                 echo "Cadastrado com sucesso";
-                header('Location: ../index.php');
+                header('Location: login_profissional.php');
             }else{
                 echo "Erro ao cadastrar";
             }

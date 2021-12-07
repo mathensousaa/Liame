@@ -12,6 +12,12 @@ if(isset($_SESSION['id_profissional'])){
 else{
   $id_profissional = 0;
 }
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
 
 //start session
 
@@ -21,7 +27,7 @@ else{
 
   //haven't log in
   include_once 'menu.php';
-  Menu($id_mae, $id_profissional);
+  Menu($id_mae, $id_profissional, $id_adm);
   ?>
 
 <!doctype html>
@@ -146,8 +152,8 @@ else{
                 <img class="img-fluid" src="assets/img/icon_vacina.png" alt="vacinação">
               </div>
               <div class="text-container">
-                <h5 class="text-uppercase">Carteirinha</h5>
-                <p class="mb-0 subtitle">Tenha uma carteirinha para acompanhar as vacinas para as crianças e as da gestação.</p>
+                <h5 class="text-uppercase">Cartilha de vacinação</h5>
+                <p class="mb-0 subtitle">Tenha uma cartilha para o acompanhamento da vacinação das crianças e gestantes.</p>
               </div>
             </a>
           </div>

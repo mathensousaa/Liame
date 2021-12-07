@@ -2,11 +2,13 @@
     include ('conexao.php');
     $id_profissional= 4;
     //$id_profissional= intval ($_GET['id']);
-    $sql_busca = ("SELECT * from profissional WHERE id_profissioanal = $id_profissional");
+    $sql_busca = "SELECT * from profissional WHERE id_profissioanal = '$id_profissional'";
 
-    $result = $link->query($sql_busca);
+    $result = mysqli_query($link, $sql_busca);
 
-    if ($result->num_rows > 0) {
+    $linhas = mysqli_num_rows($result);
+
+    if ($linhas > 0) {
       while($row = $result->fetch_assoc()) {
         echo "<b>Nome: </b>" . $row["nome_profissional"]. " - <b>email_profissional: </br>" . $row["email_profissional"]. "<br>";
       }

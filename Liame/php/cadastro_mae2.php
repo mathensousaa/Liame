@@ -40,7 +40,7 @@
             
             if (mysqli_query($link, $query)){
                 echo "Cadastrado com sucesso";
-                header('Location: ../index.php');
+                header('Location: login_mae.php');
             }else{
                 echo "Erro ao cadastrar";
             }
