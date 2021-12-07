@@ -18,7 +18,7 @@ else{
 
 if(($id_mae != 0)){
 
-$strSQL = "SELECT texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario_gestacao WHERE id_diario_gestacao = '$id_diario_gestacao' ORDER BY  data_hora_diario_gestacao DESC  ";
+$strSQL = "SELECT texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_diario_gestacao = '$id_diario_gestacao' ORDER BY  data_hora_diario_gestacao DESC  ";
 $r = mysqli_query($link,$strSQL); 
 
 while($row = mysqli_fetch_array($r)){

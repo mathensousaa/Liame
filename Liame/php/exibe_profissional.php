@@ -1,12 +1,13 @@
 <?php
     include ('conexao.php');
-    $id_profissional= 4;
-    //$id_profissional= intval ($_GET['id']);
-    $sql_busca = "SELECT * from profissional WHERE id_profissioanal = '$id_profissional'";
+    $id_profissional = $_GET['id'];
+    $sql_busca = 'select * from profissional where id_profissioanal = '.$id_profissional.';';
 
     $result = mysqli_query($link, $sql_busca);
 
-    $linhas = mysqli_num_rows($result);
+    $linhas = mysqli_fetch_array($result);
+
+    echo($linhas['nome_profissional']);
 
     if ($linhas > 0) {
       while($row = $result->fetch_assoc()) {
