@@ -194,6 +194,7 @@
 							$numero_endereco_profissional=$vetor['numero_endereco'];
 							$endereco_profissional= $vetor['tipo_logradouro'].': ' . $vetor['logradouro'];
 							$telefone_profissional= '('.$vetor['ddd_telefone_profissional'].') '.$vetor['numero_telefone_profissional'];
+							$id_profissional= intval ($vetor['id']);
 							// $youtube_profissional = $vetor['youtube_profissional'];
 							// $whatsapp_profissional = $vetor['whatsapp_profissional'];
 							// $telegram_profissional = $vetor['telegram_profissional'];
@@ -201,72 +202,36 @@
 							// $instagram_profissional = $vetor['instagram_profissional'];
 							// $linkedin_profissional = $vetor['linkedin_profissional'];
 							?>
+
+
+
 				<div class="col-lg-3 col-md-4 col-sm-12">
-					<div class="card">
-						<div class="card-img-top text-center">
-							<?php
-								if ($foto_profissional != ""){
-							?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt="">
-							<?php
-								}else{
-							?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt="">
-							<?php
-								}
-							?>
-						</div>
-						<div class="card-body">
-							<?php
-								echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
-								echo utf8_encode ('<b>Especialidade: </b>' .$especialidade_profissional.'<br>');	
-								echo utf8_encode ('<b>Telefone: </b>' . $telefone_profissional);
-								?><hr><?php	
-								echo utf8_encode ('<b>Endereço: </b>' .$endereco_profissional.'<br>');
-								echo utf8_encode ('<b>Número: </b>' .$numero_endereco_profissional.'<br>');
-								echo utf8_encode ('<b>Bairro: </b>' .$bairro_profissional.'<br>');
-								if ($descricao_endereco_profissional == ""){
-								echo "";
-								}else{
-								echo utf8_encode ('<b>Descrição: </b>' .$descricao_endereco_profissional.'<br>');
-								}
-								echo utf8_encode ('<b>CEP: </b>' .$cep_profissional.'<br>');	
-								echo utf8_encode ('<b>Cidade: </b>' .$cidade_profissional.'<br>');
-								echo utf8_encode ('<b>Estado: </b>' .$estado_profissional.'<br>');
-								?><hr><?php	
-								// if ($youtube_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Youtube: </b>' .$youtube_profissional.'<br>');
-								// }
-								// if ($whatsapp_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Whastapp: </b>' .$whatsapp_profissional.'<br>');
-								// }
-								// if ($instagram_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Instagram: </b>' .$instagram_profissional.'<br>');
-								// }
-								// if ($Linkedin_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Linkedin: </b>' .$linkedin_profissional.'<br>');
-								// }
-								// if ($facebook_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Facebook: </b>' .$facebook_profissional.'<br>');
-								// }
-								// if ($telegram_profissional == ""){
-								//   echo "";
-								// }else{
-								//   echo utf8_encode ('<b>Telegram: </b>' .$telegram_profissional.'<br>');
-								// }
-							?>
-						</div>
-						<div class="card-footer text-center">
-							<a href="exibe_profissional?id=<?php echo $vetor['id']; ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
-						</div>
+                  <div class="card">
+                    <div class="card-img-top text-center">
+                        <?php
+                          if ($foto_profissional != ""){
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+                          }else{
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+                          }
+                        ?>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                      <?php
+                        echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
+                        echo utf8_encode ('<b>Especialidade: </b>' .$especialidade_profissional.'<br>');	
+                        echo utf8_encode ('<b>Estado: </b>' .$estado_profissional.'<br>');		
+                        echo utf8_encode ('<b>Cidade: </b>' .$cidade_profissional.'<br>');
+                        echo utf8_encode ('<b>CEP: </b>' .$cep_profissional.'<br>');	
+                      ?>
+                    </div>
+                    <div class="card-footer text-center">
+                      <a href="exibe_profissional?id=<?php echo $id_profissional ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
+                    </div>
+
+
+				
 					</div>
 				</div>
 			<?php

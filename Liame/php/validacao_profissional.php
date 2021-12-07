@@ -2,16 +2,27 @@
     include ('conexao.php');
     $status = 0;
     $documentacao = "";
-    $sql_busca = "SELECT * from profissionais 
+    $consulta = "SELECT * from profissionais 
                   WHERE status_validacao_profissional = '$status' 
                   AND domumentacao_validacao_profissional != '$documentacao'";
                 
-                $resultado = mysqli_query($link, $sql_busca);
-                $fetch = mysqli_fetch_array($resultado);
-                $final = $fetch[0];
-
-                
-
+                $resultado = $mysqli->query($link, $consulta) or die ($myslqi->error);
+?>
+                <table>
+                  <td>
+                    <tr>Nome</tr>
+                    <tr>Email</tr>
+                    <tr>Documentacao</tr>
+                    <tr></tr>
+                  </td>
+                  <td>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                  </td>
+                </table>
+<?php
 
                 if($consulta->num_rows > 0){
                   while ($vetor = mysqli_fetch_array($consulta)){
