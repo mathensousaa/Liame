@@ -67,7 +67,7 @@
 <body>
   <main>
     <!--navbar-->
-    <div id="header" class="fixed-top">
+    <div id="header" class="">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
@@ -144,466 +144,47 @@
     </div>
    
     <!--//navbar-->
-<br><br><br><br><br>
+
 <div id="cartilha" class="container-fluid block position-relative">
-      <div class="container">
+   <div class="container">
 
       <form action="diario_bordo.php" method="POST">
 
-      <textarea rows= "20" name="conteudo"></textarea>
+      <textarea rows= "20"  name="conteudo"></textarea>
+
+     <style> 
+     tinyMCE.init{
+      width : "100%";
+      }
+      </style>   
 
       <input type="submit" name="enviar" value="Salvar">
    
         </form>
-
-
-
-
+   </div>
 <?php
 
 if(isset($_POST['enviar'])){
-
+   $data_hora = date('d/m/Y H:i');
    $texto_diario_gestacao=$_POST['conteudo'];
+   
+   $id_mae=$_SESSION['id_mae'];
 
-   $salvar=('INSERT INTO registro_diario_gestacao (texto_diario_gestacao) VALUES("'.$texto_diario_gestacao.'")');
-echo "O";
+   $salvar=('INSERT INTO registro_diario (texto_diario_gestacao, data_hora_diario_gestacao, id_mae) VALUES("'.$texto_diario_gestacao.'",now(), "'.$id_mae.'")');
+
+   
    if (mysqli_query($link, $salvar)){
-   echo "Salvo com sucesso";
+   echo "Salvo com sucesso" . $texto_diario_gestacao;
    
    }else{
    echo "Erro ao salvar";
 }
+
 }
 
+
 ?>
-   <!-- <h1 class="hero-title">
-              As pessoas ao meu redor...
-            </h1>
-    <div class="">
-        <form class="ps-lg-5 me-lg-5" method="post">
-            <div class="mb-3">
-               Quem foi a primeira pessoa a ficar sabendo da gravidez? <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-                Como foi a sensação de contar aos familiares e amigos?<input type="text" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-                Qual foi a reação das pessoas?<input type="text" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-                Descreva a reação dos avós<input type="text" name="" class="form-control input input-login" >
-            </div>
-            
-            <div class="mb-3">
-                
-                <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Salvar">
-            </div>
-        </form>
-    </div>
-<br><br>
 
-
-<h1  class="hero-title">
-              Quadro de evolução
-            </h1>
-    <div class="container">
-        <form class="ps-lg-5 me-lg-5" method="post">
-            <div class="row">
-            <div class="col-6 mb-3">
-               1° à 4° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                à <input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="col-6 mb-3">
-               5° à 8° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               9° à 12° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               13° à 16° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               17° à 21° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               22° à 26° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               27° à 30° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               31° à 35° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-            <div class="col-6 mb-3">
-               36° à 40° semana <input type="date" name="" class="form-control input input-login">
-            </div>
-            <div class="col-6 mb-3">
-                 à<input type="date" name="" class="form-control input input-login" >
-            </div>
-            <div class="mb-3">
-               Peso da mamãe <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div class="mb-3">
-               Circunferência da barriga<input type="text" name="" class="form-control input input-login" ><br><br>
-            </div>
-
-            <div class="mb-3">
-                
-                <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Salvar">
-            <br><br><br>
-            </div>
-
-
-
-            <h1 class="hero-title">
-              Registro semanal...
-            </h1>
-            <div class="mb-3">
-               Descreva o que sentiu na 1° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_1_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 2° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_2_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 3° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_3_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 4° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_4_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 5° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_5_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 6° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_6_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 7° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_7_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 8° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_8_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 9° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_9_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 10° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_10_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 11° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_11_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 12° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_12_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 13° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_13_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 14° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_14_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 15° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_15_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 16° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_16_semana" accept="image/*"><br><br><br><br>
-
-                <div class="mb-3">
-               Descreva o que sentiu na 17° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_17_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 18° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_18_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 19° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_19_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 20° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_20_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 21° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_21_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 22° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_22_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 23° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_23_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 24° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_24_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 25° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_25_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 26° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_26_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 27° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_27_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 28° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_28_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 29° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_29_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 30° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_30_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 31° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_31_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 32° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_32_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 33° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_33_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 34° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_34_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 35° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_35_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 36° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_36_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 37° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_37_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 38° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_38_semana" accept="image/*"><br><br><br><br>
-            </div>
-
-            <div class="mb-3">
-               Descreva o que sentiu na 39° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_39_semana" accept="image/*"><br><br><br><br>
-            </div>
-        
-            <div class="mb-3">
-               Descreva o que sentiu na 40° semana <input type="text" name="" class="form-control input input-login">
-            </div>
-            <div>
-                <input type="file" name ="foto_40_semana" accept="image/*"><br><br><br><br>
-            </div>
-            </div>
-        </div>
-        </form>-->
     </div>
     </div>
     </div>
@@ -671,7 +252,7 @@ echo "O";
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
       <script src="../assets/js/owl.carousel.min.js"></script>
-      <script src="../assets/js/main.js"></script>-->
+      <script src="../assets/js/main.js"></script>
 <BR>
 </body>
 
@@ -684,8 +265,3 @@ echo "O";
 
 
 
-<?php
-
-      /*  
-    }*/
-?>

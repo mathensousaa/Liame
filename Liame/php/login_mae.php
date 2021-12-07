@@ -50,7 +50,7 @@
                   <input type="password" name="senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar" required>
+                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar"  >
                 </div>
               <ul class="list-unstyled">
                   <li class="list-item"><a href="cadastro_mae1.php">Crie seu cadastro</a></li>
@@ -59,16 +59,7 @@
             </div>
           </div>
           <div class="col-md-6 align-self-center">
-                          <!DOCTYPE html>
-              <html>
-              <head>
-              <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-              <script>tinymce.init({ selector:'textarea' });</script>
-              </head>
-              <body>
-              <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
-              </body>
-              </html>
+               
           </div>
         </div>
       </div>
@@ -113,7 +104,7 @@
 
   include ('conexao.php');
     if(!empty($_POST)){
-     ;
+     
       $email_mae = $_POST['email_mae'];
       $senha_mae = md5($_POST['senha_mae']);
       $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';

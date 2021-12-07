@@ -26,7 +26,7 @@
             $query = 'INSERT INTO adm (nome_adm, email_adm, senha_adm) VALUES ("'.$nome_adm.'", "'.$email_adm.'", "'.$senha_criptografada_adm.'")';
             
             if (mysqli_query($link, $query)){
-                header('Location: ../index.php');
+                header('Location: login_adm.php');
             }else{
                 echo "Erro ao cadastrar";
             }

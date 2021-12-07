@@ -12,6 +12,12 @@ if(isset($_SESSION['id_profissional'])){
 else{
   $id_profissional = 0;
 }
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
 
 //start session
 
@@ -21,7 +27,7 @@ else{
 
   //haven't log in
   include_once 'menu.php';
-  Menu($id_mae, $id_profissional);
+  Menu($id_mae, $id_profissional, $id_adm);
   ?>
 
 <!doctype html>
@@ -40,7 +46,7 @@ else{
   <link rel="stylesheet" href="assets/css/main.css">
 
 <!--favicon-->
-  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-png">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
   <!--unicons (icones que serão usados no site)-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -113,15 +119,12 @@ else{
       </div>
     </div>
     <!-- //Hero -->
-
-    <div class="publicidade col-md-20">
-
-    </div>
+  
     <!-- Serviços -->
     <div id="servicos" class="container-fluid block position-relative">
       <div class="container">
-      <div id="pub" class="d-flex justify-content-center pb-5">
-          <img id="avast" class="img-fluid" src="assets/img/Oi.png">
+      <div id="pub-pampers" class="d-flex justify-content-center pb-5">
+          <img id="pampers" class="img-fluid" src="assets/img/pampers.jpg">
       </div>
         <div class="row text-center mb-5">
           
@@ -146,8 +149,8 @@ else{
                 <img class="img-fluid" src="assets/img/icon_vacina.png" alt="vacinação">
               </div>
               <div class="text-container">
-                <h5 class="text-uppercase">Carteirinha</h5>
-                <p class="mb-0 subtitle">Tenha uma carteirinha para acompanhar as vacinas para as crianças e as da gestação.</p>
+                <h5 class="text-uppercase">Cartilha de vacinação</h5>
+                <p class="mb-0 subtitle">Tenha uma cartilha para o acompanhamento da vacinação das crianças e gestantes.</p>
               </div>
             </a>
           </div>
@@ -179,9 +182,9 @@ else{
     <div id="busca" class="container-fluid block position-relative">
       <div class="container">
         <div id="linha1-busca" class="row text-center">
-        <div class="avast col-md-20">
+
      
-  </div>
+
           <h2 class="title">
             Busque por
             <span class="highlight-2">
@@ -191,7 +194,7 @@ else{
           <h5 class="subtitle-2">
             Marque consultas com diversos especialistas. Doulas, obstetras ginecologistas e psicólogos à sua disposição. Veja alguns dos exames que você pode encontrar com nossos profissionais:
           </h5>
-
+        </div>
 
       <div id="especialidades" class="mt-5 container-fluid block position-relative">
         <div class="container">
@@ -200,7 +203,7 @@ else{
 
           <div class="owl-carousel owl-theme owl-loaded">
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/pre-natal.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -210,7 +213,7 @@ else{
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/doppler.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -220,7 +223,7 @@ else{
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/ultrassom.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -230,7 +233,7 @@ else{
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/Hemograna.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -240,7 +243,7 @@ else{
               </a>
             </div>
             <div class="item">
-              <a href="#" class="carrossel">
+              <a class="carrossel">
                 <div class="card">
                   <img src="assets/img/RH.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
