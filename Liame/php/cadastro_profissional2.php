@@ -22,13 +22,11 @@
             $senha_criptografada_profissional = md5($senha_profissional);
 
             //inserir no banco de dados
-            $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional) VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_criptografada_profissional.'")';
-            echo $email_profissional;
-            echo $nome_profissional;
-            echo $senha_profissional;
-            if (mysqli_query($link, $query)){
-                echo "Cadastrado com sucesso";
-                header('Location: login_profissional.php');
+            $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional) 
+                      VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_criptografada_profissional.'")';
+           echo $query;
+           if (mysqli_query($link, $query)){
+                header('Location: perfil_profissional1.php');
             }else{
                 echo "Erro ao cadastrar";
             }

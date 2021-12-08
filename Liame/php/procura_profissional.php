@@ -210,7 +210,8 @@
                     <div class="card-img-top text-center">
                         <?php
                           if ($foto_profissional != ""){
-                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+							/*'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');*/
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/" alt=""><?php
                           }else{
                             ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
                           }

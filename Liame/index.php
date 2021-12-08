@@ -2,21 +2,23 @@
 session_start();
 if(isset($_SESSION['id_mae'])){
   $id_mae = $_SESSION['id_mae'];
+  $id_profissional = 0;
+  $id_adm = 0;
 }
-else{
+else if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  $id_mae = 0;
+  $id_adm = 0;
+}
+else if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+  $id_profissional = 0;
   $id_mae = 0;
 }
-if(isset($_SESSION['id_profissional'])){
-  $id_profissional = $_SESSION['id_profissional'];
-}
 else{
-  $id_profissional = 0;
-}
-if(isset($_SESSION['id_adm'])){
-  $id_adm = $_SESSION['id_adm'];
-
-}else{
   $id_adm=0;
+  $id_profissional = 0;
+  $id_mae = 0;
 }
 
 //start session

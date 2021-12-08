@@ -73,36 +73,12 @@
 </html>
 
 <?php
- /*include("conexao.php");
-
-
-  if(isset($_POST['enviar'])){
-
- $email_mae = $_POST['email_mae'];
- $senha_mae = $_POST['senha_mae'];
-
- $query = "SELECT * FROM mae WHERE email_mae = '$email_mae' AND senha_mae = '$senha_mae'";
-  echo $query;
- $result = mysqli_query($link, $query);
-
- $row = mysqli_num_rows($result);
- echo $row;
-
- if($row == 0) {
-  $_SESSION['nao_autenticado'] = true;
-  echo "eror";
- } else {
-  $_SESSION['email_mae'] = $email_mae;
-   header('Location: liame/php/perfil_mae.php');
-   echo "h=uau";
- }
-  }*/
 
   include("conexao.php");
     if(isset($_POST)){
       $email_profissional = $_POST['email_profissional'];
       $senha_profissional = MD5($_POST['senha_profissional']);
-      $query ="SELECT id_profissional, nome_profissional FROM profissional 
+      $query ="SELECT id_profissional, nome_profissional, email_profissional FROM profissional 
       WHERE 
       email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
 
