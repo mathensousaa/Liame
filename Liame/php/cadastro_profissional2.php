@@ -45,7 +45,8 @@
                 echo "Cadastrado com sucesso";
                 header('Location: login_profissional.php');
             }else{
-                echo "Erro ao cadastrar";
+                
+                header('location: erro_cadastro_profissional.php');
             }
         }
         ?> 

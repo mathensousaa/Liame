@@ -43,6 +43,7 @@
                 echo "Cadastrado com sucesso";
                 header('Location: login_mae.php');
             }else{
+                header('Location: erro_cadastro_mae.php');
                 echo "Erro ao cadastrar";
             }
         }
