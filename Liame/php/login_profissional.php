@@ -78,9 +78,9 @@
     if(isset($_POST)){
       $email_profissional = $_POST['email_profissional'];
       $senha_profissional = MD5($_POST['senha_profissional']);
-      $query ="SELECT id_profissional, nome_profissional, email_profissional FROM profissional 
-      WHERE 
-      email_profissional = '$email_profissional' AND senha_profissional = '$senha_profissional'";
+      $query ='SELECT id_profissional, nome_profissional, email_profissional FROM profissional 
+              WHERE email_profissional = "'.$email_profissional.'"
+              AND senha_profissional = "'.$senha_profissional.'"';
 
       $resultado = mysqli_query($link, $query);
       $linhas = mysqli_num_rows($resultado);

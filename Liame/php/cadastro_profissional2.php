@@ -9,8 +9,6 @@
    
   </head>
   <body>
-    
-  
 <?php
     session_start();
     include ('conexao.php');
@@ -29,20 +27,18 @@
         $resultado = mysqli_query($link, $user_check_query);
         $conta = mysqli_num_rows($resultado);
 
-        if($conta>=1){
+        if($conta >= 1){
             header('location: email_profissional.php');
         }else{
             //criptografar senha
             $senha_criptografada_profissional = md5($senha_profissional);
 
             //inserir no banco de dados
-            $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional) 
-            VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_criptografada_profissional.'")';
-            
-            echo $query . '<br>';
+            $query = 'INSERT INTO profissional (nome_profissional, email_profissional, senha_profissional, documentacao_validacao_profissional, status_validacao_profissional) 
+            VALUES ("'.$nome_profissional.'", "'.$email_profissional.'", "'.$senha_criptografada_profissional.'", "", "0")';
+        
 
             if (mysqli_query($link, $query)){
-                echo "Cadastrado com sucesso";
                 header('Location: login_profissional.php');
             }else{
                 echo "Erro ao cadastrar";

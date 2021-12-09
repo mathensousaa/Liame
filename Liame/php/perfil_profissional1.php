@@ -35,7 +35,6 @@ if(($id_profissional != 0)){
 	<title>Sua Conta</title>
 </head>
 <body>
-<form name="confgconta" action="#" method="POST">
 	<h1>Informações do Profissional </h1>
 
     <?php
@@ -45,10 +44,10 @@ if(($id_profissional != 0)){
 
 
     <br>
-    <form name= "registardados" method= "POST">
+    <form name= "registardados" enctype="multipart/form-data" action="#" method= "POST">
         Foto de Perfil:
-        <input type="file" name ="foto_perfil_profissional" accept="image/*"><br>
-        <input type="submit" name= "submit" value="Atualizar">
+        <input type="file" name ="foto_perfil_profissional" accept="img/*" id='foto_perfil_profissional'><br>
+        <input type="submit" name= "atualizar" value="Atualizar">
 		<h1>Informações de contato</h1>
         Telefone:
         <input type="text" name ="telefone_profissional" placeholder="()0000-0000"><br>
@@ -83,7 +82,9 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-        Cidade:<br>
+            <br>Logradouro:<br>
+        <input type="text" name ="logradouro_profissional" placeholder="Insira seu endereço...">
+        <br>Cidade:<br>
             <select name="cidade" id="select-busca2" class="form-select" aria-label="Perfil de especialista">
               <option selected disabled>Cidade </option>
                 <?php
@@ -98,9 +99,9 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-         Estado:<br>
+         <br>Estado:<br>
             <select name="estado" id="select-busca3" class="form-select" aria-label="Perfil de especialista">
-              <option selected disabled>Estado </option>
+              <option selected disabled>Selecione: </option>
                 <?php
                 $sql_estado = 'select id_estado, estado from estado;';
                 $resul_estado = mysqli_query($link, $sql_estado);
@@ -113,7 +114,7 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-         Bairro:<br>
+         <br>Bairro:<br>
          <input type="text" name ="bairro_profissional" placeholder="Insira seu bairro..."><br>
           Numero:<br>
           <input type="text" name ="num_profissional" placeholder="Insira seu numero do endereço..."><br>
@@ -128,14 +129,27 @@ if(($id_profissional != 0)){
     <input type="submit" name="excluir" value ="Excluir"></td>
     <?php
     $id=$_SESSION['id_profissional'];
-    if(isset($_POST['salvar'])){
+    if(isset($_POST['atualizar'])){
 
         echo $id;
     //foto profissional
-    $foto_perfil_profissional = $_POST['foto_perfil_profissional'];
+    if (isset($_POST['atualizar'])) {
+    $imagem = $_FILES['foto_perfil_profissional'];
+    $caminho = '../assets/img_perfil/profissional/';
+    $nome_img = md5(time()); 
+  
+    move_uploaded_file($imagem['tmp_name'], $caminho.$nome_img);
+  
+    $sql = "UPDATE profissional SET foto_perfil_profissional = '$nome_img' WHERE id_profissional = '$id_profissional'";
 
-    $query1 = ("UPDATE profissional SET foto_perfil_profissional = '$foto_perfil_profissional' WHERE id_profissional = '$id'");
-
+    if(mysqli_query($link,$sql)){
+    echo "Gravado com sucesso!";
+      }else{
+          echo "Erro ao gravar!";
+      }
+    }
+    
+    
 
     if(isset ($_POST['salvar'])){
     $tel_profissional= $_POST["telefone_profissional"];
@@ -186,7 +200,7 @@ if(($id_profissional != 0)){
           echo "Erro ao excluir!";
       }
     }
-  }
+    }
   }else if ($id_mae == 0){
       header('Location: login_profissional.php');
     }
