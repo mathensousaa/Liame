@@ -38,6 +38,7 @@ if(($id_profissional != 0)){
 	<h1>Informações do Profissional </h1>
 
     <?php
+    echo $_SESSION['id_profissional'];
     echo $_SESSION['nome_profissional'];
     $foto_perfil_mae = null;
     ?>
@@ -49,9 +50,9 @@ if(($id_profissional != 0)){
         <input type="file" name ="foto_perfil_profissional" accept="img/*" id='foto_perfil_profissional'><br>
         <input type="submit" name= "atualizar" value="Atualizar">
 		<h1>Informações de contato</h1>
-        Telefone:
-        <input type="text" name ="ddd_profissional" placeholder="DDD"><br>
-        <input type="text" name ="telefone_profissional" placeholder="()0000-0000"><br>
+        Telefone:<br>
+        <input type="text" name ="ddd_profissional" placeholder="DDD">
+        <input type="text" name ="telefone_profissional" placeholder="0000-0000"><br>
     <h1>Redes Sociais</h1>
         Canal do youtube:<br>
         <input type="text" name="youtube_profissional" placeholder="Insira seu canal do Youtube"><br>
@@ -97,26 +98,14 @@ if(($id_profissional != 0)){
                 ?>
               <option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
                 <?php
+                $id_estado = $_POST['id_estado'];
                   }
                 }
                 ?>
             </select>
-        <br>Cidade:<br>
-            <select name="cidade" id="select-busca2" class="form-select" aria-label="Perfil de especialista">
-              <option selected disabled>Cidade </option>
-                <?php
-                $sql_estado = 'select id_cidade, cidade from cidade;';
-                $resul_estado = mysqli_query($link, $sql_estado);
-                if($resul_estado->num_rows > 0){
-                  while($exibe = $resul_estado->fetch_array()){
-                ?>
-              <option value="<?php echo $exibe['id_cidade']; ?>"> <?php echo utf8_encode($exibe['cidade']); ?></option>
-                <?php
-                    }
-                }
-                ?>
-            </select>
-         <br>Bairro:<br>
+            <br>Cidade:<br>
+         <input type="text" name="cidade_profissional" placeholder="Insira sua cidade"><br>
+         Bairro:<br>
          <input type="text" name ="bairro_profissional" placeholder="Insira seu bairro..."><br>
           Numero:<br>
           <input type="text" name ="num_profissional" placeholder="Insira seu numero do endereço..."><br>
@@ -125,10 +114,11 @@ if(($id_profissional != 0)){
       <h1>Documentação </h1>
           Insirir sua documentação com suas informaões de formação profissional:
           <input type="file" name ="doc_profissional" accept="application/pdf"><br>
-    <input type="submit" name= "salvar" value="Salvar">
+    <input type="submit" name="salvar" value="Salvar">
 
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <input type="submit" name="excluir" value ="Excluir"></td>
+    </form>
     <?php
 
     if(isset($_POST['atualizar'])){
@@ -150,11 +140,13 @@ if(($id_profissional != 0)){
           echo "Erro ao gravar!";
       }
     }
+  }
     
     
 
-    if(isset ($_POST['salvar'])){
-    $tel_profissional= $_POST["ddd_profissional"]. " ". $_POST["numero_profissional"];
+    if(!empty($_POST)){
+    $ddd_tel_profissional= $_POST["ddd_profissional"];
+    $numero_tel_profissional = $_POST["numero_profissional"];
     $yt_profissional=$_POST["youtube_profissional"];
     $wpp_profissional=$_POST["whatsapp_profissional"];
     $insta_profissional=$_POST["instagram_profissional"];
@@ -162,9 +154,10 @@ if(($id_profissional != 0)){
     $face_profissional=$_POST["facebook_profissional"];
     $telegram_profissional=$_POST["telegram_profissional"];
     $cep_profissional=$_POST["cep_profissional"];
-    $logradouro=$_POST["tipo_logradouro"];
+    $tipo_logradouro=$_POST["tipo_logradouro"];
+    $logradouro=$_POST["logradouro_profissional"];
     $estado=$_POST["estado"];
-    $cidade=$_POST["cidade"];
+    $cidade=$_POST["cidade_profissional"];
     $bairro=$_POST["bairro_profissional"];
     $num_profissional=$_POST["num_profissional"];
     $desc_endereco=$_POST["desc_end_profissional"];
@@ -173,15 +166,27 @@ if(($id_profissional != 0)){
     //inserir no banco de dados
 
       
-        $query = 'INSERT INTO rede_social_profissional, telefone_profissional, endereco_profissional, profissional(youtube_profissional, whats_profissional, instagram_profissional, linkedin_profissional, facebook_profissional, telegram_profissional)
-        VALUES ('.$yt_profissional.', '.$wpp_profissional.', '.$insta_profissional.', '.$linkedin_profissional.','.$face_profissional.','.$telegram_profissional.')';
+        echo $query_rede_social = 'INSERT INTO rede_social_profissional
+        (youtube_profissional, whatsapp_profissional, instagram_profissional, linkedin_profissional, facebook_profissional, telegram_profissional, id_profissional)
+        VALUES ("'.$yt_profissional.'", "'.$wpp_profissional.'", "'.$insta_profissional.'", "'.$linkedin_profissional.'","'.$face_profissional.'", "'.$telegram_profissional.'", '.$id_profissional.')';
+        $resultado = mysqli_query($link, $query_rede_social);
+
+        echo "<br>";
+        // cadastrar o telefone, consultar e recuperar o id do telefone cadastrado, fazer update em profissional para add o id do telefone
+        echo $query_telefone = 'INSERT INTO telefone_profissional (ddd_telefone_profissional, numero_telefone_profissional, id_profissional)
+        VALUES ("'.$ddd_tel_profissional.'", "'.$numero_tel_profissional.'","'.$id_profissional.'")';
+        $resultado = mysqli_query($link, $query_telefone);
+
+        echo "<br>";
+
+        // cadastrar o endereço, consultar e recuperar o id do endereço cadastrado, fazer update em profissional para add o id do endereço
+       echo $query_endereco ='INSERT INTO endereco_profissional (id_tipo_logradouro, logradouro, cidade, id_estado, bairro, numero_endereco, descricao_endereco, cep, id_profissional)
+        VALUES ("'.$tipo_logradouro.'", "'.$logradouro.'","'.$cidade.'","'.$estado.'","'.$bairro.'","'.$num_profissional.'","'.$desc_endereco.'","'.$cep_profissional.'", "'.$id_profissional.'")';
+        $resultado = mysqli_query($link, $query_endereco);
+
+        echo "<br>";
         
-        $query = 'INSERT INTO id_telefone (numero_telefone_profissional) VALUES ('.$tel_profissional.')';
-        
-        $query ='INSERT INTO id_endereco(id_tipo_logradouro, id_cidade, id_estado, bairro, numero_endereco,descricao_endereco, cep)
-        VALUES ('.$logradouro.','.$cidade.','.$estado.','.$bairro.','.$num_profissional.','.$desc_endereco.','.$cep_profissional.')';
-        
-        $query ='INSERT INTO profissional (documentacao_validacao_profissional) VALUES ('.$documento.')';
+       echo $query_profissional ='update profissional set documentacao_validacao_profissional = "'.$documento.'"';
         $resultado= mysqli_query($link, $query);
         if ($resultado){
                echo "Registrado com sucesso";
@@ -191,7 +196,8 @@ if(($id_profissional != 0)){
         }else{
         echo "Preencha os campos corretamente!";
       }
-    }
+    
+  
 
   if (isset($_POST['excluir'])){
       $row=mysqli_fetch_array($dados);
@@ -205,7 +211,7 @@ if(($id_profissional != 0)){
       }
     }
   }else if ($id_mae == 0){
-      header('Location: login_profissional.php');
+      //header('Location: login_profissional.php');
     }
 
     ?>
