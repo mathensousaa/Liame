@@ -99,27 +99,27 @@
 				</nav>
 			</div>
 		</div>
-<?php
-session_start();
-include ('conexao.php');
-if(isset($_SESSION['id_mae'])){
-  $id_mae = $_SESSION['id_mae'];
-} 
-else{
-  $id_mae = 0;
-  
-} 
-if(isset($_SESSION['id_profissional'])){
-  $id_profissional = $_SESSION['id_profissional'];
-  
-  $id_profissional = 0;
-}
-else{
-   $id_profissional = 0;
-}
+			<?php
+			session_start();
+			include ('conexao.php');
+			if(isset($_SESSION['id_mae'])){
+			$id_mae = $_SESSION['id_mae'];
+			} 
+			else{
+			$id_mae = 0;
+			
+			} 
+			if(isset($_SESSION['id_profissional'])){
+			$id_profissional = $_SESSION['id_profissional'];
+			
+			$id_profissional = 0;
+			}
+			else{
+			$id_profissional = 0;
+			}
 
-if(($id_mae != 0)){
-?>
+			if(($id_mae != 0)){
+			?>
 
 <body>
 <main>
