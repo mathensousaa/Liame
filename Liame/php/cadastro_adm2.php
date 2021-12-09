@@ -28,7 +28,7 @@
             if (mysqli_query($link, $query)){
                 header('Location: login_adm.php');
             }else{
-                echo "Erro ao cadastrar";
+                header('location: erro_cadastro_adm.php');
             }
         }
     }else{

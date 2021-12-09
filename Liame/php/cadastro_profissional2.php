@@ -41,7 +41,8 @@
             if (mysqli_query($link, $query)){
                 header('Location: login_profissional.php');
             }else{
-                echo "Erro ao cadastrar";
+                
+                header('location: erro_cadastro_profissional.php');
             }
         }
         ?> 

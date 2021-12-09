@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cartilha de vacinação</title>
+  <title>Perfil Mãe | Liame</title>
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -36,31 +36,27 @@ else{
 }
 
 if(($id_mae != 0)){
-
-
-    //Logged in
-    /*session_start();
-    include ('conexao.php');
-    if(isset($_SESSION['id_mae'])){
-        $id_mae = $_SESSION['id_mae'];
-      }else{
-        
-        $id_mae = 10 ;
-      }
-      if (isset($_SESSION['id_profissional'])){
-        
-        echo "Você não tem acesso a essa página";
-      }
-    */
-
-
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sua Conta</title>
-</head>
+
 <body>
+<<<<<<< HEAD
+<main>
+<div class="container text-center">
+      <div class="d-flex justify-content-center" id="avatar-container">
+        <img class="imagem-perfil" src="../assets/img/user.svg">
+        <div class="botao-upload">
+          <i class="uil uil-arrow-up" aria-hidden="true"></i>
+        </div>
+        <input type="file" accept=".png, .jpg, .jpeg" name="avatar" id="avatar-input" class="avatar-input">
+      </div>
+      <h6>
+      <?php
+        echo $_SESSION['email_mae'];
+      ?>
+      </h6>
+</div>
+=======
+>>>>>>> 5da11dc526b30606b92ec71f51ad9aa724d36c3d
 <form name="confgconta" action="#" method="POST"> 
 	<h1>Informações da Mãe </h1>
 
@@ -176,9 +172,9 @@ if (isset($_POST['excluir'])){
     ?>
 
 
-<div id="pre-footer" class="pre-footer">
 
   </div>
+</main>
   <footer>
     <div id="rodape" class="container">
       <div class="conteudo py-5">
@@ -239,7 +235,31 @@ if (isset($_POST['excluir'])){
     referrerpolicy="no-referrer"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
+  
+  <script>
+      $(document).ready(function() {
+	
+        var readURL = function(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
 
+              reader.onload = function (e) {
+                  $('.imagem-perfil').attr('src', e.target.result);
+              }
+      
+              reader.readAsDataURL(input.files[0]);
+          }
+        }
+    
+        $(".avatar-input").on('change', function(){
+            readURL(this);
+        });
+        
+        $(".botao-upload").on('click', function() {
+          $(".avatar-input").click();
+        });
+    });
+  </script>
 
 
 
