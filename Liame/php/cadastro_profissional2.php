@@ -39,7 +39,7 @@
         
 
             if (mysqli_query($link, $query)){
-                header('Location: login_profissional.php');
+                header('Location: perfil_profissional1.php');
             }else{
                 
                 header('location: erro_cadastro_profissional.php');

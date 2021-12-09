@@ -50,6 +50,7 @@ if(($id_profissional != 0)){
         <input type="submit" name= "atualizar" value="Atualizar">
 		<h1>Informações de contato</h1>
         Telefone:
+        <input type="text" name ="ddd_profissional" placeholder="DDD"><br>
         <input type="text" name ="telefone_profissional" placeholder="()0000-0000"><br>
     <h1>Redes Sociais</h1>
         Canal do youtube:<br>
@@ -84,6 +85,22 @@ if(($id_profissional != 0)){
             </select>
             <br>Logradouro:<br>
         <input type="text" name ="logradouro_profissional" placeholder="Insira seu endereço...">
+        
+        <br>Estado:<br>
+            <select name="estado" id="select-busca3" class="form-select" aria-label="Perfil de especialista">
+              <option selected disabled>Selecione: </option>
+                <?php
+                $sql_estado = 'select id_estado, estado from estado;';
+                $resul_estado = mysqli_query($link, $sql_estado);
+                if($resul_estado->num_rows > 0){
+                  while($exibe = $resul_estado->fetch_array()){
+                ?>
+              <option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
+                <?php
+                  }
+                }
+                ?>
+            </select>
         <br>Cidade:<br>
             <select name="cidade" id="select-busca2" class="form-select" aria-label="Perfil de especialista">
               <option selected disabled>Cidade </option>
@@ -99,26 +116,11 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-         <br>Estado:<br>
-            <select name="estado" id="select-busca3" class="form-select" aria-label="Perfil de especialista">
-              <option selected disabled>Selecione: </option>
-                <?php
-                $sql_estado = 'select id_estado, estado from estado;';
-                $resul_estado = mysqli_query($link, $sql_estado);
-                if($resul_estado->num_rows > 0){
-                  while($exibe = $resul_estado->fetch_array()){
-                ?>
-              <option value="<?php echo $exibe['id_estado']; ?>"> <?php echo utf8_encode($exibe['estado']); ?></option>
-                <?php
-                  }
-                }
-                ?>
-            </select>
          <br>Bairro:<br>
          <input type="text" name ="bairro_profissional" placeholder="Insira seu bairro..."><br>
           Numero:<br>
           <input type="text" name ="num_profissional" placeholder="Insira seu numero do endereço..."><br>
-          Descrição:<br>
+          Complemento:<br>
           <input type="text" name ="desc_end_profissional" placeholder="Insira a descrição do seu endereço..."><br>
       <h1>Documentação </h1>
           Insirir sua documentação com suas informaões de formação profissional:
@@ -128,10 +130,10 @@ if(($id_profissional != 0)){
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <input type="submit" name="excluir" value ="Excluir"></td>
     <?php
-    $id=$_SESSION['id_profissional'];
+
     if(isset($_POST['atualizar'])){
 
-        echo $id;
+        
     //foto profissional
     if (isset($_POST['atualizar'])) {
     $imagem = $_FILES['foto_perfil_profissional'];
@@ -152,7 +154,7 @@ if(($id_profissional != 0)){
     
 
     if(isset ($_POST['salvar'])){
-    $tel_profissional= $_POST["telefone_profissional"];
+    $tel_profissional= $_POST["ddd_profissional"]. " ". $_POST["numero_profissional"];
     $yt_profissional=$_POST["youtube_profissional"];
     $wpp_profissional=$_POST["whatsapp_profissional"];
     $insta_profissional=$_POST["instagram_profissional"];
@@ -170,13 +172,15 @@ if(($id_profissional != 0)){
 
     //inserir no banco de dados
 
-      if($tel_profissional !="" && $wpp_profissional !="" && $cep_profissional!="" && $logradouro!="" &&
-      $estado!="" &&  $cidade !="" && $bairro !="" && $num_profissional!="" && $desc_endereco !="" && $documento !=""){
-        $query = 'INSERT INTO rede_social_profissional (youtube_profissional, whats_profissional, instagram_profissional, linkedin_profissional, facebook_profissional, telegram_profissional)
+      
+        $query = 'INSERT INTO rede_social_profissional, telefone_profissional, endereco_profissional, profissional(youtube_profissional, whats_profissional, instagram_profissional, linkedin_profissional, facebook_profissional, telegram_profissional)
         VALUES ('.$yt_profissional.', '.$wpp_profissional.', '.$insta_profissional.', '.$linkedin_profissional.','.$face_profissional.','.$telegram_profissional.')';
+        
         $query = 'INSERT INTO id_telefone (numero_telefone_profissional) VALUES ('.$tel_profissional.')';
+        
         $query ='INSERT INTO id_endereco(id_tipo_logradouro, id_cidade, id_estado, bairro, numero_endereco,descricao_endereco, cep)
         VALUES ('.$logradouro.','.$cidade.','.$estado.','.$bairro.','.$num_profissional.','.$desc_endereco.','.$cep_profissional.')';
+        
         $query ='INSERT INTO profissional (documentacao_validacao_profissional) VALUES ('.$documento.')';
         $resultado= mysqli_query($link, $query);
         if ($resultado){
@@ -199,7 +203,6 @@ if(($id_profissional != 0)){
       }else{
           echo "Erro ao excluir!";
       }
-    }
     }
   }else if ($id_mae == 0){
       header('Location: login_profissional.php');
