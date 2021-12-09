@@ -43,16 +43,16 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="cadastro_adm2.php" method="post">
                 <div class="mb-3">
-                  <input name="nome_adm" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome" required>
+                  <input name="nome_adm" type="text" class="form-control input input-login" id="nome-adm" placeholder="Nome" required>
                 </div>
                 <div class="mb-3">
-                  <input name="email_adm" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                  <input name="email_adm" type="email" class="form-control input input-login" id="email-adm" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input name="senha_adm" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
+                  <input name="senha_adm" type="password" class="form-control input input-login" id="senha-adm" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input name="confirmarsenha_adm" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
+                  <input name="confirmarsenha_adm" type="password" class="form-control input input-login" id="confirmar-senha-adm" placeholder="Confirmar senha" required>
                 </div>
                 <form class="row g-3">
                     <div class="col-12">
@@ -83,7 +83,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/bootstrap-validate.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+      bootstrapValidate('#email-adm' , 'email:Insira um e-mail válido')
+      bootstrapValidate('#confirmar-senha-adm' , 'matches:#senha-adm:As senhas devem ser iguais')
+      bootstrapValidate('#nome-adm' , 'required:Preencha este campo')
+    </script>
 </body>
 
 </html>
