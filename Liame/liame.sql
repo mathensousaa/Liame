@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 04-Dez-2021 às 21:24
+-- Tempo de geração: 09-Dez-2021 às 16:56
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -36,14 +36,15 @@ CREATE TABLE IF NOT EXISTS `adm` (
   `email_adm` varchar(100) DEFAULT NULL,
   `senha_adm` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id_adm`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `adm`
 --
 
 INSERT INTO `adm` (`id_adm`, `nome_adm`, `email_adm`, `senha_adm`) VALUES
-(1, 'Milena Soares', 'soares@gmail.com', '1b52a583020088fad8cc06fd0e67910e');
+(1, 'Milena Soares', 'soares@gmail.com', '3bce3c6c5451d5d446aa0a40c992f383'),
+(2, 'cendrette', 'cendrette@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -7558,38 +7559,6 @@ INSERT INTO `cidade` (`id_cidade`, `cidade`, `id_estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `diario_bordo_crianca`
---
-
-DROP TABLE IF EXISTS `diario_bordo_crianca`;
-CREATE TABLE IF NOT EXISTS `diario_bordo_crianca` (
-  `id_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
-  `id_mae` int(6) DEFAULT NULL,
-  `id_bebe` int(6) DEFAULT NULL,
-  PRIMARY KEY (`id_diario_crianca`),
-  KEY `id_mae` (`id_mae`),
-  KEY `id_bebe` (`id_bebe`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `diario_bordo_gestacao`
---
-
-DROP TABLE IF EXISTS `diario_bordo_gestacao`;
-CREATE TABLE IF NOT EXISTS `diario_bordo_gestacao` (
-  `id_diario_gestacao` int(6) NOT NULL AUTO_INCREMENT,
-  `id_mae` int(6) DEFAULT NULL,
-  `id_bebe` int(6) DEFAULT NULL,
-  PRIMARY KEY (`id_diario_gestacao`),
-  KEY `id_mae` (`id_mae`),
-  KEY `id_bebe` (`id_bebe`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `endereco_profissional`
 --
 
@@ -7762,19 +7731,21 @@ CREATE TABLE IF NOT EXISTS `mae` (
   KEY `id_bebe` (`id_bebe`),
   KEY `id_diario_gestacao` (`id_diario_gestacao`),
   KEY `id_diario_crianca` (`id_diario_crianca`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `mae`
 --
 
 INSERT INTO `mae` (`id_mae`, `nome_mae`, `email_mae`, `senha_mae`, `foto_perfil_mae`, `id_bebe`, `id_diario_gestacao`, `id_diario_crianca`) VALUES
-(1, 'Agatha Amaral', 'agatha.amaral@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(1, 'Agatha Amaral', 'agatha.amaral@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'DER_Liame (1).png', NULL, NULL, NULL),
 (2, 'Vanessa Ramario', 'vanessa.ramario@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
 (3, 'Jessica Santos', 'jessica.santos@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
 (4, 'Gloria Damasco', 'gloria.damasco@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
 (5, 'Domingas Osvaldo', 'domingas.osvaldo@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(8, 'Rosemeire Soares', 'rosemeire@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL);
+(8, 'Rosemeire Soares', 'rosemeire@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
+(9, '', '', 'd41d8cd98f00b204e9800998ecf8427e', NULL, NULL, NULL, NULL),
+(10, 'Josefina Raimunda', 'josefina.raimunda@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -7796,7 +7767,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   PRIMARY KEY (`id_profissional`),
   KEY `id_endereco` (`id_endereco`),
   KEY `id_telefone` (`id_telefone`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `profissional`
@@ -7804,10 +7775,16 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 
 INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`, `documentacao_validacao_profissional`, `status_validacao_profissional`) VALUES
 ('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1, '', 1),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 1),
-('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2, '', 1),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 0),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', '30150f41aed111bb06804fbf3965090f', 3, 1, 2, '', 1),
 ('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4, '', 1),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 1);
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 1),
+('FlÃ¡via Lopes', 'flavia10@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'c28160883cf948b6f85da31758004a13', 8, NULL, NULL, '', 0),
+('Claudio Raimundo', 'claudio.raimundo@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', NULL, 11, NULL, NULL, '', 0),
+('Thabata', 'th@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 13, NULL, NULL, '', 0),
+('Thabata', 'tha@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 14, NULL, NULL, '', 0),
+('Claudio Raimundo', 'asdas@gmail.com', 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 15, NULL, NULL, '', 0),
+('Maggie', 'maggie@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 16, NULL, NULL, '', 0);
 
 -- --------------------------------------------------------
 
@@ -7832,36 +7809,33 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `registro_diario_crianca`
+-- Estrutura da tabela `registro_diario`
 --
 
-DROP TABLE IF EXISTS `registro_diario_crianca`;
-CREATE TABLE IF NOT EXISTS `registro_diario_crianca` (
-  `id_registro_diario_crianca` int(6) NOT NULL AUTO_INCREMENT,
-  `texto_diario_crianca` text DEFAULT NULL,
-  `imagem_diario_crianca` varchar(32) DEFAULT NULL,
-  `data_hora_diario_crianca` datetime DEFAULT NULL,
-  `id_diario_crianca` int(6) DEFAULT NULL,
-  PRIMARY KEY (`id_registro_diario_crianca`),
-  KEY `id_diario_crianca` (`id_diario_crianca`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `registro_diario_gestacao`
---
-
-DROP TABLE IF EXISTS `registro_diario_gestacao`;
-CREATE TABLE IF NOT EXISTS `registro_diario_gestacao` (
-  `id_registro_diario_gestcao` int(6) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `registro_diario`;
+CREATE TABLE IF NOT EXISTS `registro_diario` (
+  `id_registro_diario_gestacao` int(6) NOT NULL AUTO_INCREMENT,
   `texto_diario_gestacao` text DEFAULT NULL,
   `imagem_diario_gestacao` varchar(32) DEFAULT NULL,
   `data_hora_diario_gestacao` datetime NOT NULL,
-  `id_diario_gestacao` int(6) DEFAULT NULL,
-  PRIMARY KEY (`id_registro_diario_gestcao`),
-  KEY `id_diario_gestacao` (`id_diario_gestacao`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_mae` int(11) NOT NULL,
+  `id_bebe` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_registro_diario_gestacao`),
+  KEY `id_mae` (`id_mae`),
+  KEY `id_bebe` (`id_bebe`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `registro_diario`
+--
+
+INSERT INTO `registro_diario` (`id_registro_diario_gestacao`, `texto_diario_gestacao`, `imagem_diario_gestacao`, `data_hora_diario_gestacao`, `id_mae`, `id_bebe`) VALUES
+(1, '<p>Meu filho&nbsp;</p>', NULL, '2021-12-07 14:23:06', 0, 0),
+(2, '<p>Meu filho&nbsp;</p>', NULL, '2021-12-07 14:24:25', 0, 0),
+(3, '<p>Meu filho&nbsp;</p>', NULL, '2021-12-07 14:25:03', 0, 0),
+(4, '<p>Meu filho&nbsp;</p>', NULL, '2021-12-07 14:26:06', 0, 0),
+(5, '<p>hoje eu chorei</p>', NULL, '2021-12-07 14:27:59', 0, 0),
+(6, '<p>dasdnasdnajdsa</p>', NULL, '2021-12-07 14:50:05', 1, NULL);
 
 -- --------------------------------------------------------
 
