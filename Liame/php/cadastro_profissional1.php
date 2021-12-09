@@ -54,12 +54,16 @@
                 <div class="mb-3">
                   <input name="confirmarsenha_profissional" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
                 </div>
-                <div>
-                    <ul class="list-unstyled">  
-                    <input type = "checkbox" id = "subscribeNews" name = "subscribe" value = "newsletter">
-                    <label for = "subscribeNews">Aceitar</label><li class="list-item"><a href="../layouts/termos_uso_profissional.html">termos de condições de uso</a></li>
-              </ul>
-                  </div>
+                <form class="row g-3">
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                        <label>
+                        Você deve concordar com os <a href="../layouts/termos_condicoes_uso.html"><u>termos de condições de uso</u></a>
+                        </label>
+                      </div>
+                    </div>
+                  <br>
                 <div class="mb-3">
                   <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>

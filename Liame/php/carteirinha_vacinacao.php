@@ -426,6 +426,11 @@ if(($id_mae != 0)){
       </div>
     </div>
     </div>
+    <div class="publicidade col-md-20">
+        <center>
+        <img id="publicidade" class="img-fluid" src="../assets/img/shopee.jpg">
+      </center>
+    </div>
   </main>
   <?php
   }else if($id_profissional == 0){
@@ -459,10 +464,7 @@ if(($id_mae != 0)){
     }
   });
   </script>
-  <div class="publicidade col-md-20">
-    <center>
-    <img id="publicidade" class="img-fluid" src="../assets/img/Amazoon.jpg">
-  </center>
+  
 </div>
     <footer>
     <div id="rodape" class="container">

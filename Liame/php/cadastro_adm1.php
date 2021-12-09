@@ -54,6 +54,16 @@
                 <div class="mb-3">
                   <input name="confirmarsenha_adm" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
                 </div>
+                <form class="row g-3">
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                        <label>
+                        Você deve concordar com os <a href="../layouts/termos_condicoes_uso.html">termos de condições de uso</a>
+                        </label>
+                      </div>
+                    </div>
+                  <br>
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>

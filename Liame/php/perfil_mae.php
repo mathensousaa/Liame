@@ -39,6 +39,7 @@ if(($id_mae != 0)){
 ?>
 
 <body>
+<<<<<<< HEAD
 <main>
 <div class="container text-center">
       <div class="d-flex justify-content-center" id="avatar-container">
@@ -54,9 +55,13 @@ if(($id_mae != 0)){
       ?>
       </h6>
 </div>
+=======
+>>>>>>> 5da11dc526b30606b92ec71f51ad9aa724d36c3d
 <form name="confgconta" action="#" method="POST"> 
+	<h1>Informações da Mãe </h1>
+
     <?php
-    echo $_SESSION['email_mae'];
+    echo $_SESSION['nome_mae'];
     $foto_perfil_mae = null;
     ?> 
     
