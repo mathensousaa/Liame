@@ -6,8 +6,31 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>Procura por profissional | Liame</title>
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  
+  $id_profissional = 0;
+}
+else{
+   $id_profissional = 0;
+}
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
 
+}else{
+  $id_adm=0;
+}
+?>
 	<!-- CSS -->
 	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
 	<link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -99,27 +122,7 @@
 				</nav>
 			</div>
 		</div>
-<?php
-session_start();
-include ('conexao.php');
-if(isset($_SESSION['id_mae'])){
-  $id_mae = $_SESSION['id_mae'];
-} 
-else{
-  $id_mae = 0;
-  
-} 
-if(isset($_SESSION['id_profissional'])){
-  $id_profissional = $_SESSION['id_profissional'];
-  
-  $id_profissional = 0;
-}
-else{
-   $id_profissional = 0;
-}
-
-if(($id_mae != 0)){
-?>
+			
 
 <body>
 <main>
@@ -245,10 +248,7 @@ if (isset($_POST['excluir'])){
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <?php
   
-    }else if($id_profissional == 0){
-      header('Location: login_mae.php');
-        
-    }
+
     ?>
 
 
@@ -349,6 +349,12 @@ if (isset($_POST['excluir'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
+<?php
+}else if($id_mae == 0){
+  header('Location: login_mae.php');
+    
+  }
+  ?>
 </body>
 
 </html>

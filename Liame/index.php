@@ -22,6 +22,12 @@ else{
   $id_mae = 0;
 }
 
+if(isset($_SESSION['id_adm'])){
+ $id_adm = $_SESSION['id_adm'];
+
+}else{
+ $id_adm=0;
+}
 //start session
 
 
