@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+
+
 if(isset($_SESSION['id_mae'])){
   $id_mae = $_SESSION['id_mae'];
 }
@@ -13,6 +16,12 @@ else{
   $id_profissional = 0;
 }
 
+if(isset($_SESSION['id_adm'])){
+ $id_adm = $_SESSION['id_adm'];
+
+}else{
+ $id_adm=0;
+}
 //start session
 
 

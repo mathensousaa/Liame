@@ -76,11 +76,10 @@
             </div>
           </div>
         <?php
-  }else{
-    echo "nao";
-    /*header("Location:php/index.php");*/
-
-  }
+  }else if($id_adm == 0){
+    header('Location: ../index.php');
+      
+    }
   ?>
   
 ?>

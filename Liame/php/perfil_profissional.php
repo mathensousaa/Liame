@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
+/*if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
     session_start();
   }
 
@@ -10,9 +10,33 @@ if($_SESSION['email_profissional']==NULL){
     echo "Você não está logado";
 }else{
     //Logged in
-    echo "Bem-vindo" . $_SESSION['email_profissional'];
+    echo "Bem-vindo" . $_SESSION['email_profissional'];*/
+session_start();
+  include ('conexao.php');
+  if(isset($_SESSION['id_mae'])){
+    $id_mae = $_SESSION['id_mae'];
+  } 
+  else{
+    $id_mae = 0;
+    
+  } 
+  if(isset($_SESSION['id_profissional'])){
+    $id_profissional = $_SESSION['id_profissional'];
+  
+  }
+  else{
+     $id_profissional = 0;
+  }
+  if(isset($_SESSION['id_adm'])){
+    $id_adm = $_SESSION['id_adm'];
+  
+  }else{
+    $id_adm=0;
+  }
+
+  if(($id_profissional != 0)){
    
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,19 +48,7 @@ if($_SESSION['email_profissional']==NULL){
 <h1> Conta </h1>
 
   <?php
-    if(!function_exists("protect")){
-
-      function protect(){
-
-        if(!isset($_SESSION))
-            session_start();
-
-        if(!isset($_SESSION['email_profissional']) || !is_numeric($_SESSION['email_profissional'])){
-          header("Location: login.php");
-        }
-      }
-    }
-
+    
    ?>
 
 	 <form name="confgconta" action=# method="GET">
@@ -68,7 +80,7 @@ if($_SESSION['email_profissional']==NULL){
 <?php
 if($_SERVER['REQUEST_METHOD']=='GET'){
 	
-   $id_profissional=$_SESSION['id_profissional'];
+   
 
 $dados=mysql_query("SELECT * FROM dados WHERE id='".$_GET['id']."'");
     $dados = mysql_fetch_array($busca);
@@ -101,6 +113,11 @@ $atualizar = mysql_query("UPDATE dados SET
 
       		}
 				}
+			}
+			}else if($id_profissional == 0){
+				header('Location: login_profissional.php');
+				  
+			  }
 ?>
  </body>
    </html>

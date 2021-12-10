@@ -1,6 +1,33 @@
 <!doctype html>
 <html lang="pt-br">
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  
+  $id_profissional = 0;
+}
+else{
+   $id_profissional = 0;
+}
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
 
+}else{
+  $id_adm=0;
+}
+if(($id_mae != 0)){
+
+
+?>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -103,19 +130,7 @@
 
   <?php
 	// verificar se o user esta logado
-    if(!function_exists("protect")){
-
-      function protect(){
-
-        if(!isset($session)){
-            session_start();
-
-        if(!isset($_session['usuario']) || !is_numeric($_session['usuario'])){
-          header("Location: login.php");
-        }
-      }
-    }
-  }
+    
 	?>
   <br><br><br><br>
   
@@ -233,5 +248,12 @@
   <script src="../assets/js/owl.carousel.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+<?php
+}else if($id_mae == 0){
+  header('Location: login_mae.php');
+    
+  }
+
+?>
 
 </html>

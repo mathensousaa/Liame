@@ -34,6 +34,12 @@ if(isset($_SESSION['id_profissional'])){
 else{
    $id_profissional = 0;
 }
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
 
 if(($id_mae != 0)){
 
@@ -428,9 +434,7 @@ if(($id_mae != 0)){
     </div>
   </main>
   <?php
-  }else if($id_profissional == 0){
-    header('Location: login_mae.php');
-  }
+  
   ?>
   <!--implementação jquery, poppers.js e plugin bootstrap-->
   <script>
@@ -525,5 +529,11 @@ if(($id_mae != 0)){
   <script src="../assets/js/owl.carousel.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+  <?php
+  }else if($id_mae == 0){
+    header('Location: login_mae.php');
+      
+    }
 
+?>
 </html>

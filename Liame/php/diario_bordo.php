@@ -29,6 +29,12 @@
         else{
            $id_profissional = 0;
         }
+        if(isset($_SESSION['id_adm'])){
+         $id_adm = $_SESSION['id_adm'];
+       
+       }else{
+         $id_adm=0;
+       }
         
         if(($id_mae != 0)){
          
@@ -626,12 +632,7 @@ if (mysqli_query($link, $diario)){
     </div>
     </div>
     </div>
-<?php
-         }else if($id_profissional == 0){
-            header('Location: login_mae.php');
-         
-     }
-   ?>
+
 
 <!--<footer>
   <div id="rodape" class="container">
@@ -704,7 +705,10 @@ if (mysqli_query($link, $diario)){
 
 
 <?php
-
+}else if($id_mae == 0){
+   header('Location: login_mae.php');
+     
+  }
       /*  
     }*/
 ?>

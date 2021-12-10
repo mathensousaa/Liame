@@ -34,6 +34,12 @@ if(isset($_SESSION['id_profissional'])){
 else{
    $id_profissional = 0;
 }
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
 
 if(($id_mae != 0)){
 
@@ -169,10 +175,10 @@ if (isset($_POST['excluir'])){
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <?php
   
-    }else if($id_profissional == 0){
-      header('Location: login_mae.php');
-        
-    }
+}else if($id_mae == 0){
+  header('Location: login_mae.php');
+    
+  }
     ?>
 
 
