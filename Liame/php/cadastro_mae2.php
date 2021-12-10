@@ -36,27 +36,23 @@
             $senha_criptografada_mae = md5($senha_mae);
 
             //inserir no banco de dados
-            $query = 'INSERT INTO mae (nome_mae, email_mae, senha_mae) VALUES ("'.$nome_mae.'", "'.$email_mae.'", "'.$senha_criptografada_mae.'")';
+            $query = 'INSERT INTO mae (nome_mae, email_mae, senha_mae) 
+            VALUES ("'.$nome_mae.'", "'.$email_mae.'", "'.$senha_criptografada_mae.'")';
             
             if (mysqli_query($link, $query)){
                 echo "Cadastrado com sucesso";
-                header('Location: ../index.php');
+                header('Location: login_mae.php');
             }else{
+                header('Location: erro_cadastro_mae.php');
                 echo "Erro ao cadastrar";
             }
         }
-       
-        ?> 
-
-        
+        ?>         
         <?php 
             }else{
                 header('location: recuperacao.php');
-               
-             }
-             ?> 
-             
+            }
+        ?>   
         </div>
-    
     </body>
     </html>

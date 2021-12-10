@@ -44,13 +44,13 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action= "login_mae.php" method="post">
                 <div class="mb-3">
-                  <input type="email" name="email_mae" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                  <input type="email" name="email_mae" class="form-control input input-login" id="email-login-mae" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input type="password" name="senha_mae" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
+                  <input type="password" name="senha_mae" class="form-control input input-login" id="senha-login-mae" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar" required>
+                  <input type="submit" name="submit" class="hero-button button-primary btn btn-primary" value="Confirmar"  >
                 </div>
               <ul class="list-unstyled">
                   <li class="list-item"><a href="cadastro_mae1.php">Crie seu cadastro</a></li>
@@ -59,16 +59,7 @@
             </div>
           </div>
           <div class="col-md-6 align-self-center">
-                          <!DOCTYPE html>
-              <html>
-              <head>
-              <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-              <script>tinymce.init({ selector:'textarea' });</script>
-              </head>
-              <body>
-              <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
-              </body>
-              </html>
+               
           </div>
         </div>
       </div>
@@ -80,7 +71,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/bootstrap-validate.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+      bootstrapValidate('#email-login-mae' , 'email:Insira um e-mail válido')
+      bootstrapValidate('senha-login-mae' , 'required:Preencha este campo')
+    </script>
 </body>
 
 </html>
@@ -113,7 +110,7 @@
 
   include ('conexao.php');
     if(!empty($_POST)){
-     ;
+     
       $email_mae = $_POST['email_mae'];
       $senha_mae = md5($_POST['senha_mae']);
       $query ='SELECT id_mae, nome_mae, email_mae FROM mae WHERE email_mae = "'.$email_mae.'" AND senha_mae = "'.$senha_mae.'"';

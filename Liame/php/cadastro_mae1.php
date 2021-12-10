@@ -43,25 +43,27 @@
             <div class="">
               <form class="ps-lg-5 me-lg-5" action="cadastro_mae2.php" method="post">
                 <div class="mb-3">
-                  <input name="nome_mae" type="text" class="form-control input input-login" id="exampleInputPassword1" placeholder="Nome" required>
+                  <input name="nome_mae" type="text" class="form-control input input-login" id="nome-mae" placeholder="Nome" required>
                 </div>
                 <div class="mb-3">
-                  <input name="email_mae" type="email" class="form-control input input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                  <input name="email_mae" type="email" class="form-control input input-login" id="email-mae" aria-describedby="emailHelp" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <input name="senha_mae" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Senha" required>
+                  <input name="senha_mae" type="password" class="form-control input input-login" id="senha-mae" placeholder="Senha" required>
                 </div>
                 <div class="mb-3">
-                  <input name="confirmarsenha_mae" type="password" class="form-control input input-login" id="exampleInputPassword1" placeholder="Confirmar senha" required>
+                  <input name="confirmarsenha_mae" type="password" class="form-control input input-login" id="confirmar-senha-mae" placeholder="Confirmar senha" required>
                 </div>
-                <form>
-                  <div>
-                    <ul class="list-unstyled">  
-                    <input type = "checkbox" id = "subscribeNews" name = "subscribe" value = "newsletter">
-                    <label for = "subscribeNews">Aceitar</label><li class="list-item"><a href="../layouts/termos_condicoes_uso.html">termos de condições de uso</a></li>
-              </ul>
-                  </div>
-                 
+                <form class="row g-3">
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                        <label>
+                        Você deve concordar com os <a href="../layouts/termos_condicoes_uso.html"><u>termos de condições de uso</u></a>
+                        </label>
+                      </div>
+                    </div>
+                  <br>
                 <div class="mb-3">
                   <input type="submit" class="hero-button button-primary btn btn-primary" value="Confirmar">
                 </div>
@@ -81,7 +83,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/bootstrap-validate.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+      bootstrapValidate('#email-mae' , 'email:Insira um e-mail válido')
+      bootstrapValidate('#confirmar-senha-mae' , 'matches:#senha-mae:As senhas devem ser iguais')
+      bootstrapValidate('#nome-mae' , 'required:Preencha este campo')
+    </script>
 </body>
 
 </html>

@@ -83,27 +83,6 @@
     max-height: 120px;
   }
 
-  #propaganda .publicidade{
-    margin-left: auto;
-    margin-right: auto;
-    height: 212px;
-    width: 400px;
-  }
-  #oi.oi{
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    width: 100px;
-  }
-
-  #avast .avast{
-    margin-left: auto;
-    margin-right: auto;
-    height: 180 px;
-    width: 350x;
-  }
-
-
   #rodape .logo img{
     display: flex;
     justify-content: center;
