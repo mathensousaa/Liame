@@ -161,41 +161,56 @@ if(($id_profissional != 0)){
     $bairro=$_POST["bairro_profissional"];
     $num_profissional=$_POST["num_profissional"];
     $desc_endereco=$_POST["desc_end_profissional"];
-    $documento=$_POST["doc_profissional"];
+    
+    // Verifica se o campo PDF está vazio
+    if ($_FILES['doc_profissional']['name'] != "") {
+
+    // Caso queira mudar o nome do arquivo basta descomentar a linha abaixo e fazer a modificação
+    //$_FILES['pdf']['name'] = "nome_do_arquivo.pdf";
+  
+    // Move o arquivo para uma pasta
+    move_uploaded_file($_FILES['doc_profissional']['tmp_name'],"documentos/".$_FILES['doc_profissional']['name']);
+  
+    // $pdf_path é a variável que guarda o endereço em que o PDF foi salvo (para adicionar na base de dados)
+    $pdf_path = "../assets/doc_profissional/".$_FILES['doc_profissional']['name'];
+  
+  } else {
+  // Caso seja falso, retornará o erro
+   echo "Não foi possível enviar o arquivo";
+  }
 
     //inserir no banco de dados
 
       
-        echo $query_rede_social = 'INSERT INTO rede_social_profissional
+         $query_rede_social = 'INSERT INTO rede_social_profissional
         (youtube_profissional, whatsapp_profissional, instagram_profissional, linkedin_profissional, facebook_profissional, telegram_profissional, id_profissional)
         VALUES ("'.$yt_profissional.'", "'.$wpp_profissional.'", "'.$insta_profissional.'", "'.$linkedin_profissional.'","'.$face_profissional.'", "'.$telegram_profissional.'", '.$id_profissional.')';
         $resultado = mysqli_query($link, $query_rede_social);
 
-        echo "<br>";
         // cadastrar o telefone, consultar e recuperar o id do telefone cadastrado, fazer update em profissional para add o id do telefone
-        echo $query_telefone = 'INSERT INTO telefone_profissional (ddd_telefone_profissional, numero_telefone_profissional, id_profissional)
+         $query_telefone = 'INSERT INTO telefone_profissional (ddd_telefone_profissional, numero_telefone_profissional, id_profissional)
         VALUES ("'.$ddd_tel_profissional.'", "'.$numero_tel_profissional.'","'.$id_profissional.'")';
         $resultado = mysqli_query($link, $query_telefone);
 
-        echo "<br>";
+      
 
         // cadastrar o endereço, consultar e recuperar o id do endereço cadastrado, fazer update em profissional para add o id do endereço
-       echo $query_endereco ='INSERT INTO endereco_profissional (id_tipo_logradouro, logradouro, cidade, id_estado, bairro, numero_endereco, descricao_endereco, cep, id_profissional)
+        $query_endereco ='INSERT INTO endereco_profissional (id_tipo_logradouro, logradouro, cidade, id_estado, bairro, numero_endereco, descricao_endereco, cep, id_profissional)
         VALUES ("'.$tipo_logradouro.'", "'.$logradouro.'","'.$cidade.'","'.$estado.'","'.$bairro.'","'.$num_profissional.'","'.$desc_endereco.'","'.$cep_profissional.'", "'.$id_profissional.'")';
         $resultado = mysqli_query($link, $query_endereco);
 
-        echo "<br>";
-        
-       echo $query_profissional ='update profissional set documentacao_validacao_profissional = "'.$documento.'"';
-        $resultado= mysqli_query($link, $query);
+        $resultado= mysqli_query($link, $query_rede_social);
         if ($resultado){
                echo "Registrado com sucesso";
            }else{
-               echo "Algo deu errado :(";
-        }
-        }else{
+               echo "Erro ao cadastrar redes sociais:(";
+        
+        }      
+      }else{
+
         echo "Preencha os campos corretamente!";
       }
+
     
   
 
@@ -210,9 +225,9 @@ if(($id_profissional != 0)){
           echo "Erro ao excluir!";
       }
     }
-  }else if ($id_mae == 0){
-      //header('Location: login_profissional.php');
-    }
+  }else($id_mae == 0){
+      header ('Location: login_profissional.php')
+  }
 
     ?>
 </body>
