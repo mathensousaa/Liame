@@ -38,7 +38,7 @@ if(($id_profissional != 0)){
 	<h1>Informações do Profissional </h1>
 
     <?php
-    echo $_SESSION['id_profissional'];
+    
     echo $_SESSION['nome_profissional'];
     $foto_perfil_mae = null;
     ?>
@@ -146,7 +146,7 @@ if(($id_profissional != 0)){
 
     if(!empty($_POST)){
     $ddd_tel_profissional= $_POST["ddd_profissional"];
-    $numero_tel_profissional = $_POST["numero_profissional"];
+    $numero_tel_profissional = $_POST["telefone_profissional"];
     $yt_profissional=$_POST["youtube_profissional"];
     $wpp_profissional=$_POST["whatsapp_profissional"];
     $insta_profissional=$_POST["instagram_profissional"];

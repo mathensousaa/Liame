@@ -211,7 +211,7 @@
                         <?php
                           if ($foto_profissional != ""){
 							/*'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');*/
-                            ?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/" alt=""><?php
+                            ?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/'.$dados_usuario['imagem'].'" alt=""><?php
                           }else{
                             ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
                           }

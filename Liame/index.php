@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['id_mae'])){
   $id_mae = $_SESSION['id_mae'];
   $id_profissional = 0;
