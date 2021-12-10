@@ -81,7 +81,7 @@
 <?php
 
   include("conexao.php");
-    if(isset($_POST)){
+    if(isset($_POST['enviar'])){
       $email_profissional = $_POST['email_profissional'];
       $senha_profissional = MD5($_POST['senha_profissional']);
       $query ='SELECT id_profissional, nome_profissional, email_profissional FROM profissional 
