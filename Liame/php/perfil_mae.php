@@ -11,25 +11,22 @@ session_start();
 include ('conexao.php');
 if(isset($_SESSION['id_mae'])){
   $id_mae = $_SESSION['id_mae'];
-} 
-else{
+}else{
   $id_mae = 0;
-  
-} 
-if(isset($_SESSION['id_profissional'])){
+}if(isset($_SESSION['id_profissional'])){
   $id_profissional = $_SESSION['id_profissional'];
   
   $id_profissional = 0;
-}
-else{
+}else{
    $id_profissional = 0;
-}
-if(isset($_SESSION['id_adm'])){
+}if(isset($_SESSION['id_adm'])){
   $id_adm = $_SESSION['id_adm'];
 
 }else{
   $id_adm=0;
 }
+
+if(($id_mae != 0)){
 ?>
 	<!-- CSS -->
 	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
@@ -212,8 +209,7 @@ echo $total;*/
     <?php
 if (isset($_POST['exibir'])){
 
-    while($row = mysqli_fetch_array($dados))
-    {
+    while($row = mysqli_fetch_array($dados)){
     echo "<table>";
     
     echo "<td>" . $row['nome_bebe'] . "</td>";
@@ -226,10 +222,6 @@ if (isset($_POST['exibir'])){
 
     echo "</table>";
   
-
-    
-
-
 if (isset($_POST['excluir'])){
     $row=mysqli_fetch_array($dados);
     $id_bebe= $row['id_bebe'];
@@ -241,7 +233,8 @@ if (isset($_POST['excluir'])){
     }else{
         echo "Erro ao excluir!";
     }
-}}
+}
+}
 
 
     ?>
@@ -354,6 +347,7 @@ if (isset($_POST['excluir'])){
   header('Location: login_mae.php');
     
   }
+
   ?>
 </body>
 

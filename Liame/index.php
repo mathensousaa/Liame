@@ -345,3 +345,4 @@ if(isset($_SESSION['id_adm'])){
 </body>
 
 </html>
+g

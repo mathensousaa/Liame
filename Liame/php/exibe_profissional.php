@@ -1,7 +1,20 @@
 <?php
     include ('conexao.php');
     $id_profissional = $_GET['id'];
-    $sql_busca = 'select * from profissional where id_profissioanal = '.$id_profissional.';';
+
+    $query ="SELECT * FROM profissional WHERE id_profissional = '$id_profissional'";
+    $dados = mysqli_query($link, $query);
+
+    while($row = mysqli_fetch_array($dados)){
+    echo "<table>";
+    
+    echo "<td>" . $row['nome_profissional'] . "</td>";
+    echo "<td>" . $row['email_profissional'] . "</td>";
+    }
+    ?>
+
+
+    <!-- $sql_busca = "select * from profissional where id_profissioanal = '.$id_profissional.';";
 
     $result = mysqli_query($link, $sql_busca);
 
@@ -16,25 +29,4 @@
     } else {
       echo "Nenhum profissional encontrado";
     }
-    $link->close();
-
-
-    // $sql_query = $link->query($consulta);
-    // while($linha = mysqli_fetch_assoc($result))
-    // {
-    //     echo "<tr>";
-    //     echo "<td>".$vetor['id']."</td>";
-    // }
-
-    // $nome_profissional= $linha['nome_profissional'];
-	// $especialidade_profissional=$linha['especialidade'];
-	// $estado_profissional=$linha['estado'] . ' - '. $linha['uf'];
-	// $cidade_profissional=$linha['cidade'];
-	// $cep_profissional=$linha['cep'];
-	// $foto_profissional=$linha['foto_perfil_profissional'];
-	// $bairro_profissional=$linha['bairro'];
-	// $descricao_endereco_profissional=$linha['descricao_endereco'];
-	// $numero_endereco_profissional=$linha['numero_endereco'];
-	// $endereco_profissional= $linha['tipo_logradouro'].': ' . $linha['logradouro'];
-	// $telefone_profissional= '('.$linha['ddd_telefone_profissional'].') '.$linha['numero_telefone_profissional'];
-?>
+    $link->close(); -->
