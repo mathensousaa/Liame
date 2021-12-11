@@ -480,7 +480,7 @@ html, body {
 #avatar-container {
   height: 100px;
   width: 100px;
-  margin: 50px auto;
+  margin: 20px auto;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid var(--primary);
