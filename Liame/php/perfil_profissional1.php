@@ -1,8 +1,19 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head><meta charset="utf-8">
-
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Editar perfil profissional | Liame</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <!--favicon-->
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+  <!--unicons (icones que serão usados no site)-->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
 <?php
@@ -29,12 +40,9 @@ if(($id_profissional != 0)){
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sua Conta</title>
-</head>
+
 <body>
+  <br>
 	<h1>Informações do Profissional </h1>
 
     <?php
@@ -47,28 +55,64 @@ if(($id_profissional != 0)){
     <br>
     <form name= "registardados" enctype="multipart/form-data" action="#" method= "POST">
         Foto de Perfil:
-        <input type="file" name ="foto_perfil_profissional" accept="img/*" id='foto_perfil_profissional'><br>
+        <input type="file" name ="foto_perfil_profissional" accept="img/*" id='foto_perfil_profissional' required><br>
         <input type="submit" name= "atualizar" value="Atualizar">
-		<h1>Informações de contato</h1>
-        Telefone:<br>
-        <input type="text" name ="ddd_profissional" placeholder="DDD">
-        <input type="text" name ="telefone_profissional" placeholder="0000-0000"><br>
-    <h1>Redes Sociais</h1>
-        Canal do youtube:<br>
-        <input type="text" name="youtube_profissional" placeholder="Insira seu canal do Youtube"><br>
-        Whatsapp:<br>
-        <input type="text" name="whatsapp_profissional" placeholder="Insira seu Whatsapp"><br>
-        Instagram:<br>
-        <input type="text" name="instagram_profissional" placeholder="Insira seu Instagram"><br>
-        Linkedin:<br>
-        <input type="text" name="linkedin_profissional" placeholder="Insira seu Linkedin"><br>
-        Facebook:<br>
-        <input type="text"name="facebook_profissional" placeholder="Insira seu Facebook"><br>
-        Telegram:<br>
-        <input type="text" name="telegram_profissional" placeholder="Insira seu Telegram"><br>
+        <h3 class="hero-title">
+        Informações de contato
+            </h3>
+        <h5> Telefone: </h5>
+            <div class="">
+              <form class="ps-lg-5 me-lg-5" action="" method="post">
+                <div class="mb-3">
+                  <input name="ddd_profissional" type="text" class="" id="ddd-profissional" placeholder="DDD" required>
+                </div>  
+                <div class="mb-3">
+                  <input name="telefone_profissional" type="text" class="" id="telefone-profissional" placeholder="0000-0000" required>
+                </div> 
+          </div>
+      </form>
+	
+       
+    <h3>Redes Sociais</h5>
+      <div class="">
+        <form class="ps-lg-5 me-lg-5" action="" method="post">
+          <div class="mb-3">
+            Youtube:
+            <input name="youtube_profissional" type="text" class="" id="canal-profissional" placeholder="Insira seu canal do Youtube"  required>
+          </div> 
+
+          <div class="mb-3">
+          Whatsapp:
+            <input name="Whatsapp_profissional" type="text" class="" id="Whatsapp_profissional" placeholder="Insira seu Whatsapp"  required>
+          </div> 
+
+          <div class="mb-3">
+          Instagram:
+            <input name="Instagram_profissional" type="text" class="" id="instagram_profissional" placeholder="Insira seu Instagram"  required>
+          </div>
+       
+          <div class="mb-3">
+          Linkedin:
+            <input name="Linkedin_profissional" type="text" class="" id="linkedin_profissional" placeholder="Insira seu Linkedin"  required>
+          </div>
+       
+          <div class="mb-3">
+          Facebook:
+            <input name="Facebook_profissional" type="text" class="" id="facebook_profissional" placeholder="Insira seu Facebook"  required>
+          </div>
+       
+          <div class="mb-3">
+          Telegram:
+            <input name="Telegram_profissional" type="text" class="" id="telegram_profissional" placeholder="Insira seu Telegram"  required>
+          </div>
+
+        <br>
     <h1>Endereço</h1>
-        CEP:<br>
-        <input type="text" name ="cep_profissional" placeholder="Insira seu cep..."><br>
+      <div class="mb-3">
+        CEP:
+          <input name="CEP_profissional" type="text" class="" id="CEP_profissional" placeholder="Insira seu CEP"  required>
+      </div>
+
         Tipo de logradouro:<br>
             <select name="tipo_logradouro" id="select-busca1" class="form-select" aria-label="Perfil de especialista">
               <option selected disabled>Tipo de logradouro </option>
@@ -84,9 +128,12 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-            <br>Logradouro:<br>
-        <input type="text" name ="logradouro_profissional" placeholder="Insira seu endereço...">
-        
+            <br>
+            <div class="mb-3">
+            Logradouro:
+              <input name="logradouro_profissional" type="text" class="" id="logradouro_profissional" placeholder="Insira seu endereço"  required>
+            </div>
+          
         <br>Estado:<br>
             <select name="estado" id="select-busca3" class="form-select" aria-label="Perfil de especialista">
               <option selected disabled>Selecione: </option>
@@ -103,17 +150,30 @@ if(($id_profissional != 0)){
                 }
                 ?>
             </select>
-            <br>Cidade:<br>
-         <input type="text" name="cidade_profissional" placeholder="Insira sua cidade"><br>
-         Bairro:<br>
-         <input type="text" name ="bairro_profissional" placeholder="Insira seu bairro..."><br>
-          Numero:<br>
-          <input type="text" name ="num_profissional" placeholder="Insira seu numero do endereço..."><br>
-          Complemento:<br>
-          <input type="text" name ="desc_end_profissional" placeholder="Insira a descrição do seu endereço..."><br>
+            <br>
+            <div class="mb-3">
+                Cidade:
+              <input name="Cidade_profissional" type="text" class="" id="cidade_profissional" placeholder="Insira sua cidade"  required>
+            </div>
+
+            <div class="mb-3">
+              Bairro:
+              <input name="Bairro_profissional" type="text" class="" id="bairro_profissional" placeholder="Insira seu bairro"  required>
+            </div>
+            
+            <div class="mb-3">
+              Numero:
+              <input name="Numero_profissional" type="text" class="" id="numero_profissional" placeholder="Insira o numero:"  required>
+            </div>
+         
+            <div class="mb-3">
+              Complemento:
+              <input name=" Complemento_profissional" type="text" class="" id="complemento_profissional" placeholder="Insira seu complemento:"  required>
+            </div>
+          
       <h1>Documentação </h1>
           Insirir sua documentação com suas informaões de formação profissional:
-          <input type="file" name ="doc_profissional" accept="application/pdf"><br>
+          <input type="file" name ="doc_profissional" accept="application/pdf" required><br>
     <input type="submit" name="salvar" value="Salvar">
 
     <button><a href="edicaodedados.php">Editar Conta</a></button>
@@ -230,5 +290,36 @@ if(($id_profissional != 0)){
   }
 
     ?>
+
+    <!--implementação jquery, poppers.js e plugin bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/bootstrap-validate.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+   
 </body>
+    
+    <script>
+      bootstrapValidate('#telefone-profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#ddd-profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#canal-profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#Whatsapp_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#instagram_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#linkedin_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#facebook_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#telegram_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#CEP_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#logradouro_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#cidade_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#bairro_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#numero_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#complemento_profissional' , 'required:Preencha este campo')
+      bootstrapValidate('#bairro_profissional' , 'required:Preencha este campo')
+      
+      
+    </script>
+
 </html>
