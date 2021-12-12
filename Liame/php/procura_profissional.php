@@ -210,9 +210,11 @@
                     <div class="card-img-top text-center">
                         <?php
                           if ($foto_profissional != ""){
-							/*'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');*/
+						//caso o profissional tiver foto de perfil aparece aqui, tem esse código aqui que eu peguei do thiago mas não consegui usar
+						//'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');
                             ?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/'.$dados_usuario['imagem'].'" alt=""><?php
                           }else{
+						// caso não tiver aparece essa padão
                             ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
                           }
                         ?>

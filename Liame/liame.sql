@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 10-Dez-2021 às 20:34
+-- Tempo de geração: 10-Dez-2021 às 17:41
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
   KEY `id_tipo_logradouro` (`id_tipo_logradouro`),
   KEY `id_estado` (`id_estado`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `endereco_profissional`
@@ -92,13 +92,7 @@ INSERT INTO `endereco_profissional` (`cep`, `id_tipo_logradouro`, `logradouro`, 
 ('07500000', '7', 'Manuel Fernadno Sales', '', '1', 'Jardim Eldorado', '20', '', 1, 0),
 ('07500000', '10', 'Professora Ana Maria', '', '20', 'Vila Amelia', '30', '', 2, 0),
 ('04582115', '9', 'Manuel Fernadno Sales', '', '7', 'Jardim Eldorado', '820', '', 3, 0),
-('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 0),
-('07500000', '17', 'rua maestro avelino', 'santa isabel', '26', '13 de maio', '330', 'consultoria roxo', 5, 3),
-('07500000', '17', 'rua maestro avelino', 'santa isabel', '26', '13 de maio', '330', 'consultoria roxo', 6, 3),
-('', '', '', '', '', '', '', '', 7, 3),
-('07500000', '14', 'da colina', 'santa isabel', '17', 'recanto do ceu', '125', 'consultoria roxo', 8, 3),
-('07500000', '14', 'da colina', 'santa isabel', '17', 'recanto do ceu', '125', 'consultoria roxo', 9, 3),
-('', '', '', '', '', '', '', '', 10, 3);
+('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -255,22 +249,26 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   `senha_profissional` varchar(32) DEFAULT NULL,
   `foto_perfil_profissional` varchar(32) DEFAULT NULL,
   `id_profissional` int(6) NOT NULL AUTO_INCREMENT,
+  `id_telefone` int(6) DEFAULT NULL,
+  `id_endereco` int(6) DEFAULT NULL,
   `documentacao_validacao_profissional` varchar(32) DEFAULT NULL,
   `status_validacao_profissional` int(1) NOT NULL,
-  PRIMARY KEY (`id_profissional`)
+  PRIMARY KEY (`id_profissional`),
+  KEY `id_endereco` (`id_endereco`),
+  KEY `id_telefone` (`id_telefone`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `profissional`
 --
 
-INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `documentacao_validacao_profissional`, `status_validacao_profissional`) VALUES
-('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, '', 1),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, '', 1),
-('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'a3191a2370ef1c116436dd77c5efddfd', 3, '', 1),
-('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, '', 1),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, '', 1),
-('lolo', 'lolo@gmail.com', 'd6581d542c7eaf801284f084478b5fcc', NULL, 10, NULL, 0);
+INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`, `documentacao_validacao_profissional`, `status_validacao_profissional`) VALUES
+('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1, '', 1),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 1),
+('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2, '', 1),
+('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4, '', 1),
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 1),
+('lolo', 'lolo@gmail.com', 'd6581d542c7eaf801284f084478b5fcc', NULL, 10, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -290,19 +288,7 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
   `id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_rede_social`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `rede_social_profissional`
---
-
-INSERT INTO `rede_social_profissional` (`id_rede_social`, `youtube_profissional`, `whatsapp_profissional`, `instagram_profissional`, `linkedin_profissional`, `facebook_profissional`, `telegram_profissional`, `id_profissional`) VALUES
-(1, 'dr. derick', '11943217889', '@drderick', 'dr. derick', 'dr. derick', 'dr.derick', 3),
-(2, 'dr. derick', '11943217889', '@drderick', 'dr. derick', 'dr. derick', 'dr.derick', 3),
-(3, '', '', '', '', '', '', 3),
-(4, 'dr. derick', '11943217889', '@drderick', 'dr. derick', 'dr. derick', 'dr.derick', 3),
-(5, 'dr. derick', '11943217889', '@drderick', 'dr. derick', 'dr. derick', 'dr.derick', 3),
-(6, '', '', '', '', '', '', 3);
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -347,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
   `id_profissional` int(11) NOT NULL,
   PRIMARY KEY (`id_telefone`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `telefone_profissional`
@@ -355,13 +341,7 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
 
 INSERT INTO `telefone_profissional` (`id_telefone`, `ddd_telefone_profissional`, `numero_telefone_profissional`, `id_profissional`) VALUES
 (1, '11', '3125-6584', 0),
-(2, '12', '4568-6589', 0),
-(3, '11', '46578909', 3),
-(4, '11', '46578909', 3),
-(5, '', '', 3),
-(6, '11', '46578909', 3),
-(7, '11', '46578909', 3),
-(8, '', '', 3);
+(2, '12', '4568-6589', 0);
 
 -- --------------------------------------------------------
 
