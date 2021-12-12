@@ -6,28 +6,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<?php
-session_start();
-include ('conexao.php');
-if(isset($_SESSION['id_mae'])){
-  $id_mae = $_SESSION['id_mae'];
-}else{
-  $id_mae = 0;
-}if(isset($_SESSION['id_profissional'])){
-  $id_profissional = $_SESSION['id_profissional'];
-  
-  $id_profissional = 0;
-}else{
-   $id_profissional = 0;
-}if(isset($_SESSION['id_adm'])){
-  $id_adm = $_SESSION['id_adm'];
-
-}else{
-  $id_adm=0;
-}
-
-if(($id_mae != 0)){
-?>
 	<!-- CSS -->
 	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
 	<link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
@@ -41,89 +19,33 @@ if(($id_mae != 0)){
 
 </head>
 
-<body>
-
-	<main>
-		<!--navbar-->
-		<div id="header" class="">
-			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-					<div class="container-fluid">
-						<a href="../index.php" class="navbar-brand">
-							<img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-						</a>
-						<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-								<li class="nav-item">
-									<a class="nav-link active" href="../index.php">Página Inicial</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
-								</li>
-							</ul>
-							<!--entrar/cadastro-->
-							<div id="login" class="nav navbar-nav">
-								<div class="nav-item">
-									<button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
-										Entrar
-									</button>
-									</a>
-									<!-- Modal -->
-									<div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-										<div class="modal-dialog modal-dialog-centered">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-												</div>
-												<div class="modal-body container-fluid block">
-													<div class="container my-4">
-														<div class="row">
-															<div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-																<a href="../php/login_profissional.php" class="destaque">
-																	<div class="img-container mb-3">
-																		<img class="img-fluid" src="../assets/img/Medico_home.png" alt="">
-																	</div>
-																	<div class="text-container">
-																		<h5>Especialista</h5>
-																	</div>
-																</a>
-															</div>
-															<div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-																<a href="../php/login_mae.php" class="destaque">
-																	<div class="img-container mb-3">
-																		<img class="img-fluid" src="../assets/img/Vaccine.png" alt="">
-																	</div>
-																	<div class="text-container">
-																		<h5>Mãe</h5>
-																	</div>
-																</a>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-			
 
 <body>
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+}else{
+  $id_mae = 0;
+}if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+
+  $id_profissional = 0;
+}else{
+   $id_profissional = 0;
+}if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
+
+if(($id_mae != 0)){
+?>
 <main>
 <div class="container text-center">
+	<div class="pt-3">
       <div class="d-flex justify-content-center" id="avatar-container">
         <img class="imagem-perfil" src="../assets/img/user.svg">
         <div class="botao-upload">
@@ -136,18 +58,41 @@ if(($id_mae != 0)){
         echo $_SESSION['nome_mae'];
       ?>
       </h6>
+		</div>
+		<div class="pt-5" id="dados-pessoais">
+			<div class="row">
+        <form action=""></form>
+				<h2 class="">Dados Pessoais</h2>
+			</div>
+			<div class="row">
+				<div class="col-6" >
+					<p>
+						<?php
+							echo $_SESSION['nome_mae'];
+						?>
+					</p>
+				</div>
+				<div class="col-6" >
+					<p>
+						<?php
+							echo $_SESSION['email_mae'];
+						?>
+					</p>
+				</div>
+			</div>
+		</div>
 </div>
-<form name="confgconta" action="#" method="POST"> 
+<form name="confgconta" action="#" method="POST">
 	<h1>Informações da Mãe </h1>
 
     <?php
-    echo $_SESSION['nome_mae'];
+
     $foto_perfil_mae = null;
-    ?> 
-    
+    ?>
+
 
     <br>
-       <!-- Nome:                   
+       <!-- Nome:
     <input type="text" name ="nome_profissional" placeholder="Nome do usuario..."><br>
         Email:
          <input type="text" name ="email_profissional" placeholder="Email do usuario..."><br>-->
@@ -159,7 +104,7 @@ if(($id_mae != 0)){
 			<h1> Informações do Bebê</h1>
         	Nome do Bebê
         	<input type="text" name ="nome_bebe" placeholder="Insira o nome do seu filho(a) ..."><br>
-        
+
     <input type="submit" name= "submit2" value="Salvar">
 
 
@@ -211,9 +156,9 @@ if (isset($_POST['exibir'])){
 
     while($row = mysqli_fetch_array($dados)){
     echo "<table>";
-    
+
     echo "<td>" . $row['nome_bebe'] . "</td>";
-    
+
     ?>
     <input type="submit" name="editar" value ="Editar">
     <input type="submit" name="excluir" value ="Excluir"></td>
@@ -221,7 +166,7 @@ if (isset($_POST['exibir'])){
     }
 
     echo "</table>";
-  
+
 if (isset($_POST['excluir'])){
     $row=mysqli_fetch_array($dados);
     $id_bebe= $row['id_bebe'];
@@ -240,7 +185,7 @@ if (isset($_POST['excluir'])){
     ?>
     <button><a href="edicaodedados.php">Editar Conta</a></button>
     <?php
-  
+
 
     ?>
 
@@ -258,10 +203,10 @@ if (isset($_POST['excluir'])){
     referrerpolicy="no-referrer"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
-  
+
   <script>
       $(document).ready(function() {
-	
+
         var readURL = function(input) {
           if (input.files && input.files[0]) {
               var reader = new FileReader();
@@ -269,15 +214,15 @@ if (isset($_POST['excluir'])){
               reader.onload = function (e) {
                   $('.imagem-perfil').attr('src', e.target.result);
               }
-      
+
               reader.readAsDataURL(input.files[0]);
           }
         }
-    
+
         $(".avatar-input").on('change', function(){
             readURL(this);
         });
-        
+
         $(".botao-upload").on('click', function() {
           $(".avatar-input").click();
         });
@@ -343,11 +288,18 @@ if (isset($_POST['excluir'])){
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
 <?php
+<<<<<<< HEAD
 }else{
     header('Location: ../index.php');
       
     }
 
+=======
+}else if($id_mae == 0){
+  header('Location: login_mae.php');
+
+  }
+>>>>>>> 077d1704f640cbcd3f7b4068ce3f6ca5afaaa0dc
 
   ?>
 </body>
