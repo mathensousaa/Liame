@@ -300,7 +300,7 @@ html, body {
   padding-top: 50px;
   padding-bottom: 50px;
   overflow: hidden;
-  height: 900px;
+  height: 450px;
 }
 
 #cartilha a.destaque {
@@ -612,4 +612,12 @@ html, body {
 #dados-pessoais .dados{
   border: 1px solid var(--medium);
   border-radius: 10px;
+}
+
+#diario {
+  background: var(--tertiary-light);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  height: 100vh;
 }

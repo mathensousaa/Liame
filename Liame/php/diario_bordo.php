@@ -151,11 +151,10 @@
    
     <!--//navbar-->
 
-<div id="cartilha" class="container-fluid block position-relative">
-   <div class="container">
-
-      <form action="diario_bordo.php" method="POST">
-      <input type="text" name="titulo" placeholder="Título">  
+<div id="diario" class="container-fluid block position-relative">
+  <div class="container">
+    <form action="diario_bordo.php" method="POST">
+      <input class="form-control" type="text" name="titulo" placeholder="Título">  
       <textarea rows= "20"  name="conteudo"></textarea>
 
      <style> 
@@ -164,10 +163,11 @@
       }
       </style>   
 
-      <input type="submit" name="enviar" value="Salvar">
+      <input class="btn btn-primary button button-primary"type="submit" name="enviar" value="Salvar">
    
-        </form>
-   </div>
+    </form>
+  </div>
+</div>
 <?php
 
 

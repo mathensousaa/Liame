@@ -298,8 +298,11 @@ if (isset($_POST['excluir'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 14563b6998ec584e0fef75232dff4b6ef6c9bf60
 <?php
 }else if($id_mae == 0){
   header('Location: login_mae.php');
