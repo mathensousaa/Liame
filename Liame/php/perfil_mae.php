@@ -299,18 +299,10 @@ if (isset($_POST['excluir'])){
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
 <?php
-<<<<<<< HEAD
-}else{
-    header('Location: ../index.php');
-      
-    }
-
-=======
 }else if($id_mae == 0){
   header('Location: login_mae.php');
 
   }
->>>>>>> 077d1704f640cbcd3f7b4068ce3f6ca5afaaa0dc
 
   ?>
 </body>
