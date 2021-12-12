@@ -69,7 +69,7 @@ if(($id_mae != 0)){
 			<div class="row d-flex justify-content-center">
 				<div class="col-4">
 					<label for="nome-mae" class="form-label">Nome</label>
-					<input type="text" class="form-control" name="nome-mae" id="nome-mae" placeholder="<?php echo $_SESSION['nome_mae']; ?>">
+					<input type="text" class="form-control" name="nome-mae" id="nome-mae" placeholder="<?php echo $_SESSION['nome_mae']; ?> ">
 				</div>
 				<div class="col-4">
 					<label for="email-mae" class="form-label">E-mail</label>
@@ -92,7 +92,7 @@ if(($id_mae != 0)){
 	<div class="row d-flex justify-content-center">
 		<div class="col-4">
 			<label for="nome-bebe" class="form-label">Nome do seu filho</label>
-			<input type="text" class="form-control" name="nome-bebe" id="nome-bebe" placeholder="<?php /*echo $_SESSION['nome_bebe']; */?>">
+			<input type="text" class="form-control" name="nome-bebe" id="nome-bebe" placeholder="<?php /*echo $_SESSION['nome_bebe']; */?>" required>
 		</div>
 		<div class="col-4">
 			
@@ -298,26 +298,22 @@ if (isset($_POST['excluir'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
-<?php
-<<<<<<< HEAD
-}else{
-    header('Location: ../index.php');
-      
-    }
 
-=======
+
+<?php
 }else if($id_mae == 0){
   header('Location: login_mae.php');
 
   }
->>>>>>> 077d1704f640cbcd3f7b4068ce3f6ca5afaaa0dc
 
   ?>
-</body>
 
-</html>
 
 
 </body>
+		<script>
+			bootstrapValidate('#nome-bebe' , 'required:Preencha este campo')
+		</script>
+
 
 </html>
