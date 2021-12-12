@@ -79,10 +79,11 @@ if(mysqli_query($link,$query)){
 ?>
   <br><a href=perfil_mae.php><button>Voltar para perfil</button></a><br>
 <?php
-}else if($id_mae == 0){
-  header('Location: login_mae.php');
+}else{
+  header('Location: ../index.php');
     
   }
+
 ?>
 
 </body>

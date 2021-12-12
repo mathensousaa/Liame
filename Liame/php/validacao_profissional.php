@@ -66,17 +66,10 @@
             </div>
           </div>
         <?php
-<<<<<<< HEAD
-  }else if($id_adm == 0){
+  }else{
     header('Location: ../index.php');
       
     }
-=======
-  }else{
-    
-    header("Location:../index.php");
 
-  }
->>>>>>> 52cd332ad0787b50a6551a80eb57e5c1de2668c6
   ?>
   

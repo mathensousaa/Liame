@@ -23,17 +23,45 @@ if(isset($_SESSION['id_adm'])){
 }
 if(($id_mae != 0)){
 
-$strSQL = "SELECT texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_diario_gestacao = '$id_diario_gestacao' ORDER BY  data_hora_diario_gestacao DESC  ";
-$r = mysqli_query($link,$strSQL); 
-
-while($row = mysqli_fetch_array($r)){
-    echo $row['texto_diario_gestacao'] ;
-    echo $row['data_hora_diario_gestacao'];
-}
-}else if($id_mae == 0){
-  header('Location: login_mae.php');
+  $strSQL = "SELECT titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_mae = '$id_mae' ORDER BY  data_hora_diario_gestacao DESC";
+  $r = mysqli_query($link,$strSQL); 
+  $e= $r->fetch_array();
+  $titulo_exibir = $e['titulo_diario_gestacao'];
+  
+  
+  while($row = mysqli_fetch_array($r)){
+    ?>
     
+      <?php
+  
+    echo $row['titulo_diario_gestacao'] . "<br>";?>
+   
+  
+  
+    <?php
+  
+  $exibir= "SELECT texto_diario_gestacao FROM registro_diario WHERE titulo_diario_gestacao = '$titulo_exibir'";
+  $query= mysqli_query($link,$exibir);
+  $texto = mysqli_fetch_assoc($query);
+  
+  print_r( $texto);
+  
   }
+  
+  
+  
+    
+  
+  
+  /*while($row = mysqli_fetch_array($r)){
+      echo $row['texto_diario_gestacao'] ;
+      echo $row['data_hora_diario_gestacao'];
+  }*/
+  
+}else{
+  header('Location: ../index.php');
+    
+}
 
   
 ?>
