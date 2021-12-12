@@ -46,37 +46,50 @@ if(isset($_SESSION['id_adm'])){
 }
 if(($id_mae != 0)){
 
-$strSQL = "SELECT texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_diario_gestacao = '$id_diario_gestacao' ORDER BY  data_hora_diario_gestacao DESC  ";
-$r = mysqli_query($link,$strSQL); 
-
-while($row = mysqli_fetch_array($r)){
-    echo $row['texto_diario_gestacao'] ;
-    echo $row['data_hora_diario_gestacao'];
-?>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="../assets/js/owl.carousel.min.js"></script>
-	<script src="../assets/js/main.js"></script>
-<?php
-}
-}else if($id_mae == 0){
-  header('Location: login_mae.php');
+  $strSQL = "SELECT titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_mae = '$id_mae' ORDER BY  data_hora_diario_gestacao DESC";
+  $r = mysqli_query($link,$strSQL); 
+  $e= $r->fetch_array();
+  $titulo_exibir = $e['titulo_diario_gestacao'];
+  /*
+  
+  while($row = mysqli_fetch_array($r)){
+    ?>
     
+      <?php
+  
+    echo $row['titulo_diario_gestacao'] . "<br>";?>
+   
+  
+  
+    <?php
+  
+  $exibir= "SELECT texto_diario_gestacao FROM registro_diario WHERE titulo_diario_gestacao = '$titulo_exibir'";
+  $query= mysqli_query($link,$exibir);
+  $texto = mysqli_fetch_assoc($query);
+  
+  print_r( $texto);
+  
   }
+  
+  
+  
+    
+  
+  
+  /*while($row = mysqli_fetch_array($r)){
+      echo $row['texto_diario_gestacao'] ;
+      echo $row['data_hora_diario_gestacao'];
+  }*/
+  
 
   
 ?>
 
 <main>
+  <?php
+  while($row = mysqli_fetch_array($r)){
+    
+    ?>
     <div class="container" id="titulos">
       <div class="row pb-2">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
@@ -84,69 +97,38 @@ while($row = mysqli_fetch_array($r)){
             <div class="text-container">
               <h6 class="pb-0">
                 <!-- puxar titulo aqui -->
-                Primeiros passos do Enzo
+                <?php
+  
+                  echo $row['titulo_diario_gestacao'] ;
+                  $titulo=$row['titulo_diario_gestacao'];
+                  ?>
+   
+                
               </h6>
               <p class="preview">
                 Ontem o enzo estava na sala brincando com seus
                 ...
               </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
+              
+              <a href="exibe_diario2?titulo=<?php echo $titulo ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
+          
               <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
+                <?php
+               echo $row['data_hora_diario_gestacao'];
+               ?>
               </p>
             </div>
           </a>
         </div>
-        
+        <?php
+  }
+        ?>
+  <!--
         <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
           <a class="titulo-diario">
             <div class="text-container">
               <h6 class="pb-0">
-                <!-- puxar titulo aqui -->
-                Primeiros passos do Enzo
-              </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
-              <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
-          <a class="titulo-diario">
-            <div class="text-container">
-              <h6 class="pb-0">
-                <!-- puxar titulo aqui -->
-                Primeiros passos do Enzo
-              </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
-              <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
-          <a class="titulo-diario">
-            <div class="text-container">
-              <h6 class="pb-0">
-                <!-- puxar titulo aqui -->
+                
                 Primeiros passos do Enzo
               </h6>
               <p class="preview">
@@ -167,7 +149,49 @@ while($row = mysqli_fetch_array($r)){
           <a class="titulo-diario">
             <div class="text-container">
               <h6 class="pb-0">
-                <!-- puxar titulo aqui -->
+                
+                Primeiros passos do Enzo
+              </h6>
+              <p class="preview">
+                Ontem o enzo estava na sala brincando com seus
+                ...
+              </p>
+              <form action="">
+                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
+              </form>
+              <p class=data>
+                Sexta-feira, 03 de dezembro de 2021
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
+          <a class="titulo-diario">
+            <div class="text-container">
+              <h6 class="pb-0">
+                
+                Primeiros passos do Enzo
+              </h6>
+              <p class="preview">
+                Ontem o enzo estava na sala brincando com seus
+                ...
+              </p>
+              <form action="">
+                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
+              </form>
+              <p class=data>
+                Sexta-feira, 03 de dezembro de 2021
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
+          <a class="titulo-diario">
+            <div class="text-container">
+              <h6 class="pb-0">
+               
                 Primeiros passos do Enzo
               </h6>
               <p class="preview">
@@ -184,6 +208,14 @@ while($row = mysqli_fetch_array($r)){
           </a>
         </div>
       </div>
-    </div>
+    </div>-->
   </main>
+  <?php
+}else{
+  header('Location: ../index.php');
+    
+}
+?>
 </body>
+
+</html>

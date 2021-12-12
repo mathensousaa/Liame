@@ -155,7 +155,7 @@
    <div class="container">
 
       <form action="diario_bordo.php" method="POST">
-
+      <input type="text" name="titulo" placeholder="Título">  
       <textarea rows= "20"  name="conteudo"></textarea>
 
      <style> 
@@ -170,15 +170,18 @@
    </div>
 <?php
 
-if(isset($_POST['enviar'])){
-   $data_hora = date('d/m/Y H:i');
-   $texto_diario_gestacao=$_POST['conteudo'];
-   
-   $id_mae=$_SESSION['id_mae'];
 
-   $salvar=('INSERT INTO registro_diario (texto_diario_gestacao, data_hora_diario_gestacao, id_mae) VALUES("'.$texto_diario_gestacao.'",now(), "'.$id_mae.'")');
-
+  if(isset($_POST['enviar'])){
+    
+    $titulo=$_POST['titulo'];
+    $_SESSION['titulo']=$titulo;
+    $data_hora = date('d/m/Y H:i');
+    $texto_diario_gestacao=$_POST['conteudo'];
    
+    $id_mae=$_SESSION['id_mae'];
+
+    $salvar=('INSERT INTO registro_diario (titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao, id_mae) VALUES("'.$titulo.'","'.$texto_diario_gestacao.'",now(), "'.$id_mae.'")');
+
    if (mysqli_query($link, $salvar)){
    echo "Salvo com sucesso" . $texto_diario_gestacao;
    
@@ -195,10 +198,7 @@ if(isset($_POST['enviar'])){
           </div>
           </div>
       <?php
-              }else if($id_mae == 0){
-                  header('Location: login_mae.php');
               
-          }
         ?>
 
 </main>
@@ -261,6 +261,13 @@ if(isset($_POST['enviar'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
+  <?php
+  }else{
+                  header('Location: ../index.php');
+              
+          }
+
+          ?>
 </body>
 
 </html>

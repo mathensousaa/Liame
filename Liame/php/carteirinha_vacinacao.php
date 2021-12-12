@@ -534,8 +534,8 @@ if(($id_mae != 0)){
   <script src="../assets/js/main.js"></script>
 </body>
   <?php
-  }else if($id_mae == 0){
-    header('Location: login_mae.php');
+  }else{
+    header('Location: ../index.php');
       
     }
 

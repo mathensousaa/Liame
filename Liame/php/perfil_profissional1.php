@@ -285,9 +285,11 @@ if(($id_profissional != 0)){
           echo "Erro ao excluir!";
       }
     }
-  }else($id_mae == 0){
-      header ('Location: login_profissional.php')
-  }
+  }else{
+    header('Location: ../index.php');
+      
+    }
+
 
     ?>
 

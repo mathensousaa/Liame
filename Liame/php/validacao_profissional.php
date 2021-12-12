@@ -77,16 +77,10 @@
             </div>
           </div>
         <?php
-
-  }else if($id_adm == 0){
+  }else{
     header('Location: ../index.php');
       
-  }
+    }
 
-  else{
-    
-    header("Location:../index.php");
-
-  }
   ?>
   
