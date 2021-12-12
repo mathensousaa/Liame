@@ -555,3 +555,47 @@ html, body {
   height: 500 px;
   width: 600px;
 }
+
+#titulos a.titulo-diario {
+  position: relative;
+  display: block;
+  background: var(--light);
+  border: 1px solid var(--medium);
+  border-radius: 10px;
+  padding: 20px;
+  color: #000;
+  text-decoration: none;
+  transition: all ease-out 0.2s;
+  z-index: 9999;
+  height: 190px;
+}
+
+#titulos a.titulo-diario:hover {
+  background: #fff;
+  transform: scale(1.02 );
+  border: 1px solid var(--dark);
+}
+
+.titulo-diario .preview {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.titulo-diario .data {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+}
+
+#titulos .titulo-diario .button-primary {
+  font-size: 12px;
+  padding: 5px 15px;
+  background: var(--light);
+  color: var(--dark);
+  border: 2px solid var(--dark);
+}
+
+#titulos .titulo-diario .button-primary:hover {
+  border: 2px solid var(--primary);
+  background: #fff;
+}

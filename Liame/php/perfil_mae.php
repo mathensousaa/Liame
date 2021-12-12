@@ -6,6 +6,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+	<link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
+
+	<!--favicon-->
+	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+
+	<!--unicons (icones que serão usados no site)-->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+
+
+<body>
 <?php
 session_start();
 include ('conexao.php');
@@ -28,20 +43,6 @@ if(isset($_SESSION['id_mae'])){
 
 if(($id_mae != 0)){
 ?>
-	<!-- CSS -->
-	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
-	<link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
-	<link rel="stylesheet" href="../assets/css/main.css">
-
-	<!--favicon-->
-	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
-
-	<!--unicons (icones que serão usados no site)-->
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-</head>
-
-<body>
 <main>
 <div class="container text-center">
 	<div class="pt-3">
@@ -60,6 +61,7 @@ if(($id_mae != 0)){
 		</div>
 		<div class="pt-5" id="dados-pessoais">
 			<div class="row">
+        <form action=""></form>
 				<h2 class="">Dados Pessoais</h2>
 			</div>
 			<div class="row">
