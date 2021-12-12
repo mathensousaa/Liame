@@ -206,35 +206,32 @@
 
 
 				<div class="col-lg-3 col-md-4 col-sm-12">
-                  <div class="card">
-                    <div class="card-img-top text-center">
-                        <?php
-                          if ($foto_profissional != ""){
-						//caso o profissional tiver foto de perfil aparece aqui, tem esse código aqui que eu peguei do thiago mas não consegui usar
-						//'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');
-                            ?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/'.$dados_usuario['imagem'].'" alt=""><?php
-                          }else{
-						// caso não tiver aparece essa padão
-                            ?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
-                          }
-                        ?>
-                    </div>
-                    <hr>
-                    <div class="card-body">
-                      <?php
-                        echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
-                        echo utf8_encode ('<b>Especialidade: </b>' .$especialidade_profissional.'<br>');	
-                        echo utf8_encode ('<b>Estado: </b>' .$estado_profissional.'<br>');		
-                        echo utf8_encode ('<b>Cidade: </b>' .$cidade_profissional.'<br>');
-                        echo utf8_encode ('<b>CEP: </b>' .$cep_profissional.'<br>');	
-                      ?>
-                    </div>
-                    <div class="card-footer text-center">
-                      <a href="exibe_profissional?id=<?php echo $id_profissional ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
-                    </div>
-
-
-				
+                  	<div class="card" id="profissional">
+							<div class="card-img-top text-center">
+								<?php
+								if ($foto_profissional != ""){
+								//caso o profissional tiver foto de perfil aparece aqui, tem esse código aqui que eu peguei do thiago mas não consegui usar
+								//'<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">');
+									?><img id="img_exibe" class="img-fluid" src="../assets/img_perfil/profissional/'.$dados_usuario['imagem'].'" alt=""><?php
+								}else{
+								// caso não tiver aparece essa padão
+									?><img id="img_exibe" class="img-fluid" src="../assets/img/icone-especialista.png" alt=""><?php
+								}
+								?>
+							</div>
+							<hr>
+							<div class="card-body">
+								<?php
+									echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
+									echo utf8_encode ('<b>Especialidade: </b>' .$especialidade_profissional.'<br>');	
+									echo utf8_encode ('<b>Estado: </b>' .$estado_profissional.'<br>');		
+									echo utf8_encode ('<b>Cidade: </b>' .$cidade_profissional.'<br>');
+									echo utf8_encode ('<b>CEP: </b>' .$cep_profissional.'<br>');	
+								?>
+							</div>
+							<div class=" text-center pt-3">
+								<a href="exibe_profissional?id=<?php echo $id_profissional ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
+							</div>
 					</div>
 				</div>
 			<?php
