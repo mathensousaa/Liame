@@ -307,12 +307,6 @@ if(($id_profissional != 0)){
     <script>
       bootstrapValidate('#telefone-profissional' , 'required:Preencha este campo')
       bootstrapValidate('#ddd-profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#canal-profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#Whatsapp_profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#instagram_profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#linkedin_profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#facebook_profissional' , 'required:Preencha este campo')
-      bootstrapValidate('#telegram_profissional' , 'required:Preencha este campo')
       bootstrapValidate('#CEP_profissional' , 'required:Preencha este campo')
       bootstrapValidate('#logradouro_profissional' , 'required:Preencha este campo')
       bootstrapValidate('#cidade_profissional' , 'required:Preencha este campo')
