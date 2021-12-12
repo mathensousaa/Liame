@@ -513,8 +513,6 @@ html, body {
 }
 
 #avatar-container .botao-upload {
-  position: absolute;
-  top: 0; left: 0;
   height: 100%;
   width: 100%;
   }
@@ -609,4 +607,9 @@ html, body {
   color: #000;
   text-decoration: none;
   transition: all ease-out 0.2s;
+}
+
+#dados-pessoais .dados{
+  border: 1px solid var(--medium);
+  border-radius: 10px;
 }

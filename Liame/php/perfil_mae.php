@@ -44,73 +44,84 @@ if(isset($_SESSION['id_mae'])){
 if(($id_mae != 0)){
 ?>
 <main>
-<div class="container text-center">
-	<div class="pt-3">
-      <div class="d-flex justify-content-center" id="avatar-container">
-        <img class="imagem-perfil" src="../assets/img/user.svg">
-        <div class="botao-upload">
-          <i class="uil uil-arrow-up" aria-hidden="true"></i>
-        </div>
-        <input type="file" accept=".png, .jpg, .jpeg" name="avatar" id="avatar-input" class="avatar-input">
-      </div>
-      <h6>
-      <?php
-        echo $_SESSION['nome_mae'];
-      ?>
-      </h6>
+<form name="confgconta" action="#" method="POST">
+	<div class="container">
+		<div class="pt-3">
+		<div class="d-flex justify-content-center" id="avatar-container">
+			<img class="imagem-mae" src="../assets/img/user.svg">
+			<div class="botao-upload">
+				<i class="uil uil-arrow-up" aria-hidden="true"></i>
+			</div>
+			<input type="file" accept=".png, .jpg, .jpeg" name="imagem-mae" id="avatar-input" class="avatar-input">
 		</div>
-		<div class="pt-5" id="dados-pessoais">
-			<div class="row">
-        <form action=""></form>
+		<h6 class="text-center">
+		<?php
+			echo $_SESSION['nome_mae'];
+		?>
+		</h6>
+		</div>
+	</div>
+	<div class="container">
+		<div class="pt-4" id="dados-pessoais">
+			<div class="row text-center">
 				<h2 class="">Dados Pessoais</h2>
 			</div>
-			<div class="row">
-				<div class="col-6" >
-					<p>
-						<?php
-							echo $_SESSION['nome_mae'];
-						?>
-					</p>
+			<div class="row d-flex justify-content-center">
+				<div class="col-4">
+					<label for="nome-mae" class="form-label">Nome</label>
+					<input type="text" class="form-control" name="nome-mae" id="nome-mae" placeholder="<?php echo $_SESSION['nome_mae']; ?>">
 				</div>
-				<div class="col-6" >
-					<p>
-						<?php
-							echo $_SESSION['email_mae'];
-						?>
-					</p>
+				<div class="col-4">
+					<label for="email-mae" class="form-label">E-mail</label>
+					<input type="text" class="form-control" name="email-mae" id="email-mae" placeholder="<?php echo $_SESSION['email_mae']; ?>">
+				</div>
+			</div>
+			<div class="row">
+				<div class="d-flex justify-content-center">
+					<input class="btn btn-primary button button-primary" type="submit" name= "editar" value="Salvar">
 				</div>
 			</div>
 		</div>
+	</div>
+</form>
+
+<div class="container pt-3">
+	<div class="row text-center">
+		<h2 class="">Dados do bebê</h2>
+	</div>
+	<div class="row d-flex justify-content-center">
+		<div class="col-4">
+			<label for="nome-bebe" class="form-label">Nome do seu filho</label>
+			<input type="text" class="form-control" name="nome-bebe" id="nome-bebe" placeholder="<?php /*echo $_SESSION['nome_bebe']; */?>">
+		</div>
+		<div class="col-4">
+			
+		</div>
+	</div>
 </div>
-<form name="confgconta" action="#" method="POST">
-	<h1>Informações da Mãe </h1>
 
-    <?php
+<?php
+if(isset ($_POST['editar'])){
+    $foto_perfil_mae = $_POST['imagem-mae'];
+    $alterar_nome_mae = $_POST ['nome-mae'];
+    $alterar_email_mae = $_POST['email-mae'];
+	
+    $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae'");
 
-    $foto_perfil_mae = null;
-    ?>
+//echo $sql;
 
+	if(mysqli_query($link,$query)){
+		echo "Atualizado com sucesso!";
+	}else{
+		echo "Erro ao gravar!";
+	}
+}
+?>
 
-    <br>
-       <!-- Nome:
-    <input type="text" name ="nome_profissional" placeholder="Nome do usuario..."><br>
-        Email:
-         <input type="text" name ="email_profissional" placeholder="Email do usuario..."><br>-->
-
-        Foto de Perfil:
-        <input type="file" name ="foto_perfil_mae" accept="image/*"><br>
-        <input type="submit" name= "submit" value="Atualizar">
-
-			<h1> Informações do Bebê</h1>
-        	Nome do Bebê
-        	<input type="text" name ="nome_bebe" placeholder="Insira o nome do seu filho(a) ..."><br>
-
-    <input type="submit" name= "submit2" value="Salvar">
 
 
 
 <?php
-echo $foto_perfil_mae;
 $id=$_SESSION['id_mae'];
 if(isset($_POST['submit'])){
 
@@ -212,7 +223,7 @@ if (isset($_POST['excluir'])){
               var reader = new FileReader();
 
               reader.onload = function (e) {
-                  $('.imagem-perfil').attr('src', e.target.result);
+                  $('.imagem-mae').attr('src', e.target.result);
               }
 
               reader.readAsDataURL(input.files[0]);
