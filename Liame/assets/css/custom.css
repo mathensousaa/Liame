@@ -470,8 +470,35 @@ html, body {
   vertical-align: middle;
 }
 
+/* ICONE PERFIL NAVBAR */
 
+/*#perfil-dropdown {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
+#perfil-dropdown img {
+  height: 100%;
+  width: 150%;
+  transition: all .3s ease;
+}*/
+
+#icone-perfil .dropdown-item {
+  font-weight: 500;
+}
+
+#icone-perfil .dropdown-item:hover {
+  background: var(--primary-light);
+  color: #FFF;
+  transition: .3s;
+}
+
+#icone-perfil i {
+  font-weight: 500;
+}
 
 /* PERFIL MAE */
 

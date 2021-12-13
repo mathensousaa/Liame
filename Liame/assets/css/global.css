@@ -34,6 +34,7 @@ body {
   background-color: var(--primary-light);
   border-color: var(--primary-light);
   color: #FFF;
+  transition: 0.2s;
 }
 
 .button-tertiary {
@@ -45,6 +46,7 @@ body {
   background-color: var(--tertiary-medium);
   border-color: var(--tertiary-medium);
   color: #fff;
+  transition: 0.2s;
 }
 
 .button-primary-outline {
@@ -56,6 +58,7 @@ body {
   background-color: var(--primary-light);
   border-color: var(--primary-light);
   color: #FFF;
+  transition: 0.2s;
 }
 a {
   color: var(--tertiary);
