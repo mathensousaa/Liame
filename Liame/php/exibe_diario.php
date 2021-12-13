@@ -49,7 +49,7 @@ if(($id_mae != 0)){
   $strSQL = "SELECT titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_mae = '$id_mae' ORDER BY  data_hora_diario_gestacao DESC";
   $r = mysqli_query($link,$strSQL); 
   $e= $r->fetch_array();
-  $titulo_exibir = $e['titulo_diario_gestacao'];
+  
   /*
   
   while($row = mysqli_fetch_array($r)){
@@ -87,6 +87,7 @@ if(($id_mae != 0)){
 
 <main>
   <?php
+  mysqli_data_seek($r, '0');
   while($row = mysqli_fetch_array($r)){
     
     ?>
@@ -105,10 +106,7 @@ if(($id_mae != 0)){
    
                 
               </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
+              
               
               <a href="exibe_diario2?titulo=<?php echo $titulo ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
           
