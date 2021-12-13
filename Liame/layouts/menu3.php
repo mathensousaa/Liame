@@ -8,7 +8,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
               <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
             </a>
 
@@ -19,13 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
+                  <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="procura_profissional.php">Buscar especialistas</a>
+                  <a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="diario_bordo.php">Diário de Bordo</a>
+                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
                 </li>
               </ul>
               <!--entrar/cadastro-->
@@ -36,20 +36,20 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li>
-                      <a class="dropdown-item" href="exibe_diario.php">
+                      <a class="dropdown-item" href="../php/exibe_diario.php">
                         <i class="uil uil-diary"></i>
                         Minhas anotações
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="perfil_mae.php">
+                      <a class="dropdown-item" href="../php/perfil_mae.php">
                         <i class="uil uil-user-square"></i>
                         Meu perfil
                       </a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                      <a class="dropdown-item" href="logout_mae.php">
+                      <a class="dropdown-item" href="../php/logout_mae.php">
                         <i class="uil uil-signout"></i>
                         Sair
                       </a>
@@ -72,7 +72,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
               <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
             </a>
 
@@ -83,13 +83,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
+                  <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="procura_profissional.php">Buscar especialistas</a>
+                  <a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="diario_bordo.php">Diário de Bordo</a>
+                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
                 </li>
               </ul>
               <!--entrar/cadastro-->
@@ -100,14 +100,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="perfil_profissional1.php">
+                        <a class="dropdown-item" href="../php/perfil_profissional1.php">
                           <i class="uil uil-user-square"></i>
                           Meu perfil
                         </a>
                       </li>
                       <li><hr class="dropdown-divider"></li>
                       <li>
-                        <a class="dropdown-item" href="logout_mae.php">
+                        <a class="dropdown-item" href="../php/logout_mae.php">
                           <i class="uil uil-signout"></i>
                           Sair
                         </a>
@@ -129,7 +129,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
               <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
             </a>
 
@@ -140,13 +140,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
+                  <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="procura_profissional.php">Buscar especialistas</a>
+                  <a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="diario_bordo.php">Diário de Bordo</a>
+                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
                 </li>
               </ul>
               <!--entrar/cadastro-->
@@ -157,14 +157,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="perfil_mae.php">
+                        <a class="dropdown-item" href="../php/perfil_mae.php">
                         <i class="uil uil-file-check-alt"></i>
                           Avaliações Pendentes
                         </a>
                       </li>
                       <li><hr class="dropdown-divider"></li>
                       <li>
-                        <a class="dropdown-item" href="logout_mae.php">
+                        <a class="dropdown-item" href="../php/logout_mae.php">
                           <i class="uil uil-signout"></i>
                           Sair
                         </a>
@@ -186,7 +186,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
               <img class="img-fluid" id="logo" src="assets/img/logo_liame.png" alt="Liame">
             </a>
 
@@ -197,13 +197,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
+                  <a class="nav-link active" href="index.php">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="procura_profissional.php">Buscar especialistas</a>
+                  <a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="diario_bordo.php">Diário de Bordo</a>
+                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
                 </li>
               </ul>
               <!--entrar/cadastro-->
@@ -225,7 +225,7 @@
                           <div class="container my-4">
                             <div class="row">
                               <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="login_profissional.php" class="destaque">
+                                <a href="../php/login_profissional.php" class="destaque">
                                   <div class="img-container mb-3">
                                     <img class="img-fluid" src="assets/img/Medico_home.png" alt="">
                                   </div>
@@ -235,7 +235,7 @@
                                 </a>
                               </div>
                               <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="login_mae.php" class="destaque">
+                                <a href="../php/login_mae.php" class="destaque">
                                   <div class="img-container mb-3">
                                     <img class="img-fluid" src="assets/img/Vaccine.png" alt="">
                                   </div>

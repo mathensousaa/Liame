@@ -53,7 +53,7 @@ include 'conexao.php';
 <body>
 	<?php
 
-include_once 'menu2.php';
+include_once 'menu.php';
 Menu($id_mae, $id_profissional, $id_adm);
 
 ?>

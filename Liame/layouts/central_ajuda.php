@@ -1,6 +1,29 @@
 <!doctype html>
 <html lang="pt-br">
 
+<?php
+session_start();
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+  $id_profissional = 0;
+  $id_adm = 0;
+}
+else if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
+  $id_mae = 0;
+  $id_adm = 0;
+}
+else if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+  $id_profissional = 0;
+  $id_mae = 0;
+}
+else{
+  $id_adm=0;
+  $id_profissional = 0;
+  $id_mae = 0;
+}
+?>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -22,83 +45,13 @@
 </head>
 
 <body>
+  <?php
+  include_once 'menu3.php';
+  Menu($id_mae, $id_profissional, $id_adm);
+  
+  ?>
   <main>
-    <!--navbar-->
-    <div id="header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-          <div class="container-fluid">
-            <a href="../index.php" class="navbar-brand">
-              <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
-            </a>
-
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="../index.php">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../php/procura_profissional.php">Buscar especialistas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../php/diario_bordo.php">Diário de Bordo</a>
-                </li>
-              </ul>
-              <!--entrar/cadastro-->
-              <div id="login" class="nav navbar-nav">
-                <div class="nav-item">
-                  <button type="button" class="button button-primary btn btn-outline-primarynav-item " data-bs-toggle="modal" data-bs-target="#modal-login">
-                    Entrar
-                  </button>
-                  </a>
-                  <!-- Modal -->
-                  <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Quem você é?</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body container-fluid block">
-                          <div class="container my-4">
-                            <div class="row">
-                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="../php/login_profissional.php" class="destaque">
-                                  <div class="img-container mb-3">
-                                    <img class="img-fluid" src="../assets/img/Medico_home.png" alt="">
-                                  </div>
-                                  <div class="text-container">
-                                    <h5>Especialista</h5>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                                <a href="../php/login_mae.php" class="destaque">
-                                  <div class="img-container mb-3">
-                                    <img class="img-fluid" src="../assets/img/Vaccine.png" alt="">
-                                  </div>
-                                  <div class="text-container">
-                                    <h5>Mãe</h5>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </nav>
-      </div>
-
-    </div>
+   
     <!--//navbar-->
 
   <main class="">
@@ -177,17 +130,17 @@
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Especialistas</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="central_ajuda.html">Central de ajuda</a></li>
-                <li class=""><a href="termos_uso_profissional.html">Termos de uso de profissional</a></li>
+                <li class=""><a href="central_ajuda.php">Central de ajuda</a></li>
+                <li class=""><a href="termos_uso_profissional.php">Termos de uso de profissional</a></li>
                 <li class=""></li><a href="../index.php">Página Inicial</a>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Serviços</h5>
               <ul class="list-unstyled">
-                <li class="list-item"><a href="quem_somos.html">Quem somos</a></li>
-                <li class=""><a href="Contatos.html">Contato</a></li>
-                <li class=""><a href="termos_condicoes_uso.html">Termos e condições de uso</a></li>
+                <li class="list-item"><a href="quem_somos.php">Quem somos</a></li>
+                <li class=""><a href="Contatos.php">Contato</a></li>
+                <li class=""><a href="termos_condicoes_uso.php">Termos e condições de uso</a></li>
               </ul>
             </div>
           </div>
