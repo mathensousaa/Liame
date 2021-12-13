@@ -260,7 +260,6 @@
             <div> 
                 <a href="../index.php" class="nav_logo"> 
                     <img src="../assets/img/logo-liame-branca.png" alt=""> 
-                    <span class="nav_logo-name">Liame</span> 
                 </a>
                 <div class="nav_list">
                     <a href="diario_bordo.php" class="nav_link">
@@ -353,7 +352,7 @@
             $alterar_nome_mae = $_POST ['nome-mae'];
             $alterar_email_mae = $_POST['email-mae'];
             
-            $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae'");
+            $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae' where id_mae = $id_mae'");
 
           //echo $sql;
 
@@ -456,7 +455,7 @@
                 headerpd = document.getElementById(headerId)
 
                 // Validate that all variables exist
-                if(toggle && nav && bodypd && headerpd){
+                if(toggle && nav && bodypd && headerpd  ){
                     toggle.addEventListener('click', ()=>{
                     // show navbar
                     nav.classList.toggle('show')

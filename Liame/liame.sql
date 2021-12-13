@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 13-Dez-2021 às 09:04
+-- Tempo de geração: 13-Dez-2021 às 17:03
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
   KEY `id_tipo_logradouro` (`id_tipo_logradouro`),
   KEY `id_estado` (`id_estado`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `endereco_profissional`
@@ -93,7 +93,8 @@ INSERT INTO `endereco_profissional` (`cep`, `id_tipo_logradouro`, `logradouro`, 
 ('07500000', '7', 'Manuel Fernadno Sales', '', '1', 'Jardim Eldorado', '20', '', 1, 1),
 ('07500000', '10', 'Professora Ana Maria', '', '20', 'Vila Amelia', '30', '', 2, 2),
 ('04582115', '9', 'Manuel Fernadno Sales', '', '7', 'Jardim Eldorado', '820', '', 3, 3),
-('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 4);
+('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 4),
+('', '4', 'Presidente Vargas', '', '26', '', '', '', 5, 11);
 
 -- --------------------------------------------------------
 
@@ -222,20 +223,14 @@ CREATE TABLE IF NOT EXISTS `mae` (
   KEY `id_bebe` (`id_bebe`),
   KEY `id_diario_gestacao` (`id_diario_gestacao`),
   KEY `id_diario_crianca` (`id_diario_crianca`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `mae`
 --
 
 INSERT INTO `mae` (`id_mae`, `nome_mae`, `email_mae`, `senha_mae`, `foto_perfil_mae`, `id_bebe`, `id_diario_gestacao`, `id_diario_crianca`) VALUES
-(1, 'Agatha Amaral', 'agatha.amaral@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(2, 'Vanessa Ramario', 'vanessa.ramario@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(3, 'Jessica Santos', 'jessica.santos@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(4, 'Gloria Damasco', 'gloria.damasco@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(5, 'Domingas Osvaldo', 'domingas.osvaldo@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(8, 'Rosemeire Soares', 'rosemeire@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL),
-(9, 'ola', 'ola@ola.com', 'c4efd5020cb49b9d3257ffa0fbccc0ae', NULL, NULL, NULL, NULL);
+(12, 'Isabel', 'isa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -257,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `profissional` (
   PRIMARY KEY (`id_profissional`),
   KEY `id_endereco` (`id_endereco`),
   KEY `id_telefone` (`id_telefone`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `profissional`
@@ -288,7 +283,15 @@ CREATE TABLE IF NOT EXISTS `rede_social_profissional` (
   `id_profissional` int(6) DEFAULT NULL,
   PRIMARY KEY (`id_rede_social`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `rede_social_profissional`
+--
+
+INSERT INTO `rede_social_profissional` (`id_rede_social`, `youtube_profissional`, `whatsapp_profissional`, `instagram_profissional`, `linkedin_profissional`, `facebook_profissional`, `telegram_profissional`, `id_profissional`) VALUES
+(1, 'a', '', '', '', '', '', 11),
+(2, 'a', '', '', '', '', '', 11);
 
 -- --------------------------------------------------------
 
@@ -305,19 +308,15 @@ CREATE TABLE IF NOT EXISTS `registro_diario` (
   `id_mae` int(11) NOT NULL,
   PRIMARY KEY (`id_registro_diario_gestacao`),
   KEY `id_mae` (`id_mae`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `registro_diario`
 --
 
 INSERT INTO `registro_diario` (`id_registro_diario_gestacao`, `titulo_diario_gestacao`, `texto_diario_gestacao`, `data_hora_diario_gestacao`, `id_mae`) VALUES
-(1, '', '<p>Meu filho&nbsp;</p>', '2021-12-07 14:23:06', 0),
-(2, '', '<p>Meu filho&nbsp;</p>', '2021-12-07 14:24:25', 0),
-(3, '', '<p>Meu filho&nbsp;</p>', '2021-12-07 14:25:03', 0),
-(4, '', '<p>Meu filho&nbsp;</p>', '2021-12-07 14:26:06', 0),
-(5, '', '<p>hoje eu chorei</p>', '2021-12-07 14:27:59', 0),
-(6, '', '<p>dasdnasdnajdsa</p>', '2021-12-07 14:50:05', 1);
+(8, '5 meses do Robertinho', '<p>Hoje o dia foi incrivel, a festa estava maravilhosa me matei</p>', '2021-12-13 09:39:01', 10),
+(9, 'Primeiros passos do Zyan', 'Ontem estavamos comnendo comida vegana e meu filho comeÃ§ou a andar para tirar aquela ruim da minha boca', '2021-12-13 11:48:11', 11);
 
 -- --------------------------------------------------------
 
@@ -333,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
   `id_profissional` int(11) NOT NULL,
   PRIMARY KEY (`id_telefone`),
   KEY `id_profissional` (`id_profissional`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `telefone_profissional`
@@ -341,7 +340,8 @@ CREATE TABLE IF NOT EXISTS `telefone_profissional` (
 
 INSERT INTO `telefone_profissional` (`id_telefone`, `ddd_telefone_profissional`, `numero_telefone_profissional`, `id_profissional`) VALUES
 (1, '11', '3125-6584', 0),
-(2, '12', '4568-6589', 0);
+(2, '12', '4568-6589', 0),
+(3, '', '', 11);
 
 -- --------------------------------------------------------
 

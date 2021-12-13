@@ -25,8 +25,6 @@
 		:root {
 			--header-height: 3rem;
 			--nav-width: 68px;
-			--first-color: #4723D9;
-			--first-color-light: #AFA5D9;
 			--white-color: #F7F6FB;
 			--normal-font-size: 1rem;
 			--z-fixed: 100
@@ -67,7 +65,7 @@
 		}
 
 		.header_toggle {
-			color: var(--first-color);
+			color: var(--tertiary);
 			font-size: 1.5rem;
 			cursor: pointer
 		}
@@ -91,7 +89,7 @@
 			left: -30%;
 			width: var(--nav-width);
 			height: 100vh;
-			background-color: var(--first-color);
+			background-color: var(--tertiary);
 			padding: .5rem 1rem 0 0;
 			transition: .5s;
 			z-index: var(--z-fixed)
@@ -134,7 +132,7 @@
 
 		.nav_link {
 			position: relative;
-			color: var(--first-color-light);
+			color: var(--tertiary-light);
 			margin-bottom: 1.5rem;
 			transition: .3s
 		}
@@ -216,39 +214,30 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
-                <a href="#" class="nav_logo"> 
+			<a href="../index.php" class="nav_logo"> 
                     <img src="../assets/img/logo-liame-branca.png" alt=""> 
-                    <span class="nav_logo-name">Liame</span> 
                 </a>
                 <div class="nav_list">
-                    <a href="#" class="nav_link active">
+                    <a href="diario_bordo.php" class="nav_link">
                         <i class='uil uil-file-plus nav_icon'></i>
                         <span class="nav_name">Nova anotação</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="exibe_diario.php" class="nav_link">
                         <i class='uil uil-diary nav_icon'></i>
                         <span class="nav_name">Minhas anotações</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="carteirinha_vacinacao.php" class="nav_link">
                         <i class='uil uil-syringe nav_icon'></i>
                         <span class="nav_name">Vacinas</span> 
                     </a> 
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-bookmark nav_icon'></i>
+                    <a href="perfil_mae.php" class="nav_link active">
+                        <i class='uil uil-user-circle nav_icon'></i>
                         <span class="nav_name">Meu Perfil</span>
                     </a> 
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-folder nav_icon'></i>
-                        <span class="nav_name">Files</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
-                        <span class="nav_name">Stats</span> 
-                    </a>
                 </div>
             </div> 
-            <a href="#" class="nav_link"> 
-                <i class='bx bx-log-out nav_icon'></i>
+            <a href="logout_mae.php" class="nav_link"> 
+                <i class='uil uil-signout nav_icon'></i>
                 <span class="nav_name">Sair</span>
             </a>
         </nav>
