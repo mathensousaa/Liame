@@ -48,6 +48,7 @@ if(($id_mae != 0)){
 	<div class="container">
 		<div class="pt-3">
 		<div class="d-flex justify-content-center" id="avatar-container">
+			
 			<img class="imagem-mae" src="../assets/img/user.svg">
 			<div class="botao-upload">
 				<i class="uil uil-arrow-up" aria-hidden="true"></i>
@@ -102,11 +103,13 @@ if(($id_mae != 0)){
 
 <?php
 if(isset ($_POST['editar'])){
+	
     $foto_perfil_mae = $_POST['imagem-mae'];
+	$foto_perfil=$_SESSION['foto_perfil_mae'];
     $alterar_nome_mae = $_POST ['nome-mae'];
     $alterar_email_mae = $_POST['email-mae'];
 	
-    $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae'");
+    $query = ("UPDATE mae SET foto_perfil_mae ='$foto_perfil_mae', nome_mae='$alterar_nome_mae',email_mae='$alterar_email_mae' WHERE id_mae='$id_mae'");
 
 //echo $sql;
 
@@ -298,11 +301,8 @@ if (isset($_POST['excluir'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 14563b6998ec584e0fef75232dff4b6ef6c9bf60
 <?php
 }else{
   header('Location: login_mae.php');
