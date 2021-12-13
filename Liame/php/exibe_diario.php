@@ -86,34 +86,29 @@ if(($id_mae != 0)){
 ?>
 
 <main>
+  <div class="container" id="titulos">
+    <div class="row pb-2">
   <?php
   mysqli_data_seek($r, '0');
   while($row = mysqli_fetch_array($r)){
-    
     ?>
-    <div class="container" id="titulos">
-      <div class="row pb-2">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
           <a class="titulo-diario">
             <div class="text-container">
               <h6 class="pb-0">
                 <!-- puxar titulo aqui -->
                 <?php
-  
                   echo $row['titulo_diario_gestacao'] ;
                   $titulo=$row['titulo_diario_gestacao'];
-                  ?>
-   
-                
+                ?>
               </h6>
-              
-              
-              <a href="exibe_diario2?titulo=<?php echo $titulo ?>" class="button button-tertiary btn btn-primary">Ver mais</a>
-          
+              <a href="exibe_diario2?titulo=<?php echo $titulo ?>" class="button button-tertiary btn btn-primary">
+                Ver mais
+              </a>
               <p class=data>
                 <?php
-               echo $row['data_hora_diario_gestacao'];
-               ?>
+                  echo $row['data_hora_diario_gestacao'];
+                ?>
               </p>
             </div>
           </a>
@@ -142,71 +137,7 @@ if(($id_mae != 0)){
             </div>
           </a>
         </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
-          <a class="titulo-diario">
-            <div class="text-container">
-              <h6 class="pb-0">
-                
-                Primeiros passos do Enzo
-              </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
-              <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
-          <a class="titulo-diario">
-            <div class="text-container">
-              <h6 class="pb-0">
-                
-                Primeiros passos do Enzo
-              </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
-              <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
-          <a class="titulo-diario">
-            <div class="text-container">
-              <h6 class="pb-0">
-               
-                Primeiros passos do Enzo
-              </h6>
-              <p class="preview">
-                Ontem o enzo estava na sala brincando com seus
-                ...
-              </p>
-              <form action="">
-                <input type="submit" name="ver mais" value="Ver mais" class="btn btn-primary button button-primary">
-              </form>
-              <p class=data>
-                Sexta-feira, 03 de dezembro de 2021
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>-->
+    -->
   </main>
   <?php
 }else{

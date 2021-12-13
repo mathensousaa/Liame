@@ -107,7 +107,7 @@
                       </li>
                       <li><hr class="dropdown-divider"></li>
                       <li>
-                        <a class="dropdown-item" href="php/logout_mae.php">
+                        <a class="dropdown-item" href="php/logout_profissional.php">
                           <i class="uil uil-signout"></i>
                           Sair
                         </a>
@@ -164,7 +164,7 @@
                       </li>
                       <li><hr class="dropdown-divider"></li>
                       <li>
-                        <a class="dropdown-item" href="php/logout_mae.php">
+                        <a class="dropdown-item" href="php/logout_adm.php">
                           <i class="uil uil-signout"></i>
                           Sair
                         </a>
