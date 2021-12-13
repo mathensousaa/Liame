@@ -50,7 +50,7 @@
                         //exibindo as variaveis
                                 echo utf8_encode ('<b>Nome: </b>' .$nome_profissional.'<br>');
                                 echo utf8_encode ('<b>Email: </b>' .$email_profissional.'<br>');
-                                echo utf8_encode ('<b>Documentação: </b>' .$documentacao_profissional.'<br>');
+                                echo utf8_encode ('<b>Documento: </b>' .$documentacao_profissional.'<br>');
                         // fazendo o link para ele ser aprovado ou reprovado
                                 echo "<a href=aprovar_profissional.php?id=".$vetor['id_profissional'].">Aprovar</a><br>";
                                 echo "<a href=reprovar_profissional.php?id=".$vetor['id_profissional'].">Reprovar</a>";

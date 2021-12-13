@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 10-Dez-2021 às 17:41
+-- Tempo de geração: 13-Dez-2021 às 09:04
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.3.21
 
@@ -36,14 +36,15 @@ CREATE TABLE IF NOT EXISTS `adm` (
   `email_adm` varchar(100) DEFAULT NULL,
   `senha_adm` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id_adm`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `adm`
 --
 
 INSERT INTO `adm` (`id_adm`, `nome_adm`, `email_adm`, `senha_adm`) VALUES
-(1, 'Milena Soares', 'soares@gmail.com', '1b52a583020088fad8cc06fd0e67910e');
+(1, 'Milena Soares', 'soares@gmail.com', '1b52a583020088fad8cc06fd0e67910e'),
+(2, 'adm geral', 'adm@gmail.com', '25d55ad283aa400af464c76d713c07ad');
 
 -- --------------------------------------------------------
 
@@ -89,10 +90,10 @@ CREATE TABLE IF NOT EXISTS `endereco_profissional` (
 --
 
 INSERT INTO `endereco_profissional` (`cep`, `id_tipo_logradouro`, `logradouro`, `cidade`, `id_estado`, `bairro`, `numero_endereco`, `descricao_endereco`, `id_endereco`, `id_profissional`) VALUES
-('07500000', '7', 'Manuel Fernadno Sales', '', '1', 'Jardim Eldorado', '20', '', 1, 0),
-('07500000', '10', 'Professora Ana Maria', '', '20', 'Vila Amelia', '30', '', 2, 0),
-('04582115', '9', 'Manuel Fernadno Sales', '', '7', 'Jardim Eldorado', '820', '', 3, 0),
-('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 0);
+('07500000', '7', 'Manuel Fernadno Sales', '', '1', 'Jardim Eldorado', '20', '', 1, 1),
+('07500000', '10', 'Professora Ana Maria', '', '20', 'Vila Amelia', '30', '', 2, 2),
+('04582115', '9', 'Manuel Fernadno Sales', '', '7', 'Jardim Eldorado', '820', '', 3, 3),
+('14578965', '8', 'Damasco Ferreira', '', '1', 'Vila Guilherme', '5045', '', 4, 4);
 
 -- --------------------------------------------------------
 
@@ -264,11 +265,10 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 
 INSERT INTO `profissional` (`nome_profissional`, `email_profissional`, `senha_profissional`, `foto_perfil_profissional`, `id_profissional`, `id_telefone`, `id_endereco`, `documentacao_validacao_profissional`, `status_validacao_profissional`) VALUES
 ('Carlos Alberto', 'carlos.alberto@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 1, 1, '', 1),
-('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, '', 1),
+('Amanda Barbosa', 'amanda.barbosa@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 2, 3, 4, 'documentacao_amanda', 0),
 ('Derick Domingues', 'derick.domingues@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 3, 1, 2, '', 1),
 ('Sophia Ribeiro', 'sophia.ribeiro@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 4, 1, 4, '', 1),
-('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, '', 1),
-('lolo', 'lolo@gmail.com', 'd6581d542c7eaf801284f084478b5fcc', NULL, 10, NULL, NULL, NULL, 0);
+('Roberto Santana', 'roberto.santana@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 5, 2, 3, 'documentacao_roberto', 0);
 
 -- --------------------------------------------------------
 

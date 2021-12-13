@@ -28,38 +28,24 @@
     include ('conexao.php');
     $id_profissional = $_GET['id'];
 
-    $query ="SELECT * FROM profissional WHERE id_profissional = '$id_profissional'";
-    $dados = mysqli_query($link, $query);
+    $query_dados ="SELECT * FROM profissional WHERE id_profissional = '$id_profissional'";
+    $query_tel = "SELECT * FROM telefone_profissional WHERE id_profissional = '$id_profissional'";
+    $qurey_end = "SELECT * FROM endereco_profissional WHERE id_profissional = '$id_profissional'";
+    $qurey_red = "SELECT * FROM rede_social_profissional WHERE id_profissional = '$id_profissional'";
 
+    $dados = mysqli_query($link, $query_dados);
     while($row = mysqli_fetch_array($dados)){
     echo "<table>";
-    
-    echo "<td>" . $row['nome_profissional'] . "</td>";
-    echo "<td>" . $row['email_profissional'] . "</td>";
-    ?>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div class="col-6">
-              <img src="" alt="">
-          </div>
-          <div class="col-6">
-              <h5>
-                <?php
-                  $row['nome_profissional'];
-                ?>
-              </h5>
-          </div>
-        </div>
-        <div class="col-6">
-
-        </div>
-        
-      </div>
-    </div>
-    <?php
+    echo "<tr>Nome: " . $row['nome_profissional'] . "</tr><br>";
+    echo "<tr> Email: " . $row['email_profissional'] . "</tr><br>";
     }
+
+  //   $tel = mysqli_query($link, $query_tel);
+  //   while($row = mysqli_fetch_array($tel)){
+  //   echo "<table>";
+  //   echo "<tr>Telefone para contato: (" . $row['ddd_telefone_profissional'] . ") ".$row['numero_telefone_profissional']."</tr><br>";
+    
+  // }
     ?>
 
 
