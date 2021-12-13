@@ -181,7 +181,7 @@
 										WHERE esp.id_especialidade = '$buscarprofissional' AND est.id_estado = '$buscarestado'" );
 						  
 						$consulta = mysqli_query($link, $sql_busca);
-						if($consulta->num_rows > 0){
+						if($consulta && $consulta->num_rows > 0){
 						  while ($vetor = mysqli_fetch_array($consulta)){
 							$nome_profissional= $vetor['nome_profissional'];
 							$especialidade_profissional=$vetor['especialidade'];

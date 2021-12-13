@@ -1,5 +1,4 @@
-
-    <?php
+<?php
    /* echo "página do diário de bordo";
     if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
         session_start();
