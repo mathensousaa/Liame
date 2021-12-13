@@ -1,76 +1,30 @@
-<?php
-   /* echo "página do diário de bordo";
-    if (!isset($_SESSION)) {//Verificar se a sessão não já está aberta.
-        session_start();
-      }
-    
-    //check do the person logged in
-    if($_SESSION['email_mae']==NULL){
-        //haven't log in
-        echo "Você não está logado";
-    }else{
-        //Logged in
-        echo "Bem-vindo " . $_SESSION['email_mae'];*/
-        session_start();
-        include ('conexao.php');
-        if(isset($_SESSION['id_mae'])){
-          $id_mae = $_SESSION['id_mae'];
-        } 
-        else{
-          $id_mae = 0;
-          
-        } 
-        if(isset($_SESSION['id_profissional'])){
-          $id_profissional = $_SESSION['id_profissional'];
-          
-          $id_profissional = 0;
-        }
-        else{
-           $id_profissional = 0;
-        }
-        if(isset($_SESSION['id_adm'])){
-         $id_adm = $_SESSION['id_adm'];
-       
-       }else{
-         $id_adm=0;
-       }
-        
-        if(($id_mae != 0)){
-         
-        ?>
-
-
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Diario de bordo | Liame</title>
+	<title>Procura por profissional | Liame</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
-  <link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/owl/owl.carousel.min.css">
+	<link rel="stylesheet" href="../assets/css/owl/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 
-  <!--favicon-->
-  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
+	<!--favicon-->
+	<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-png">
 
-  <!--unicons (icones que serão usados no site)-->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-  <!-- tinymce -->
-
-   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  
-   <script>tinymce.init({selector:'textarea'});</script>
-
-   <style>
+	<!--unicons (icones que serão usados no site)-->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <style>
 		:root {
 			--header-height: 3rem;
 			--nav-width: 68px;
+			--first-color: #4723D9;
+			--first-color-light: #AFA5D9;
 			--white-color: #F7F6FB;
 			--normal-font-size: 1rem;
 			--z-fixed: 100
@@ -86,6 +40,7 @@
 			position: relative;
 			margin: var(--header-height) 0 0 0;
 			padding: 0 1rem;
+			font-family: var(--body-font);
 			font-size: var(--normal-font-size);
 			transition: .5s
 		}
@@ -110,7 +65,7 @@
 		}
 
 		.header_toggle {
-			color: var(--tertiary);
+			color: var(--first-color);
 			font-size: 1.5rem;
 			cursor: pointer
 		}
@@ -134,7 +89,7 @@
 			left: -30%;
 			width: var(--nav-width);
 			height: 100vh;
-			background-color: var(--tertiary);
+			background-color: var(--first-color);
 			padding: .5rem 1rem 0 0;
 			transition: .5s;
 			z-index: var(--z-fixed)
@@ -177,7 +132,7 @@
 
 		.nav_link {
 			position: relative;
-			color: var(--tertiary-light);
+			color: var(--first-color-light);
 			margin-bottom: 1.5rem;
 			transition: .3s
 		}
@@ -251,83 +206,54 @@
 	</style>    
 </head>
 
-<body id="body-pd" class="px-0">
+<body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='uil uil-bars' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="../assets/img/logo-liame-branca.png" alt=""> </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> 
-                <a href="../index.php" class="nav_logo"> 
+                <a href="#" class="nav_logo"> 
                     <img src="../assets/img/logo-liame-branca.png" alt=""> 
                     <span class="nav_logo-name">Liame</span> 
                 </a>
                 <div class="nav_list">
-                    <a href="diario_bordo.php" class="nav_link active">
+                    <a href="#" class="nav_link active">
                         <i class='uil uil-file-plus nav_icon'></i>
                         <span class="nav_name">Nova anotação</span>
                     </a>
-                    <a href="exibe_diario.php" class="nav_link">
+                    <a href="#" class="nav_link">
                         <i class='uil uil-diary nav_icon'></i>
                         <span class="nav_name">Minhas anotações</span>
                     </a>
-                    <a href="carteirinha_vacinacao.php" class="nav_link">
+                    <a href="#" class="nav_link">
                         <i class='uil uil-syringe nav_icon'></i>
                         <span class="nav_name">Vacinas</span> 
                     </a> 
-                    <a href="perfil_mae.php" class="nav_link">
-                        <i class='uil uil-user-circle nav_icon'></i>
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-bookmark nav_icon'></i>
                         <span class="nav_name">Meu Perfil</span>
                     </a> 
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-folder nav_icon'></i>
+                        <span class="nav_name">Files</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                        <span class="nav_name">Stats</span> 
+                    </a>
                 </div>
             </div> 
             <a href="#" class="nav_link"> 
-                <i class='uil uil-signout nav_icon'></i>
+                <i class='bx bx-log-out nav_icon'></i>
                 <span class="nav_name">Sair</span>
             </a>
         </nav>
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light">
-    <main>
-    <div id="diario" class="container-fluid block position-relative">
-      <div class="container">
-        <form action="diario_bordo.php" method="POST">
-          <input class="form-control" type="text" name="titulo" placeholder="Título">  
-          <textarea rows= "20"  name="conteudo"></textarea>
-
-        <style> 
-        tinyMCE.init{
-          width : "100%";
-          }
-          </style>   
-
-          <input class="btn btn-primary button button-primary"type="submit" name="enviar" value="Salvar">
-      
-        </form>
-      </div>
-    </div>
-    <?php
-      if(isset($_POST['enviar'])){
-        
-        $titulo=$_POST['titulo'];
-        $_SESSION['titulo']=$titulo;
-        $data_hora = date('d/m/Y H:i');
-        $texto_diario_gestacao=$_POST['conteudo'];
-      
-        $id_mae=$_SESSION['id_mae'];
-
-        $salvar=('INSERT INTO registro_diario (titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao, id_mae) VALUES("'.$titulo.'","'.$texto_diario_gestacao.'",now(), "'.$id_mae.'")');
-
-        if (mysqli_query($link, $salvar)){
-        echo "Salvo com sucesso" . $texto_diario_gestacao;
-        }else{
-        echo "Erro ao salvar";
-        }
-      }
-    ?>
-</main>
-
+        <h4>Main Components</h4>
     </div>
     <!--Container Main end-->
 
@@ -377,10 +303,4 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
-    <?php
-        }else{
-            header('Location: ../index.php');
-              
-        }
-    ?>
 </body>
