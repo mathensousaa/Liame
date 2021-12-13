@@ -260,7 +260,6 @@
             <div> 
                 <a href="../index.php" class="nav_logo"> 
                     <img src="../assets/img/logo-liame-branca.png" alt=""> 
-                    <span class="nav_logo-name">Liame</span> 
                 </a>
                 <div class="nav_list">
                     <a href="diario_bordo.php" class="nav_link active">
@@ -288,9 +287,9 @@
         </nav>
     </div>
     <!--Container Main start-->
-    <div class="height-100 bg-light">
+    <div class="height-100 bg-light ps-3">
     <main>
-    <div id="diario" class="container-fluid block position-relative">
+    <div id="diario" class="container-fluid block position-relative ps-5">
       <div class="container">
         <form action="diario_bordo.php" method="POST">
           <input class="form-control" type="text" name="titulo" placeholder="Título">  

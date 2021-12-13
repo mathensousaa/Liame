@@ -205,8 +205,36 @@
 		}
 	</style>    
 </head>
+<?php
+session_start();
+include ('conexao.php');
+if(isset($_SESSION['id_mae'])){
+  $id_mae = $_SESSION['id_mae'];
+} 
+else{
+  $id_mae = 0;
+  
+} 
+if(isset($_SESSION['id_profissional'])){
+  $id_profissional = $_SESSION['id_profissional'];
 
-<body id="body-pd">
+}
+else{
+   $id_profissional = 0;
+}
+if(isset($_SESSION['id_adm'])){
+  $id_adm = $_SESSION['id_adm'];
+
+}else{
+  $id_adm=0;
+}
+if(($id_mae != 0)){
+
+	$strSQL = "SELECT titulo_diario_gestacao, texto_diario_gestacao, data_hora_diario_gestacao FROM registro_diario WHERE id_mae = '$id_mae' ORDER BY  data_hora_diario_gestacao DESC";
+  $r = mysqli_query($link,$strSQL); 
+  $e= $r->fetch_array();
+  ?>
+<body id="body-pd" class="px-0">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='uil uil-bars' id="header-toggle"></i> </div>
         <div class="header_img"> <img src="../assets/img/logo-liame-branca.png" alt=""> </div>
@@ -253,8 +281,42 @@
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light">
-        <h4>Main Components</h4>
+		<main>
+			<div class="container" id="titulos">
+				<div class="row pb-2">
+					<?php
+					mysqli_data_seek($r, '0');
+					while($row = mysqli_fetch_array($r)){
+						?>
+					<div class="col-lg-3 col-md-6 col-sm-12 pb-4">
+						<div class="titulo-diario">
+							<div class="text-container">
+								<h6 class="pb-0">
+									<!-- puxar titulo aqui -->
+									<?php
+									echo $row['titulo_diario_gestacao'] ;
+									$titulo=$row['titulo_diario_gestacao'];
+									?>
+								</h6>
+								<a href="exibe_diario2?titulo=<?php echo $titulo ?>" class="button button-primary btn btn-primary">
+									Ver mais
+								</a>
+								<p class=data>
+									<?php
+									echo $row['data_hora_diario_gestacao'];
+									?>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
+  				}
+        	?>
+		</main>		
     </div>
+	
     <!--Container Main end-->
 
     <script>
@@ -304,3 +366,11 @@
 	<script src="../assets/js/owl.carousel.min.js"></script>
 	<script src="../assets/js/main.js"></script>
 </body>
+<?php
+  }else{
+    header('Location: ../index.php');
+      
+    }
+
+?>
+</html>

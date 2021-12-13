@@ -187,7 +187,7 @@
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
           <div class="container-fluid">
             <a href="index.php" class="navbar-brand">
-              <img class="img-fluid" id="logo" src="assets/img/logo_liame.png" alt="Liame">
+              <img class="img-fluid" id="logo" src="../assets/img/logo_liame.png" alt="Liame">
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

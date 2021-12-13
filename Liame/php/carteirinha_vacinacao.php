@@ -239,7 +239,6 @@ if(($id_mae != 0)){
             <div> 
                 <a href="../index.php" class="nav_logo"> 
                     <img src="../assets/img/logo-liame-branca.png" alt=""> 
-                    <span class="nav_logo-name">Liame</span> 
                 </a>
                 <div class="nav_list">
                     <a href="diario_bordo.php" class="nav_link">

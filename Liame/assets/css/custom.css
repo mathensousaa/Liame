@@ -579,7 +579,11 @@ html, body {
   width: 600px;
 }
 
-#titulos a.titulo-diario {
+#titulos .title {
+  color:var(--tertiary);
+}
+
+.titulo-diario {
   position: relative;
   display: block;
   background: var(--light);
@@ -589,14 +593,32 @@ html, body {
   color: #000;
   text-decoration: none;
   transition: all ease-out 0.2s;
-  z-index: 9999;
   height: 190px;
 }
 
-#titulos a.titulo-diario:hover {
+.titulo-diario:hover {
   background: #fff;
   transform: scale(1.02 );
   border: 1px solid var(--dark);
+}
+
+@media (max-width: 1199.98px) {
+  .titulo-diario {
+    height: 240px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .titulo-diario {
+    height: 190px;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .titulo-diario {
+    height: 190px;
+  }
 }
 
 .titulo-diario .preview {
@@ -610,7 +632,7 @@ html, body {
   font-size: 12px;
 }
 
-#titulos .titulo-diario .button-primary {
+.titulo-diario .button-primary {
   font-size: 12px;
   padding: 5px 15px;
   background: var(--light);
@@ -618,7 +640,7 @@ html, body {
   border: 2px solid var(--dark);
 }
 
-#titulos .titulo-diario .button-primary:hover {
+.titulo-diario .button-primary:hover {
   border: 2px solid var(--primary);
   background: #fff;
   color: var(--primary);

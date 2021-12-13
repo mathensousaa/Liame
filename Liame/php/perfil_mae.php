@@ -281,7 +281,7 @@
                     </a> 
                 </div>
             </div> 
-            <a href="#" class="nav_link"> 
+            <a href="logout_mae.php" class="nav_link"> 
                 <i class='uil uil-signout nav_icon'></i>
                 <span class="nav_name">Sair</span>
             </a>
@@ -292,7 +292,7 @@
       <main>
         <form name="confgconta" action="#" method="POST">
           <div class="container" id="container-input">
-            <div class="pt-3">
+            <div class="pt-5">
             <div class="d-flex justify-content-center" id="avatar-container">
               <img class="imagem-mae" src="../assets/img/user.svg">
               <div class="botao-upload">
@@ -331,7 +331,7 @@
           </div>
         </form>
 
-        <div class="container pt-3">
+        <!--<div class="container pt-3">
           <div class="row text-center">
             <h2 class="">Dados do bebê</h2>
           </div>
@@ -472,7 +472,6 @@
 
             showNavbar('header-toggle','nav-bar','body-pd','header')
 
-            /===== LINK ACTIVE =====/
             const linkColor = document.querySelectorAll('.nav_link')
 
             function colorLink(){

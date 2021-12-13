@@ -1,6 +1,6 @@
 /* max width */
 @media (max-width: 1199.98px) {
-  #titulos a.titulo-diario {
+  .titulo-diario {
     height: 240px;
   }
 }
@@ -47,14 +47,14 @@
     padding-right: 0%;
   }
 
-  #titulos a.titulo-diario {
+  .titulo-diario {
     height: 190px;
   }
 }
 
 @media (max-width: 767.98px) {
 
-  #titulos a.titulo-diario {
+  .titulo-diario {
     height: 190px;
   }
 
