@@ -472,7 +472,7 @@
 
             showNavbar('header-toggle','nav-bar','body-pd','header')
 
-            /*===== LINK ACTIVE =====*/
+            /===== LINK ACTIVE =====/
             const linkColor = document.querySelectorAll('.nav_link')
 
             function colorLink(){

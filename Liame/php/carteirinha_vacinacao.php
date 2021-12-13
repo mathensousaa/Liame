@@ -693,7 +693,7 @@ if(($id_mae != 0)){
   </script>
   
 </div>
-    </div>
+    
     <!--Container Main end-->
 
     <script>

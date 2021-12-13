@@ -292,17 +292,17 @@ if(isset($_SESSION['id_adm'])){
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Especialistas</h5>
               <ul class="list-unstyled">
-                <li class=""><a href="layouts/central_ajuda.html">Central de ajuda</a></li>
-                <li class=""><a href="layouts/termos_uso_profissional.html">Termos de uso de profissional</a></li>
+                <li class=""><a href="layouts/central_ajuda.php">Central de ajuda</a></li>
+                <li class=""><a href="layouts/termos_uso_profissional.php">Termos de uso de profissional</a></li>
                 <li class=""><a href="index.php">Página inicial</a></li>
               </ul>
             </div>
             <div class="px-lg-4 px-mb-1">
               <h5 class="text-uppercase">Serviços</h5>
               <ul class="list-unstyled">
-                <li class="list-item"><a href="layouts/quem_somos.html">Quem somos</a></li>
-                <li class=""><a href="layouts/Contatos.html">Contato</a></li>
-                <li class=""><a href="layouts/termos_condicoes_uso.html">Termos e condições de uso</a></li>
+                <li class="list-item"><a href="layouts/quem_somos.php">Quem somos</a></li>
+                <li class=""><a href="layouts/Contatos.php">Contato</a></li>
+                <li class=""><a href="layouts/termos_condicoes_uso.php">Termos e condições de uso</a></li>
               </ul>
             </div>
           </div>
@@ -345,4 +345,3 @@ if(isset($_SESSION['id_adm'])){
 </body>
 
 </html>
-g
