@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	Liame, unindo do início ao fim!🤱🏻
+	Liame, unindo do início ao fim! 🤱🏻
 </h4>
 
 ## 💻 Sobre o projeto
