@@ -378,7 +378,7 @@
 	<script src="../assets/js/main.js"></script>
     <?php
         }else{
-            header('Location: ../index.php');
+            header('Location: ../login_mae.php');
               
         }
     ?>

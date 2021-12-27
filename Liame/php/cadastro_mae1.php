@@ -59,7 +59,7 @@
                       <div class="form-check">
                         <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
                         <label>
-                        Você deve concordar com os <a href="../layouts/termos_condicoes_uso.html"><u>termos de condições de uso</u></a>
+                        Você deve concordar com os <a href="../layouts/termos_condicoes_uso.php"><u>termos de condições de uso</u></a>
                         </label>
                       </div>
                     </div>

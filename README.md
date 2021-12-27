@@ -1,12 +1,28 @@
-# Liame
-Projeto de TCC - Etec Santa Isabel
+<h1 align="center">
+    <img alt="Liame" title="#Liame" src="./assets/banner.png" />
+</h1>
 
-Trabalho de Conclusão de Curso
-apresentado ao curso técnico em
-Informática para Internet na Etec
-Santa Isabel orientado pelos
-professores Benedita Francisca 
-Barbosa de Avila e Thiago Ribeiro de
-Melo, como requisito parcial para a
-obtenção do título de tecnólogo em
-informática para internet.
+<h4 align="center"> 
+	Liame, unindo do início ao fim!🤱🏻
+</h4>
+
+## 💻 Sobre o projeto
+
+👶🏼 Liame - é uma forma de conectar especialistas e profissionais da área da saúde com mamães e papais para auxilia-los e ajuda-los durante o período da gestação e maternidade.
+
+Os profissionais poderão se cadastrar na plataforma web enviando:
+- uma docuemntação com sua especialidade e formação
+- número de registro profissional válido e ativo
+
+Projeto desenvolvido durante a **Curso técnico em informática para internet integrado ao ensino médio** oferecida pela ETEC Santa Isabel.
+
+
+## 🛠 Tecnologias
+
+As seguintes linguagens e ferramentas foram usadas na construção do projeto:
+
+- PHP
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
