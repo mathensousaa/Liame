@@ -46,6 +46,5 @@ As seguintes linguagens e ferramentas foram usadas na construção do projeto:
         <td align="center"><a href="https://www.linkedin.com/in/milena-cendrette-ferreira-b4a548216/"><img src="https://avatars.githubusercontent.com/u/88352849?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milena Cendrette</b></sub></a></td>
         <td align="center"><a href="https://www.linkedin.com/in/mlnsoares/"><img src="https://avatars.githubusercontent.com/u/80491740?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milena Soares</b></sub></a></td>
         <td align="center"><a href="https://github.com/thabatasantss"><img src="https://avatars.githubusercontent.com/u/88562273?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thabata Santos</b></sub></a></td>
-        
     </tr>
 </table>
