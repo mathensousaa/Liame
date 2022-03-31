@@ -33,6 +33,7 @@ As seguintes linguagens e ferramentas foram usadas na construção do projeto:
 - CSS
 - JavaScript
 - Bootstrap
+- SQL
 
 
 
