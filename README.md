@@ -11,7 +11,7 @@
 👶🏼 Liame - é uma forma de conectar especialistas e profissionais da área da saúde com mamães e papais para auxiliá-los e ajudá-los durante o período da gestação e maternidade.
 
 Os profissionais terão a oportunidade de divulgar seu trabalho na plataforma web enviando:
-- uma docuemntação com sua especialidade e formação
+- uma documentação com sua especialidade e formação
 - número de registro profissional válido e ativo
 
 As mães terão acesso a:
