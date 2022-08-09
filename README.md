@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Liame" title="#Liame" src="Liame/assets/img/banner.jpg" />
+    <img alt="Liame" title="#Liame" src="assets/img/banner.jpg" />
 </h1>
 
 <h4 align="center"> 
